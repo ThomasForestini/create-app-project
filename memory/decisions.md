@@ -13,25 +13,13 @@
 
 <!-- ADR-NNN entries appended here by /architect (Étape 6.6) and /evoluer (Étape 5f) -->
 
-<!--
-Exemple ADR-001 ci-dessous : à remplacer par tes vrais ADR au fil du projet.
-`/architect` Étape 6.6 le réécrira avec ton vrai choix de stack lors du premier
-cadrage. Garde-le tel quel pour voir à quoi un ADR de production ressemble.
--->
+### ADR-001 — Stack initiale : n8n + Telegram + pgvector VPS + Sonnet 5.5
 
-### ADR-001 — Stack Next.js + Supabase pour le MVP
-
-**Status** : Accepted
-**Date** : 2026-05-21
-**Context** : Le projet a besoin d'auth, BDD relationnelle, storage de fichiers, et déploiement rapide. L'équipe est 1 personne, non-backend. Budget MVP < €50/mois.
-**Decision** : Next.js (frontend + API routes) + Supabase (auth + Postgres + Storage) + Vercel (hosting). Pas de backend custom, pas de Prisma — Supabase client direct depuis API routes Next.js.
-**Consequences** :
-- ✅ Auth en 30 min sans rouler son propre backend (OAuth Google + email/password gérés)
-- ✅ Postgres = relationnel sérieux, pas un sandbox jouet (jointures, contraintes, vues)
-- ✅ RLS côté BDD = sécurité by default si > 1 utilisateur, pas de check applicatif à oublier
-- ⚠️ Lock-in Vercel partiel : Next.js compatible ailleurs, mais build optimisé pour Vercel (ISR, edge)
-- ⚠️ Coûts Supabase à surveiller si > 500 MAU (gratuit jusqu'à 50k MAU, payant ~$25/mo au-dessus)
-- ⚠️ Pas de queue/cron natif : besoin d'externaliser (Vercel cron, n8n) si async
+- **Status** : Accepted
+- **Date** : 2026-10-25
+- **Context** : Brief `docs/brainstorms/2026-10-25-assistant-odoo-telegram.md`, `project_type: automation`, usage perso. Reprise de l'ancien projet AgentIA-Odoo (Next.js) dont l'échec venait d'un excès d'infrastructure avant validation du cœur.
+- **Decision** : n8n self-hosted (Hostinger) + Telegram comme seule interface. Postgres + pgvector en conteneur sur le même VPS (pas de pause ni de quota, contrairement à Supabase gratuit), bibliothèque Odoo 20 réutilisée telle quelle avec `gemini-embedding-2`. Rédaction par Claude Sonnet 5.5, à confirmer par un duel mesuré contre Gemini en Phase 1.
+- **Consequences** : Verrouille `gemini-embedding-2` (changer = revectoriser). Débloque un MVP sans UI web. Le VPS devient point unique (n8n + BDD) — repli Supabase si l'accès Docker manque.
 
 ---
 

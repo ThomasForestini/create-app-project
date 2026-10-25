@@ -7,41 +7,59 @@
 ## Arborescence
 
 <!-- architect:directories -->
-{Rempli par /architect Étape 6.5 — arbo des dossiers principaux + à quoi sert chacun}
+- `workflows/` — fichiers `.workflow.json` exportés depuis n8n (1 par workflow), versionnés git
+- `scripts/` — utilitaires CLI (import de la bibliothèque dans pgvector, banc de mesure / duel de modèles)
+- `docs/` — brainstorms, plans de phase, procédures opérationnelles (ex : import bibliothèque, setup VPS)
+- Matériel source hors repo : `~/Desktop/a-reprendre-odoo/` (bibliothèque v20, consignes IA, glossaire, jeux de test)
 <!-- /architect:directories -->
 
 ## Patterns clés
 
 <!-- architect:patterns -->
-{Rempli par /architect Étape 6.5 — 3-5 patterns d'architecture du projet (ex : "vertical slice par feature", "RSC pour les pages, Server Actions pour les mutations", "workflows n8n versionnés en .workflow.ts")}
+- 1 fichier `.workflow.json` par workflow n8n, versionné git, push via MCP `n8n_create_workflow` / `n8n_update_full_workflow`
+- Telegram Trigger → filtre `chat_id` → aiguillage par type (texte / photo / PDF) → recherche pgvector → rédaction LLM → réponse Telegram
+- Recherche : 1-5 sous-questions (glossaire FR→EN) → embeddings `gemini-embedding-2` → 8-12 passages diversifiés filtrés `odoo_version = '20.0'`
+- Réponse structurée JSON avec statut (*Documenté / À vérifier / Non couvert*) + sources, puis mise en forme Telegram
+- Secrets uniquement dans les credentials n8n (jamais dans les JSON exportés)
 <!-- /architect:patterns -->
 
 ## Tests
 
 <!-- architect:tests -->
-{Rempli par /architect Étape 6.5 — où vivent les tests, comment les lancer, convention de nommage}
+- Tests via `n8n_test_workflow` MCP avec payload type, ou exécution manuelle dans l'UI n8n
+- Banc de mesure rejouable sur les jeux de test (106 questions doc + 12 de référence + échantillon QCM corrigé) — résultats datés dans `docs/`
 <!-- /architect:tests -->
 
 ## Conventions d'arborescence
 
 <!-- architect:conventions -->
-{Rempli par /architect Étape 6.5 — règles de naming (kebab-case fichiers, etc.), placement (ex : helpers dans `lib/`, types dans `types/`)}
+- Nommage workflows : `[ENV] {scope}-{action}` (ex : `[DEV] telegram-question-texte`, `[PROD] telegram-assistant`)
+- Fichiers : kebab-case ; export workflow = `workflows/{scope}-{action}.workflow.json`
+- Libellés Odoo en anglais, explications en français
 <!-- /architect:conventions -->
 
 ## Intégrations externes
 
 <!-- structure:integrations -->
-_(Maintenu par /architect Étape 6.5 + /evoluer Étape 5g. Liste des services tiers branchés : APIs, BDD, MCP, webhooks. Vide à l'init.)_
+- **n8n** self-hosted Hostinger (`https://n8n-ijcp.srv1468750.hstgr.cloud`) — MCP `n8n-mcp` en mode API
+- **Telegram Bot API** — interface utilisateur (credential n8n)
+- **Postgres + pgvector** — conteneur Docker sur le VPS, tables `knowledge_sources` / `knowledge_chunks`
+- **Google Gemini API** — `gemini-embedding-2` (embeddings)
+- **Anthropic API** — Claude Sonnet 5.5 (rédaction + vision)
+- **runbot.odoo.com** — vérification manuelle des réponses « À vérifier »
 <!-- /structure:integrations -->
 
 ## Fichiers clés
 
 <!-- structure:key-files -->
-_(Maintenu par /architect Étape 6.5 + /evoluer Étape 5g. Pointeurs vers les fichiers critiques pour l'agent : entrées principales, configs, schémas BDD.)_
+- `PRD.md` — scope, phases, critères de succès
+- `workflows/` — workflows n8n exportés (vide à l'init)
+- `.mcp.json` (gitignoré) — config MCP n8n avec clé API
+- `~/Desktop/a-reprendre-odoo/bibliotheque/knowledge-20.0.sql.gz` + `schema-tables-bibliotheque.ts` — données et schéma de la bibliothèque
 <!-- /structure:key-files -->
 
 ## Évolutions livrées (résumé)
 
 <!-- structure:evolutions-summary -->
-_(Maintenu par /evoluer après chaque livraison. 1 ligne par évolution livrée, lien vers `docs/specs/SPEC-{date}-{slug}.md`. Vide à l'init.)_
+_(Aucune évolution livrée pour l'instant.)_
 <!-- /structure:evolutions-summary -->

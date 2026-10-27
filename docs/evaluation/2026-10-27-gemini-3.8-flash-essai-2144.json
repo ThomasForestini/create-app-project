@@ -1,0 +1,188 @@
+{
+  "modele": "gemini-3.8-flash",
+  "date": "2026-10-27",
+  "jeu": "doc",
+  "resume": {
+    "questions": 1,
+    "erreurs": 0,
+    "rappelDoc": 1.0,
+    "questionsDocCompletes": "1/1",
+    "rappelI5": null,
+    "statuts": {
+      "À vérifier": 1
+    },
+    "coutMoyenUsd": 0.01087,
+    "coutTotalUsd": 0.0109,
+    "latenceMoyenneS": 24.8,
+    "latenceMaxS": 24.8
+  },
+  "resultats": [
+    {
+      "id": "D001",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+      "attendues": [
+        "finance/accounting/bank"
+      ],
+      "pagesCitees": [
+        "finance/accounting/bank",
+        "finance/accounting/bank/transactions"
+      ],
+      "trouvees": [
+        "finance/accounting/bank"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.01087,
+      "dureeServeurMs": 24161,
+      "latenceMs": 24785,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+        "modele": "gemini-3.8-flash",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Lorsqu'un client ne souhaite pas connecter son compte bancaire à sa base de données, Odoo permet de configurer le compte bancaire manuellement depuis le tableau de bord de la comptabilité ou en modifiant directement le journal de banque existant par défaut.",
+          "statut": "Documenté",
+          "sources": [
+            1
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Disposer des informations du compte bancaire à renseigner (par exemple l'IBAN).",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "raison": "Le passage demande de remplir les informations bancaires et cite l'IBAN comme détecté automatiquement, mais ne présente pas leur disponibilité comme prérequis."
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans le **Accounting Dashboard**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Accéder au tableau de bord comptable"
+          },
+          {
+            "texte": "Sur la carte kanban d'une banque non connectée, cliquer sur **Search over 26000 banks**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir la sélection de la banque"
+          },
+          {
+            "texte": "Cliquer sur **Record transactions manually** (en bas à droite), renseigner les informations de la banque, puis cliquer sur **Create**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Enregistrer les informations bancaires manuellement"
+          },
+          {
+            "texte": "Un journal de banque par défaut est disponible : aller dans **Accounting ‣ Configuration ‣ Accounting: Journals ‣ Bank**, l'ouvrir et éditer les différents champs pour les faire correspondre aux informations du compte bancaire.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Méthode alternative : Modifier le journal par défaut"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Odoo détecte automatiquement le type de compte bancaire (par exemple l'IBAN) et active certaines fonctionnalités en conséquence.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          },
+          {
+            "texte": "En l'absence de synchronisation automatique, les écritures bancaires devront soit être importées à partir des relevés fournis par la banque, soit être saisies manuellement.",
+            "statut": "À vérifier",
+            "sources": [
+              3
+            ],
+            "raison": "Le passage 3 présente l'import de relevés et la saisie manuelle comme des options, non comme une obligation (« devront »)."
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Bank and cash accounts > Manage bank and cash accounts > Create a bank account",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html#create-a-bank-account",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank.html"
+          },
+          {
+            "n": 3,
+            "titre": "Transactions",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to create a bank journal manually without online bank synchronization in Odoo 20.0 Accounting",
+          "How to record bank statement lines manually or import a bank statement file (CSV, OFX, QIF, CAMT) in Odoo 20.0 Accounting",
+          "How to set up bank account number and bank details on a bank journal in Odoo 20.0 Accounting",
+          "How to reconcile manually imported bank statement lines with invoices in Odoo 20.0 Accounting",
+          "How to add a manual bank account in Odoo 20.0 Accounting Settings without Online Synchronization"
+        ],
+        "cout": {
+          "usd": 0.01087,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 820,
+              "sortie": 229,
+              "usd": 0.0002
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 194,
+              "sortie": 0,
+              "usd": 4e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "gemini-3.8-flash",
+              "entree": 3127,
+              "sortie": 1876,
+              "usd": 0.00938
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 5283,
+              "sortie": 1449,
+              "usd": 0.00125
+            }
+          ]
+        },
+        "dureeMs": 24161
+      }
+    }
+  ]
+}

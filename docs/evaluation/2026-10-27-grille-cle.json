@@ -1,0 +1,50 @@
+{
+  "Q1": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q2": {
+    "A": "claude-sonnet-5-5",
+    "B": "gemini-4-argon"
+  },
+  "Q3": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q4": {
+    "A": "claude-sonnet-5-5",
+    "B": "gemini-4-argon"
+  },
+  "Q5": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q6": {
+    "A": "claude-sonnet-5-5",
+    "B": "gemini-4-argon"
+  },
+  "Q7": {
+    "A": "claude-sonnet-5-5",
+    "B": "gemini-4-argon"
+  },
+  "Q8": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q9": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q10": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q11": {
+    "A": "gemini-4-argon",
+    "B": "claude-sonnet-5-5"
+  },
+  "Q12": {
+    "A": "claude-sonnet-5-5",
+    "B": "gemini-4-argon"
+  }
+}

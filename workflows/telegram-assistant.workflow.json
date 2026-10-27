@@ -1,0 +1,285 @@
+{
+  "name": "[DEV] telegram-assistant",
+  "nodes": [
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e01",
+      "name": "Telegram Trigger",
+      "webhookId": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0eff",
+      "type": "n8n-nodes-base.telegramTrigger",
+      "typeVersion": 1.5,
+      "position": [
+        0,
+        100
+      ],
+      "parameters": {
+        "updates": [
+          "message"
+        ],
+        "additionalFields": {}
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "knO0m7y2xLhQBsGw",
+          "name": "Assistant Odoo"
+        }
+      }
+    },
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e02",
+      "name": "Only my chat, text only",
+      "type": "n8n-nodes-base.filter",
+      "typeVersion": 2.2,
+      "position": [
+        220,
+        100
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c",
+              "leftValue": "={{ $json.message.chat.id }}",
+              "rightValue": 5688120478,
+              "operator": {
+                "type": "number",
+                "operation": "equals"
+              }
+            },
+            {
+              "id": "t",
+              "leftValue": "={{ $json.message.text ?? '' }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e03",
+      "name": "Show typing",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "onError": "continueRegularOutput",
+      "position": [
+        440,
+        100
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendChatAction",
+        "chatId": "={{ $json.message.chat.id }}",
+        "action": "typing"
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "knO0m7y2xLhQBsGw",
+          "name": "Assistant Odoo"
+        }
+      },
+      "webhookId": "b14a3f3b-4039-405a-ba4c-23bb7f0173e1"
+    },
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e04",
+      "name": "Ask odoo-question",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.4,
+      "onError": "continueErrorOutput",
+      "position": [
+        660,
+        100
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "KwhsROllaxRj74UA",
+          "mode": "id"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "question": "={{ $('Telegram Trigger').first().json.message.text }}",
+            "model": "claude-sonnet-5-5"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "question",
+              "displayName": "question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "model",
+              "displayName": "model",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "mode": "once",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      }
+    },
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e05",
+      "name": "Format answer",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        880,
+        0
+      ],
+      "parameters": {
+        "mode": "runOnceForEachItem",
+        "language": "javaScript",
+        "jsCode": "// Why Code: mise en forme HTML Telegram (échappement, gras, statuts par élément, liens) et coupe à 4 096 caractères.\nconst r = $json;\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst fmt = (s) => esc(s).replace(/\\*\\*(.+?)\\*\\*/g, '<b>$1</b>');\nconst refs = (i) => (i.sources?.length ? ` <i>[${i.sources.join(', ')}]</i>` : '');\nconst mark = (i) => (i.statut === 'Documenté' ? '✅' : '⚠️');\nconst BADGE = { 'Documenté': '✅ Documenté', 'À vérifier': '⚠️ À vérifier', 'Non couvert': '❌ Non couvert' };\n\nconst lines = [`<b>${BADGE[r.statut] ?? esc(r.statut)}</b>`, '', `${mark(r.resume)} ${fmt(r.resume.texte)}${refs(r.resume)}`];\nif (r.prerequis.length) lines.push('', '<b>Prérequis</b>', ...r.prerequis.map((i) => `${mark(i)} ${fmt(i.texte)}${refs(i)}`));\nif (r.etapes.length) lines.push('', '<b>Étapes</b>', ...r.etapes.map((i, k) => `${k + 1}. ${mark(i)} <b>${fmt(i.titre)}</b> — ${fmt(i.texte)}${refs(i)}`));\nif (r.avertissements.length) lines.push('', '<b>Attention</b>', ...r.avertissements.map((i) => `${mark(i)} ${fmt(i.texte)}${refs(i)}`));\nif (r.pistes.length) lines.push('', '<b>Pistes à tester</b>', ...r.pistes.map((p) => `• ${fmt(p)}`));\nif (r.nonCouvert.length) lines.push('', '<b>Non couvert</b>', ...r.nonCouvert.map((p) => `• ${fmt(p)}`));\nif (r.sources.length) lines.push('', '<b>Sources — doc officielle Odoo 20</b>', ...r.sources.map((s) => `[${s.n}] <a href=\"${esc(s.url)}\">${esc(s.titre)}</a>`));\nlines.push('', `<i>✅ = vérifié sur la doc en ligne · ⚠️ = à vérifier · contrôle : ${esc(r.controle.site)} · ${Math.round(r.dureeMs / 1000)} s</i>`);\n\n// Coupe à une fin de ligne (chaque ligne ferme ses balises) ; découpage en plusieurs messages en Phase 4.\nlet text = lines.join('\\n');\nif (text.length > 4096) text = text.slice(0, text.lastIndexOf('\\n', 4000)) + '\\n\\n<i>… réponse tronquée</i>';\n\nreturn { json: { chatId: $('Telegram Trigger').first().json.message.chat.id, text } };\n"
+      }
+    },
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e06",
+      "name": "Send answer",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $json.chatId }}",
+        "text": "={{ $json.text }}",
+        "additionalFields": {
+          "parse_mode": "HTML",
+          "disable_web_page_preview": true,
+          "appendAttribution": false
+        }
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "knO0m7y2xLhQBsGw",
+          "name": "Assistant Odoo"
+        }
+      },
+      "webhookId": "63fa3a3a-debc-4cd7-bcfe-b81b9aeaf6ae"
+    },
+    {
+      "id": "5b2e7c41-1a9d-4e3f-8c6b-2d4f6a8c0e07",
+      "name": "Send error",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        880,
+        220
+      ],
+      "parameters": {
+        "resource": "message",
+        "operation": "sendMessage",
+        "chatId": "={{ $('Telegram Trigger').first().json.message.chat.id }}",
+        "text": "⚠️ Je n'ai pas pu traiter ta question (erreur technique). Réessaie dans un instant.",
+        "additionalFields": {
+          "appendAttribution": false
+        }
+      },
+      "credentials": {
+        "telegramApi": {
+          "id": "knO0m7y2xLhQBsGw",
+          "name": "Assistant Odoo"
+        }
+      },
+      "webhookId": "118d2292-370f-40bc-b7e5-5e10b379712c"
+    }
+  ],
+  "connections": {
+    "Telegram Trigger": {
+      "main": [
+        [
+          {
+            "node": "Only my chat, text only",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Only my chat, text only": {
+      "main": [
+        [
+          {
+            "node": "Show typing",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Show typing": {
+      "main": [
+        [
+          {
+            "node": "Ask odoo-question",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask odoo-question": {
+      "main": [
+        [
+          {
+            "node": "Format answer",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send error",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Format answer": {
+      "main": [
+        [
+          {
+            "node": "Send answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "id": "LzPHuYGXoLxXKkMX"
+}

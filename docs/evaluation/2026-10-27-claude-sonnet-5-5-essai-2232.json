@@ -1,0 +1,1823 @@
+{
+  "modele": "claude-sonnet-5-5",
+  "date": "2026-10-27",
+  "jeu": "doc",
+  "resume": {
+    "questions": 10,
+    "erreurs": 0,
+    "rappelDoc": 1.0,
+    "questionsDocCompletes": "10/10",
+    "rappelI5": null,
+    "statuts": {
+      "À vérifier": 7,
+      "Documenté": 2,
+      "Non couvert": 1
+    },
+    "coutMoyenUsd": 0.02281,
+    "coutTotalUsd": 0.2281,
+    "latenceMoyenneS": 21.6,
+    "latenceMaxS": 33.3
+  },
+  "resultats": [
+    {
+      "id": "D040",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Où et comment paramétrer le journal des ventes pour inclure les références de paiement danoises FIK sur les factures de nos clients ?",
+      "attendues": [
+        "finance/fiscal_localizations/denmark"
+      ],
+      "pagesCitees": [
+        "finance/accounting/get_started/journals",
+        "finance/fiscal_localizations/denmark"
+      ],
+      "trouvees": [
+        "finance/fiscal_localizations/denmark"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.01995,
+      "dureeServeurMs": 16321,
+      "latenceMs": 16933,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Où et comment paramétrer le journal des ventes pour inclure les références de paiement danoises FIK sur les factures de nos clients ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Pour inclure les références de paiement FIK sur les factures clients, installez le module **Denmark - FIK Number**, puis ouvrez le journal de type **Sales** concerné via **Accounting ‣ Configuration ‣ Journals** et paramétrez l'onglet **Advanced Settings** (**Communication Type**, **Communication Standard**, **FIK Creditor Number**).",
+          "statut": "À vérifier",
+          "sources": [
+            1,
+            4
+          ],
+          "raison": "Les étapes et les trois réglages figurent dans les passages, mais le résumé présente les trois réglages comme à paramétrer alors que la source dit « if necessary » (si nécessaire)."
+        },
+        "prerequis": [
+          {
+            "texte": "Installer le module **Denmark - FIK Number**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Installer le module **Denmark - FIK Number** pour générer et utiliser les références de paiement FIK sur les factures clients.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Installer le module"
+          },
+          {
+            "texte": "Aller dans **Accounting ‣ Configuration ‣ Journals**, puis sélectionner le journal concerné de type **Sales**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir le journal des ventes"
+          },
+          {
+            "texte": "Cliquer sur l'onglet **Advanced Settings** du journal, qui regroupe les réglages du format de communication affiché sur les factures clients.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              4
+            ],
+            "titre": "Ouvrir l'onglet Advanced Settings"
+          },
+          {
+            "texte": "Si nécessaire, définir **Communication Type** sur **Based on Invoice**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Régler Communication Type"
+          },
+          {
+            "texte": "Si nécessaire, sélectionner dans **Communication Standard** le standard de communication requis.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Régler Communication Standard"
+          },
+          {
+            "texte": "Si nécessaire, saisir dans **FIK Creditor Number** le numéro de créancier FIK (8 chiffres).",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Saisir le FIK Creditor Number"
+          }
+        ],
+        "avertissements": [],
+        "pistes": [],
+        "nonCouvert": [
+          "Les passages ne précisent pas quelle valeur exacte choisir dans **Communication Standard** pour le FIK."
+        ],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Denmark > FIK number",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/denmark.html#fik-number",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/fiscal_localizations/denmark.html"
+          },
+          {
+            "n": 4,
+            "titre": "Journals > Sales, purchase, and miscellaneous journals > Sales",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/journals.html#sales",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/get_started/journals.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/denmark.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/journals.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to configure a Sales journal in Odoo 20 Accounting settings",
+          "How to set up Danish FIK payment reference on customer invoices in Odoo",
+          "Where to enable Payment Reference or Communication field on the Sales journal settings in Odoo",
+          "How to configure the Payment Reference (FIK) on Customers invoices in Odoo Accounting",
+          "How to add a QR code or payment reference to Customer invoices printed report in Odoo"
+        ],
+        "cout": {
+          "usd": 0.01995,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 852,
+              "sortie": 184,
+              "usd": 0.00018
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 150,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5605,
+              "sortie": 695,
+              "usd": 0.01816
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 7634,
+              "sortie": 1630,
+              "usd": 0.00158
+            }
+          ]
+        },
+        "dureeMs": 16321
+      }
+    },
+    {
+      "id": "D041",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Où puis-je retrouver l'historique complet des entretiens de notre parc automobile et quels sont les différents statuts de suivi possibles ?",
+      "attendues": [
+        "hr/fleet/service"
+      ],
+      "pagesCitees": [
+        "hr/fleet/accidents",
+        "hr/fleet/service"
+      ],
+      "trouvees": [
+        "hr/fleet/service"
+      ],
+      "rappel": 1.0,
+      "statut": "Documenté",
+      "couverture": "complete",
+      "coutUsd": 0.02049,
+      "dureeServeurMs": 16758,
+      "latenceMs": 17385,
+      "erreur": null,
+      "reponse": {
+        "statut": "Documenté",
+        "question": "Où puis-je retrouver l'historique complet des entretiens de notre parc automobile et quels sont les différents statuts de suivi possibles ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "L'historique complet des services (entretiens et réparations) de la flotte se consulte via **Fleet app ‣ Fleet ‣ Services** : la liste affiche tous les services, anciens et nouveaux. Le champ **Stage** indique le statut : **New**, **Running**, **Done** ou **Cancelled**.",
+          "statut": "Documenté",
+          "sources": [
+            1
+          ]
+        },
+        "prerequis": [],
+        "etapes": [
+          {
+            "texte": "Aller dans **Fleet app ‣ Fleet ‣ Services** pour voir tous les services enregistrés dans la base, anciens et nouveaux, avec leurs détails (**Date**, **Description**, **Service Type**, **Vehicle**, **Driver**, **Vendor**, **Notes**, **Cost**, **Stage**).",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir la liste des services"
+          },
+          {
+            "texte": "Les enregistrements sont groupés par **Service Type**, avec le nombre de réparations entre parenthèses après le nom du type. Le total des coûts de tous les services et réparations apparaît en bas de la colonne **Cost**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Lire les regroupements et le total"
+          },
+          {
+            "texte": "Les options de la colonne **Stage** sont **New**, **Running**, **Done** ou **Cancelled**. **New** : service demandé, réparations non commencées, **Cost** à zéro. **Running** : réparation en cours, l'estimation figure dans **Cost**. Le stade terminé est nommé **Completed** dans la description des stades et **Done** dans la liste : **Cost** reflète alors le coût final. **Cancelled** : demande annulée.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              4
+            ],
+            "titre": "Consulter les statuts (colonne Stage)"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Le stade terminé est libellé **Done** dans la liste des services [1] et **Completed** dans la description des stades [4] : les libellés diffèrent selon les passages.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              4
+            ]
+          },
+          {
+            "texte": "Il s'agit des quatre stades par défaut ; la documentation ne précise pas ici s'ils sont personnalisables.",
+            "statut": "Documenté",
+            "sources": [
+              4
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Services > View services",
+            "url": "https://www.odoo.com/documentation/20.0/applications/hr/fleet/service.html#view-services",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/hr/fleet/service.html"
+          },
+          {
+            "n": 4,
+            "titre": "Accidents > Service stages",
+            "url": "https://www.odoo.com/documentation/20.0/applications/hr/fleet/accidents.html#service-stages",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/hr/fleet/accidents.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/hr/fleet/service.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/hr/fleet/accidents.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "Where to find the complete service history of vehicles in Odoo Fleet",
+          "How to view service records and maintenance history for a vehicle in Fleet",
+          "What are the different stages of a service record in Odoo Fleet",
+          "How to use the Kanban and Pivot views of Fleet services to track maintenance status"
+        ],
+        "cout": {
+          "usd": 0.02049,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 849,
+              "sortie": 135,
+              "usd": 0.00015
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 117,
+              "sortie": 0,
+              "usd": 2e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5649,
+              "sortie": 748,
+              "usd": 0.01878
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 8041,
+              "sortie": 1459,
+              "usd": 0.00153
+            }
+          ]
+        },
+        "dureeMs": 16758
+      }
+    },
+    {
+      "id": "D042",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Comment indiquer dans le système qu'une boisson commandée par un visiteur lors de son arrivée à l'accueil lui a bien été apportée ?",
+      "attendues": [
+        "hr/frontdesk/visitors"
+      ],
+      "pagesCitees": [
+        "hr/frontdesk",
+        "hr/frontdesk/visitors"
+      ],
+      "trouvees": [
+        "hr/frontdesk/visitors"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02199,
+      "dureeServeurMs": 15711,
+      "latenceMs": 16884,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Comment indiquer dans le système qu'une boisson commandée par un visiteur lors de son arrivée à l'accueil lui a bien été apportée ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Dans l'application Frontdesk, on marque une boisson comme servie avec le bouton **Drink Served**, soit depuis la carte de la station (**Frontdesk app ‣ Stations**), soit depuis la liste **Frontdesk app ‣ Visitors**. Une fois cliqué, le visiteur disparaît de la liste des boissons à servir (ou le bouton disparaît dans la liste des visiteurs).",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Des boissons doivent avoir été configurées pour la station (**Frontdesk app ‣ Configuration ‣ Drinks**) et le visiteur doit en avoir demandé une lors de son enregistrement ; sinon le bouton **Drink Served** n'apparaît pas.",
+            "statut": "À vérifier",
+            "sources": [
+              2,
+              3,
+              4
+            ],
+            "raison": "Le passage 4 dit que la configuration des boissons n'est ni nécessaire ni obligatoire ; le prérequis est présenté comme obligatoire alors que c'est facultatif. Le bouton n'apparaît que si une boisson a été demandée, ce qui est appuyé."
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Frontdesk app ‣ Stations** et choisir la carte de la station affichant **(#) Drinks to serve**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Méthode 1 : ouvrir la station"
+          },
+          {
+            "texte": "Dans la liste des visiteurs enregistrés à cette station et en attente d'une boisson, cliquer sur le bouton **Drink Served** en fin de ligne du visiteur servi. Le visiteur disparaît alors de la liste.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Méthode 1 : cliquer sur Drink Served"
+          },
+          {
+            "texte": "Alternativement, aller dans **Frontdesk app ‣ Visitors**.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ],
+            "titre": "Méthode 2 : ouvrir la liste des visiteurs"
+          },
+          {
+            "texte": "Cliquer sur le bouton **Drink Served** situé à côté de la colonne de statut sans titre. Il n'apparaît que si le visiteur a demandé une boisson, et disparaît une fois cliqué.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ],
+            "titre": "Méthode 2 : cliquer sur Drink Served"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "C'est la personne qui a apporté la boisson qui est responsable de la marquer comme servie.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Visitors > Visitor flow > Notifications",
+            "url": "https://www.odoo.com/documentation/20.0/applications/hr/frontdesk/visitors.html#notifications",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/hr/frontdesk/visitors.html"
+          },
+          {
+            "n": 2,
+            "titre": "Visitors > Visitor flow > Drinks",
+            "url": "https://www.odoo.com/documentation/20.0/applications/hr/frontdesk/visitors.html#drinks",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/hr/frontdesk/visitors.html"
+          },
+          {
+            "n": 3,
+            "titre": "Visitors > Visitor list",
+            "url": "https://www.odoo.com/documentation/20.0/applications/hr/frontdesk/visitors.html#visitor-list",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/hr/frontdesk/visitors.html"
+          },
+          {
+            "n": 4,
+            "titre": "Frontdesk > Configuration > Drinks",
+            "url": "https://www.odoo.com/documentation/20.0/applications/hr/frontdesk.html#drinks",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/hr/frontdesk.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/hr/frontdesk/visitors.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/hr/frontdesk.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to manage visitor drinks orders at reception in Odoo Visitor Management",
+          "How to mark a visitor order as delivered or served in Odoo Visitor Management",
+          "How to configure visitor host drinks or refreshments products in Odoo Visitor Management",
+          "How to track visitor check-in and order status in Odoo Visitor Management reports"
+        ],
+        "cout": {
+          "usd": 0.02199,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 803,
+              "sortie": 149,
+              "usd": 0.00015
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 123,
+              "sortie": 0,
+              "usd": 2e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 6348,
+              "sortie": 748,
+              "usd": 0.02018
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 9668,
+              "sortie": 1338,
+              "usd": 0.00164
+            }
+          ]
+        },
+        "dureeMs": 15711
+      }
+    },
+    {
+      "id": "D043",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Comment puis-je autoriser les usagers à clôturer eux-mêmes leur demande d'assistance depuis leur espace en ligne ?",
+      "attendues": [
+        "services/helpdesk/advanced/close_tickets"
+      ],
+      "pagesCitees": [
+        "services/helpdesk/advanced/close_tickets"
+      ],
+      "trouvees": [
+        "services/helpdesk/advanced/close_tickets"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.01865,
+      "dureeServeurMs": 16815,
+      "latenceMs": 17703,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Comment puis-je autoriser les usagers à clôturer eux-mêmes leur demande d'assistance depuis leur espace en ligne ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Pour permettre aux clients de clôturer eux-mêmes leur ticket Helpdesk, il faut activer le réglage **Closure by Customers** sur l'équipe concernée. Un bouton **Close Ticket** apparaît alors dans le portail client lorsqu'ils consultent leur ticket.",
+          "statut": "Documenté",
+          "sources": [
+            1
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Disposer d'une équipe Helpdesk existante dans **Helpdesk ‣ Configuration ‣ Helpdesk Teams**.",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "raison": "Le passage indique de sélectionner une équipe, mais ne présente pas l'existence d'une équipe comme un prérequis obligatoire."
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Helpdesk ‣ Configuration ‣ Helpdesk Teams** et sélectionner une équipe.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir les équipes Helpdesk"
+          },
+          {
+            "texte": "Sur la page de configuration de l'équipe, faire défiler jusqu'à la section **Self-Service** et cocher la case **Closure by Customers**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Activer la clôture par le client"
+          },
+          {
+            "texte": "Une fois le réglage activé, le bouton **Close Ticket** est disponible pour les clients lorsqu'ils consultent leur ticket via le portail client.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Vérifier côté client"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Les clients accèdent à leur ticket via le lien **View the ticket** reçu par e-mail (inclus dans le modèle **Request Acknowledgment**, ajouté par défaut à la première étape d'une équipe). Ce lien ne nécessite pas d'accès au portail. Les clients ayant accès au portail peuvent aussi voir leurs tickets sous **My Account ‣ Tickets**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Close tickets > Allow customers to close their own tickets",
+            "url": "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/close_tickets.html#allow-customers-to-close-their-own-tickets",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/services/helpdesk/advanced/close_tickets.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/close_tickets.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to allow customers to close their own support ticket from the customer portal in Odoo Helpdesk",
+          "How to enable customer portal access for helpdesk tickets in Odoo 20 Helpdesk settings",
+          "How to configure helpdesk team stages with the Closed flag so a ticket is considered closed in Odoo",
+          "How to use the Close Ticket button or Mark as Done action on a helpdesk ticket in the Odoo customer portal",
+          "How to set up automatic closing of helpdesk tickets after customer confirmation in Odoo Helpdesk"
+        ],
+        "cout": {
+          "usd": 0.01865,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 800,
+              "sortie": 220,
+              "usd": 0.00019
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 168,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5522,
+              "sortie": 626,
+              "usd": 0.0173
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 3476,
+              "sortie": 1555,
+              "usd": 0.00113
+            }
+          ]
+        },
+        "dureeMs": 16815
+      }
+    },
+    {
+      "id": "D044",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Dans l'éditeur de texte, comment puis-je manipuler les lignes ou les colonnes d'un tableau pour les déplacer, en ajouter de nouvelles ou en supprimer ?",
+      "attendues": [
+        "essentials/html_editor"
+      ],
+      "pagesCitees": [
+        "essentials/html_editor",
+        "studio/pdf_reports"
+      ],
+      "trouvees": [
+        "essentials/html_editor"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02712,
+      "dureeServeurMs": 21666,
+      "latenceMs": 21994,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Dans l'éditeur de texte, comment puis-je manipuler les lignes ou les colonnes d'un tableau pour les déplacer, en ajouter de nouvelles ou en supprimer ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Dans l'éditeur de texte Odoo, on insère un tableau avec la commande **Table** de la powerbox (`/`), puis on survole une colonne ou une ligne pour afficher le menu du tableau et déplacer, insérer ou supprimer des colonnes/lignes. Dans l'éditeur de rapports PDF, la même logique s'applique via les outils de tableau (rectangle violet), avec des limites pour les tableaux dynamiques.",
+          "statut": "À vérifier",
+          "sources": [
+            1,
+            7
+          ],
+          "raison": "Le menu du tableau de l'éditeur de texte (passage 7) est appuyé, mais la partie rapport PDF relève d'un autre flux. La limite citée ne vaut que pour les tableaux dynamiques existants d'un rapport standard, pas pour tous les tableaux dynamiques."
+        },
+        "prerequis": [],
+        "etapes": [
+          {
+            "texte": "Dans le champ de texte, tapez `/` pour ouvrir la powerbox, puis sélectionnez la commande **Table** (Insert a table).",
+            "statut": "Documenté",
+            "sources": [
+              7
+            ],
+            "titre": "Insérer un tableau"
+          },
+          {
+            "texte": "Survolez une colonne ou une ligne pour révéler le menu du tableau.",
+            "statut": "Documenté",
+            "sources": [
+              7
+            ],
+            "titre": "Afficher le menu du tableau"
+          },
+          {
+            "texte": "Cliquez sur l'icône **(ellipsis)** pour déplacer, insérer ou supprimer une colonne ou une ligne.",
+            "statut": "Documenté",
+            "sources": [
+              7
+            ],
+            "titre": "Déplacer, insérer ou supprimer une colonne ou une ligne"
+          },
+          {
+            "texte": "Placez le curseur au-dessus de la colonne ou à gauche de la ligne, cliquez sur le rectangle violet et choisissez l'option voulue (insérer, déplacer, supprimer). Pour redimensionner une colonne, faites glisser sa bordure ; **Reset Size** dans les outils du tableau rétablit la taille standard.",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "titre": "Cas de l'éditeur de rapports PDF (tableau statique)",
+            "raison": "Les étapes du rectangle violet et du Reset Size figurent dans le passage 1, mais elles décrivent l'éditeur de rapports PDF, pas l'éditeur de texte visé par la question."
+          },
+          {
+            "texte": "Survolez un élément du texte (dont un tableau) pour afficher l'icône **(drag)**, puis cliquez et maintenez pour le glisser-déposer ailleurs dans le texte.",
+            "statut": "Documenté",
+            "sources": [
+              2
+            ],
+            "titre": "Déplacer un élément entier (bloc) dans le texte"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Dans un rapport PDF, pour un tableau dynamique, on peut insérer, déplacer et supprimer des colonnes, mais un tableau dynamique existant d'un rapport standard a une structure plus complexe : on peut insérer ou supprimer des colonnes, pas les déplacer, ni insérer, déplacer ou supprimer des lignes.",
+            "statut": "À vérifier",
+            "sources": [
+              3
+            ],
+            "raison": "La limitation des tableaux dynamiques existants est dans le passage 3, mais elle concerne les rapports PDF et non l'éditeur de texte demandé."
+          },
+          {
+            "texte": "Le menu du tableau des rapports PDF (rectangle violet) est décrit pour l'éditeur de rapports ; pour l'éditeur de texte général, le passage décrit l'icône **(ellipsis)** au survol.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              7
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "PDF reports > Editing PDF reports > Report editor > Other content > Add or edit a table > Add or edit a static table",
+            "url": "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#add-or-edit-a-static-table",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/studio/pdf_reports.html"
+          },
+          {
+            "n": 2,
+            "titre": "Odoo rich-text editor",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/html_editor.html",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/html_editor.html"
+          },
+          {
+            "n": 3,
+            "titre": "PDF reports > Editing PDF reports > Report editor > Other content > Add or edit a table > Add or edit a dynamic table",
+            "url": "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#add-or-edit-a-dynamic-table",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/studio/pdf_reports.html"
+          },
+          {
+            "n": 7,
+            "titre": "Odoo rich-text editor > Powerbox commands",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/html_editor.html#powerbox-commands",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/html_editor.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/essentials/html_editor.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to insert a table in the text editor of Odoo 20.0 html field",
+          "How to add a row or a column to a table in the Odoo html editor",
+          "How to delete a row or a column from a table in the Odoo html editor",
+          "How to move a row or a column in a table in the Odoo html editor"
+        ],
+        "cout": {
+          "usd": 0.02712,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 819,
+              "sortie": 128,
+              "usd": 0.00015
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 139,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 7551,
+              "sortie": 938,
+              "usd": 0.02448
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 12409,
+              "sortie": 2447,
+              "usd": 0.00246
+            }
+          ]
+        },
+        "dureeMs": 21666
+      }
+    },
+    {
+      "id": "D045",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Où puis-je consulter le solde de mes crédits pour les différents services intégrés et en racheter manuellement si nécessaire ?",
+      "attendues": [
+        "essentials/in_app_purchase"
+      ],
+      "pagesCitees": [
+        "essentials/in_app_purchase",
+        "sales/crm/optimize/lead_enrichment"
+      ],
+      "trouvees": [
+        "essentials/in_app_purchase"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.01973,
+      "dureeServeurMs": 15555,
+      "latenceMs": 15912,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Où puis-je consulter le solde de mes crédits pour les différents services intégrés et en racheter manuellement si nécessaire ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Le solde de crédits de chaque service IAP se consulte, et des crédits se rachètent manuellement, dans l'app **Settings**, section **Contacts**, sous le paramètre **Odoo IAP**, via **View My Services**. On ouvre ensuite le service voulu (page **Account Information**) pour acheter des crédits.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        "prerequis": [],
+        "etapes": [
+          {
+            "texte": "Aller dans l'app **Settings**, puis dans la section **Contacts** (ou taper `IAP` dans la barre de recherche des réglages). Sous **Odoo IAP**, cliquer sur **View My Services**.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              3
+            ],
+            "titre": "Ouvrir les réglages IAP"
+          },
+          {
+            "texte": "La page qui s'affiche liste les services IAP de la base. Cliquer sur le service concerné pour ouvrir sa page **Account Information**, où l'on consulte le solde et où l'on peut acheter des crédits.",
+            "statut": "À vérifier",
+            "sources": [
+              1,
+              3
+            ],
+            "titre": "Choisir le service IAP",
+            "raison": "Le passage liste les services et ouvre Account Information pour acheter, mais ne dit pas que le solde y est affiché."
+          },
+          {
+            "texte": "Sur la page **Account Information**, cliquer sur le bouton **Buy Credit**. Une page **Buy Credits for (IAP Account)** s'ouvre dans un nouvel onglet.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ],
+            "titre": "Lancer l'achat"
+          },
+          {
+            "texte": "Cliquer sur **Buy** sur le pack de crédits souhaité, puis suivre les étapes pour saisir les informations de paiement et confirmer la commande. Une fois la transaction terminée, les crédits sont disponibles dans la base.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ],
+            "titre": "Choisir le pack et payer"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Les crédits ne sont pas interchangeables entre services IAP : il faut acheter les crédits du service concerné.",
+            "statut": "À vérifier",
+            "sources": [
+              12
+            ],
+            "raison": "La non-interchangeabilité est dite dans une note de l'enrichissement de leads, un autre flux, alors que la question porte sur la consultation générale des soldes."
+          },
+          {
+            "texte": "Odoo propose automatiquement d'acheter des crédits lorsqu'il n'y en a plus assez pour effectuer une tâche.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "In-app purchases (IAP) > IAP credits > Buy credits",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/in_app_purchase.html#buy-credits",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/in_app_purchase.html"
+          },
+          {
+            "n": 3,
+            "titre": "In-app purchases (IAP) > IAP credits > Buy credits > Manually buy credits",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/in_app_purchase.html#manually-buy-credits",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/in_app_purchase.html"
+          },
+          {
+            "n": 12,
+            "titre": "Lead enrichment > Pricing",
+            "url": "https://www.odoo.com/documentation/20.0/applications/sales/crm/optimize/lead_enrichment.html#pricing",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/sales/crm/optimize/lead_enrichment.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/essentials/in_app_purchase.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/sales/crm/optimize/lead_enrichment.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "Where to view the credit balance for Odoo In-App Services (IAP) in Odoo 20.0",
+          "How to check remaining IAP credits in Odoo Settings under Companies or Odoo Account",
+          "How to buy IAP credits manually in Odoo 20.0 Recharge or Buy Credits button",
+          "How to configure automatic recharge of IAP credits in Odoo",
+          "Which Odoo services consume IAP credits such as SMS, email, and lead enrichment"
+        ],
+        "cout": {
+          "usd": 0.01973,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 796,
+              "sortie": 192,
+              "usd": 0.00018
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 155,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5499,
+              "sortie": 710,
+              "usd": 0.0181
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 6343,
+              "sortie": 1575,
+              "usd": 0.00142
+            }
+          ]
+        },
+        "dureeMs": 15555
+      }
+    },
+    {
+      "id": "D046",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Quelle API Google dois-je précisément activer sur la console Cloud pour l'autocomplétion des adresses, et y a-t-il une version spécifique à éviter ?",
+      "attendues": [
+        "general/integrations/address_autocomplete"
+      ],
+      "pagesCitees": [
+        "general/integrations/address_autocomplete"
+      ],
+      "trouvees": [
+        "general/integrations/address_autocomplete"
+      ],
+      "rappel": 1.0,
+      "statut": "Documenté",
+      "couverture": "complete",
+      "coutUsd": 0.02243,
+      "dureeServeurMs": 20003,
+      "latenceMs": 20327,
+      "erreur": null,
+      "reponse": {
+        "statut": "Documenté",
+        "question": "Quelle API Google dois-je précisément activer sur la console Cloud pour l'autocomplétion des adresses, et y a-t-il une version spécifique à éviter ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Pour l'autocomplétion des adresses, il faut activer l'API **Places API** dans la console Google Cloud. Il ne faut pas activer **Places API (New)**, car elle n'est pas encore prise en charge par Odoo.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Disposer d'un compte Google et d'un projet dans la Google Cloud console (création possible via **Select a project** puis **New Project**).",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller sur la Google Cloud console et se connecter avec un compte Google.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir la console Google Cloud"
+          },
+          {
+            "texte": "Cliquer sur **Select a project** en haut à gauche, puis dans le pop-up **Select a resource**, créer un **New Project** (ou sélectionner un projet existant).",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Sélectionner ou créer un projet"
+          },
+          {
+            "texte": "Ouvrir le panneau latéral **(Navigation menu)** puis aller dans **APIs and services ‣ Enabled APIs and services**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir les API activées"
+          },
+          {
+            "texte": "Cliquer sur **Enable APIs and services**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Lancer l'activation d'une API"
+          },
+          {
+            "texte": "Rechercher **Places API** et la sélectionner. Ne pas choisir **Places API (New)**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Choisir Places API"
+          },
+          {
+            "texte": "Cliquer sur **Enable**, puis compléter le processus de vérification.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Activer l'API"
+          },
+          {
+            "texte": "Dans la **Settings app**, section **Integrations**, activer **Google Address Autocomplete** et cliquer sur **Save**. Revenir dans la section **Integrations**, coller la clé API Google Places dans le champ dédié, puis cliquer sur **Save**.",
+            "statut": "Documenté",
+            "sources": [
+              2
+            ],
+            "titre": "Connecter Odoo à l'API"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Ne pas activer **Places API (New)** : elle n'est pas encore supportée par Odoo.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          },
+          {
+            "texte": "L'utilisation de la Google Places API peut nécessiter un paiement à Google.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [
+          "La génération de la clé API elle-même (création dans la console Google) n'est pas détaillée dans les passages fournis pour l'autocomplétion."
+        ],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Address autocomplete > Google Places API configuration > Enable the Google Places API",
+            "url": "https://www.odoo.com/documentation/20.0/applications/general/integrations/address_autocomplete.html#enable-the-google-places-api",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/general/integrations/address_autocomplete.html"
+          },
+          {
+            "n": 2,
+            "titre": "Address autocomplete > Odoo configuration",
+            "url": "https://www.odoo.com/documentation/20.0/applications/general/integrations/address_autocomplete.html#odoo-configuration",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/general/integrations/address_autocomplete.html"
+          },
+          {
+            "n": 3,
+            "titre": "Address autocomplete",
+            "url": "https://www.odoo.com/documentation/20.0/applications/general/integrations/address_autocomplete.html",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/general/integrations/address_autocomplete.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/general/integrations/address_autocomplete.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "Google Places API address autocomplete setup in Odoo 20.0",
+          "Enable Google Maps Platform APIs required for address autocomplete in Odoo settings",
+          "Google Cloud Console API key restrictions for Odoo address autocomplete",
+          "Deprecated or legacy Google Places API version to avoid with Odoo address autocomplete",
+          "Odoo 20.0 Google Maps address autocomplete configuration in General Settings"
+        ],
+        "cout": {
+          "usd": 0.02243,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 809,
+              "sortie": 180,
+              "usd": 0.00017
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 144,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 6172,
+              "sortie": 852,
+              "usd": 0.02086
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 3713,
+              "sortie": 1992,
+              "usd": 0.00137
+            }
+          ]
+        },
+        "dureeMs": 20003
+      }
+    },
+    {
+      "id": "D047",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Quel type d'emplacement dois-je assigner à une zone pour gérer les écarts constatés lors des inventaires ou le rebut de marchandises détériorées ?",
+      "attendues": [
+        "inventory_and_mrp/inventory/warehouses_storage/inventory_management"
+      ],
+      "pagesCitees": [
+        "finance/accounting/get_started/inventory_valuation",
+        "inventory_and_mrp/inventory/inventory_valuation/operations_valuation",
+        "inventory_and_mrp/inventory/inventory_valuation/scrapped_inventory_valuation",
+        "inventory_and_mrp/inventory/warehouses_storage/inventory_management",
+        "inventory_and_mrp/inventory/warehouses_storage/inventory_management/scrap_inventory"
+      ],
+      "trouvees": [
+        "inventory_and_mrp/inventory/warehouses_storage/inventory_management"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02688,
+      "dureeServeurMs": 24696,
+      "latenceMs": 24983,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Quel type d'emplacement dois-je assigner à une zone pour gérer les écarts constatés lors des inventaires ou le rebut de marchandises détériorées ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Il faut assigner le type d'emplacement **Inventory Loss** (dans le champ **Location Type**). Ce type sert de contrepartie pour consommer des articles manquants ou créer du stock et rendre compte des écarts ; les emplacements *Inventory adjustment* (écarts d'inventaire) et *Scrap* (marchandises endommagées) en sont des exemples.",
+          "statut": "Documenté",
+          "sources": [
+            4,
+            10
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Pour afficher tous les emplacements, y compris ceux de type Inventory Loss, retirer le filtre par défaut de la liste **Locations** (qui n'affiche que les emplacements internes).",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              4
+            ]
+          },
+          {
+            "texte": "Les champs d'emplacement du formulaire de rebut ne s'affichent que si **Storage Locations** est activé dans **Inventory app ‣ Configuration ‣ Settings**.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Locations**, ouvrir un emplacement existant ou cliquer sur **New**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir les emplacements"
+          },
+          {
+            "texte": "Dans le champ **Location Type**, sélectionner **Inventory Loss**.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              4
+            ],
+            "titre": "Définir le type d'emplacement"
+          },
+          {
+            "texte": "Indiquer le **Loss Account** : le compte utilisé pour les marchandises rebutées (section **Accounting** de l'emplacement).",
+            "statut": "À vérifier",
+            "sources": [
+              1,
+              2
+            ],
+            "titre": "Renseigner le compte de perte",
+            "raison": "Le compte de perte est bien dans [1], mais la mention de la section Accounting vient de [2], qui traite d'exclure les ajustements de la variation de clôture, soit un autre objectif."
+          },
+          {
+            "texte": "Dans **Inventory app ‣ Operations ‣ Scrap**, cliquer sur **New**, choisir le produit et la quantité ; le champ **Scrap Location** est par défaut l'emplacement de rebut désigné (**Inventory adjustment**) et peut être modifié. Cliquer sur **Confirm**.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ],
+            "titre": "Utiliser l'emplacement pour le rebut"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Les emplacements de type **Virtual** ne doivent pas contenir de produits : ne pas les utiliser pour les écarts ou rebuts.",
+            "statut": "À vérifier",
+            "sources": [
+              4,
+              10
+            ],
+            "raison": "Le passage [4] dit que les emplacements virtuels ne doivent pas contenir de produits, mais ne dit pas de ne pas les utiliser pour les écarts ou rebuts : cette conséquence est une généralisation."
+          },
+          {
+            "texte": "Les emplacements Inventory Loss ne sont pas comptés dans le stock (valorisation) : les produits qui y sont déplacés sortent de l'inventaire.",
+            "statut": "Documenté",
+            "sources": [
+              10
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Account for scrapped goods > Set up a scrap location and its scrap journal",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/inventory_valuation/scrapped_inventory_valuation.html#set-up-a-scrap-location-and-its-scrap-journal",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/inventory_valuation/scrapped_inventory_valuation.html"
+          },
+          {
+            "n": 2,
+            "titre": "Inventory valuation > Configuration > Other accounts > Inventory Loss",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started/inventory_valuation.html#inventory-loss",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/get_started/inventory_valuation.html"
+          },
+          {
+            "n": 4,
+            "titre": "Inventory management > Locations > Location types",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management.html#location-types",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management.html"
+          },
+          {
+            "n": 5,
+            "titre": "Scrap inventory > Scrap from stock",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/scrap_inventory.html#scrap-from-stock",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/scrap_inventory.html"
+          },
+          {
+            "n": 10,
+            "titre": "Valuation of stock movements and inventory operations > About stock movements > Location types",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/inventory_valuation/operations_valuation.html#location-types",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/inventory_valuation/operations_valuation.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/inventory_valuation/scrapped_inventory_valuation.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/inventory_valuation/operations_valuation.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "Which location type is used for inventory adjustment losses in Odoo 20.0 Inventory (Inventory adjustment location, virtual location)",
+          "What is the location type of a scrap location and how to configure scrap locations in Odoo Inventory",
+          "How to set the Location Type of a storage location in Odoo Inventory (Internal Location, Inventory Loss, Scrap, Production, Transit)",
+          "How to scrap products in Odoo Inventory using the Scrap order and its destination location",
+          "How to perform an inventory adjustment (counted quantity, Apply) and where the difference is recorded in Odoo Inventory"
+        ],
+        "cout": {
+          "usd": 0.02688,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 808,
+              "sortie": 239,
+              "usd": 0.0002
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 186,
+              "sortie": 0,
+              "usd": 4e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 7697,
+              "sortie": 859,
+              "usd": 0.02398
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 10771,
+              "sortie": 3169,
+              "usd": 0.00266
+            }
+          ]
+        },
+        "dureeMs": 24696
+      }
+    },
+    {
+      "id": "D048",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Quelles options faut-il activer dans les paramètres de gestion des stocks pour faire apparaître le champ déterminant si un type de contenant est réutilisable ou jetable ?",
+      "attendues": [
+        "inventory_and_mrp/inventory/product_management/configure/package"
+      ],
+      "pagesCitees": [
+        "inventory_and_mrp/inventory/product_management/configure/pack_in_pack",
+        "inventory_and_mrp/inventory/product_management/configure/package",
+        "inventory_and_mrp/inventory/product_management/configure/packaging"
+      ],
+      "trouvees": [
+        "inventory_and_mrp/inventory/product_management/configure/package"
+      ],
+      "rappel": 1.0,
+      "statut": "Non couvert",
+      "couverture": "insufficient",
+      "coutUsd": 0.02004,
+      "dureeServeurMs": 26410,
+      "latenceMs": 33301,
+      "erreur": null,
+      "reponse": {
+        "statut": "Non couvert",
+        "question": "Quelles options faut-il activer dans les paramètres de gestion des stocks pour faire apparaître le champ déterminant si un type de contenant est réutilisable ou jetable ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "insufficient",
+        "resume": {
+          "texte": "Les passages ne mentionnent aucun champ indiquant si un type de contenant (package type) est réutilisable ou jetable. Ils documentent seulement les options à activer pour accéder aux types de package (Packages) et aux conditionnements (Units of Measure & Packagings), mais pas ce champ précis.",
+          "statut": "À vérifier",
+          "sources": [
+            1,
+            5,
+            7
+          ],
+          "raison": "Modifié en ligne : la page package.html documente le champ Package Use (Reusable Box / Disposable Box) sur le formulaire de type de package, ce qui contredit l'affirmation que ce champ n'est pas documenté."
+        },
+        "prerequis": [
+          {
+            "texte": "Activer le paramètre **Packages** dans **Inventory app ‣ Configuration ‣ Settings** (section **Operations**) pour utiliser les packages et créer des types de package, puis cliquer sur **Save**.",
+            "statut": "À vérifier",
+            "sources": [
+              2,
+              7
+            ],
+            "raison": "Le paramètre Packages est bien décrit, mais les passages ne traitent pas du champ demandé. Le champ Package Use n'apparaît que si Batch, Wave & Cluster Transfers et Packages sont activés, ce que l'affirmation omet."
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Settings**, activer **Packages** sous le titre **Operations**, puis cliquer sur **Save**.",
+            "statut": "À vérifier",
+            "sources": [
+              2,
+              7
+            ],
+            "titre": "Activer Packages",
+            "raison": "Les étapes du passage 2 sont fidèlement reprises, mais le passage concerne les packages en général et non le champ réutilisable/jetable visé par la question."
+          },
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Package Types** puis cliquer sur **New** pour ouvrir un formulaire de type de package vierge. Les champs documentés sont : **Package Type**, **Size**, **Weight**, **Max Weight**, **Barcode**, **Sequence Prefix**, **Company**, **Carrier**, **Carrier Code**. Aucun champ de réutilisabilité n'y figure.",
+            "statut": "À vérifier",
+            "sources": [
+              5,
+              10
+            ],
+            "titre": "Ouvrir les types de package",
+            "raison": "Modifié en ligne : la page package.html indique que le formulaire de type de package comporte le champ Package Use (Reusable Box / Disposable Box), contrairement à l'affirmation « aucun champ de réutilisabilité n'y figure »."
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Aucun passage ne documente un champ « réutilisable / jetable » sur les types de package : ne pas présumer que ce champ existe nativement.",
+            "statut": "À vérifier",
+            "sources": [
+              5
+            ],
+            "raison": "Modifié en ligne : la page package.html documente un champ Package Use sur les types de package, ce qui contredit la mise en garde selon laquelle ce champ n'existerait pas."
+          },
+          {
+            "texte": "L'option **Units of Measure & Packagings** (section **Products**) concerne les conditionnements (packagings) et non les types de package ; elle n'est pas liée à un champ de réutilisabilité dans les passages.",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "raison": "Le passage 1 confirme que l'option concerne les conditionnements (packagings) et non les types de package. Mais il s'agit d'une autre fonctionnalité que celle de la question, et aucun passage ne la relie à la réutilisabilité."
+          }
+        ],
+        "pistes": [
+          "Piste à tester : si un besoin de distinguer réutilisable/jetable existe, créer des types de package distincts (ex. avec un nom ou un **Sequence Prefix** différent) pour les différencier.",
+          "Piste à tester : utiliser des champs personnalisés ou une étiquette via Studio (si disponible) sur le type de package ; à vérifier, non confirmé comme fonction native."
+        ],
+        "nonCouvert": [
+          "Existence et nom exact d'un champ indiquant si un type de package est réutilisable ou jetable.",
+          "Option de paramétrage éventuelle qui ferait apparaître ce champ."
+        ],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Packaging > Configuration",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/packaging.html#configuration",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/product_management/configure/packaging.html"
+          },
+          {
+            "n": 2,
+            "titre": "Packages > Configuration",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/package.html#configuration",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/product_management/configure/package.html"
+          },
+          {
+            "n": 5,
+            "titre": "Pack-in-pack > Create package types",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/pack_in_pack.html#create-package-types",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/product_management/configure/pack_in_pack.html"
+          },
+          {
+            "n": 7,
+            "titre": "Pack-in-pack > Enable settings",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/pack_in_pack.html#enable-settings",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/product_management/configure/pack_in_pack.html"
+          },
+          {
+            "n": 10,
+            "titre": "Packages > Create package types",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/package.html#create-package-types",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/product_management/configure/package.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/pack_in_pack.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/package.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/packaging.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to enable packages in Inventory Settings in Odoo 20.0",
+          "Where to find the Package Type field and the reusable or disposable option in Odoo Inventory",
+          "Which settings under Inventory Settings Management enable Storage Locations and Packages in Odoo 20.0",
+          "How to configure a package type in Odoo Inventory Configuration Package Types"
+        ],
+        "cout": {
+          "usd": 0.02004,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 873,
+              "sortie": 155,
+              "usd": 0.00016
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 132,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 4121,
+              "sortie": 878,
+              "usd": 0.01702
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 8989,
+              "sortie": 3846,
+              "usd": 0.00282
+            }
+          ]
+        },
+        "dureeMs": 26410
+      }
+    },
+    {
+      "id": "D049",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Comment doit-on structurer et paramétrer les emplacements dans l'entrepôt pour pouvoir utiliser les catégories de stockage avec des règles de rangement ?",
+      "attendues": [
+        "inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category"
+      ],
+      "pagesCitees": [
+        "inventory_and_mrp/inventory/shipping_receiving/daily_operations/putaway",
+        "inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category"
+      ],
+      "trouvees": [
+        "inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "partial",
+      "coutUsd": 0.03078,
+      "dureeServeurMs": 30672,
+      "latenceMs": 31065,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Comment doit-on structurer et paramétrer les emplacements dans l'entrepôt pour pouvoir utiliser les catégories de stockage avec des règles de rangement ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "partial",
+        "resume": {
+          "texte": "Pour utiliser les catégories de stockage avec des règles de rangement : activer les réglages Storage Locations et Multi-Step Routes (et Packages si capacité par type de colis), créer un emplacement parent avec des sous-emplacements, définir la catégorie de stockage, puis créer une règle de rangement avec Sublocation = Closest Location et la catégorie dans Having Category. La documentation ne détaille pas ici comment affecter la catégorie à chaque sous-emplacement ni les champs de capacité.",
+          "statut": "À vérifier",
+          "sources": [
+            1,
+            2,
+            3,
+            5
+          ],
+          "raison": "Les étapes sont présentes dans les passages, mais la phrase finale (la doc ne détaille pas l'affectation de la catégorie aux sous-emplacements) est contredite par la page en ligne, qui détaille cette étape dans « Assign storage locations »."
+        },
+        "prerequis": [
+          {
+            "texte": "Dans Inventory app ‣ Configuration ‣ Settings, section Warehouse : les fonctions Storage Locations et Multi-Step Routes doivent être activées.",
+            "statut": "Documenté",
+            "sources": [
+              2
+            ]
+          },
+          {
+            "texte": "Pour définir des capacités par type de colis, activer aussi Packages dans la section Operations, puis cliquer sur Save.",
+            "statut": "Documenté",
+            "sources": [
+              2,
+              5
+            ]
+          },
+          {
+            "texte": "Activer Multi-Step Routes active automatiquement Storage Locations (nécessaire pour utiliser les règles de rangement).",
+            "statut": "Documenté",
+            "sources": [
+              11
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Settings**. Dans la section *Warehouse*, activer **Storage Locations** et **Multi-Step Routes** ; activer **Packages** dans la section *Operations* si la capacité est limitée par type de colis. Cliquer sur **Save**.",
+            "statut": "Documenté",
+            "sources": [
+              2,
+              11
+            ],
+            "titre": "Activer les réglages"
+          },
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Locations**. Utiliser un emplacement parent existant (par ex. `WH/Stock`) ou en créer un avec **New** : renseigner **Location Name** et **Parent Location**, et choisir **Internal** comme **Location Type**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Préparer l'emplacement parent"
+          },
+          {
+            "texte": "Cliquer sur **New**, renseigner **Location Name** et définir **Parent Location** sur l'emplacement parent. Exemple : `PAL1` et `PAL2` avec `WH/Stock/Pallets` comme parent. L'emplacement parent sera utilisé dans **Store to** de la règle de rangement, et la catégorie de stockage sera associée aux sous-emplacements.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Créer les sous-emplacements"
+          },
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Storage Categories**, cliquer sur **New** et saisir le nom dans le champ **Storage Category**. La capacité peut être limitée par poids, produit et type de colis. Définir **Allow New Product** : **If location is empty**, **If products are the same** ou **Allow mixed products**.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ],
+            "titre": "Créer la catégorie de stockage"
+          },
+          {
+            "texte": "Aller dans **Inventory app ‣ Configuration ‣ Putaway Rules** et cliquer sur **New**. Choisir le **Product** ou la **Product Category**, renseigner **When product arrives in** (l'emplacement parent déclencheur) et **Store to**, qui doit être un sous-emplacement du premier selon la documentation générale des règles.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              5
+            ],
+            "titre": "Créer la règle de rangement"
+          },
+          {
+            "texte": "Dans le champ **Sublocation**, choisir **Closest Location** : les emplacements d'une catégorie de stockage sont alors utilisés, et la catégorie est obligatoire dans le champ **Having Category**. Cliquer sur **Save**.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ],
+            "titre": "Utiliser la catégorie dans la règle"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Odoo ne répartit pas automatiquement les quantités entre plusieurs emplacements : si la capacité du premier emplacement recommandé est dépassée, toute la quantité y est quand même dirigée (ex. 12 unités reçues pour 10 de capacité).",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ]
+          },
+          {
+            "texte": "Limiter la capacité par produit et par type de colis dans le même emplacement est possible, mais il peut être plus pratique de répartir les articles dans des emplacements différents.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ]
+          },
+          {
+            "texte": "Les limites de poids peuvent se combiner avec une capacité par colis ou par produit.",
+            "statut": "Documenté",
+            "sources": [
+              3
+            ]
+          }
+        ],
+        "pistes": [
+          "Piste à tester : affecter la catégorie de stockage à chaque sous-emplacement via un champ de la fiche **Location** (par ex. PAL1, PAL2), à vérifier dans l'interface Odoo 20."
+        ],
+        "nonCouvert": [
+          "Le champ exact de la fiche Location pour affecter la catégorie de stockage n'est pas cité dans les passages.",
+          "Le détail des champs de capacité (poids, produit, type de colis) de la catégorie de stockage n'est pas documenté dans ces passages."
+        ],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Storage categories > Storage location setup",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html#storage-location-setup",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html"
+          },
+          {
+            "n": 2,
+            "titre": "Storage categories > Enable storage categories",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html#enable-storage-categories",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html"
+          },
+          {
+            "n": 3,
+            "titre": "Storage categories > Define storage category limitations",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html#define-storage-category-limitations",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html"
+          },
+          {
+            "n": 5,
+            "titre": "Putaway rules > Configuration > Define putaway rule",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/putaway.html#define-putaway-rule",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/putaway.html"
+          },
+          {
+            "n": 11,
+            "titre": "Putaway rules > Configuration",
+            "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/putaway.html#configuration",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/putaway.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/storage_category.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/putaway.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to enable storage locations and storage categories in Odoo Inventory settings",
+          "How to create and configure a storage category with max weight, max volume and capacity in Odoo Inventory",
+          "How to set up the location structure of a warehouse (view location, internal locations, parent location) in Odoo Inventory",
+          "How to assign a storage category to a location and configure putaway rules with storage categories in Odoo Inventory",
+          "How to define putaway strategy and storage category capacity on internal locations in Odoo Inventory"
+        ],
+        "cout": {
+          "usd": 0.03078,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 811,
+              "sortie": 200,
+              "usd": 0.00018
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 169,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5528,
+              "sortie": 1672,
+              "usd": 0.02778
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 8910,
+              "sortie": 3800,
+              "usd": 0.00279
+            }
+          ]
+        },
+        "dureeMs": 30672
+      }
+    }
+  ]
+}

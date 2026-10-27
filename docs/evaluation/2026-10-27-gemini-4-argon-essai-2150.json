@@ -1,0 +1,223 @@
+{
+  "modele": "gemini-4-argon",
+  "date": "2026-10-27",
+  "jeu": "doc",
+  "resume": {
+    "questions": 1,
+    "erreurs": 0,
+    "rappelDoc": 1.0,
+    "questionsDocCompletes": "1/1",
+    "rappelI5": null,
+    "statuts": {
+      "À vérifier": 1
+    },
+    "coutMoyenUsd": 0.02166,
+    "coutTotalUsd": 0.0217,
+    "latenceMoyenneS": 27.9,
+    "latenceMaxS": 27.9
+  },
+  "resultats": [
+    {
+      "id": "D001",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+      "attendues": [
+        "finance/accounting/bank"
+      ],
+      "pagesCitees": [
+        "finance/accounting/bank",
+        "finance/accounting/bank/bank_synchronization",
+        "finance/accounting/bank/transactions",
+        "finance/accounting/get_started"
+      ],
+      "trouvees": [
+        "finance/accounting/bank"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02166,
+      "dureeServeurMs": 27618,
+      "latenceMs": 27884,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+        "modele": "gemini-4-argon",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Si vous ne souhaitez pas connecter un compte bancaire à votre base de données, vous pouvez le configurer manuellement depuis le tableau de bord de la comptabilité (**Accounting Dashboard**), en modifiant le journal bancaire par défaut dans la configuration comptable, ou en ajoutant manuellement une banque depuis la fenêtre de recherche d'institution. Une fois le compte créé, les transactions pourront être importées par fichier ou saisies manuellement.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            2,
+            4,
+            7,
+            10
+          ]
+        },
+        "prerequis": [],
+        "etapes": [
+          {
+            "texte": "Rendez-vous sur le **Accounting Dashboard** et, sur la carte kanban d'une banque non connectée, cliquez sur **Search over 26000 banks**. Cliquez ensuite sur **Record transactions manually** (en bas à droite), renseignez les informations bancaires et cliquez sur **Create**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Méthode 1 : Ajouter un compte bancaire manuellement depuis le tableau de bord"
+          },
+          {
+            "texte": "Un journal bancaire est disponible par défaut. Vous pouvez l'utiliser en allant dans **Accounting ‣ Configuration ‣ Accounting: Journals ‣ Bank**. Ouvrez-le et modifiez les différents champs pour qu'ils correspondent aux informations de votre compte bancaire.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Méthode 2 : Utiliser et modifier le journal bancaire par défaut"
+          },
+          {
+            "texte": "Dans la fenêtre **Search for an institution** (accessible via le tableau de bord), faites défiler la liste jusqu'en bas et cliquez sur **Add new bank**. Renseignez les champs **Account Number**, **Bank** et **SWIFT Code**, puis cliquez sur **Connect**. Un journal bancaire portant le numéro de compte est alors créé sans que la banque ne soit synchronisée.",
+            "statut": "Documenté",
+            "sources": [
+              7
+            ],
+            "titre": "Méthode 3 : Créer la banque manuellement depuis la fenêtre de recherche"
+          },
+          {
+            "texte": "Pour importer vos relevés (formats supportés : CAMT.053, CSV, XLSX, OFX, QIF, CODA), allez sur le **Accounting Dashboard**, cliquez sur l'icône **(ellipsis)** du journal **Bank** et sélectionnez **Import file** (vous pouvez aussi cliquer sur le nom du journal **Bank** puis sur **Upload**, ou glisser-déposer le fichier sur le journal dans le **Accounting Dashboard** ou dans la vue **Bank Matching**). Pour les fichiers CSV et XLSX, configurez le formatage et le mappage des colonnes, puis cliquez sur **Test** et **Import**.",
+            "statut": "À vérifier",
+            "sources": [
+              4,
+              10
+            ],
+            "titre": "Alimenter le compte sans synchronisation (Option A : Import de fichiers)",
+            "raison": "Les étapes d'import sont présentes, mais le format CODA est réservé à la Belgique et l'affirmation le présente comme format général, sans cette restriction."
+          },
+          {
+            "texte": "Pour enregistrer les transactions manuellement, allez sur le **Accounting Dashboard**, cliquez sur le nom du journal **Bank**, puis sur **New**. Renseignez obligatoirement les champs **Label** et **Date** (le champ **Partner** est optionnel mais facilite le lettrage).",
+            "statut": "Documenté",
+            "sources": [
+              2,
+              10
+            ],
+            "titre": "Alimenter le compte sans synchronisation (Option B : Saisie manuelle)"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Lors de la création du compte, Odoo détecte automatiquement le type de compte bancaire (par exemple, IBAN) et active certaines fonctionnalités en conséquence.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          },
+          {
+            "texte": "Une fois les premières transactions ajoutées (manuellement ou par import), il est important de créer le relevé d'ouverture et de définir le **Starting Balance** avec le solde réel du compte bancaire avant la première transaction.",
+            "statut": "Documenté",
+            "sources": [
+              6
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Bank and cash accounts > Manage bank and cash accounts > Create a bank account",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html#create-a-bank-account",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank.html"
+          },
+          {
+            "n": 2,
+            "titre": "Transactions > Register bank transactions manually",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html#register-bank-transactions-manually",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          },
+          {
+            "n": 4,
+            "titre": "Transactions > Import transactions",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html#import-transactions",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          },
+          {
+            "n": 6,
+            "titre": "Get started > At the time of implementation > Opening entries > Opening bank and credit card transactions",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/get_started.html#opening-bank-and-credit-card-transactions",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/get_started.html"
+          },
+          {
+            "n": 7,
+            "titre": "Bank synchronization > Configuration > First synchronization",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/bank_synchronization.html#first-synchronization",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/bank_synchronization.html"
+          },
+          {
+            "n": 10,
+            "titre": "Transactions",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/bank_synchronization.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to create a bank journal manually without online bank synchronization in Odoo Accounting",
+          "How to add a bank account manually in Odoo 20 accounting settings (Bank Accounts, Account Number, Bank field)",
+          "How to import a bank statement file manually (CSV, OFX, CAMT.053) in Odoo Accounting",
+          "How to reconcile bank statement lines manually in Odoo bank reconciliation without online sync",
+          "How to record a manual bank statement or opening balance on a bank journal in Odoo"
+        ],
+        "cout": {
+          "usd": 0.02166,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 820,
+              "sortie": 202,
+              "usd": 0.00018
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 175,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "gemini-4-argon",
+              "entree": 4861,
+              "sortie": 915,
+              "usd": 0.01887
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 10558,
+              "sortie": 3027,
+              "usd": 0.00257
+            }
+          ]
+        },
+        "dureeMs": 27618
+      }
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "modele": "gemini-4-argon",
+  "date": "2026-10-27",
+  "jeu": "doc",
+  "resume": {
+    "questions": 1,
+    "erreurs": 1,
+    "rappelDoc": null,
+    "questionsDocCompletes": "0/0",
+    "rappelI5": null,
+    "statuts": {},
+    "coutMoyenUsd": null,
+    "coutTotalUsd": null,
+    "latenceMoyenneS": null,
+    "latenceMaxS": null
+  },
+  "resultats": [
+    {
+      "id": "D001",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+      "attendues": [
+        "finance/accounting/bank"
+      ],
+      "pagesCitees": [],
+      "trouvees": [],
+      "rappel": 0.0,
+      "statut": null,
+      "couverture": null,
+      "coutUsd": null,
+      "dureeServeurMs": null,
+      "latenceMs": 13627,
+      "erreur": "HTTPError: 500 HTTP Error 500: Internal Server Error",
+      "reponse": null
+    }
+  ]
+}

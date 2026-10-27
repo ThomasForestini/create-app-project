@@ -1,0 +1,101 @@
+{
+  "source": "Duel_Odoo_comparatif_reponses_A_B.pdf (notation de Thomas, 27/10/2026)",
+  "notes": {
+    "Q1": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "A",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "gemini-4-argon"
+    },
+    "Q2": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "A",
+      "modeleA": "claude-sonnet-5-5",
+      "modeleB": "gemini-4-argon",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q3": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q4": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "A",
+      "modeleA": "claude-sonnet-5-5",
+      "modeleB": "gemini-4-argon",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q5": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q6": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "claude-sonnet-5-5",
+      "modeleB": "gemini-4-argon",
+      "modelePrefere": "gemini-4-argon"
+    },
+    "Q7": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "claude-sonnet-5-5",
+      "modeleB": "gemini-4-argon",
+      "modelePrefere": "gemini-4-argon"
+    },
+    "Q8": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q9": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q10": {
+      "A": "Incorrecte",
+      "B": "Incorrecte",
+      "preferee": "B",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q11": {
+      "A": "Incorrecte",
+      "B": "Incorrecte",
+      "preferee": "B",
+      "modeleA": "gemini-4-argon",
+      "modeleB": "claude-sonnet-5-5",
+      "modelePrefere": "claude-sonnet-5-5"
+    },
+    "Q12": {
+      "A": "Partielle",
+      "B": "Partielle",
+      "preferee": "B",
+      "modeleA": "claude-sonnet-5-5",
+      "modeleB": "gemini-4-argon",
+      "modelePrefere": "gemini-4-argon"
+    }
+  }
+}

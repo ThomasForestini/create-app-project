@@ -1,0 +1,1033 @@
+{
+  "modele": "claude-sonnet-5-5",
+  "date": "2026-10-27",
+  "jeu": "doc",
+  "resume": {
+    "questions": 5,
+    "erreurs": 0,
+    "rappelDoc": 1.0,
+    "questionsDocCompletes": "5/5",
+    "rappelI5": null,
+    "statuts": {
+      "À vérifier": 4,
+      "Documenté": 1
+    },
+    "coutMoyenUsd": 0.02537,
+    "coutTotalUsd": 0.1268,
+    "latenceMoyenneS": 22.9,
+    "latenceMaxS": 28.2
+  },
+  "resultats": [
+    {
+      "id": "D001",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+      "attendues": [
+        "finance/accounting/bank"
+      ],
+      "pagesCitees": [
+        "finance/accounting/bank",
+        "finance/accounting/bank/transactions",
+        "finance/fiscal_localizations/belgium"
+      ],
+      "trouvees": [
+        "finance/accounting/bank"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02399,
+      "dureeServeurMs": 21890,
+      "latenceMs": 22635,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Mon client ne souhaite pas synchroniser son établissement financier directement dans l'outil. Comment doit-il procéder pour paramétrer son compte en banque sans passer par la connexion automatique ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Sans connexion automatique, le compte bancaire se configure manuellement depuis l'**Accounting Dashboard** (carte kanban d'une banque non connectée), ou via le journal **Bank** par défaut. Les transactions peuvent ensuite être importées depuis un fichier ou saisies manuellement.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            3
+          ]
+        },
+        "prerequis": [],
+        "etapes": [
+          {
+            "texte": "Aller dans l'**Accounting Dashboard** et, sur la carte kanban d'une banque non connectée, cliquer sur **Search over 26000 banks**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir la création manuelle du compte"
+          },
+          {
+            "texte": "Cliquer sur **Record transactions manually** (en bas à droite).",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Choisir la saisie manuelle"
+          },
+          {
+            "texte": "Remplir les informations de la banque, puis cliquer sur **Create**. Odoo détecte automatiquement le type de compte (ex. IBAN) et active certaines fonctions en conséquence.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Renseigner les informations bancaires"
+          },
+          {
+            "texte": "Aller dans **Accounting ‣ Configuration ‣ Accounting: Journals ‣ Bank**, ouvrir le journal et modifier les champs pour qu'ils correspondent aux informations du compte bancaire.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Alternative : configurer le journal bancaire par défaut"
+          },
+          {
+            "texte": "Depuis l'**Accounting Dashboard**, cliquer sur l'icône (ellipsis) du journal **Bank**, choisir **Import file**, puis sélectionner et téléverser le fichier. Formats pris en charge : CAMT.053, CSV, XLSX, OFX, QIF, et CODA (Belgique).",
+            "statut": "Documenté",
+            "sources": [
+              4
+            ],
+            "titre": "Alimenter les transactions sans synchronisation : import de fichier"
+          },
+          {
+            "texte": "Depuis l'**Accounting Dashboard**, cliquer sur le nom du journal **Bank**, puis sur **New**. Les champs **Label** et **Date** sont obligatoires, **Partner** est optionnel (il facilite le rapprochement).",
+            "statut": "Documenté",
+            "sources": [
+              2
+            ],
+            "titre": "Alimenter les transactions sans synchronisation : saisie manuelle"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Pour les fichiers CSV et XLSX, il faut définir les options de format et faire correspondre les colonnes du fichier aux champs Odoo, puis lancer un **Test** avant **Import**. Les autres types de fichiers sont mappés automatiquement.",
+            "statut": "Documenté",
+            "sources": [
+              4
+            ]
+          },
+          {
+            "texte": "Le format CODA est spécifique aux relevés bancaires belges.",
+            "statut": "À vérifier",
+            "sources": [
+              4,
+              10
+            ],
+            "raison": "Le passage [10] vient de la page de localisation belge, pays que la question ne cite pas ; le passage [4] ne dit que CODA (Belgique) dans une liste."
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Bank and cash accounts > Manage bank and cash accounts > Create a bank account",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html#create-a-bank-account",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank.html"
+          },
+          {
+            "n": 2,
+            "titre": "Transactions > Register bank transactions manually",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html#register-bank-transactions-manually",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          },
+          {
+            "n": 3,
+            "titre": "Transactions",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          },
+          {
+            "n": 4,
+            "titre": "Transactions > Import transactions",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html#import-transactions",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/bank/transactions.html"
+          },
+          {
+            "n": 10,
+            "titre": "Belgium > CODA and SODA statements > CODA",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/belgium.html#coda",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/fiscal_localizations/belgium.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/bank/transactions.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/belgium.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to create a bank journal manually without online bank synchronization in Odoo 20.0 Accounting",
+          "How to record bank transactions manually using a bank statement in Odoo Accounting",
+          "How to import a bank statement file (CSV, OFX, QIF, CAMT) in Odoo Accounting",
+          "How to reconcile bank statement lines with invoices in the Bank Reconciliation widget in Odoo",
+          "How to set up the bank account and bank journal settings (account number, bank account, default accounts) in Odoo Accounting"
+        ],
+        "cout": {
+          "usd": 0.02399,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 820,
+              "sortie": 210,
+              "usd": 0.00019
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 176,
+              "sortie": 0,
+              "usd": 4e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5762,
+              "sortie": 949,
+              "usd": 0.02101
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 15867,
+              "sortie": 2331,
+              "usd": 0.00275
+            }
+          ]
+        },
+        "dureeMs": 21890
+      }
+    },
+    {
+      "id": "D002",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Comment activer la validation automatique des numéros de TVA intracommunautaires pour les partenaires et peut-on forcer manuellement le statut si le contrôle échoue ?",
+      "attendues": [
+        "finance/accounting/taxes/vat_verification"
+      ],
+      "pagesCitees": [
+        "finance/accounting/taxes/vat_verification"
+      ],
+      "trouvees": [
+        "finance/accounting/taxes/vat_verification"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02067,
+      "dureeServeurMs": 21779,
+      "latenceMs": 22263,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Comment activer la validation automatique des numéros de TVA intracommunautaires pour les partenaires et peut-on forcer manuellement le statut si le contrôle échoue ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Pour activer la validation automatique via le VIES, il faut activer la fonctionnalité **Verify VAT Numbers** dans **Accounting ‣ Configuration ‣ Settings** (section **Taxes**) puis enregistrer. Odoo coche ou décoche alors automatiquement **Intra-Community Valid** sur les contacts. Oui, ce champ peut être modifié manuellement si le contrôle automatique est incorrect ; la modification est tracée dans le chatter.",
+          "statut": "Documenté",
+          "sources": [
+            1
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Le contact doit avoir le champ **Tax ID** renseigné et un pays différent de celui de votre société pour que la case **Intra-Community Valid** s'affiche.",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "raison": "Le passage présente le Tax ID renseigné et le pays différent comme des conditions d'affichage (« si… »), pas comme un prérequis obligatoire ; l'affirmation les présente comme requis."
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Accounting ‣ Configuration ‣ Settings**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir les réglages de comptabilité"
+          },
+          {
+            "texte": "Dans la section **Taxes**, activer la fonctionnalité **Verify VAT Numbers**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Activer la vérification"
+          },
+          {
+            "texte": "Cliquer sur **Save**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Enregistrer"
+          },
+          {
+            "texte": "Sur un contact dont le champ **Tax ID** est renseigné et dont le pays diffère de celui de la société, Odoo teste le numéro via le VIES et coche ou décoche automatiquement **Intra-Community Valid**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Contrôler la validité sur le contact"
+          },
+          {
+            "texte": "Modifier manuellement le champ **Intra-Community Valid** sur le contact si le contrôle automatique est incorrect (par exemple société récemment créée dont la TVA n'est pas encore dans le VIES). Le changement est enregistré dans le chatter.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Forcer manuellement le statut si nécessaire"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Si **Verify VAT Numbers** est activé, les positions fiscales avec l'option VAT required activée exigent un numéro de TVA intracommunautaire valide (**Intra-Community Valid**) pour s'appliquer automatiquement ; un forçage manuel du statut influence donc leur application automatique.",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "raison": "Le passage dit que les positions fiscales avec VAT required exigent un numéro valide ; il ne dit pas qu'un forçage manuel influence leur application, et ce point relève d'une autre fonctionnalité (positions fiscales)."
+          },
+          {
+            "texte": "Que la fonctionnalité soit activée ou non, Odoo vérifie le format du numéro de TVA par rapport au format attendu pour le pays du contact.",
+            "statut": "À vérifier",
+            "sources": [
+              3
+            ],
+            "raison": "Le passage [3] dit bien que le format est vérifié quel que soit le réglage, mais c'est une vérification de format distincte du contrôle VIES demandé dans la question."
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "VAT numbers verification (VIES) > VIES VAT number verification",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/vat_verification.html#vies-vat-number-verification",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/taxes/vat_verification.html"
+          },
+          {
+            "n": 3,
+            "titre": "VAT numbers verification (VIES)",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/vat_verification.html",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/taxes/vat_verification.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/vat_verification.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to enable automatic VAT number validation for partners in Odoo 20.0 Contacts and Invoicing settings",
+          "VIES VAT number check on partner form in Odoo: how the VAT validation works and what statuses it returns",
+          "How to manually set or override the VAT verification status on a partner when the automatic VAT check fails in Odoo",
+          "Odoo partner VAT check failed: fields, error messages and how to fix or force the VAT number on a customer or vendor record"
+        ],
+        "cout": {
+          "usd": 0.02067,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 810,
+              "sortie": 190,
+              "usd": 0.00018
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 159,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 5104,
+              "sortie": 879,
+              "usd": 0.019
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 3350,
+              "sortie": 2251,
+              "usd": 0.00146
+            }
+          ]
+        },
+        "dureeMs": 21779
+      }
+    },
+    {
+      "id": "D003",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Comment procéder pour régler une facture fournisseur par chèque et imprimer ce dernier dans le système ?",
+      "attendues": [
+        "finance/accounting/payments/pay_checks"
+      ],
+      "pagesCitees": [
+        "finance/accounting/payments/pay_checks",
+        "finance/fiscal_localizations/argentina",
+        "finance/fiscal_localizations/canada",
+        "finance/fiscal_localizations/philippines",
+        "finance/fiscal_localizations/united_states"
+      ],
+      "trouvees": [
+        "finance/accounting/payments/pay_checks"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.03154,
+      "dureeServeurMs": 27748,
+      "latenceMs": 28181,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Comment procéder pour régler une facture fournisseur par chèque et imprimer ce dernier dans le système ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Pour payer une facture fournisseur par chèque, il faut d'abord activer la méthode de paiement **Checks** et choisir un **Check Layout** dans les réglages comptables. Ensuite, on enregistre le paiement depuis la facture avec le **Payment Method** **Checks**, on imprime le chèque via **Print Check**, puis on rapproche la transaction bancaire pour passer la facture à **Paid**.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            5
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Activer la méthode de paiement par chèque : **Accounting ‣ Configuration ‣ Settings**, section **Vendor Payments**, activer **Checks**, cliquer sur **Save**, puis sélectionner un **Check Layout** et enregistrer à nouveau. Une fois activée, la méthode **Checks** est configurée automatiquement dans l'onglet **Outgoing Payments** des journaux bancaires.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ]
+          },
+          {
+            "texte": "Selon le pays, certains formats de chèque spécifiques peuvent nécessiter l'installation d'un module dédié (ex. **US Checks Layout** `l10n_us_check_printing` pour les États-Unis, **Canadian Checks Layout** `l10n_ca_check_printing` pour le Canada).",
+            "statut": "À vérifier",
+            "sources": [
+              5,
+              6,
+              7
+            ],
+            "raison": "Le passage 5 mentionne un module dédié selon le pays, mais les exemples US et Canada viennent de localisations que la question ne cite pas."
+          },
+          {
+            "texte": "Prévoir le papier adapté : les formats pré-imprimés exigent du papier pré-imprimé d'un fournisseur tiers ; les formats vierges (blank) exigent de l'encre ou du toner MICR conforme et du papier chèque de qualité.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Aller dans **Accounting ‣ Configuration ‣ Settings**, descendre jusqu'à la section **Vendor Payments**, activer **Checks**, cliquer sur **Save**.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ],
+            "titre": "Activer les chèques dans les réglages"
+          },
+          {
+            "texte": "Sélectionner un **Check Layout**, puis cliquer sur **Save**. Options facultatives : **Multi-Pages Check Stub**, **Check Top Margin**, **Check Left Margin**.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ],
+            "titre": "Choisir le format de chèque"
+          },
+          {
+            "texte": "Aller dans **Accounting ‣ Vendors ‣ Bills**, ouvrir la facture concernée. Une fois confirmée, cliquer sur **Pay**, définir **Payment Method** sur **Checks**, puis cliquer sur **Create Payment**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Enregistrer le paiement depuis la facture fournisseur"
+          },
+          {
+            "texte": "Cliquer sur le bouton intelligent **Payments** pour accéder au paiement par chèque.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir le paiement par chèque"
+          },
+          {
+            "texte": "Cliquer sur **Print Check**. Dans la fenêtre pop-up, indiquer le numéro du chèque pré-imprimé pour que ce numéro soit enregistré sur le paiement.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Imprimer le chèque"
+          },
+          {
+            "texte": "Créer une transaction dans le journal bancaire et la rapprocher avec la facture fournisseur ou le chèque concerné afin que la facture passe à **Paid**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Rapprocher avec le relevé bancaire"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Après impression, **Void Check** annule le paiement par chèque ; **Reject** est à utiliser si le chèque est rejeté : le paiement passe à **Rejected** et la facture n'est plus marquée **Paid**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          },
+          {
+            "texte": "Alternatives : depuis l'**Accounting Dashboard**, cliquer sur **Checks to print** sur la carte du journal **Bank**, ouvrir le chèque puis **Print Check**. Pour imprimer plusieurs chèques en lot, sélectionner les paiements dans la vue liste, puis l'icône **(Actions)** et **Print**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          },
+          {
+            "texte": "Selon la localisation, la procédure d'impression peut différer (ex. Philippines : saisie manuelle du numéro de chèque lors de l'impression avec **Print Check - PH** ; Argentine : le réglage **Use electronic and deferred checks** désactive l'impression).",
+            "statut": "À vérifier",
+            "sources": [
+              10,
+              11
+            ],
+            "raison": "Les passages 10 et 11 décrivent les Philippines et l'Argentine, des localisations que la question ne cite pas ; le contenu est présent mais le contexte ne correspond pas."
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Pay by checks > Pay a vendor bill",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments/pay_checks.html#pay-a-vendor-bill",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/payments/pay_checks.html"
+          },
+          {
+            "n": 5,
+            "titre": "Pay by checks > Configuration",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments/pay_checks.html#configuration",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/accounting/payments/pay_checks.html"
+          },
+          {
+            "n": 6,
+            "titre": "United States > Writing checks",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/united_states.html#writing-checks",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/fiscal_localizations/united_states.html"
+          },
+          {
+            "n": 7,
+            "titre": "Canada > Accounting > Writing checks",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/canada.html#writing-checks",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/fiscal_localizations/canada.html"
+          },
+          {
+            "n": 10,
+            "titre": "Argentina > Accounting > Check management > Own checks",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/argentina.html#own-checks",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/fiscal_localizations/argentina.html"
+          },
+          {
+            "n": 11,
+            "titre": "Philippines > Accounting > Payments by check",
+            "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/philippines.html#payments-by-check",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/finance/fiscal_localizations/philippines.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments/pay_checks.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/united_states.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/finance/fiscal_localizations/canada.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to register a payment on a vendor bill in Odoo Accounting",
+          "How to pay a vendor bill with a check payment method in Odoo",
+          "How to configure the Check payment method and journal in Odoo Accounting",
+          "How to print checks from a payment in Odoo Accounting",
+          "How to set up check layout and check number sequence for printing checks in Odoo"
+        ],
+        "cout": {
+          "usd": 0.03154,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 789,
+              "sortie": 152,
+              "usd": 0.00015
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 127,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 6345,
+              "sortie": 1511,
+              "usd": 0.0278
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 19629,
+              "sortie": 3203,
+              "usd": 0.00356
+            }
+          ]
+        },
+        "dureeMs": 27748
+      }
+    },
+    {
+      "id": "D004",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Que se passe-t-il lorsqu'un utilisateur planifie un rendez-vous depuis le chatter d'un document et comment finaliser sa création dans l'agenda ?",
+      "attendues": [
+        "essentials/activities"
+      ],
+      "pagesCitees": [
+        "essentials/activities",
+        "productivity/calendar",
+        "productivity/discuss/chatter"
+      ],
+      "trouvees": [
+        "essentials/activities"
+      ],
+      "rappel": 1.0,
+      "statut": "À vérifier",
+      "couverture": "complete",
+      "coutUsd": 0.02543,
+      "dureeServeurMs": 21845,
+      "latenceMs": 22590,
+      "erreur": null,
+      "reponse": {
+        "statut": "À vérifier",
+        "question": "Que se passe-t-il lorsqu'un utilisateur planifie un rendez-vous depuis le chatter d'un document et comment finaliser sa création dans l'agenda ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Depuis le chatter, on clique sur **Activity** (ou **Activities**), on choisit le type **Meeting** dans la fenêtre **Schedule Activity**, puis on clique sur **Schedule**. Cela ouvre le calendrier de l'utilisateur (app **Calendar**) : on clique sur la date et l'heure voulues, une fenêtre **New Event** apparaît avec le **Title** prérempli par le **Summary**, puis **Save & Close** finalise la création. L'activité apparaît ensuite dans le chatter sous **Planned Activities**.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            2,
+            4
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Disposer d'un enregistrement avec un chatter (ex. opportunité **CRM** ou tâche **Project**).",
+            "statut": "Documenté",
+            "sources": [
+              2,
+              4
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Dans le chatter de l'enregistrement, cliquer sur le bouton **Activity** (libellé **Activities** dans un autre passage), situé en haut du chatter. La fenêtre **Schedule Activity** s'ouvre.",
+            "statut": "Documenté",
+            "sources": [
+              2,
+              4,
+              6
+            ],
+            "titre": "Ouvrir la fenêtre d'activité"
+          },
+          {
+            "texte": "Sélectionner **Meeting** comme **Activity Type**. Les activités impliquant d'autres agendas, comme **Meeting**, sont liées à l'app **Calendar**.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              3,
+              4
+            ],
+            "titre": "Choisir le type Meeting"
+          },
+          {
+            "texte": "Saisir les informations du formulaire, notamment **Summary**, **Due Date**, **Assigned to** (par défaut l'utilisateur courant) et, si besoin, **Log a note**.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              3
+            ],
+            "titre": "Renseigner le formulaire"
+          },
+          {
+            "texte": "Cliquer sur **Schedule** : l'utilisateur est redirigé vers le calendrier pour ajouter et planifier l'activité.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              4
+            ],
+            "titre": "Cliquer sur Schedule"
+          },
+          {
+            "texte": "Dans le calendrier, cliquer sur la date et l'heure souhaitées. Une fenêtre **New Event** apparaît et le champ **Title** est prérempli avec le **Summary** de la fenêtre **Schedule Activity**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Sélectionner le créneau"
+          },
+          {
+            "texte": "Compléter les informations de la fenêtre **New Event**, puis cliquer sur **Save & Close**. L'activité est ajoutée au chatter sous **Planned Activities**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Finaliser l'événement"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "Ne pas confondre : si l'on clique sur **Schedule** sans finaliser par **Save & Close** dans **New Event**, la création de l'événement n'est pas terminée dans l'agenda (déduit du déroulé documenté).",
+            "statut": "À vérifier",
+            "sources": [
+              1
+            ],
+            "raison": "Aucun passage ne dit qu'un clic sur Schedule sans Save & Close laisse la création inachevée ; c'est une déduction généralisée à partir de la phrase « to schedule it »."
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Activities > Schedule activities > Schedule Activity form > Schedule a meeting",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/activities.html#schedule-a-meeting",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/activities.html"
+          },
+          {
+            "n": 2,
+            "titre": "Chatter > Schedule activities",
+            "url": "https://www.odoo.com/documentation/20.0/applications/productivity/discuss/chatter.html#schedule-activities",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/productivity/discuss/chatter.html"
+          },
+          {
+            "n": 3,
+            "titre": "Activities > Schedule activities > Schedule Activity form",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/activities.html#schedule-activity-form",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/activities.html"
+          },
+          {
+            "n": 4,
+            "titre": "Calendar > Create activities from chatter",
+            "url": "https://www.odoo.com/documentation/20.0/applications/productivity/calendar.html#create-activities-from-chatter",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/productivity/calendar.html"
+          },
+          {
+            "n": 6,
+            "titre": "Activities > Schedule activities > Chatter",
+            "url": "https://www.odoo.com/documentation/20.0/applications/essentials/activities.html#chatter",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/applications/essentials/activities.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/essentials/activities.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/productivity/calendar.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/applications/productivity/discuss/chatter.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to schedule an activity from the chatter of a document in Odoo 20.0",
+          "Activity types and the Schedule Activity dialog fields (Activity Type, Summary, Due Date, Assigned to) in Odoo Discuss",
+          "How to convert or finalize a scheduled activity into a calendar meeting in Odoo Calendar",
+          "What happens when a user marks an activity as done or schedules a next activity from the chatter in Odoo"
+        ],
+        "cout": {
+          "usd": 0.02543,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 812,
+              "sortie": 181,
+              "usd": 0.00017
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 150,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 6320,
+              "sortie": 1000,
+              "usd": 0.02264
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 14460,
+              "sortie": 2286,
+              "usd": 0.00259
+            }
+          ]
+        },
+        "dureeMs": 21845
+      }
+    },
+    {
+      "id": "D005",
+      "jeu": "doc",
+      "version": "20.0",
+      "question": "Comment puis-je configurer l'accès pour intégrer un dépôt GitHub non public en tant que sous-module sur mon projet Odoo.sh ?",
+      "attendues": [
+        "administration/odoo_sh/getting_started/settings"
+      ],
+      "pagesCitees": [
+        "administration/odoo_sh/advanced",
+        "administration/odoo_sh/getting_started/settings"
+      ],
+      "trouvees": [
+        "administration/odoo_sh/getting_started/settings"
+      ],
+      "rappel": 1.0,
+      "statut": "Documenté",
+      "couverture": "complete",
+      "coutUsd": 0.02521,
+      "dureeServeurMs": 18721,
+      "latenceMs": 19067,
+      "erreur": null,
+      "reponse": {
+        "statut": "Documenté",
+        "question": "Comment puis-je configurer l'accès pour intégrer un dépôt GitHub non public en tant que sous-module sur mon projet Odoo.sh ?",
+        "modele": "claude-sonnet-5-5",
+        "couverture": "complete",
+        "resume": {
+          "texte": "Pour intégrer un dépôt GitHub privé comme sous-module, il faut d'abord ajouter une clé de déploiement (deploy key) : coller l'URL SSH du sous-dépôt dans Odoo.sh, copier la **Public Key** générée, puis l'ajouter dans les **Deploy keys** du sous-dépôt GitHub. Ensuite, le sous-module s'ajoute avec la commande Git, puis on commit/push et on attend la reconstruction par Odoo.sh.",
+          "statut": "Documenté",
+          "sources": [
+            1,
+            5
+          ]
+        },
+        "prerequis": [
+          {
+            "texte": "Un dépôt Git contenant des modules Odoo (Odoo Apps Store ou modules communautaires, ex. OCA) est nécessaire.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ]
+          },
+          {
+            "texte": "Une deploy key doit être configurée dans le projet et les paramètres du dépôt pour intégrer des dépôts privés ; Odoo.sh détecte alors automatiquement les sous-modules et les ajoute à l'addons path.",
+            "statut": "Documenté",
+            "sources": [
+              5
+            ]
+          }
+        ],
+        "etapes": [
+          {
+            "texte": "Dans les paramètres du projet Odoo.sh (section **Settings > Submodules**), coller l'URL SSH du sous-dépôt (ex. `git@github.com:USERNAME/REPOSITORY.git`) et cliquer sur **Add**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Générer la clé de déploiement"
+          },
+          {
+            "texte": "Copier la **Public Key** générée.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Copier la clé publique"
+          },
+          {
+            "texte": "Sur le GitHub du sous-dépôt, aller dans **Settings ‣ Deploy keys**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ouvrir les Deploy keys du sous-dépôt GitHub"
+          },
+          {
+            "texte": "Cliquer sur **Add deploy key**, saisir un **Title**, coller la clé publique dans le champ **Key**, puis cliquer sur **Add key**.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Ajouter la clé"
+          },
+          {
+            "texte": "Avec Git, dans le dépôt cloné, se placer sur la branche voulue puis exécuter : `git submodule add -b BRANCH git@github.com:USERNAME/REPOSITORY.git PATH`.",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              2
+            ],
+            "titre": "Ajouter le sous-module au projet"
+          },
+          {
+            "texte": "Exécuter `git commit -a && git push -u origin master` (adapter remote et branche selon votre configuration).",
+            "statut": "Documenté",
+            "sources": [
+              1,
+              2
+            ],
+            "titre": "Commit et push"
+          },
+          {
+            "texte": "Attendre qu'Odoo.sh reconstruise le projet.",
+            "statut": "Documenté",
+            "sources": [
+              1
+            ],
+            "titre": "Attendre la reconstruction"
+          }
+        ],
+        "avertissements": [
+          {
+            "texte": "L'ajout d'un dépôt privé via le bouton **Submodule** > **Run on Odoo.sh** de la vue Branches n'est pas possible actuellement ; il faut passer par Git.",
+            "statut": "Documenté",
+            "sources": [
+              2
+            ]
+          }
+        ],
+        "pistes": [],
+        "nonCouvert": [],
+        "sources": [
+          {
+            "n": 1,
+            "titre": "Settings > Submodules",
+            "url": "https://www.odoo.com/documentation/20.0/administration/odoo_sh/getting_started/settings.html#submodules",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/administration/odoo_sh/getting_started/settings.html"
+          },
+          {
+            "n": 2,
+            "titre": "Advanced topics > Submodules > Adding a submodule",
+            "url": "https://www.odoo.com/documentation/20.0/administration/odoo_sh/advanced.html#adding-a-submodule",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/administration/odoo_sh/advanced.html"
+          },
+          {
+            "n": 5,
+            "titre": "Advanced topics > Submodules",
+            "url": "https://www.odoo.com/documentation/20.0/administration/odoo_sh/advanced.html#submodules",
+            "urlFr": "https://www.odoo.com/documentation/20.0/fr/administration/odoo_sh/advanced.html"
+          }
+        ],
+        "controle": {
+          "site": "en ligne",
+          "pages": [
+            {
+              "url": "https://www.odoo.com/documentation/20.0/administration/odoo_sh/getting_started/settings.html",
+              "lue": true
+            },
+            {
+              "url": "https://www.odoo.com/documentation/20.0/administration/odoo_sh/advanced.html",
+              "lue": true
+            }
+          ]
+        },
+        "sousQuestions": [
+          "How to add a private GitHub repository as a git submodule in an Odoo.sh project",
+          "How to generate an SSH deploy key for an Odoo.sh project repository",
+          "How to add a deploy key to a private GitHub repository",
+          "How to configure git submodules in an Odoo.sh Project repository and trigger a build"
+        ],
+        "cout": {
+          "usd": 0.02521,
+          "details": [
+            {
+              "etape": "sous-questions",
+              "modele": "claude-haiku-5-5",
+              "entree": 849,
+              "sortie": 139,
+              "usd": 0.00015
+            },
+            {
+              "etape": "embeddings",
+              "modele": "gemini-embedding-2",
+              "entree": 128,
+              "sortie": 0,
+              "usd": 3e-05
+            },
+            {
+              "etape": "rédaction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 6431,
+              "sortie": 1016,
+              "usd": 0.02302
+            },
+            {
+              "etape": "contrôle",
+              "modele": "claude-haiku-5-5",
+              "entree": 9318,
+              "sortie": 2148,
+              "usd": 0.00201
+            }
+          ]
+        },
+        "dureeMs": 18721
+      }
+    }
+  ]
+}

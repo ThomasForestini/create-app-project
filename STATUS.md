@@ -5,7 +5,7 @@
 <!-- close:active -->
 **Dernière étape** : `/close` Phase 1 — Socle + question texte ✅ (`/validate` OK le 27/10/2026)
 **Prochaine étape recommandée** : `/plan Phase 2` — QCM photo (vision → réponse + explication + source)
-**Dernier commit reflété** : 1feefc4
+**Dernier commit reflété** : fc0dcd7
 
 ## Historique récent
 - 27/10/2026 — Phase 1 clôturée : pgvector VPS, `[DEV] odoo-question` (recherche + réponse sourcée contrôlée en ligne) et `[DEV] telegram-assistant` actifs ; rappel 100 % sur 106 questions ; Sonnet 5.5 retenu au duel contre Gemini 4 Argon

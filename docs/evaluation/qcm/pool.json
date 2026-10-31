@@ -1,0 +1,3084 @@
+{
+  "source": "Odoo 19 certification.pdf",
+  "note": "couleur_remy = surlignage de Rémy Claes (vert = sa réponse, orange = erreur probable, bleu = réponse alternative). Métadonnée seulement : jamais un corrigé, jamais montrée au modèle.",
+  "nb_questions": 123,
+  "questions": [
+    {
+      "id": "P001",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Introduction",
+      "page": 1,
+      "question": "In a multi-company setup, how can you allow a customer record to be shared across all companies?",
+      "choix": [
+        {
+          "texte": "This is not possible because each customer is restricted to a single company.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Leave the \"Company\" field empty on the contact record (Sales & Purchase Tab).",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Enable an option called Accessible to Everyone on the contact.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P002",
+      "code_banc": "Q01",
+      "echantillon": true,
+      "module": "Introduction",
+      "page": 1,
+      "question": "If you were in any list view, how would you display 1,000 records at once?",
+      "choix": [
+        {
+          "texte": "All records are always displayed.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By clicking on the page indicator next to the view options",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "80 records is the maximum number of results that can be displayed in list view.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P003",
+      "code_banc": "Q02",
+      "echantillon": true,
+      "module": "Introduction",
+      "page": 1,
+      "question": "How do you access the technical menu?",
+      "choix": [
+        {
+          "texte": "Go to the Settings module and it automatically appears there.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Load the technical module from the Apps module and it will be accessible.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Activate developer mode and go to the Settings module.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P004",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Introduction",
+      "page": 2,
+      "question": "What does it mean when a record is archived in Odoo?",
+      "choix": [
+        {
+          "texte": "Records cannot be archived for traceability purposes.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When a record is archived in Odoo, it is hidden from regular view, and no longer active.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "When a record is archived, nobody can ever modify it, it's frozen forever.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P005",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Introduction",
+      "page": 2,
+      "question": "What action(s) need to be taken on the Odoo dashboard to order the placement of the icons?",
+      "choix": [
+        {
+          "texte": "Enable edit mode from the dashboard settings, then use the \"Arrange Apps\" option to drag icons into place.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Open the user menu, select \"Customize Dashboard,\" and reorder the apps by dragging them in the list view.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Click on an app icon and hold the mouse button down; the icon will tilt slightly, allowing it to be dragged into a new position within the app grid.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P006",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Introduction",
+      "page": 2,
+      "question": "How can you bulk add or remove followers from multiple records in Odoo?",
+      "choix": [
+        {
+          "texte": "In List View, select the records, click Actions, then choose Add/Remove Followers.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "In Form View, open each record and manage followers individually under the chatter.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "From Settings > Users & Companies, update the follower lists for all related records.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P007",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 2,
+      "question": "Which of the following actions can customers NOT perform in the customer portal?",
+      "choix": [
+        {
+          "texte": "Manage pricelists for their most frequently purchased products",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Add funds to their eWallet",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Submit partial payments and down payments for invoices (if the payment terms allow)",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P008",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 2,
+      "question": "What does it mean when a product is labeled under the product type, \"Combo\"?",
+      "choix": [
+        {
+          "texte": "When purchasing this product type, the customer can choose one product amongst a selection of multiple",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "This product is a combination of a \"Good\" and a \"Service\"",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When purchasing this product, the customer must choose multiple product variants to submit an order",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P009",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 3,
+      "question": "What does the 'Customer Lead Time' field on a product form represent?",
+      "choix": [
+        {
+          "texte": "The computed order date based on the quotation date",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The number of days, promised to the customer, between the confirmation of the sales order and the delivery",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Confirmation that the Terms & Conditions will be displayed on the quotation",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P010",
+      "code_banc": "Q03",
+      "echantillon": true,
+      "module": "Sales",
+      "page": 3,
+      "question": "A customer is linked to the pricelist 'Retailer.' If you create a quote for this customer, but change the pricelist to 'Consumer' before adding products to the quote, what price will be used for the new sale order lines?",
+      "choix": [
+        {
+          "texte": "A price from the 'Retailer' pricelist",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A price from the 'Consumer' pricelist",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The system issue a warning, and request the correct pricelist be applied",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P011",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 3,
+      "question": "What's the best way to set up the product form for a product where a consultant will come to the customer's location and conduct a home appraisal?",
+      "choix": [
+        {
+          "texte": "This should be set up with the Product Type \"Goods\" and the Invoicing Policy \"Delivered quantities\", since the consultant is delivering themself by coming to the customer",
+          "couleur_remy": null
+        },
+        {
+          "texte": "This should be set up with the Product Type \"Service\" and the Invoicing Policy \"Prepaid/Fixed Price\" since the consultant is providing a one-time service",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "This should be set up with the Product Type \"Combo\", since the appraisal is a service but coming to the customer's location counts as a delivered good",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P012",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 3,
+      "question": "When a customer finalizes a purchase in the online store:",
+      "choix": [
+        {
+          "texte": "Odoo automatically creates a sales order and invoice in the Sales app (if the 'Automatic Invoice' setting is activated)",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Odoo automatically creates a quotation in the Sales app (if the 'Automatic Quotation' setting is activated)",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Odoo automatically creates a new opportunity in the CRM pipeline (if the 'Automatic Opportunity' setting is activated)",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P013",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 4,
+      "question": "When would it be most useful to use 'Order Grid Entry' as the sales variant selection type for a product?",
+      "choix": [
+        {
+          "texte": "When clients want their sales orders organized in a grid",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When salespeople typically recommend specific product variants to clients",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When salespeople usually create large quotations with many product variants for clients",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P014",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 4,
+      "question": "What is a valid configuration for an achievement-based commission plan?",
+      "choix": [
+        {
+          "texte": "10% of all sales to a specific customer each quarter",
+          "couleur_remy": null
+        },
+        {
+          "texte": "$1,000 for reaching $25,000 in sales each month",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "5% of the margin of all sales across a specific product category over the course of a year",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P015",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Sales",
+      "page": 4,
+      "question": "You sell highly customizable leather jackets. Which Display Type should you use to avoid having to manually create Variants with every possible Attribute combination?",
+      "choix": [
+        {
+          "texte": "Multi-checkbox",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Image",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Select",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P016",
+      "code_banc": "Q04",
+      "echantillon": true,
+      "module": "Sales",
+      "page": 4,
+      "question": "During the sales process, when is the on-hand quantity of a product decreased in your inventory?",
+      "choix": [
+        {
+          "texte": "When the delivery order is validated",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "When the sales order is validated",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When the customer invoice is paid",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P017",
+      "code_banc": "Q05",
+      "echantillon": true,
+      "module": "Survey",
+      "page": 5,
+      "question": "Can the survey participant be directed to a specific question based on their answer to a previous question?",
+      "choix": [
+        {
+          "texte": "Yes. It's called 'Parent Questions.' (Go to the Question > Settings tab > Determine Parent Question & Child Answer)",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes. It's called 'Conditional Display'. (Go to the Question > Options tab > Locate the 'Conditional Display' section > Choose a Triggering Answer)",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Yes, but only in a \"Live Session\" survey when the \"Allow Roaming\" feature is enabled.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P018",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Survey",
+      "page": 5,
+      "question": "How can you give participants exclusive access to a Live Session survey?",
+      "choix": [
+        {
+          "texte": "By creating a custom badge with a barcode for participants under the Settings tab.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By enabling Private Mode under the Participants section and sharing the survey link manually with attendees.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "By setting a session code and requiring participants to log in under the Options tab of the survey form.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P019",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Survey",
+      "page": 5,
+      "question": "How can a survey conclude with a custom message for participants?",
+      "choix": [
+        {
+          "texte": "Enter a custom message in the Description tab of the survey form.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Enter a custom message in the Confirmation email settings instead of the survey itself.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Enter a custom message in the End Message tab of the survey form.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P020",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 5,
+      "question": "What is the visual effect of setting a high priority on an opportunity?",
+      "choix": [
+        {
+          "texte": "The opportunity moves to the top of its stage in the Kanban view the next time the pipeline is loaded.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The opportunity is visually flagged with a priority icon but remains in its current position in the stage.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The opportunity temporarily appears at the top of the stage until the page is refreshed.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P021",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 5,
+      "question": "What does the Closed Date field indicate on a lead or opportunity?",
+      "choix": [
+        {
+          "texte": "The date the lead was marked as closed.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The date the opportunity was marked as won or lost.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The date the opportunity record was removed from the database.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P022",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 6,
+      "question": "Which of the following is not true about the relationship between an opportunity and a customer in Odoo?",
+      "choix": [
+        {
+          "texte": "You can create a new customer record before or after winning the opportunity.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Once an opportunity is won, you can no longer create a new customer record from the opportunity form.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Opportunities can remain in the database without a customer linked, even after they are closed or won.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P023",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 6,
+      "question": "What does the Opportunities smart button display on a company's contact record in Odoo?",
+      "choix": [
+        {
+          "texte": "All opportunities related to the company and its contacts.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Only opportunities that have been won.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Only opportunities that have scheduled activities.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P024",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 6,
+      "question": "When can the Expected Revenue on an opportunity be set in Odoo?",
+      "choix": [
+        {
+          "texte": "It cannot be set manually because it is computed from the untaxed amount of linked sales orders.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It can only be set when creating the opportunity.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It can be set or modified manually at any time.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P025",
+      "code_banc": "Q06",
+      "echantillon": true,
+      "module": "CRM",
+      "page": 6,
+      "question": "If the manager of the Pre-Sales team creates a new property field on an opportunity, who can see it?",
+      "choix": [
+        {
+          "texte": "Only members of the Pre-Sales team.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Only managers of other sales teams.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Anyone with access to that opportunity.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P026",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 7,
+      "question": "What happens to a stage's total Expected Revenue when a new opportunity is moved into it?",
+      "choix": [
+        {
+          "texte": "The stage's total Expected Revenue instantly increases to include the new opportunity's expected revenue.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The stage's total Expected Revenue instantly decreases to include the new opportunity's expected revenue.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Nothing happens to the stage's total Expected Revenue.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P027",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 7,
+      "question": "How can you view the current stage of each opportunity on the My Activities page in List view?",
+      "choix": [
+        {
+          "texte": "The stage is not displayed in the default view; you must customize the columns.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "In the Current Status column.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "In the Stage column.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P028",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 7,
+      "question": "How can you set the Days to Rot for a stage in the CRM pipeline?",
+      "choix": [
+        {
+          "texte": "Click the gear icon on the stage, select Edit, and enter the number of days in the Days to Rot field.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Open any opportunity in that stage and set the number of days in the Days to Rot field on the record itself.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Go to Configuration > CRM Settings and define a default number of days that applies to all stages in the pipeline.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P029",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "CRM",
+      "page": 7,
+      "question": "What visual indicator shows that an opportunity has \"rotted\" in Odoo?",
+      "choix": [
+        {
+          "texte": "A red warning icon appears next to the opportunity name in the list view.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The opportunity's Kanban card is highlighted in red.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The stage header flashes to indicate a rotted opportunity.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P030",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "AI",
+      "page": 7,
+      "question": "When configuring an AI Agent in Odoo, how do Topics and Sources work together?",
+      "choix": [
+        {
+          "texte": "Topics define the actions and behaviors available to the agent, while Sources determine which documents or pages the agent can use to generate responses.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Topics identify which documents the agent can access, while Sources define how the agent communicates with users.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Topics are used only for internal Knowledge pages, while Sources are used for any data uploaded to the Documents app.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P031",
+      "code_banc": "Q07",
+      "echantillon": true,
+      "module": "AI",
+      "page": 8,
+      "question": "What does it mean when an AI Agent is not assigned any Topics?",
+      "choix": [
+        {
+          "texte": "The agent can provide information, but cannot make changes to the database or perform tasks.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The agent can only perform tasks based on the information provided in its Sources.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Leaving the Topics field empty means the agent has access to all topics and tools in the database.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P032",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "AI",
+      "page": 8,
+      "question": "What is the purpose of the AI email prompt in Odoo email templates?",
+      "choix": [
+        {
+          "texte": "To decide when an email should be sent to maximize open rates.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "To help write or enhance parts of an email message based on the template context.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "To automatically detect recipient email addresses from contact records.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P033",
+      "code_banc": "Q08",
+      "echantillon": true,
+      "module": "AI",
+      "page": 8,
+      "question": "You want to ask an AI Agent how many leads are currently assigned to a specific salesperson. Which Topic must be assigned to the agent for it to answer that question?",
+      "choix": [
+        {
+          "texte": "Information Reporting.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Information Retrieval.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Lead Assessment.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P034",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "AI",
+      "page": 8,
+      "question": "When you open a conversation with an AI Agent, what information does it automatically know about the record?",
+      "choix": [
+        {
+          "texte": "Only the record name and user’s message.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It can access the field values of the record you're viewing, unless restricted by configuration.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "It only knows what's stored in its Sources.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P035",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Marketing",
+      "page": 9,
+      "question": "How would you automatically communicate information to an event attendee once they register?",
+      "choix": [
+        {
+          "texte": "Select an email template in the Communication tab of the event, with the trigger \"Before the event starts\".",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Select an email template in the Communication tab of the event, with the trigger \"After each registration\".",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "You can only email attendees if they select 'allow emails' on the event registration page.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P036",
+      "code_banc": "Q09",
+      "echantillon": true,
+      "module": "Marketing",
+      "page": 9,
+      "question": "Can you use the same mailing list contacts for BOTH email and SMS marketing campaigns?",
+      "choix": [
+        {
+          "texte": "No, mailing list contacts are specific to the delivery method, and are not interchangeable.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "No, since SMS mailing list contacts do not have an email field, and email marketing lists do not have a phone number field.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, since mailing list contacts contain both email addresses and phone numbers.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P037",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Marketing",
+      "page": 9,
+      "question": "What happens when you change an event state to 'cancelled'?",
+      "choix": [
+        {
+          "texte": "Event attendees are automatically sent an email using the email template 'Event: Cancelled', and the 'Register' button changes to a 'Cancelled' button on the website.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Automatically moves the event to the 'Ended' stage, and emails attendees using the 'Event: Cancelled' email template.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Replaces the 'Register' button with a 'Cancelled' image on the event website and even Kanban card, and disables outgoing emails for the event.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P038",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Website",
+      "page": 9,
+      "question": "After installing the Website app, you pick a theme. Can you switch to a different theme later?",
+      "choix": [
+        {
+          "texte": "Yes, using the website editor, go to the 'Theme tab' and choose 'Switch Theme'.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "No, this choice is definitive, and you'll have to create another website.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, switch to 'debug' mode, then go to Website > Settings.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P039",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Website",
+      "page": 10,
+      "question": "You added a shape to one of your blocks with the initial website theme and color. If you change the presets, will the shapes' colors adapt?",
+      "choix": [
+        {
+          "texte": "Yes, shapes are dynamic.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "No",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, but you have to remove the shape and then re-apply it.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P040",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Website",
+      "page": 10,
+      "question": "On the Event Registration page, where can you choose which blocks to hide or reveal in the event sidebar?",
+      "choix": [
+        {
+          "texte": "Go to the website editor in the Style tab. Toggle on 'Sidebar' and toggle on or off which blocks to hide or reveal.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Activate developer mode to add the sidebar settings in the website editor.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "On the backend of the Events app, select which info to hide or reveal.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P041",
+      "code_banc": "Q10",
+      "echantillon": true,
+      "module": "Website",
+      "page": 10,
+      "question": "How can you hide the header and/or footer on pages?",
+      "choix": [
+        {
+          "texte": "You can do this upon activating developer mode.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "You can do this in the website editor, in the Styles tab.",
+          "couleur_remy": "bleu"
+        },
+        {
+          "texte": "You can do this in the website editor, in the Blocks tab.",
+          "couleur_remy": "orange"
+        }
+      ],
+      "couleurs_remy": [
+        "bleu",
+        "orange"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P042",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Ecommerce",
+      "page": 10,
+      "question": "You want to show your customers additional products they may be interested in upon checkout, which feature can you use?",
+      "choix": [
+        {
+          "texte": "Alternative products.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Optional products.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Accessory products.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P043",
+      "code_banc": "Q11",
+      "echantillon": true,
+      "module": "Ecommerce",
+      "page": 11,
+      "question": "How can you edit the way the variant selection will be displayed on a website product page?",
+      "choix": [
+        {
+          "texte": "By clicking the attribute and changing the Block display type in the Style tab in the website editor.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "By changing the attribute display type in the Style tab.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By activating developer mode and going to the Theme tab in the website editor.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P044",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Ecommerce",
+      "page": 11,
+      "question": "Where can you automate Ribbons and Badges? How many 'assign' options do you have?",
+      "choix": [
+        {
+          "texte": "On the back-end, in Product Ribbons. When a Ribbon is selected, you can choose an option between 'Manually', 'On Sale', 'When new' or 'When out of stock'.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "On the back-end of a specific product only, in the Sales tab, you can choose an option between 'Manually', 'On Sale', 'When new' or 'When out of stock'.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "On the back-end of a specific product only, in the Attributes & Variants tab, you can choose an option between 'Manually', 'On Sale', 'When new'.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P045",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Ecommerce",
+      "page": 11,
+      "question": "What can you add to a product to highlight it in your catalog and/or on the product page?",
+      "choix": [
+        {
+          "texte": "A ribbon.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A badge.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A ribbon or a badge.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P046",
+      "code_banc": "Q12",
+      "echantillon": true,
+      "module": "Knowledge",
+      "page": 11,
+      "question": "Which of the following commands are exclusive to Knowledge?",
+      "choix": [
+        {
+          "texte": "Index, Item Kanban/Cards/List/Calendar",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Separator, Checklist, Quote, Media, Emoji",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Banner Info/Success/Warning/Danger",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P047",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Knowledge",
+      "page": 11,
+      "question": "Can you copy the link of one specific header?",
+      "choix": [
+        {
+          "texte": "Yes, any header can be copied.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "No, you can only copy the article's link.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, but you can only copy the title.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P048",
+      "code_banc": "Q13",
+      "echantillon": true,
+      "module": "Knowledge",
+      "page": 12,
+      "question": "After pressing CTRL+K, which symbol allows you to search for hidden articles?",
+      "choix": [
+        {
+          "texte": "The question mark (?)",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The dollar sign ($)",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The exclamation mark (!)",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P049",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Project",
+      "page": 12,
+      "question": "How can you share a task publicly?",
+      "choix": [
+        {
+          "texte": "By sharing a public link to the task or project",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By setting the task visibility to public",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By setting the project visibility to public",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P050",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Project",
+      "page": 12,
+      "question": "What is not carried over from the original task when a recurring task is created?",
+      "choix": [
+        {
+          "texte": "Tags",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Activities",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Assignees",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P051",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Project",
+      "page": 12,
+      "question": "The burndown chart represent, at a specific point in time:",
+      "choix": [
+        {
+          "texte": "The number of tasks in each stage",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The number of negative customer ratings",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The number of canceled tasks",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P052",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Project",
+      "page": 12,
+      "question": "Which conditions must be met before you can invoice a milestone?",
+      "choix": [
+        {
+          "texte": "The milestone must have been marked as reached",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A sales order item must have been set on the milestone",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Both the milestone must have been marked as reached and a sales order item must have been set on the milestone",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P053",
+      "code_banc": "Q14",
+      "echantillon": true,
+      "module": "Project",
+      "page": 13,
+      "question": "When is a milestone displayed in green?",
+      "choix": [
+        {
+          "texte": "When the milestone's deadline is today",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When all its tasks have been marked as done or canceled",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When the milestone is marked as reached",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P054",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Project",
+      "page": 13,
+      "question": "When is a milestone displayed in red?",
+      "choix": [
+        {
+          "texte": "When one or more of its tasks is marked as canceled",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When the milestone's deadline is today",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When the milestone's deadline has passed and at least one of its tasks is not marked as done or canceled",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P055",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Project",
+      "page": 13,
+      "question": "How many task priority levels are available?",
+      "choix": [
+        {
+          "texte": "One",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Three",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Five",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P056",
+      "code_banc": "Q15",
+      "echantillon": true,
+      "module": "Project",
+      "page": 13,
+      "question": "When creating a task from a project's Kanban view, adding \"#priority\" to the title will:",
+      "choix": [
+        {
+          "texte": "Add a \"priority\" tag to the task",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Set's the task's priority to high",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Add the text \"#priority\" to the task's title",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P057",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 13,
+      "question": "Which statement is true?",
+      "choix": [
+        {
+          "texte": "Time off entries automatically generate timesheet entries",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Time off and timesheets entries are never linked",
+          "couleur_remy": null
+        },
+        {
+          "texte": "You have to add time off entries manually in timesheets",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P058",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 14,
+      "question": "Which statement is true?",
+      "choix": [
+        {
+          "texte": "Employees cannot edit a timesheet that predates their most recent validated timesheet",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Employees cannot edit a timesheet when a timesheet from an earlier period has not been validated yet",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Employees cannot edit a timesheet outside their working hours",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P059",
+      "code_banc": "Q16",
+      "echantillon": true,
+      "module": "Timesheets",
+      "page": 14,
+      "question": "At which level do you define a billing time target?",
+      "choix": [
+        {
+          "texte": "At the company level",
+          "couleur_remy": null
+        },
+        {
+          "texte": "At the employee level",
+          "couleur_remy": null
+        },
+        {
+          "texte": "At the project level",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P060",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 14,
+      "question": "Does a time off record automatically create a timesheet?",
+      "choix": [
+        {
+          "texte": "Always",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Only if the \"Time Off\" setting is enabled",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Never",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P061",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 14,
+      "question": "On the \"All Timesheets\" view, what does it mean when a duration is in orange?",
+      "choix": [
+        {
+          "texte": "It means the employee worked overtime on that day",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It means the employee took time off on that day",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It means the employee worked undertime on that day",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P062",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 14,
+      "question": "What are hours billed at a fixed price?",
+      "choix": [
+        {
+          "texte": "These are sold hours coming from a sales order that still need to be timesheeted before being invoiced",
+          "couleur_remy": null
+        },
+        {
+          "texte": "These are timesheeted hours linked to a sales order, where the invoicing policy is set to \"prepaid\"",
+          "couleur_remy": null
+        },
+        {
+          "texte": "These are the actual timesheeted hours that cannot be invoiced from the sales order",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P063",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 15,
+      "question": "What does it mean when a timesheet line is in italics?",
+      "choix": [
+        {
+          "texte": "It means the line has been invoiced",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It means the line has been validated",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It means the line is related to a project or task for which the user has not yet submitted a timesheet during the displayed period",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P064",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Timesheets",
+      "page": 15,
+      "question": "What Grid view feature helps identify missing hours in timesheets?",
+      "choix": [
+        {
+          "texte": "By filtering by missing hours",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The color-code system",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The \"Spot missing hours\" feature",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P065",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 15,
+      "question": "How can you configure fiscal positions to apply automatically to contacts based on their country?",
+      "choix": [
+        {
+          "texte": "Select the country and enable the 'Detect Automatically' option on the fiscal position.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Set the customer's fiscal position to 'Detect Automatically'.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Set the invoice's fiscal position to 'Detect Automatically'.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P066",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 15,
+      "question": "How can you set up follow-up actions for payments due from a customer?",
+      "choix": [
+        {
+          "texte": "Set follow-up actions using the Due smartbutton in the customer record.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Create follow-up levels then set reminders in the customer's contact record.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Create follow-up levels then set reminders in Accounting > Customers > Follow-up Reports.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P067",
+      "code_banc": "Q17",
+      "echantillon": true,
+      "module": "Accounting",
+      "page": 15,
+      "question": "Which feature allows you to automatically change the income or expense account that a product should use based on the customer or vendor?",
+      "choix": [
+        {
+          "texte": "Fiscal Positions.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Fiscal Localizations.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Account Groups.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P068",
+      "code_banc": "Q18",
+      "echantillon": true,
+      "module": "Accounting",
+      "page": 16,
+      "question": "What happens when you try to confirm a bill with an Accounting Date before the Lock Tax Return date?",
+      "choix": [
+        {
+          "texte": "Odoo will only allow users with Administrator access rights for the Accounting application to confirm the bill. All other users will receive a validation error explaining that the tax period is locked and the bill cannot be confirmed.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Odoo will allow you to post the bill, but it will alert you that the tax period is locked and the bill should be reviewed.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Odoo will automatically set the Accounting Date to today.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P069",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 16,
+      "question": "What information can you define on a contact record?",
+      "choix": [
+        {
+          "texte": "The default payment method, preferred invoice sending method, and the invoice follow-ups.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The invoice follow-ups, the payment terms, and the costing method.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The default payment terms, default payment method, and outstanding account.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P070",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 16,
+      "question": "How can you automatically cancel all journal entries from before a specific date?",
+      "choix": [
+        {
+          "texte": "Set the specific date in the Invoicing Switch Threshold field in the Accounting settings.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Select all the journal entries from before the specific date in the list view and click Action > Cancel.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "In developer mode, go to the Advanced Settings tab of each journal that you want to cancel journal entries in, enable the Cancel Posted Entries With Hash field, and set the specific date.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P071",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 16,
+      "question": "Is it possible to reconcile a bank entry with a draft invoice?",
+      "choix": [
+        {
+          "texte": "No, draft entries cannot be reconciled with bank transactions because they're not confirmed yet.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Yes, draft entries can be reconciled, but only if the payment generated a journal entry that uses outstanding accounts.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, draft invoices can be matched with bank entries for reconciliation.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P072",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 16,
+      "question": "What checks are automatically processed when reviewing a tax return before its submission?",
+      "choix": [
+        {
+          "texte": "Bank reconciliation, aged payables and receivables, loans, fixed assets, draft entries, and overdue payables and receivables.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Taxes and countries matching, draft entries, bill attachments, bank matching, and company data.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Review, submit, and pay.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P073",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 17,
+      "question": "How can you set a lock date for only vendor bills?",
+      "choix": [
+        {
+          "texte": "Set the Journal Entries Lock Date.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Set the Lock Bills date.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Set the Lock Purchases date.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P074",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 17,
+      "question": "How can you replace a 15% sales tax with a 0% sales tax for customers using the Tax Exempt fiscal position?",
+      "choix": [
+        {
+          "texte": "In the Tax Mapping tab of the Tax Exempt fiscal position, set the 15% tax as the Tax on Product and the 0% tax as the Tax to Apply.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "On the 15% tax record, set the Fiscal Position to Tax Exempt and add the 0% tax to the Replaces field.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "On the 0% tax record, set the Fiscal Position to Tax Exempt and add the 15% tax to the Replaces field.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P075",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 17,
+      "question": "Which of the following statements correctly describes the periodic or perpetual accounting practices?",
+      "choix": [
+        {
+          "texte": "In the periodic method, vendor bills are recorded as expenses, and the inventory (stock valuation) is adjusted in the closing entry.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "In the periodic method, vendor bills are recorded as assets (stock valuation) and are expensed when goods are sold.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "In perpetual accounting, vendor bills are recorded as expenses, and the inventory (stock valuation) is adjusted in the closing entry.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P076",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Accounting",
+      "page": 17,
+      "question": "How can you choose to round an invoice's taxes per invoice line instead of per tax?",
+      "choix": [
+        {
+          "texte": "On the individual invoice, in the Accounting section of the Other Info tab, set the Tax Rounding field to Per Invoice Line.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The tax rounding is automatically set based on country regulations and cannot be changed.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Go to Accounting > Configuration > Taxes, and set the Rounding Method to Round per Line.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P077",
+      "code_banc": "Q19",
+      "echantillon": true,
+      "module": "Spreadsheet",
+      "page": 18,
+      "question": "When you upload an Excel or CSV file and open it with Odoo Spreadsheet, what happens to the original file?",
+      "choix": [
+        {
+          "texte": "By default, it is deleted, but you can opt to preserve the file.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The original file is moved to an 'Uploaded Files' folder.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By default, it is preserved in the same folder unless you check 'Send source file to trash'.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P078",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Spreadsheet",
+      "page": 18,
+      "question": "What is the purpose of field matching when setting up a global filter?",
+      "choix": [
+        {
+          "texte": "It allows the filter to automatically format the output cells based on the field type (e.g., currency, date).",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It allows you to configure access rights to ensure the user is authorized to see the matched field.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It ensures the filter acts on the correct database field for each specific data source in the spreadsheet.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P079",
+      "code_banc": "Q20",
+      "echantillon": true,
+      "module": "Spreadsheet",
+      "page": 18,
+      "question": "In a spreadsheet containing dynamic Odoo data, how can you access an underlying database record, e.g., a specific sales order?",
+      "choix": [
+        {
+          "texte": "By right-clicking the cell and selecting 'See record'.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By selecting the cell, then clicking 'View' then 'Show' from the menu bar.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "By double clicking the cell.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P080",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "HR",
+      "page": 19,
+      "question": "If you wanted to set a color for \"Sick Time Off\" (as displayed in the dashboard view of the Time Off module), where would you go to do this?",
+      "choix": [
+        {
+          "texte": "From Configuration > Time Off Types",
+          "couleur_remy": null
+        },
+        {
+          "texte": "From Management > Time Off",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Colors are set by default and are unchangeable",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P081",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "HR",
+      "page": 19,
+      "question": "How would you set up a mechanism where the amount of time off an employee gets depends on their number of days worked?",
+      "choix": [
+        {
+          "texte": "You create a new Allocation and set the Allocation Type to \"Accrual Allocation\"",
+          "couleur_remy": null
+        },
+        {
+          "texte": "You create a new Time Off type that does not permit Extra Day Requests",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P082",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "HR",
+      "page": 19,
+      "question": "In the Employees app, what does the History smart button do?",
+      "choix": [
+        {
+          "texte": "Allows you to revert to any previous contract",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It shows all versions of the Employee record, and allows you to view past records",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Shows all payslpis for the employee, grouped by job title and salary",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P083",
+      "code_banc": "Q21",
+      "echantillon": true,
+      "module": "HR",
+      "page": 19,
+      "question": "Is it possible for employees to view the onboarding slides in the Referrals app after they've already seen them?",
+      "choix": [
+        {
+          "texte": "Yes, by going to 'Referrals' app > 'Configuration' > 'Onboarding' and click 'Restart Onboarding'.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, by setting the 'Onboarding' option to 'always show'.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "No, they can only be viewed once and cannot be shown again.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P084",
+      "code_banc": "Q22",
+      "echantillon": true,
+      "module": "HR",
+      "page": 19,
+      "question": "How can a user with the required rights change an Employee's presence in the database from Present to Absent?",
+      "choix": [
+        {
+          "texte": "In the Attendances app dashboard, click on the employee",
+          "couleur_remy": null
+        },
+        {
+          "texte": "In the Employees app dashboard, click Presence Icon > Absent",
+          "couleur_remy": null
+        },
+        {
+          "texte": "On the Employee record, click Actions > Presence Control > Set Absent",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P085",
+      "code_banc": "Q23",
+      "echantillon": true,
+      "module": "POS",
+      "page": 20,
+      "question": "What are the preconfigured presets for a restaurant?",
+      "choix": [
+        {
+          "texte": "Delivery, Dine In, and Takeout.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Pickup, Eat In, and Online delivery.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Food truck, Restaurant, and Uber.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P086",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "POS",
+      "page": 20,
+      "question": "What is required when configuring a payment method?",
+      "choix": [
+        {
+          "texte": "Selecting a point of sale.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Selecting a terminal.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Selecting a journal.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P087",
+      "code_banc": "Q24",
+      "echantillon": true,
+      "module": "POS",
+      "page": 20,
+      "question": "If no payment method is selected, what is the default one in the register?",
+      "choix": [
+        {
+          "texte": "Cash.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Card.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Customer account.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P088",
+      "code_banc": "Q25",
+      "echantillon": true,
+      "module": "Purchase",
+      "page": 20,
+      "question": "Where do you define the vendor delivery lead time?",
+      "choix": [
+        {
+          "texte": "On the Product form, go to the Purchase tab",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Go to Purchase > Configuration > Vendor Pricelists",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Both options above are places to define vendor lead time",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P089",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 20,
+      "question": "In Odoo, when can a product have multiple reordering rules?",
+      "choix": [
+        {
+          "texte": "When each rule applies to a different warehouse, location, or route.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Only when using multiple vendors for the same warehouse",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Never. Each product supports only one rule",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P090",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 21,
+      "question": "Is a receipt automatically created when an RFQ is confirmed?",
+      "choix": [
+        {
+          "texte": "Yes, if the Inventory app is installed",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Yes, if there are some \"Goods\"-type products in the RFQ",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Both answers above are true",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P091",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 21,
+      "question": "You have the following vendor pricelist: (1) Azure Interior, Quantity ≥ 20 units, Unit Price = $450; (2) Gemini Furniture, Quantity ≥ 10 units, Unit Price = $470. (3) Gemini Furniture, Quantity ≥ 10 units, Unit Price = $500. An automatic reordering rule is triggered for 12 units. Which vendor and unit price will appear on the generated RFQ?",
+      "choix": [
+        {
+          "texte": "Gemini Furniture - $470",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Azure Interior - $450",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Gemini Furniture - $470 (for 10 units) and $500 (for 2 units)",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P092",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 21,
+      "question": "A product is tracked in inches (in), but its vendor sells in feet (ft), where 1 ft = 12 in. In the vendor's reordering rule, the Minimum = 50, Maximum = 100, and Multiple = ? ft. When the rule triggers, which of the following statements is TRUE?",
+      "choix": [
+        {
+          "texte": "Odoo displays a warning asking if you meant to purchase 72 ft instead of 72 in",
+          "couleur_remy": null
+        },
+        {
+          "texte": "From the reordering rule, you're supposed to order 65 in, but since it's not a multiple of 12, Odoo automatically rounds up to 72 in (6 ft)",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The vendor column shows \"5 ft,\" meaning you must order in multiples of 5 units",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": "énoncé incomplet dans la source (valeur du multiple perdue)"
+    },
+    {
+      "id": "P093",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 21,
+      "question": "When the '3-way matching' feature is activated, how will you know which vendor bills are ready to be paid for received quantities?",
+      "choix": [
+        {
+          "texte": "You won't. The '3-way matching' feature only works when the bill control policy is set to 'On ordered quantities'",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The 'Should Be Paid' field will read 'Yes', under the 'Other Info' tab on the vendor bill",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When the vendor bill's status changes from 'In Payment' to 'Paid'",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P094",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 22,
+      "question": "After confirming a purchase order, what is the purpose of clicking the \"Send PO\" button?",
+      "choix": [
+        {
+          "texte": "To automatically create a vendor bill based on the confirmed purchase order",
+          "couleur_remy": null
+        },
+        {
+          "texte": "To request internal approval from a user with admin access before the purchase order can be confirmed",
+          "couleur_remy": null
+        },
+        {
+          "texte": "To email the confirmed purchase order to the vendor so they can acknowledge the order and send the vendor bill",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P095",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Purchase",
+      "page": 22,
+      "question": "You set \"Based On\" to Last 7 days and \"Replenish for\" to 15 days. Odoo suggests quantities for several products. What data is Odoo using to generate these suggestions?",
+      "choix": [
+        {
+          "texte": "It only considers confirmed purchase orders in the last 7 days to compute daily demand, then multiplies by 15 280",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It averages the price of the product over the last 7 days to compare to what you're paying for the next 15 days to make sure your vendors aren't ripping you off 281",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It looks at quantities delivered over the past 7 days to compute daily demand, then multiplies by 15 and subtracts on-hand stock 282",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P096",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 22,
+      "question": "Which of the following statements is TRUE about products with the product type set to 'Goods' and the Track Inventory field unchecked?",
+      "choix": [
+        {
+          "texte": "Putaway rules cannot be configured for this product",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Reordering rules can be used to restock the product",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The product does not appear in packages",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P097",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 23,
+      "question": "Your warehouse is divided into zones for different product types. You want pickers to process several orders simultaneously while minimizing walking distance between zones. Which configuration best supports this goal?",
+      "choix": [
+        {
+          "texte": "Enable Batch Transfers and group operations by the zone's stock location",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Use cluster picking so each picker handles the pick, pack, and ship steps separately",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Use Wave Transfers and assign a picker to retrieve items in each zone",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P098",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 23,
+      "question": "A delivery method is set to Based on Rules. (1) Order total < $50, Delivery fee = $13 (2) Order total > $50, Delivery fee = $0. Question: You confirm a sales order totalling $55. How much is delivery?",
+      "choix": [
+        {
+          "texte": "$13",
+          "couleur_remy": null
+        },
+        {
+          "texte": "$0",
+          "couleur_remy": null
+        },
+        {
+          "texte": "$55",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P099",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 23,
+      "question": "When performing an inventory adjustment that increases a product's stock from 0 to 5 units, what are the 'Location Types' of the locations involved in the resulting stock move?",
+      "choix": [
+        {
+          "texte": "A move from an 'Internal Location' to an 'Inventory Adjustment' location",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A move from an 'Inventory Loss' location to an 'Internal Location'",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A move between two 'Internal Locations'",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P100",
+      "code_banc": "Q26",
+      "echantillon": true,
+      "module": "Inventory",
+      "page": 23,
+      "question": "What happens when the on-hand quantity of a product is manually updated to increase by 10 units?",
+      "choix": [
+        {
+          "texte": "Nothing; on-hand quantity can only be updated by following the purchasing process",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The forecasted quantity increases by 10 units",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The on-hand quantity updates to 10, and an inventory adjustment is created to account for the difference",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P101",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 23,
+      "question": "Which of the following statements about 'Inventory Adjustments' is FALSE?",
+      "choix": [
+        {
+          "texte": "A stock move with 0 quantity is created from the storage location to the Inventory Loss location when the on-hand and counted quantities match",
+          "couleur_remy": null
+        },
+        {
+          "texte": "You can set the frequency of inventory counts for product categories",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The barcode app shows all inventory counts to do at the selected location",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P102",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 24,
+      "question": "When you update on-hand quantities from 5 units to 4 for a specific product, what stock moves are created?",
+      "choix": [
+        {
+          "texte": "A move of 4 units from an 'Internal Location' to an 'Inventory Loss' location",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A move of 1 unit from an 'Internal Location' to an 'Inventory Loss' location",
+          "couleur_remy": null
+        },
+        {
+          "texte": "A move of 1 unit from an 'Inventory Loss' location to an 'Internal Location'",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P103",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 24,
+      "question": "What removal strategy does Odoo use if nothing is set on the location or product category?",
+      "choix": [
+        {
+          "texte": "FIFO",
+          "couleur_remy": null
+        },
+        {
+          "texte": "LIFO",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Stock moves cannot take place without a specifically defined inventory removal strategy",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P104",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "Inventory",
+      "page": 24,
+      "question": "I CANNOT set the capacity on a location by:",
+      "choix": [
+        {
+          "texte": "Product",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Package type",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Volume",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P105",
+      "code_banc": "Q27",
+      "echantillon": true,
+      "module": "Inventory",
+      "page": 24,
+      "question": "On which document can an expiration date be set for newly received products?",
+      "choix": [
+        {
+          "texte": "Purchase order",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Receipt",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Either the purchase order or receipt",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P106",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 24,
+      "question": "What do the \"Setup Time\" and \"Cleanup Time\" fields on a work center configuration page do?",
+      "choix": [
+        {
+          "texte": "They add extra minutes to the duration of operations performed at that work center",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "They add the same number of minutes to all operations across the company",
+          "couleur_remy": null
+        },
+        {
+          "texte": "They represent periods where labor cost is reduced because employees aren't performing active work",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P107",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 25,
+      "question": "When should a company use the Master Production Schedule (MPS) instead of reordering rules?",
+      "choix": [
+        {
+          "texte": "When it wants to maintain fixed safety stock levels for all products",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When it produces only on demand (Make to Order)",
+          "couleur_remy": null
+        },
+        {
+          "texte": "When it needs to plan production based on seasonal or forecasted demand",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P108",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 25,
+      "question": "When an analytic account is assigned to a MO, how are the related costs recorded?",
+      "choix": [
+        {
+          "texte": "Finished products are posted as revenue, while consumed components appear as costs, and labor is billed through timesheets",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Consumed components and labor costs are recorded as expenses on the linked analytic account (project)",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Finished products and by-products are recorded as revenue on the analytic account",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P109",
+      "code_banc": "Q28",
+      "echantillon": true,
+      "module": "MRP",
+      "page": 25,
+      "question": "Can you use a kit as a component in a bill of materials?",
+      "choix": [
+        {
+          "texte": "Yes",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "No",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Only when the 'BoM Kits' setting is enabled",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P110",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 25,
+      "question": "In the Shop Floor interface, how can an operator move an operation to an alternative work center?",
+      "choix": [
+        {
+          "texte": "Pause the operation, close the work order, and create a new one for the correct work center",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Click \"...\" icon, select \"Modify Routing\", \"Move to work center\", and choose the alternative work center",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Click \"...\", click \"Settings\", and choose \"Move to another work center\"",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P111",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 25,
+      "question": "In the MPS, what does an orange-colored cell indicate about replenishment?",
+      "choix": [
+        {
+          "texte": "A replenishment order has already been generated, but more quantities need to be ordered to meet the Safety Stock Target",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The forecasted demand is higher than the actual demand, so the quantity to replenish is uncertain",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Too many units have already been replenished",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [],
+      "remarque": null
+    },
+    {
+      "id": "P112",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 26,
+      "question": "What must happen in order to mark a subcontracted order as complete?",
+      "choix": [
+        {
+          "texte": "The subcontractor must validate component consumption from the subcontracting portal",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The user must validate the receipt of the product from the subcontractor",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The finished product must be shipped",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P113",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 26,
+      "question": "How do you activate work order dependencies on BoMs?",
+      "choix": [
+        {
+          "texte": "Work order dependencies are activated by default",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Work order dependencies must be activated from Manufacturing settings",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Work order dependencies must be activated in the Manufacturing settings, as well as on the 'Miscellaneous' tab for each specific BoM",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P114",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 26,
+      "question": "What is the \"Register Production\" step on a work order card in the Shop Floor module used for?",
+      "choix": [
+        {
+          "texte": "To confirm that the manufacturing order has been completed",
+          "couleur_remy": null
+        },
+        {
+          "texte": "To mark a work order as \"In Progress\"",
+          "couleur_remy": null
+        },
+        {
+          "texte": "To register the number of units manufactured",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P115",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 26,
+      "question": "If an amount is entered in both \"per workcenter\" and \"per employee\" fields in the \"Cost per hour\" section on a work center form, which value takes precedence?",
+      "choix": [
+        {
+          "texte": "The values are added together",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The value in the \"per workcenter\" field",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The value in the \"per employee field",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P116",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "MRP",
+      "page": 27,
+      "question": "What does it mean when a work center is \"fully productive\"?",
+      "choix": [
+        {
+          "texte": "The work center is operational",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The work center is processing a work order within its expected duration",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "The work center is processing multiple work orders",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P117",
+      "code_banc": "Q29",
+      "echantillon": true,
+      "module": "MRP",
+      "page": 27,
+      "question": "What does it mean when a work center is operating at \"reduced speed\"?",
+      "choix": [
+        {
+          "texte": "The work center is operating more slowly than usual",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The work center does not have enough employees staffing",
+          "couleur_remy": null
+        },
+        {
+          "texte": "The work center is processing a work order that has exceeded its expected duration",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P118",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "STUDIO",
+      "page": 27,
+      "question": "Which property should you use on a field if you want to display an example of how the field should be completed (e.g., 'Enter up to 50 characters')?",
+      "choix": [
+        {
+          "texte": "Placeholder.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Help Tooltip.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Default Value.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P119",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "STUDIO",
+      "page": 27,
+      "question": "How can you ensure users can only choose a year and a month in a date selector, rather than a day?",
+      "choix": [
+        {
+          "texte": "Set the Date format to Numeric and disable 'Show Day'.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Set the 'Minimal Precision' field to 'Month' and the Enable 'Show Year' and 'Show Month'.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P120",
+      "code_banc": "Q30",
+      "echantillon": true,
+      "module": "STUDIO",
+      "page": 27,
+      "question": "What is the effect of editing the Footer content in the Report Editor?",
+      "choix": [
+        {
+          "texte": "The footer of all standard and custom reports is modified.",
+          "couleur_remy": "bleu"
+        },
+        {
+          "texte": "Only the footer of that specific report is modified.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Only the footers of Internal reports are modified, not External reports.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "bleu"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P121",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "STUDIO",
+      "page": 28,
+      "question": "A dynamic table in a report is based on a relational field. Which type(s) of relational fields can be used for this purpose?",
+      "choix": [
+        {
+          "texte": "Many2One only.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Related Fields only.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "One2Many or Many2Many.",
+          "couleur_remy": "vert"
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P122",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "STUDIO",
+      "page": 28,
+      "question": "When setting up an approval step on a button, which option, if enabled, prevents a user who approves one step from approving any other step on the same record?",
+      "choix": [
+        {
+          "texte": "Exclusive Approval.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "Approval Order.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "Sequential Approval.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    },
+    {
+      "id": "P123",
+      "code_banc": null,
+      "echantillon": false,
+      "module": "STUDIO",
+      "page": 28,
+      "question": "What is the primary function of the 'Before Update Domain' in an automation rule?",
+      "choix": [
+        {
+          "texte": "It defines the set of records the rule acts on after the trigger event occurs.",
+          "couleur_remy": null
+        },
+        {
+          "texte": "It defines the conditions a record must meet before the trigger event occurs.",
+          "couleur_remy": "vert"
+        },
+        {
+          "texte": "It specifies the user groups that are allowed to trigger the automation rule.",
+          "couleur_remy": null
+        }
+      ],
+      "couleurs_remy": [
+        "vert"
+      ],
+      "remarque": null
+    }
+  ]
+}

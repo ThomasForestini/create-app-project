@@ -20,7 +20,7 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 
 ### Core
 - [x] Question texte → réponse sourcée (statut *Documenté / À vérifier / Non couvert* + lien doc v20)
-- [ ] Photo de QCM → bonne(s) réponse(s) + brève explication + source, signalement si la doc v20 contredit une question pensée v19
+- [x] Photo de QCM → bonne(s) réponse(s) + brève explication + source, signalement si la doc v20 contredit une question pensée v19
 - [ ] PDF client → plan de configuration Odoo 20 étape par étape (menus, champs, valeurs en EN)
 
 ### Technique
@@ -29,7 +29,7 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 - [x] Recherche : `gemini-embedding-2` (1 536 dim), 1-5 sous-questions, 8-12 passages diversifiés, glossaire FR→EN
 - [x] Rédaction : Claude Sonnet 5.5 (pari de départ), confirmé ou remplacé par le duel de la Phase 1
 - [x] Workflows n8n versionnés dans `workflows/*.workflow.json`
-- [ ] Banc de mesure rejouable (jeux de test existants + échantillon QCM corrigé)
+- [x] Banc de mesure rejouable (jeux de test existants + échantillon QCM corrigé)
 
 ## 4. Hors scope (différé)
 
@@ -58,7 +58,7 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 ## 7. Implementation Phases
 
 - **Phase 1 — Socle + question texte** : pgvector sur VPS + import v20, bot Telegram filtré, workflow question texte → recherche → réponse sourcée à 3 statuts ; duel Sonnet 5.5 vs meilleur Gemini sur les jeux de test existants (106 doc + 12 de référence), modèle gagnant figé. ✅ Terminée le 2026-10-27
-- **Phase 2 — QCM photo** : photo → lecture de la question et des choix (vision) → réponse + explication + source ; corrigé vérifié de 30 questions ; mesure du taux de bonnes réponses.
+- **Phase 2 — QCM photo** : photo → lecture de la question et des choix (vision) → réponse + explication + source ; corrigé vérifié de 30 questions ; mesure du taux de bonnes réponses. ✅ Terminée le 2026-10-31
 - **Phase 3 — PDF client** : PDF → extraction des besoins → plan de configuration Odoo 20 étape par étape ; validé sur les scénarios clients existants (dont MTO).
 - **Phase 4 — Robustesse** : format Telegram lisible (découpage messages longs), gestion d'erreurs visible, journal coûts/latence, workflows `[PROD]`.
 

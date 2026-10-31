@@ -1,0 +1,444 @@
+{
+  "id": "qaSV05SqjoxQI8jL",
+  "name": "[DEV] odoo-qcm",
+  "nodes": [
+    {
+      "id": "e01dceaf-4a7f-5568-812f-66f9d46e6599",
+      "name": "Called by workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "workflowInputs",
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "image_base64",
+              "type": "string"
+            },
+            {
+              "name": "mime_type",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "f4e7e332-dc1c-5fcd-b099-6a68a468a0c7",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        200
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "odoo-qcm",
+        "authentication": "headerAuth",
+        "responseMode": "lastNode",
+        "responseData": "firstEntryJson",
+        "options": {}
+      },
+      "webhookId": "e54da9a1-3fdd-54fb-82d5-ad3640755043",
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "LQqGAUFsqdlaTmb0",
+          "name": "Odoo webhook token"
+        }
+      }
+    },
+    {
+      "id": "bfef19e8-9764-5626-9fb9-6e1a73b34293",
+      "name": "Normalize input",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        220,
+        100
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "image",
+              "name": "image",
+              "type": "string",
+              "value": "={{ ($json.body?.image_base64 ?? $json.image_base64 ?? '').replace(/^data:[^,]*,/, '').replace(/\\s/g, '') }}"
+            },
+            {
+              "id": "mime",
+              "name": "mime",
+              "type": "string",
+              "value": "={{ $json.body?.mime_type ?? $json.mime_type ?? (($json.body?.image_base64 ?? $json.image_base64 ?? '').replace(/^data:[^,]*,/, '').startsWith('/9j/') ? 'image/jpeg' : 'image/png') }}"
+            },
+            {
+              "id": "startedAt",
+              "name": "startedAt",
+              "type": "number",
+              "value": "={{ $now.toMillis() }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "e91c2b2e-6eb0-5174-8bda-01ab6f6438d6",
+      "name": "Read image (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        100
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\"model\": \"claude-sonnet-5-5\", \"max_tokens\": 2000, \"output_config\": {\"effort\": \"low\", \"format\": {\"type\": \"json_schema\", \"schema\": {\"type\": \"object\", \"properties\": {\"lisible\": {\"type\": \"boolean\"}, \"raison\": {\"type\": \"string\"}, \"question\": {\"type\": \"string\"}, \"choix\": {\"type\": \"array\", \"items\": {\"type\": \"string\"} }, \"plusieurs_reponses\": {\"type\": \"boolean\"} }, \"required\": [\"lisible\", \"raison\", \"question\", \"choix\", \"plusieurs_reponses\"], \"additionalProperties\": false} } }, \"system\": \"Tu lis des photos ou captures d'écran de questions de certification Odoo et tu les recopies fidèlement.\", \"messages\": [{\"role\": \"user\", \"content\": [{\"type\": \"image\", \"source\": {\"type\": \"base64\", \"media_type\": $json.mime, \"data\": $json.image} }, {\"type\": \"text\", \"text\": \"Cette image doit montrer une question à choix multiples de la certification Odoo. Ne réponds pas à la question : recopie-la.\\n- \\\"question\\\" : l'énoncé mot pour mot, dans sa langue d'origine (souvent l'anglais), sans numéro de question.\\n- \\\"choix\\\" : chaque choix mot pour mot, dans l'ordre d'affichage, sans lettre, puce ni case.\\n- \\\"plusieurs_reponses\\\" : vrai seulement si l'écran indique que plusieurs réponses sont attendues (cases à cocher, « select all that apply », « choose two »…).\\n- \\\"lisible\\\" : faux si l'image ne contient pas de QCM, ou si l'énoncé ou un choix est coupé, flou ou masqué au point de ne pas pouvoir le recopier avec certitude. N'invente ni ne complète aucun mot.\\n- \\\"raison\\\" : si \\\"lisible\\\" est faux, ce qui manque ou gêne la lecture, en une phrase en français ; sinon chaîne vide.\"}]}]}) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "2739acf5-b66d-5f22-a001-6f4059954f93",
+      "name": "Parse reading",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        660,
+        100
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "lecture",
+              "name": "lecture",
+              "type": "object",
+              "value": "={{ JSON.parse($json.content.find((c) => c.type === 'text').text) }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "44da2ba4-3471-51d2-b4bc-32d764837c66",
+      "name": "Readable?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        880,
+        100
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "r",
+              "leftValue": "={{ $json.lecture.lisible && $json.lecture.choix.length >= 2 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "8683dc17-30a3-5537-8271-08a71195e401",
+      "name": "Ask odoo-question",
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.4,
+      "position": [
+        1100,
+        0
+      ],
+      "parameters": {
+        "source": "database",
+        "workflowId": {
+          "__rl": true,
+          "value": "KwhsROllaxRj74UA",
+          "mode": "id"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "question": "={{ $json.lecture.question + ($json.lecture.plusieurs_reponses ? '\\n(Plusieurs réponses attendues.)' : '') }}",
+            "choix": "={{ $json.lecture.choix }}",
+            "model": "claude-sonnet-5-5"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "question",
+              "displayName": "question",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            },
+            {
+              "id": "choix",
+              "displayName": "choix",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "array"
+            },
+            {
+              "id": "model",
+              "displayName": "model",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string"
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": false
+        },
+        "mode": "once",
+        "options": {
+          "waitForSubWorkflow": true
+        }
+      }
+    },
+    {
+      "id": "b5234091-5041-58b3-9438-58c147bc5399",
+      "name": "Answer",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1320,
+        0
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": true,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "lisible",
+              "name": "lisible",
+              "type": "boolean",
+              "value": "={{ true }}"
+            },
+            {
+              "id": "question_lue",
+              "name": "question_lue",
+              "type": "string",
+              "value": "={{ $('Parse reading').first().json.lecture.question }}"
+            },
+            {
+              "id": "plusieurs_reponses",
+              "name": "plusieurs_reponses",
+              "type": "boolean",
+              "value": "={{ $('Parse reading').first().json.lecture.plusieurs_reponses }}"
+            },
+            {
+              "id": "cout",
+              "name": "cout",
+              "type": "object",
+              "value": "={{ { usd: Math.round(((($json.cout?.usd) ?? 0) + (($('Read image (Claude)').first().json.usage.input_tokens * 2 + $('Read image (Claude)').first().json.usage.output_tokens * 10) / 1e6)) * 1e5) / 1e5, details: [{ etape: 'lecture image', modele: 'claude-sonnet-5-5', usd: Math.round((($('Read image (Claude)').first().json.usage.input_tokens * 2 + $('Read image (Claude)').first().json.usage.output_tokens * 10) / 1e6) * 1e5) / 1e5 }, ...($json.cout?.details ?? [])] } }}"
+            },
+            {
+              "id": "dureeMs",
+              "name": "dureeMs",
+              "type": "number",
+              "value": "={{ Date.now() - $('Normalize input').first().json.startedAt }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "f9ab75b4-78fa-5828-abf2-c52abaf7d65f",
+      "name": "Ask for new photo",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1100,
+        220
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "lisible",
+              "name": "lisible",
+              "type": "boolean",
+              "value": "={{ false }}"
+            },
+            {
+              "id": "raison",
+              "name": "raison",
+              "type": "string",
+              "value": "={{ $json.lecture.raison || 'Moins de deux choix lus.' }}"
+            },
+            {
+              "id": "message",
+              "name": "message",
+              "type": "string",
+              "value": "Je n'arrive pas à lire la question en entier. Renvoie une photo nette, de face, avec l'énoncé et tous les choix."
+            },
+            {
+              "id": "cout",
+              "name": "cout",
+              "type": "object",
+              "value": "={{ { usd: Math.round((($('Read image (Claude)').first().json.usage.input_tokens * 2 + $('Read image (Claude)').first().json.usage.output_tokens * 10) / 1e6) * 1e5) / 1e5, details: [{ etape: 'lecture image', modele: 'claude-sonnet-5-5', usd: Math.round((($('Read image (Claude)').first().json.usage.input_tokens * 2 + $('Read image (Claude)').first().json.usage.output_tokens * 10) / 1e6) * 1e5) / 1e5 }] } }}"
+            },
+            {
+              "id": "dureeMs",
+              "name": "dureeMs",
+              "type": "number",
+              "value": "={{ Date.now() - $('Normalize input').first().json.startedAt }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Called by workflow": {
+      "main": [
+        [
+          {
+            "node": "Normalize input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Normalize input",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Normalize input": {
+      "main": [
+        [
+          {
+            "node": "Read image (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read image (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Parse reading",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse reading": {
+      "main": [
+        [
+          {
+            "node": "Readable?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Readable?": {
+      "main": [
+        [
+          {
+            "node": "Ask odoo-question",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Ask for new photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Ask odoo-question": {
+      "main": [
+        [
+          {
+            "node": "Answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

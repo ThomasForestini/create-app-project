@@ -1,0 +1,395 @@
+{
+  "note": "Pré-rempli par Claude le 28/10/2026 depuis la doc v20 indexée (recherche par mots-clés, sans passer par odoo-question). Thomas relit chaque ligne (doc ou runbot) et passe valide à true.",
+  "questions": [
+    {
+      "code_banc": "Q01",
+      "id": "P002",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/essentials/search.html",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "Cliquer sur l'indicateur de pagination d'une vue liste et saisir une plage allant jusqu'à 1 000. La documentation v20 citée ne décrit pas ce geste ; confirmation indirecte par le forum Odoo, sans essai runbot.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q02",
+      "id": "P003",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/general/developer_mode.html#developer-tools-and-technical-menu",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "« Database administrators can access the technical menu from the Settings app » une fois le mode développeur activé.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q03",
+      "id": "P010",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/margin.html#margin-calculation-with-a-pricelist",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Les lignes ajoutées après la modification utilisent la liste de prix du devis, ici Consumer, et non la liste Retailer de la fiche client.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q04",
+      "id": "P016",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html#deliver-goods-directly-1-step",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "La quantité en stock diminue lors de la validation du bon de livraison. La confirmation de la commande crée la livraison et peut modifier le prévisionnel, sans réduire à elle seule le stock disponible.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q05",
+      "id": "P017",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/marketing/surveys/questions.html#conditional-display-section",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Options tab ‣ Conditional Display ‣ Triggering Answers.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q06",
+      "id": "P025",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/essentials/property_fields.html#properties-across-apps",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "La propriété est liée à l'équipe commerciale ; elle est visible sur les opportunités concernées pour toute personne ayant accès à ces opportunités, sans restriction aux seuls managers.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q07",
+      "id": "P031",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/productivity/ai/agents.html#skills",
+      "methode": "doc",
+      "ecart_v19_v20": true,
+      "confiance": "haute",
+      "note": "v20 : les « Topics » s'appellent « Skills ». Sans skill, l'agent ne fait que fournir de l'information.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q08",
+      "id": "P033",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/productivity/ai/agents.html#skills",
+      "methode": "doc",
+      "ecart_v19_v20": true,
+      "confiance": "haute",
+      "note": "Skill préconfiguré « Information retrieval » (Topic en v19).",
+      "valide": true
+    },
+    {
+      "code_banc": "Q09",
+      "id": "P036",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/marketing/email_marketing/mailing_lists.html#create-mailing-lists",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Une même liste a les boutons Send Mailing et Send SMS ; Mailing Contacts partagé entre Email et SMS Marketing.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q10",
+      "id": "P041",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/websites/website/structure/header_footer.html#header-and-footer-design",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Style tab : Header Position = Hidden ; footer : Page visibility.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q11",
+      "id": "P043",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/sales/sales/products_prices/products/variants.html#attributes",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "B est le meilleur choix parmi les trois : c'est le Display Type de l'attribut qui détermine la présentation des variantes. Réserve : la documentation v20 situe ce réglage sur la fiche de l'attribut (Ventes > Produits > Attributs), et non explicitement dans l'onglet Style de l'éditeur web. Le « Block display type » de A ne désigne pas ce réglage.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q12",
+      "id": "P046",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/productivity/knowledge.html#commands",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Commandes exclusives Knowledge : Index, Item Kanban/Cards/List/Calendar, Clipboard, Foldable Section, Article.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q13",
+      "id": "P048",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/productivity/knowledge.html#basic-management",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "CTRL/CMD + K puis « ? » pour les articles visibles, « $ » pour les articles masqués.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q14",
+      "id": "P053",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/services/project/project_management/project_dashboard.html#milestones",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Vert = prêt à être marqué atteint (tâches liées done ou canceled).",
+      "valide": true
+    },
+    {
+      "code_banc": "Q15",
+      "id": "P056",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/services/project/tasks/task_creation.html#task-configuration",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "« #tags » ajoute des étiquettes ; « ! » met la priorité haute.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q16",
+      "id": "P059",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/services/timesheets/billing_rates.html#configuration",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Billing Time Target sur la fiche employé, onglet Settings.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q17",
+      "id": "P067",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/taxes/fiscal_positions.html",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Les positions fiscales adaptent taxes et comptes de revenus/charges.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q18",
+      "id": "P068",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/finance/accounting/reporting/tax_returns.html#tax-return-lock-date",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "faible",
+      "note": "C est le choix le plus proche car Odoo ajuste automatiquement la date comptable d'une facture placée dans une période verrouillée. Attention : « today » n'est pas une règle générale ; la date est reportée à une période ouverte (selon le verrou et le journal). La documentation fiscale v20 indique aussi le report des valeurs de taxe. A et B ne décrivent pas correctement ce mécanisme ; aucun choix n'est parfaitement exact.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q19",
+      "id": "P077",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/productivity/spreadsheet/get_started.html#upload-files",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Par défaut, le fichier source est supprimé ; décocher « Send source file to trash » pour le garder.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q20",
+      "id": "P079",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/productivity/spreadsheet/insert.html#accessing-underlying-data",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Clic droit ‣ See record.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q21",
+      "id": "P083",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/hr/referrals.html#onboarding",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "Après « Start Now », les diapositives d'accueil de Referrals ne sont plus montrées à l'employé. Le menu de configuration sert à modifier l'accueil, pas à le relancer pour lui.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q22",
+      "id": "P084",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/hr/employees.html",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "Le contrôle manuel de présence passe par la carte employé en vue Kanban de l'application Employés et son icône de présence ; choisir Absent. Le cours officiel Odoo confirme l'usage de la vue Kanban pour ajuster la présence. La documentation v20 ne détaille pas ce clic exact ; runbot était inaccessible.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q23",
+      "id": "P085",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/extra/presets.html",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Les trois types de service proposés pour un restaurant sont Dine In, Takeout et Delivery.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q24",
+      "id": "P087",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/sales/point_of_sale/payment_methods.html",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "Cash est sélectionné par défaut si un montant est saisi sans choisir de moyen de paiement. Cette règle est explicite dans la documentation officielle Odoo 18 ; la page v20 citée décrit les moyens de paiement mais ne répète pas cette phrase. Pas d'essai runbot possible.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q25",
+      "id": "P088",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Delivery Lead Time dans l'onglet Purchase du produit, ou Purchase ‣ Configuration ‣ Vendor Pricelists.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q26",
+      "id": "P100",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/count_products.html#create-an-inventory-adjustment",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "moyenne",
+      "note": "La modification manuelle de la quantité disponible produit un ajustement d'inventaire. C est le meilleur choix ; « updates to 10 » est imprécis si la quantité initiale n'est pas zéro : l'augmentation est de 10 unités, pas nécessairement un total de 10.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q27",
+      "id": "P105",
+      "bonnes_reponses": [
+        "B"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/product_tracking/expiration_dates.html#set-expiration-dates-on-receipts-with-lots-serial-numbers",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Saisie sur la réception (Detailed Operations, lot/série).",
+      "valide": true
+    },
+    {
+      "code_banc": "Q28",
+      "id": "P109",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/advanced_configuration/kit_shipping.html",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Oui. Un kit peut organiser des composants dans une nomenclature plus complexe : sa nomenclature est imbriquée dans une autre nomenclature, sans réglage « BoM Kits » supplémentaire.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q29",
+      "id": "P117",
+      "bonnes_reponses": [
+        "C"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/reporting/oee.html#reduced-speed",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "Mot pour mot dans la doc v20.",
+      "valide": true
+    },
+    {
+      "code_banc": "Q30",
+      "id": "P120",
+      "bonnes_reponses": [
+        "A"
+      ],
+      "url_doc_v20": "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#report-editor",
+      "methode": "doc",
+      "ecart_v19_v20": false,
+      "confiance": "haute",
+      "note": "« Editing the header and footer of a report impacts all standard and custom reports. »",
+      "valide": true
+    }
+  ]
+}

@@ -1,0 +1,556 @@
+{
+  "name": "[DEV] odoo-plan",
+  "nodes": [
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000001",
+      "name": "Called by workflow",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        0,
+        0
+      ],
+      "parameters": {
+        "inputSource": "workflowInputs",
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "pdf",
+              "type": "string"
+            },
+            {
+              "name": "texte",
+              "type": "string"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000002",
+      "name": "Webhook",
+      "webhookId": "d4a7b2c9-3e1f-4b6a-9c8d-2f0e1a3b5c7d",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        200
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "odoo-plan",
+        "authentication": "headerAuth",
+        "responseMode": "lastNode",
+        "responseData": "firstEntryJson",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "LQqGAUFsqdlaTmb0",
+          "name": "Odoo webhook token"
+        }
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000003",
+      "name": "Build extraction request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        240,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: prompt d'extraction, schéma de sortie et bloc PDF ou texte du document client.\nconst input = $json.body ?? $json;\nconst pdf = String(input.pdf ?? '').trim();\nconst texte = String(input.texte ?? '').trim();\nif (!pdf && !texte) throw new Error('Ni PDF ni texte reçu : envoyer \"pdf\" (base64) ou \"texte\".');\n\nconst SYSTEM = `Tu es l'assistant d'un consultant fonctionnel Odoo. Tu lis un document client (compte rendu de rendez-vous, transcription, cahier des charges) pour préparer un paramétrage d'Odoo 20.0. Tu réponds en français.\n\nRègles impératives :\n1. \"besoins\" : un besoin par fonctionnalité à paramétrer dans Odoo (ex. vente avec signature en ligne, réapprovisionnement à la commande, tickets de support). Regroupe ce qui se paramètre au même endroit, sépare ce qui relève de modules différents. 12 besoins au maximum.\n   - \"titre\" : quelques mots ;\n   - \"besoin\" : une phrase autonome, compréhensible sans le document, qui décrit ce que le client veut obtenir dans Odoo, avec le vocabulaire métier du document ;\n   - \"contexte\" : les données du document utiles à ce besoin (noms, délais, montants, sites, adresses), recopiées telles quelles, chacune suivie entre parenthèses de l'objet auquel le document la rattache (ex. « Lumitech SAS (fournisseur des luminaires sur mesure uniquement) ») ; chaîne vide s'il n'y en a pas ;\n   - \"extrait\" : la phrase du document d'où vient le besoin.\n2. \"donnees_client\" : chaque donnée factuelle présente dans le document (société, interlocuteur, fournisseurs, délais, montants, sites, volumes, adresses e-mail). \"valeur\" est recopiée du document, \"objet\" dit à quoi le document la rattache (une famille de produits, un flux, un site, la société ; « général » si elle vaut pour tout), \"extrait\" est la phrase d'où elle vient. N'invente jamais une donnée absente : ni prix, ni fournisseur, ni délai, ni quantité, ni nom de produit.\n3. \"questions_ouvertes\" : les décisions que le document dit non prises (« pas encore décidé », « à voir », « je sais pas »), puis les informations manquantes sans lesquelles un besoin ne peut pas être paramétré (ex. seuils de réapprovisionnement, fournisseur non nommé, prix d'achat). Chaque question cite le besoin concerné (\"besoin\" = son numéro, ou 0 si elle est générale) et dit pourquoi elle se pose.\n4. \"edition\" : l'édition d'Odoo si le document la mentionne (\"Community\" ou \"Enterprise\"), sinon \"Non précisée\".\n5. Un document qui exprime peu de besoins concrets donne peu de besoins et beaucoup de questions : ne complète pas avec des besoins supposés.\n6. Ne propose aucun paramétrage, aucun menu ni aucune solution : tu extrais seulement ce que dit le document.\n7. \"lots\" : regroupe les besoins à paramétrer en 5 lots au plus, un lot par ensemble de besoins qui se paramètrent dans le même module ou le même flux (ex. produits + fournisseur + commande fournisseur automatique + traçabilité). Un besoin qui n'est qu'une décision non prise ou une donnée à fournir n'entre dans aucun lot : il reste une question ouverte. Ne mets jamais dans un même lot deux familles de produits ou deux flux dont les données diffèrent (ex. produits stockés et produits commandés à la demande, s'ils n'ont pas le même fournisseur)  : fais un lot par famille. Un lot regroupe 3 besoins au plus : au-delà, coupe-le par fonction (ex. produit et fournisseur / commande et suivi / entrepôt et livraison).\n   - \"besoins\" : les numéros des besoins du lot (1 pour le premier besoin de la liste) ;\n   - \"question\" : une phrase autonome qui demande comment paramétrer ces besoins dans Odoo 20.0, avec le vocabulaire métier ;\n   - \"contexte\" : les données du document utiles au lot, recopiées telles quelles, chacune avec l'objet auquel elle se rapporte entre parenthèses.`;\n\nconst SCHEMA = {\n  type: 'object',\n  properties: {\n    client: { type: 'string' },\n    edition: { type: 'string', enum: ['Community', 'Enterprise', 'Non précisée'] },\n    besoins: { type: 'array', items: { type: 'object', properties: { titre: { type: 'string' }, besoin: { type: 'string' }, contexte: { type: 'string' }, extrait: { type: 'string' } }, required: ['titre', 'besoin', 'contexte', 'extrait'], additionalProperties: false } },\n    donnees_client: { type: 'array', items: { type: 'object', properties: { donnee: { type: 'string' }, valeur: { type: 'string' }, objet: { type: 'string' }, extrait: { type: 'string' } }, required: ['donnee', 'valeur', 'objet', 'extrait'], additionalProperties: false } },\n    questions_ouvertes: { type: 'array', items: { type: 'object', properties: { question: { type: 'string' }, besoin: { type: 'integer' }, raison: { type: 'string' } }, required: ['question', 'besoin', 'raison'], additionalProperties: false } },\n    lots: { type: 'array', items: { type: 'object', properties: { besoins: { type: 'array', items: { type: 'integer' } }, question: { type: 'string' }, contexte: { type: 'string' } }, required: ['besoins', 'question', 'contexte'], additionalProperties: false } },\n  },\n  required: ['client', 'edition', 'besoins', 'donnees_client', 'questions_ouvertes', 'lots'],\n  additionalProperties: false,\n};\n\nconst docBlock = pdf\n  ? { type: 'document', source: { type: 'base64', media_type: 'application/pdf', data: pdf } }\n  : { type: 'text', text: `Document client :\\n\\n${texte}` };\n\nreturn {\n  json: {\n    source: pdf ? 'pdf' : 'texte',\n    startedAt: Date.now(),\n    extractBody: {\n      model: 'claude-sonnet-5-5',\n      max_tokens: 8000,\n      output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: [docBlock, { type: 'text', text: 'Extrais les besoins, les données client, les questions ouvertes et les lots de ce document.' }] }],\n    },\n  },\n};\n"
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000004",
+      "name": "Extract needs (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "position": [
+        480,
+        100
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.extractBody) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000005",
+      "name": "Read extraction",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        720,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: lecture de la sortie structurée, numérotation des besoins, coût et latence.\nconst req = $('Build extraction request').first().json;\nconst raw = ($json.content ?? []).find((c) => c.type === 'text')?.text ?? '';\nlet x;\ntry { x = JSON.parse(raw); } catch (e) { throw new Error(`Extraction illisible : ${raw.slice(0, 200)}`); }\n\nconst u = $json.usage ?? {};\nconst entree = (u.input_tokens ?? 0) + (u.cache_creation_input_tokens ?? 0) + (u.cache_read_input_tokens ?? 0);\nconst sortie = u.output_tokens ?? 0;\n// Tarif Sonnet 5.5 par million de tokens (Anthropic au 06/10/2026) : 2 USD en entrée, 10 USD en sortie.\nconst usd = Math.round(((entree * 2 + sortie * 10) / 1e6) * 1e5) / 1e5;\n\nreturn [{\n  json: {\n    source: req.source,\n    client: x.client,\n    edition: x.edition,\n    besoins: x.besoins.map((b, i) => ({ n: i + 1, ...b })),\n    donnees_client: x.donnees_client,\n    questions_ouvertes: x.questions_ouvertes,\n    lots: x.lots.slice(0, 5).map((l, i) => ({ n: i + 1, ...l })),\n    cout: { usd, details: [{ etape: 'extraction', modele: 'claude-sonnet-5-5', entree, sortie, usd }] },\n    dureeMs: Date.now() - req.startedAt,\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000006",
+      "name": "One item per lot",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        960,
+        100
+      ],
+      "parameters": {
+        "fieldToSplitOut": "lots",
+        "include": "noOtherFields",
+        "options": {}
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000007",
+      "name": "Configure lot (odoo-question)",
+      "notes": "Une requête par lot, envoyées en parallèle (pas de batching) : Execute Workflow les enchaînerait et dépasserait 3 min.",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "onError": "continueRegularOutput",
+      "position": [
+        1200,
+        100
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://n8n-ijcp.srv1468750.hstgr.cloud/webhook/odoo-question",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendQuery": false,
+        "sendHeaders": false,
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ mode: 'config', question: $json.question, contexte: $json.contexte, web: false }) }}",
+        "options": {
+          "timeout": 170000
+        }
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "LQqGAUFsqdlaTmb0",
+          "name": "Odoo webhook token"
+        }
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000008",
+      "name": "Build assembly request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1440,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: étapes numérotées de tous les lots, prompt et schéma d'assemblage.\nconst ext = $('Read extraction').first().json;\nconst lots = $input.all().map((it, i) => ({ lot: ext.lots[i], r: it.json }));\n\nconst refs = [];\nconst blocks = lots.map(({ lot, r }) => {\n  if (!Array.isArray(r.etapes)) return `Lot ${lot.n} (besoins ${lot.besoins.join(', ')}) : échec de la recherche (${r.error?.message ?? r.message ?? 'réponse invalide'}).`;\n  const lines = r.etapes.map((e, k) => {\n    const ref = `L${lot.n}.${k + 1}`;\n    refs.push(ref);\n    return `- ${ref} [${e.statut}] ${e.action} | menu : ${e.menu || '—'} | champ : ${e.champ || '—'} | valeur : ${e.valeur || '—'}`;\n  });\n  const extra = [\n    ...r.avertissements.map((a) => `  Avertissement : ${a.texte}`),\n    ...r.nonCouvert.map((g) => `  Non couvert : ${g}`),\n  ];\n  return `Lot ${lot.n} (besoins ${lot.besoins.join(', ')}) : ${lot.question}\\nÉtapes :\\n${lines.join('\\n') || '(aucune)'}\\n${extra.join('\\n')}\\nPages : ${[...new Set(r.sources.map((s) => s.url.split('#')[0]))].join(' ; ')}`;\n}).join('\\n\\n');\n\nconst SYSTEM = `Tu assembles le plan de paramétrage Odoo 20.0 d'un client à partir des étapes déjà recherchées et contrôlées, lot par lot. Tu réponds en français.\n\nRègles impératives :\n1. \"etapes\" : toutes les étapes utiles des lots, dans l'ordre d'exécution, chacune citée par sa référence (\"ref\", ex. L1.3). Garde toute étape [Documenté] sauf doublon, contradiction avec le document ou réglage non demandé : n'écarte jamais une étape sur une supposition (« le réglage par défaut suffit ») qu'aucun lot ne dit. Ordonne les dépendances : installation d'une app, puis réglage qui fait apparaître un champ, puis enregistrement créé (ex. fournisseur), puis champ qui le sélectionne. Supprime les doublons (une même opération citée par deux lots : garde une seule référence). Écarte une étape qui contredit le document client ou qui ajoute un réglage que le client n'a pas demandé, en particulier : une étape qui ne fait que confirmer un comportement par défaut d'Odoo (ex. réception ou livraison en 1 étape quand un lot indique que c'est le réglage par défaut) et tout réglage multi-étapes (**Multi-Step Routes**, réception ou livraison en 2 ou 3 étapes) que le client n'exige pas ; dis-le alors dans \"avertissements\". Écarte aussi une étape qui place une donnée client dans un champ qui ne lui correspond pas (ex. le délai d'un fournisseur dans le délai de livraison au client), ou qui l'applique à un autre objet que celui auquel les données client la rattachent (ex. le fournisseur d'une famille de produits proposé pour une autre famille, même « si » c'est le cas).\nÉcarte aussi une étape contredite par un avertissement d'un autre lot sur un changement de version (ex. un lot dit que la route **Buy** est masquée par défaut depuis Odoo 19.0 : écarte l'étape qui fait activer **Buy**), et dis-le dans \"avertissements\".\nUne action de test ou d'utilisation (confirmer une commande, valider une réception ou une livraison, ouvrir un document pour vérifier) n'est pas une étape de paramétrage : mets-la dans \"tests\". \"ecartees\" : chaque référence que tu ne retiens pas, avec sa raison courte (doublon de Lx.y, action de test, réglage non demandé, contredit…) ; toute référence ni retenue ni écartée sera remise dans le plan.\n2. Tu ne modifies jamais une étape : tu choisis et ordonnes les références. L'installation des apps et la création des fournisseurs sont ajoutées par le code : ne les liste pas. \"a_chercher\" : les opérations de paramétrage Odoo indispensables aux besoins qu'aucune étape ne couvre (ex. un point « Non couvert » d'un lot, un réglage qui manque entre deux étapes), 5 au plus, jamais une action de test, une décision ou une donnée du client, ni ce que le comportement par défaut d'Odoo couvre déjà, ni un réglage multi-étapes non exigé ; \"apres\" = la référence de l'étape après laquelle l'insérer (vide pour le début). Elles seront cherchées sur le web.\n3. \"tests\" : un test de bout en bout par flux métier du client, en étapes courtes avec les boutons et menus en anglais tels qu'ils figurent dans les étapes ou les avertissements, et \"pages\" = les pages des lots qui décrivent ce flux.\n4. \"questions\" : les questions ouvertes du document, puis les points non couverts des lots qui demandent une décision ou une donnée du client. Pas de doublon.\n5. \"avertissements\" : édition requise (Enterprise) si un lot l'indique, limites et prérequis signalés par les lots. Pas de doublon.\n6. N'invente aucune donnée client : prix, délai, fournisseur, quantité restent « À renseigner » s'ils ne figurent pas dans les données client.`;\n\nconst step = { type: 'object', properties: { ref: { type: 'string' }, besoins: { type: 'array', items: { type: 'integer' } } }, required: ['ref', 'besoins'], additionalProperties: false };\nconst missing = { type: 'object', properties: { apres: { type: 'string' }, operation: { type: 'string' }, besoins: { type: 'array', items: { type: 'integer' } } }, required: ['apres', 'operation', 'besoins'], additionalProperties: false };\nconst SCHEMA = {\n  type: 'object',\n  properties: {\n    resume: { type: 'string' },\n    etapes: { type: 'array', items: step },\n    a_chercher: { type: 'array', items: missing },\n    ecartees: { type: 'array', items: { type: 'object', properties: { ref: { type: 'string' }, raison: { type: 'string' } }, required: ['ref', 'raison'], additionalProperties: false } },\n    tests: { type: 'array', items: { type: 'object', properties: { titre: { type: 'string' }, etapes: { type: 'array', items: { type: 'string' } }, pages: { type: 'array', items: { type: 'string' } } }, required: ['titre', 'etapes', 'pages'], additionalProperties: false } },\n    questions: { type: 'array', items: { type: 'object', properties: { question: { type: 'string' }, besoin: { type: 'integer' }, raison: { type: 'string' } }, required: ['question', 'besoin', 'raison'], additionalProperties: false } },\n    avertissements: { type: 'array', items: { type: 'string' } },\n  },\n  required: ['resume', 'etapes', 'a_chercher', 'ecartees', 'tests', 'questions', 'avertissements'],\n  additionalProperties: false,\n};\n\nconst besoins = ext.besoins.map((b) => `${b.n}. ${b.titre} : ${b.besoin}`).join('\\n');\nconst donnees = ext.donnees_client.map((d) => `- ${d.donnee} : ${d.valeur} (${d.objet})`).join('\\n');\nconst questions = ext.questions_ouvertes.map((q) => `- (besoin ${q.besoin}) ${q.question} — ${q.raison}`).join('\\n');\nconst user = `Client : ${ext.client} (édition : ${ext.edition})\\n\\nBesoins :\\n${besoins}\\n\\nDonnées client :\\n${donnees || '(aucune)'}\\n\\nQuestions ouvertes du document :\\n${questions || '(aucune)'}\\n\\n---\\n\\n${blocks}`;\n\nreturn [{\n  json: {\n    lots: lots.map(({ lot, r }) => ({ lot, r })),\n    refs,\n    assemblyBody: {\n      model: 'claude-sonnet-5-5',\n      max_tokens: 8000,\n      output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: user }],\n    },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000009",
+      "name": "Assemble plan (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "position": [
+        1680,
+        100
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.assemblyBody) }}",
+        "options": {
+          "timeout": 150000
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000010",
+      "name": "Finalize plan",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3000,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: étapes reprises des lots avec leur statut et leur source, coût total et rendu Markdown.\nconst ext = $('Read extraction').first().json;\nconst asm = $('Build assembly request').first().json;\nconst res = $('Assemble plan (Claude)').first().json;\nconst raw = (res.content ?? []).find((c) => c.type === 'text')?.text ?? '';\nlet p;\ntry { p = JSON.parse(raw); } catch (e) { throw new Error(`Assemblage illisible : ${raw.slice(0, 200)}`); }\n\n// Étape d'origine par référence : statut, source et champs ne viennent jamais de l'assemblage.\nconst byRef = new Map();\nfor (const { lot, r } of asm.lots) (r.etapes ?? []).forEach((e, k) => byRef.set(`L${lot.n}.${k + 1}`, { lot: lot.n, e }));\nconst seen = new Set();\nconst etapes = [];\nfor (const s of p.etapes) {\n  const o = byRef.get(s.ref);\n  if (o && seen.has(s.ref)) continue;\n  if (o) {\n    seen.add(s.ref);\n    etapes.push({ n: etapes.length + 1, ref: s.ref, besoins: s.besoins, action: o.e.action, menu: o.e.menu, champ: o.e.champ, valeur: o.e.valeur, detail: o.e.texte, statut: o.e.statut, source: o.e.source, ...(o.e.raison ? { raison: o.e.raison } : {}) });\n  }\n}\n\n// Étape « Documenté » d'un lot ni retenue ni écartée (avec raison) par l'assemblage : remise après l'étape qui la précède dans son lot.\nconst ecartees = new Map((p.ecartees ?? []).map((x) => [x.ref, x.raison]));\nfor (const { lot, r } of asm.lots) {\n  (r.etapes ?? []).forEach((e, k) => {\n    const ref = `L${lot.n}.${k + 1}`;\n    if (seen.has(ref) || ecartees.has(ref) || e.statut !== 'Documenté') return;\n    let at = -1;\n    for (let j = k; j >= 1 && at < 0; j--) at = etapes.findIndex((x) => x.ref === `L${lot.n}.${j}`);\n    etapes.splice(at + 1, 0, { n: 0, ref, besoins: [], action: e.action, menu: e.menu, champ: e.champ, valeur: e.valeur, detail: e.texte, statut: e.statut, source: e.source, remise: true });\n    seen.add(ref);\n  });\n}\n\n// Opérations manquantes : étape 🌐 Web si le web l'a trouvée et que le contrôle la garde, sinon « À vérifier ».\nconst webRes = $('Search web (plan)').isExecuted ? $('Search web (plan)').first().json : null;\nconst wcheck = $('Check web steps (Claude)').isExecuted ? $('Check web steps (Claude)').first().json : null;\nconst cands = $('Build web check (plan)').isExecuted ? $('Build web check (plan)').first().json.candidates : [];\nlet verdicts = new Map();\ntry { verdicts = new Map(JSON.parse((wcheck?.content ?? []).find((c) => c.type === 'text')?.text ?? '{\"verdicts\":[]}').verdicts.map((v) => [v.id, v])); } catch (e) { /* contrôle illisible : aucune étape web gardée */ }\nconst rejetsWeb = [];\n$('Build web request (plan)').first().json.points.forEach((pt, k) => {\n  const c = cands.find((x) => x.point === k);\n  const v = c && verdicts.get(c.id);\n  let step;\n  if (c && v?.garder) {\n    const { id, point, apres, operation, ...s } = c;\n    step = { n: 0, ref: 'web', ...s, statut: 'Web' };\n  } else {\n    if (c) rejetsWeb.push({ operation: pt.operation, action: c.action, source: c.source, raison: v?.raison ?? 'Non contrôlée.' });\n    step = { n: 0, ref: '', besoins: pt.besoins, action: pt.operation, menu: '', champ: '', valeur: '', detail: '', statut: 'À vérifier', source: [],\n      raison: c ? `Trouvée sur le web mais rejetée au contrôle : ${v?.raison ?? 'non contrôlée'}.` : (webRes ? 'Non trouvée dans la documentation ni sur le web.' : 'Non trouvée dans la documentation.') };\n  }\n  const at = pt.apres ? etapes.findIndex((e) => e.ref === pt.apres) : -1;\n  etapes.splice(at + 1, 0, step);\n});\n\n// Prérequis ajoutés par le code (« À vérifier ») : installation des apps citées dans les menus,\n// puis création de chaque fournisseur du document avant le premier champ Vendor qui le nomme.\nconst APPS = [['Sales', /\\bSales\\b|\\bdevis\\b|\\bquotation\\b/i], ['Purchase', /\\bPurchase app\\b|onglet \\*?\\*?Purchase|\\bVendor\\b/], ['Inventory', /\\bInventory app\\b/],\n  ['Invoicing', /\\bInvoicing app\\b/], ['Helpdesk', /\\bHelpdesk( app)?\\s*‣/], ['Planning', /\\bPlanning( app)?\\s*‣/],\n  ['Subscriptions', /\\bSubscriptions( app)?\\s*‣/], ['Project', /\\bProject( app)?\\s*‣/], ['Timesheets', /\\bTimesheets( app)?\\s*‣/]];\nconst stepText = (e) => [e.action, e.menu, e.champ, e.valeur, e.detail].join(' ');\nconst added = (e) => !e.ref;\nconst cited = [...etapes.map(stepText), ...p.tests.flatMap((t) => t.etapes)];\nconst apps = APPS.filter(([, re]) => cited.some((s) => re.test(s))).map(([a]) => a);\nfor (let i = etapes.length - 1; i >= 0; i--) if (added(etapes[i]) && /install/i.test(etapes[i].action)) etapes.splice(i, 1);\nif (apps.length) etapes.unshift({ n: 0, ref: '', besoins: [], action: `Installer les apps ${apps.join(', ')}`, menu: 'Apps', champ: '', valeur: apps.join(', '), detail: '', statut: 'À vérifier', source: [], raison: 'Ajoutée par le code : apps citées dans les menus du plan.' });\nconst vendors = [...new Set(ext.donnees_client.filter((d) => /fournisseur|vendor/i.test(`${d.donnee} ${d.objet ?? ''}`)).map((d) => d.valeur.trim()))]\n  .filter((v) => v && !/renseigner|liste|plusieurs/i.test(v));\nfor (const v of vendors) {\n  const use = etapes.findIndex((e) => /Vendor|fournisseur/i.test(`${e.champ} ${e.valeur} ${e.action}`) && !/cr[ée]er|create/i.test(e.action) && e.valeur.includes(v));\n  if (use < 0) continue;\n  const isCreate = (e) => /cr[ée]er|create/i.test(e.action) && stepText(e).includes(v);\n  const at = etapes.findIndex(isCreate);\n  if (at >= 0 && at < use) continue;\n  const create = at >= 0 ? etapes.splice(at, 1)[0]\n    : { n: 0, ref: '', besoins: etapes[use].besoins, action: `Créer le fournisseur ${v}`, menu: 'Purchase app ‣ Orders ‣ Vendors', champ: 'Name', valeur: v, detail: '', statut: 'À vérifier', source: [], raison: 'Ajoutée par le code : fournisseur à créer avant de le sélectionner.' };\n  etapes.splice(etapes.findIndex((e) => /Vendor|fournisseur/i.test(`${e.champ} ${e.valeur} ${e.action}`) && !/cr[ée]er|create/i.test(e.action) && e.valeur.includes(v)), 0, create);\n}\netapes.forEach((e, i) => { e.n = i + 1; });\n\n// Coût : extraction + chaque lot (odoo-question) + assemblage (Sonnet 5.5 : 2 / 10 USD par million de tokens).\nconst u = res.usage ?? {};\nconst entree = (u.input_tokens ?? 0) + (u.cache_creation_input_tokens ?? 0) + (u.cache_read_input_tokens ?? 0);\nconst sortie = u.output_tokens ?? 0;\nconst details = [\n  ...ext.cout.details,\n  ...asm.lots.map(({ lot, r }) => ({ etape: `lot ${lot.n}`, modele: r.modele ?? null, usd: r.cout?.usd ?? null, dureeMs: r.dureeMs ?? null })),\n  { etape: 'assemblage', modele: 'claude-sonnet-5-5', entree, sortie, usd: Math.round(((entree * 2 + sortie * 10) / 1e6) * 1e5) / 1e5 },\n];\nif (wcheck?.usage) {\n  const cu = wcheck.usage;\n  const ce = (cu.input_tokens ?? 0) + (cu.cache_creation_input_tokens ?? 0) + (cu.cache_read_input_tokens ?? 0);\n  details.push({ etape: 'contrôle web', modele: 'claude-haiku-5-5', entree: ce, sortie: cu.output_tokens ?? 0, usd: Math.round(((ce * 0.1 + (cu.output_tokens ?? 0) * 0.5) / 1e6) * 1e5) / 1e5 });\n}\nif (webRes) {\n  const wu = webRes.usage ?? {};\n  const we = (wu.input_tokens ?? 0) + (wu.cache_creation_input_tokens ?? 0) + (wu.cache_read_input_tokens ?? 0);\n  const recherches = wu.server_tool_use?.web_search_requests ?? 0;\n  // Haiku 5.5 : 0,10 / 0,50 USD par million de tokens ; recherche web : 10 USD les 1 000.\n  details.push({ etape: 'web', modele: 'claude-haiku-5-5', entree: we, sortie: wu.output_tokens ?? 0, recherches, usd: Math.round(((we * 0.1 + (wu.output_tokens ?? 0) * 0.5) / 1e6 + recherches * 0.01) * 1e5) / 1e5 });\n}\nconst usd = details.some((d) => d.usd === null) ? null : Math.round(details.reduce((t, d) => t + d.usd, 0) * 1e5) / 1e5;\nconst dureeMs = Date.now() - $('Build extraction request').first().json.startedAt;\n\nconst parStatut = {};\nfor (const e of etapes) parStatut[e.statut] = (parStatut[e.statut] ?? 0) + 1;\n\nconst md = [\n  `# Plan Odoo 20 — ${ext.client}`,\n  '',\n  `Édition : ${ext.edition}. ${p.resume}`,\n  '',\n  `Étapes : ${Object.entries(parStatut).map(([k, v]) => `${v} ${k}`).join(', ')}.`,\n  '',\n  '## Besoins compris',\n  ...ext.besoins.map((b) => `${b.n}. **${b.titre}** : ${b.besoin}`),\n  '',\n  '## Étapes',\n  ...etapes.map((e) => [\n    `${e.n}. **${e.action}** — _${e.statut}_`,\n    e.menu ? `   - Menu : ${e.menu}` : null,\n    e.champ ? `   - Champ : ${e.champ}` : null,\n    e.valeur ? `   - Valeur : ${e.valeur}` : null,\n    e.detail ? `   - ${e.detail}` : null,\n    e.source.length ? `   - Source : ${e.source.join(' ; ')}` : null,\n    e.raison ? `   - À vérifier : ${e.raison}` : null,\n  ].filter(Boolean).join('\\n')),\n  '',\n  '## Tests',\n  ...p.tests.flatMap((t) => [`### ${t.titre}`, ...t.etapes.map((s, i) => `${i + 1}. ${s}`), t.pages.length ? `Pages : ${t.pages.join(' ; ')}` : '', '']),\n  '## Questions ouvertes',\n  ...p.questions.map((q) => `- ${q.question}${q.besoin ? ` (besoin ${q.besoin})` : ''} — ${q.raison}`),\n  '',\n  '## Avertissements',\n  ...p.avertissements.map((a) => `- ${a}`),\n  '',\n  `_Coût : ${usd === null ? 'inconnu' : `${usd.toFixed(3)} USD`} · durée : ${Math.round(dureeMs / 1000)} s_`,\n].join('\\n');\n\nreturn [{\n  json: {\n    client: ext.client,\n    edition: ext.edition,\n    resume: p.resume,\n    besoins: ext.besoins,\n    donnees_client: ext.donnees_client,\n    lots: asm.lots.map(({ lot, r }) => ({ ...lot, statut: r.statut ?? 'échec' })),\n    etapes,\n    parStatut,\n    tests: p.tests,\n    questions_ouvertes: p.questions,\n    avertissements: p.avertissements,\n    markdown: md,\n    rejetsWeb,\n    cout: { usd, details },\n    dureeMs,\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000011",
+      "name": "Build web request (plan)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1900,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: un seul appel web par plan, pour les opérations que l'assemblage n'a trouvées dans aucun lot.\nconst ext = $('Read extraction').first().json;\nconst raw = ($json.content ?? []).find((c) => c.type === 'text')?.text ?? '';\nlet asm;\ntry { asm = JSON.parse(raw); } catch (e) { throw new Error(`Assemblage illisible : ${raw.slice(0, 200)}`); }\nconst points = (asm.a_chercher ?? []).slice(0, 5);\nconst donnees = ext.donnees_client.map((d) => `${d.donnee} : ${d.valeur} (${d.objet})`).join(' ; ');\nconst SYSTEM = `Tu complètes un plan de paramétrage Odoo 20.0 avec le web, seulement pour les opérations listées. Tu réponds en français.\nRègles :\n1. Cherche TOUJOURS avec l'outil web_search avant de répondre. N'affirme rien que les résultats ne disent pas.\n2. Préfère odoo.com/documentation/20.0, puis le forum et les slides odoo.com, puis les autres sites. Si une page vise une autre version qu'Odoo 20, dis-le.\n3. Pour chaque opération, écris un paragraphe court qui commence par son repère ([P1], [P2]…). Sa première ligne est : Action : … | Menu : … | Champ : … | Valeur : … (libellés d'interface en anglais, comme sur la page ; « À renseigner » pour une donnée client absente ; une donnée client ne s'applique qu'à son objet). Si tu ne trouves rien de fiable, écris « [Pn] Non trouvé. »\n4. Sois bref : 2 à 4 phrases par opération. Ne propose que ce que l'opération demande, rien de plus (pas de réglage voisin).\n5. Ne contredis jamais les faits établis par la documentation listés plus bas (ex. une route masquée par défaut depuis une version) : si une page web les contredit, ignore-la. N'ajoute aucun réglage multi-étapes (**Multi-Step Routes**, cross-dock, réception ou livraison en 2 ou 3 étapes) ni module tiers que l'opération ne demande pas explicitement.`;\nconst faits = (asm.avertissements ?? []).map((a) => `- ${a}`).join('\\n');\nconst user = `Client : ${ext.client}\\nDonnées client : ${donnees || '(aucune)'}\\n\\nFaits établis par la documentation (à ne pas contredire) :\\n${faits || '(aucun)'}\\n\\nOpérations à trouver :\\n${points.map((x, i) => `[P${i + 1}] ${x.operation}`).join('\\n')}`;\nreturn [{\n  json: {\n    points,\n    webBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 12000,\n      output_config: { effort: 'low' },\n      system: SYSTEM,\n      tools: [{ type: 'web_search_20260318', name: 'web_search', max_uses: Math.min(3, points.length + 1), allowed_callers: ['direct'] }],\n      messages: [{ role: 'user', content: user }],\n    },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000012",
+      "name": "Points to search?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2120,
+        100
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "pts",
+              "leftValue": "={{ $json.points.length > 0 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000013",
+      "name": "Search web (plan)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "onError": "continueRegularOutput",
+      "position": [
+        2340,
+        -20
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.webBody) }}",
+        "options": {
+          "timeout": 90000
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000024",
+      "name": "Build web check (plan)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2560,
+        -20
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: lecture des étapes web (repères [Pn], citations des résultats) et prompt de contrôle par Haiku.\nconst wb = $('Build web request (plan)').first().json;\nconst ext = $('Read extraction').first().json;\nconst araw = ($('Assemble plan (Claude)').first().json.content ?? []).find((c) => c.type === 'text')?.text ?? '{}';\nconst asm = JSON.parse(araw);\nconst content = Array.isArray($json.content) ? $json.content : [];\nconst resultUrls = new Set(content.filter((c) => c.type === 'web_search_tool_result' && Array.isArray(c.content)).flatMap((c) => c.content.map((x) => x.url)));\nconst seg = {};\nlet cur = null;\nfor (const c of content.filter((x) => x.type === 'text')) {\n  for (const part of c.text.split(/(\\[P\\d+\\])/)) {\n    const m = part.match(/^\\[P(\\d+)\\]$/);\n    if (m) { cur = Number(m[1]); seg[cur] ??= { text: '', cites: [] }; } else if (cur) seg[cur].text += part;\n  }\n  if (cur) seg[cur].cites.push(...(c.citations ?? []).filter((x) => x.type === 'web_search_result_location' && resultUrls.has(x.url)));\n}\nconst otherVersion = (u) => (u.match(/odoo\\.com\\/documentation\\/((?!20\\.0)[^/]+)\\//) ?? [])[1];\nconst candidates = [];\nwb.points.forEach((pt, k) => {\n  const s = seg[k + 1];\n  const text = (s?.text ?? '').replace(/\\*\\*/g, '').trim();\n  const line = text.match(/Action\\s*:\\s*(.*?)\\s*\\|\\s*Menu\\s*:\\s*(.*?)\\s*\\|\\s*Champ\\s*:\\s*(.*?)\\s*\\|\\s*Valeur\\s*:\\s*([^\\n]*)/);\n  const urls = [...new Set((s?.cites ?? []).map((x) => x.url))];\n  if (!line || !urls.length || /^Non trouvé/i.test(text)) return;\n  const versions = [...new Set(urls.map(otherVersion).filter(Boolean))];\n  candidates.push({ id: `W${k + 1}`, point: k, apres: pt.apres, besoins: pt.besoins, operation: pt.operation, action: line[1], menu: line[2], champ: line[3], valeur: line[4].trim(),\n    detail: text.replace(line[0], '').trim(), source: urls, extraits: [...new Set(s.cites.map((x) => x.cited_text))].slice(0, 4),\n    ...(versions.length ? { raison: `Page web d'une autre version d'Odoo (${versions.join(', ')}).` } : {}) });\n});\n\nconst SYSTEM = `Tu contrôles des étapes de paramétrage Odoo 20.0 trouvées sur le web avant de les ajouter à un plan client.\nPour chaque étape, \"garder\" vaut true seulement si les quatre conditions sont vraies :\n1. Les extraits cités disent l'action, le menu, le champ et la valeur de l'étape (une valeur « À renseigner » ou une donnée client n'a pas à y figurer).\n2. L'étape ne contredit aucun fait établi par la documentation (ex. une route masquée par défaut depuis Odoo 19.0 : une étape qui la fait activer est rejetée).\n3. L'étape fait seulement l'opération demandée, sans réglage voisin ni ajout que le besoin n'exige pas.\n4. Une donnée client n'y est appliquée qu'à l'objet auquel les données client la rattachent.\nDonne une raison courte en français.`;\nconst list = candidates.map((c) => `- id \"${c.id}\" — opération demandée : ${c.operation}\\n  étape : ${c.action} | menu : ${c.menu} | champ : ${c.champ} | valeur : ${c.valeur}\\n  extraits cités : ${c.extraits.map((e) => `« ${e} »`).join(' ; ')}`).join('\\n');\nconst user = `Données client : ${ext.donnees_client.map((d) => `${d.donnee} : ${d.valeur} (${d.objet})`).join(' ; ')}\\n\\nFaits établis par la documentation :\\n${(asm.avertissements ?? []).map((a) => `- ${a}`).join('\\n') || '(aucun)'}\\n\\nÉtapes à contrôler :\\n${list || '(aucune)'}`;\nconst SCHEMA = { type: 'object', properties: { verdicts: { type: 'array', items: { type: 'object', properties: { id: { type: 'string' }, garder: { type: 'boolean' }, raison: { type: 'string' } }, required: ['id', 'garder', 'raison'], additionalProperties: false } } }, required: ['verdicts'], additionalProperties: false };\nreturn [{ json: { candidates, checkBody: { model: 'claude-haiku-5-5', max_tokens: 4000, output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } }, system: SYSTEM, messages: [{ role: 'user', content: user }] } } }];\n"
+      }
+    },
+    {
+      "id": "b7e0c1a2-0001-4a00-8000-000000000025",
+      "name": "Check web steps (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "onError": "continueRegularOutput",
+      "position": [
+        2780,
+        -20
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.checkBody) }}",
+        "options": {
+          "timeout": 90000
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Called by workflow": {
+      "main": [
+        [
+          {
+            "node": "Build extraction request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Build extraction request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build extraction request": {
+      "main": [
+        [
+          {
+            "node": "Extract needs (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extract needs (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Read extraction",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read extraction": {
+      "main": [
+        [
+          {
+            "node": "One item per lot",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One item per lot": {
+      "main": [
+        [
+          {
+            "node": "Configure lot (odoo-question)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Configure lot (odoo-question)": {
+      "main": [
+        [
+          {
+            "node": "Build assembly request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build assembly request": {
+      "main": [
+        [
+          {
+            "node": "Assemble plan (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Assemble plan (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Build web request (plan)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build web request (plan)": {
+      "main": [
+        [
+          {
+            "node": "Points to search?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Points to search?": {
+      "main": [
+        [
+          {
+            "node": "Search web (plan)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Finalize plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search web (plan)": {
+      "main": [
+        [
+          {
+            "node": "Build web check (plan)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build web check (plan)": {
+      "main": [
+        [
+          {
+            "node": "Check web steps (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check web steps (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Finalize plan",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "id": "QoXYmUQPXbk3nBv1"
+}

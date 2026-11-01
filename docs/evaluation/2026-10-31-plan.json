@@ -1,0 +1,1785 @@
+{
+  "date": "2026-10-31",
+  "scenarios": {
+    "mto": {
+      "pdf": "mto.pdf",
+      "grille": "grille-mto.md",
+      "date": "2026-10-31T23:33:06",
+      "latenceMs": 70475,
+      "coutUsd": 0.19303,
+      "coutParAppel": [
+        {
+          "etape": "extraction",
+          "modele": "claude-sonnet-5-5",
+          "entree": 4192,
+          "sortie": 2585,
+          "usd": 0.03423
+        },
+        {
+          "etape": "lot 1",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.04159,
+          "dureeMs": 38653
+        },
+        {
+          "etape": "lot 2",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.0344,
+          "dureeMs": 29439
+        },
+        {
+          "etape": "lot 3",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.03241,
+          "dureeMs": 27020
+        },
+        {
+          "etape": "assemblage",
+          "modele": "claude-sonnet-5-5",
+          "entree": 8803,
+          "sortie": 3279,
+          "usd": 0.0504
+        }
+      ],
+      "erreur": null,
+      "plan": {
+        "client": "Atelier Lumière",
+        "edition": "Non précisée",
+        "resume": "Plan de paramétrage pour Atelier Lumière (distributeur de luminaires, un entrepôt à Lyon) : activation de la route MTO, création des produits standard (en stock) et sur mesure (MTO, fournisseur Lumitech SAS, délai 15 jours), vérification de la commande fournisseur générée automatiquement et liée à la commande client, réception et livraison en 1 étape (réglage par défaut, donc aucune étape de configuration d'entrepôt retenue).",
+        "besoins": [
+          {
+            "n": 1,
+            "titre": "Produits standard et sur mesure",
+            "besoin": "Gérer deux familles de produits : des luminaires standard tenus en stock et des luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.",
+            "contexte": "Luminaires standard tenus en stock ; luminaires sur mesure jamais stockés",
+            "extrait": "Deux familles de produits : des luminaires standard tenus en stock, et des luminaires sur mesure qui ne sont jamais stockés : ils sont commandés au fournisseur uniquement quand un client passe commande."
+          },
+          {
+            "n": 2,
+            "titre": "Fournisseurs et délais",
+            "besoin": "Enregistrer les fournisseurs des produits : Lumitech SAS pour le sur-mesure avec un délai de livraison de 15 jours, et plusieurs fournisseurs possibles pour les standards.",
+            "contexte": "Lumitech SAS ; délai de livraison annoncé de 15 jours ; liste des fournisseurs des standards à fournir par le client",
+            "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours. Pour les standards, plusieurs fournisseurs possibles, liste à fournir par le client."
+          },
+          {
+            "n": 3,
+            "titre": "Commande fournisseur automatique",
+            "besoin": "À la confirmation d'une commande client de sur-mesure, préparer automatiquement la commande fournisseur sans ressaisie.",
+            "contexte": "Commandes de luminaires sur mesure ; fournisseur Lumitech SAS",
+            "extrait": "À la confirmation d'une commande client de sur-mesure, la commande fournisseur doit être préparée automatiquement, sans ressaisie."
+          },
+          {
+            "n": 4,
+            "titre": "Suivi commande client / fournisseur",
+            "besoin": "Pouvoir savoir à tout moment quelle commande fournisseur correspond à quelle commande client.",
+            "contexte": "Aujourd'hui commandes fournisseurs par e-mail, aucun suivi entre commande client et commande fournisseur",
+            "extrait": "Ils veulent savoir à tout moment quelle commande fournisseur correspond à quelle commande client."
+          },
+          {
+            "n": 5,
+            "titre": "Entrepôt et réception",
+            "besoin": "Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.",
+            "contexte": "Un seul entrepôt, à Lyon ; pas de contrôle qualité",
+            "extrait": "Un seul entrepôt, à Lyon. La marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité."
+          },
+          {
+            "n": 6,
+            "titre": "Livraison client depuis Lyon",
+            "besoin": "Faire partir la livraison au client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.",
+            "contexte": "Entrepôt de Lyon",
+            "extrait": "La livraison au client part de l'entrepôt de Lyon dès que la marchandise fournisseur est reçue."
+          }
+        ],
+        "donnees_client": [
+          {
+            "donnee": "Société",
+            "valeur": "Atelier Lumière",
+            "extrait": "RDV du 14/10/2026 avec M. Durand, directeur des opérations d'Atelier Lumière (distributeur de luminaires, une dizaine d'utilisateurs)."
+          },
+          {
+            "donnee": "Interlocuteur",
+            "valeur": "M. Durand, directeur des opérations",
+            "extrait": "RDV du 14/10/2026 avec M. Durand, directeur des opérations d'Atelier Lumière"
+          },
+          {
+            "donnee": "Activité",
+            "valeur": "distributeur de luminaires",
+            "extrait": "Atelier Lumière (distributeur de luminaires, une dizaine d'utilisateurs)"
+          },
+          {
+            "donnee": "Nombre d'utilisateurs",
+            "valeur": "une dizaine",
+            "extrait": "distributeur de luminaires, une dizaine d'utilisateurs"
+          },
+          {
+            "donnee": "Date du rendez-vous",
+            "valeur": "14/10/2026",
+            "extrait": "RDV du 14/10/2026 avec M. Durand"
+          },
+          {
+            "donnee": "Fournisseur du sur-mesure",
+            "valeur": "Lumitech SAS",
+            "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+          },
+          {
+            "donnee": "Délai de livraison du sur-mesure",
+            "valeur": "15 jours",
+            "extrait": "Lumitech SAS, délai de livraison annoncé de 15 jours."
+          },
+          {
+            "donnee": "Entrepôt",
+            "valeur": "un seul entrepôt, à Lyon",
+            "extrait": "Un seul entrepôt, à Lyon."
+          },
+          {
+            "donnee": "Organisation actuelle",
+            "valeur": "devis sous Excel, commandes fournisseurs par e-mail",
+            "extrait": "Organisation actuelle : devis sous Excel, commandes fournisseurs par e-mail, aucun suivi entre commande client et commande fournisseur."
+          }
+        ],
+        "lots": [
+          {
+            "n": 1,
+            "besoins": [
+              1,
+              2
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 les produits standard (tenus en stock) et sur mesure (jamais stockés) avec leurs fournisseurs, dont Lumitech SAS et son délai de 15 jours ?",
+            "contexte": "Lumitech SAS ; délai de livraison annoncé de 15 jours ; luminaires standard tenus en stock ; luminaires sur mesure jamais stockés",
+            "statut": "À vérifier"
+          },
+          {
+            "n": 2,
+            "besoins": [
+              3,
+              4
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 la commande fournisseur préparée automatiquement à la confirmation d'une commande client de sur-mesure, avec le suivi de la correspondance entre commande fournisseur et commande client ?",
+            "contexte": "Commandes de luminaires sur mesure ; fournisseur Lumitech SAS ; aucun suivi actuel entre commande client et commande fournisseur",
+            "statut": "À vérifier"
+          },
+          {
+            "n": 3,
+            "besoins": [
+              5,
+              6
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 l'entrepôt de Lyon avec réception directe en stock sans contrôle qualité et livraison au client dès réception de la marchandise fournisseur ?",
+            "contexte": "Un seul entrepôt, à Lyon ; pas de contrôle qualité",
+            "statut": "À vérifier"
+          }
+        ],
+        "etapes": [
+          {
+            "n": 1,
+            "ref": "L1.1",
+            "besoins": [
+              1,
+              3
+            ],
+            "action": "Activer la route MTO",
+            "menu": "**Inventory app ‣ Configuration ‣ Settings**",
+            "champ": "**Replenish on Order (MTO)** (section **Logistics**)",
+            "valeur": "Case cochée, puis **Save**",
+            "detail": "Nécessaire pour les luminaires sur mesure, jamais stockés : l'achat est déclenché après confirmation de la commande client.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html#make-to-order",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route"
+            ]
+          },
+          {
+            "n": 2,
+            "ref": "",
+            "besoins": [
+              2,
+              3
+            ],
+            "action": "Installer l'app Purchase (nécessaire aux fournisseurs et aux demandes de prix) si elle n'est pas déjà installée",
+            "menu": "Apps",
+            "champ": "Purchase",
+            "valeur": "Install",
+            "detail": "",
+            "statut": "À vérifier",
+            "source": [],
+            "raison": "Ajoutée à l'assemblage, sans source contrôlée."
+          },
+          {
+            "n": 3,
+            "ref": "L1.2",
+            "besoins": [
+              1
+            ],
+            "action": "Créer ou ouvrir le produit luminaire standard",
+            "menu": "**Inventory app ‣ Products ‣ Products**",
+            "champ": "**New**",
+            "valeur": "À renseigner (nom du produit)",
+            "detail": "Créer le produit standard ou sélectionner un produit existant.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html"
+            ]
+          },
+          {
+            "n": 4,
+            "ref": "L1.3",
+            "besoins": [
+              1
+            ],
+            "action": "Définir le suivi du luminaire standard",
+            "menu": "**Inventory app ‣ Products ‣ Products**",
+            "champ": "**Tracking**",
+            "valeur": "**By Quantity**",
+            "detail": "Un produit suivi permet de maintenir le stock. **By Quantity** est la valeur par défaut pour un produit de type **Goods** ; **By Lots** ou **By Unique Serial Number** restent possibles si le client le souhaite.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html#tracked-vs-untracked-goods",
+              "https://www.odoo.com/documentation/20.0/applications/sales/rental/configure_products/products.html#initial-product-configuration"
+            ],
+            "raison": "Le choix de Tracking est présent, mais « By Quantity » par défaut pour Goods vient de la page location (rental), autre flux, et est généralisé."
+          },
+          {
+            "n": 5,
+            "ref": "L1.4",
+            "besoins": [
+              2
+            ],
+            "action": "Renseigner Lumitech SAS sur le produit standard",
+            "menu": "**Inventory app ‣ Products ‣ Products** (onglet **Purchase**)",
+            "champ": "**Vendor**",
+            "valeur": "Lumitech SAS",
+            "detail": "Cliquer sur **Add a line** dans l'onglet **Purchase** pour ajouter le fournisseur. Le prix unitaire (**Unit Price**) est À renseigner.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+            ],
+            "raison": "Add a line et Vendor sont présents, mais le passage 4 indique le menu Purchase app > Products, non Inventory app."
+          },
+          {
+            "n": 6,
+            "ref": "L1.6",
+            "besoins": [
+              1
+            ],
+            "action": "Créer ou ouvrir le produit luminaire sur mesure",
+            "menu": "**Inventory app ‣ Products ‣ Products**",
+            "champ": "**New**",
+            "valeur": "À renseigner (nom du produit)",
+            "detail": "Créer le produit sur mesure ou sélectionner un produit existant.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+            ]
+          },
+          {
+            "n": 7,
+            "ref": "L1.7",
+            "besoins": [
+              1,
+              3
+            ],
+            "action": "Appliquer la route MTO au luminaire sur mesure",
+            "menu": "**Inventory app ‣ Products ‣ Products** (onglet *Inventory*, section *Operations*)",
+            "champ": "**Routes**",
+            "valeur": "**Replenish on Order (MTO)**",
+            "detail": "Cocher la case. Odoo génère alors un devis d'achat brouillon dès la confirmation de la commande client, lié à celle-ci, sans stock conservé.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html#make-to-order",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+            ]
+          },
+          {
+            "n": 8,
+            "ref": "L1.8",
+            "besoins": [
+              2,
+              3
+            ],
+            "action": "Renseigner Lumitech SAS sur le produit sur mesure",
+            "menu": "**Inventory app ‣ Products ‣ Products** (onglet **Purchase**)",
+            "champ": "**Vendor**",
+            "valeur": "Lumitech SAS",
+            "detail": "Cliquer sur **Add a line**. Le prix unitaire (**Unit Price**) est À renseigner.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+            ],
+            "raison": "Vendor via Add a line est présent, mais le menu indiqué diffère du passage 4 (Purchase app > Products)."
+          },
+          {
+            "n": 9,
+            "ref": "L1.9",
+            "besoins": [
+              2
+            ],
+            "action": "Saisir le délai de Lumitech SAS sur le produit sur mesure",
+            "menu": "**Inventory app ‣ Products ‣ Products** (onglet **Purchase**)",
+            "champ": "**Lead Time**",
+            "valeur": "15 days",
+            "detail": "Ce délai fournisseur est pris en compte dans la date prévisionnelle (**Expected Arrival** = **Order Deadline** + **Vendor Lead Time**).",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#purchase-lead-times"
+            ],
+            "raison": "Expected Arrival = Order Deadline + Vendor Lead Time est appuyé par le passage 12, mais le menu indiqué diffère du passage 4."
+          },
+          {
+            "n": 10,
+            "ref": "L2.4",
+            "besoins": [
+              3,
+              4
+            ],
+            "action": "Confirmer la commande client et contrôler la RfQ générée",
+            "menu": "**Sales app ‣ Orders ‣ Orders**",
+            "champ": "",
+            "valeur": "",
+            "detail": "À la confirmation de la commande client contenant le produit MTO, une RfQ est créée et liée à la commande client, accessible par un smart button. Elle est créée même si le stock est suffisant. Elle doit être confirmée ou ajustée, pas annulée.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html#make-to-order"
+            ],
+            "raison": "Création de la RfQ liée à la commande client et création même avec stock suffisant sont présents ; « doit être confirmée » renforce le « should normally » du passage [1]."
+          }
+        ],
+        "parStatut": {
+          "Documenté": 4,
+          "À vérifier": 6
+        },
+        "tests": [
+          {
+            "titre": "Commande client sur mesure vers commande fournisseur automatique",
+            "etapes": [
+              "Ouvrir Inventory app ‣ Products ‣ Products et vérifier que le luminaire sur mesure a la route Replenish on Order (MTO) et le fournisseur Lumitech SAS avec un délai de 15 jours",
+              "Créer un devis dans Sales app ‣ Orders ‣ Orders avec ce luminaire",
+              "Cliquer sur Confirm",
+              "Cliquer sur le smart button Purchase de la commande client",
+              "Vérifier que la RfQ pour Lumitech SAS est créée, liée à la commande client, avec la date d'arrivée prévue tenant compte de 15 jours",
+              "Confirmer ou ajuster la RfQ sans l'annuler"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time"
+            ]
+          },
+          {
+            "titre": "Réception fournisseur directe en stock à Lyon puis livraison client",
+            "etapes": [
+              "Confirmer la commande fournisseur (Confirm Order) depuis la RfQ",
+              "Ouvrir la réception depuis le smart button Receipt",
+              "Cliquer sur Validate : la marchandise entre directement en stock à Lyon sans contrôle qualité",
+              "Ouvrir la livraison de la commande client depuis Inventory app",
+              "Cliquer sur Validate pour expédier au client depuis Lyon"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html#receive-goods-directly-1-step"
+            ]
+          }
+        ],
+        "questions_ouvertes": [
+          {
+            "question": "Qui valide les commandes fournisseurs avant envoi : le responsable achats ou personne ?",
+            "besoin": 3,
+            "raison": "La décision n'est pas prise ; elle conditionne le paramétrage de la commande fournisseur automatique."
+          },
+          {
+            "question": "Quelle est la liste des fournisseurs des luminaires standard ?",
+            "besoin": 2,
+            "raison": "Le document indique plusieurs fournisseurs possibles sans les nommer."
+          },
+          {
+            "question": "Quels sont les prix d'achat négociés des articles ?",
+            "besoin": 2,
+            "raison": "Nécessaires pour les fiches produits et les commandes fournisseurs."
+          },
+          {
+            "question": "Quelle est la liste des articles (standard et sur mesure) ?",
+            "besoin": 1,
+            "raison": "Nécessaire pour créer les produits."
+          },
+          {
+            "question": "Quels sont les seuils de réapprovisionnement des luminaires standard tenus en stock ?",
+            "besoin": 1,
+            "raison": "Les standards sont tenus en stock mais aucune règle de réapprovisionnement n'est donnée."
+          },
+          {
+            "question": "Le suivi des luminaires standard se fait-il par quantité, par lots ou par numéros de série ?",
+            "besoin": 1,
+            "raison": "Le choix n'a pas été décidé par le client."
+          },
+          {
+            "question": "Le sur mesure est-il acheté chez Lumitech SAS ou fabriqué par Atelier Lumière ?",
+            "besoin": 1,
+            "raison": "Non précisé ; une fabrication nécessiterait une route de fabrication."
+          },
+          {
+            "question": "La livraison « dès réception » est-elle une livraison depuis le stock de Lyon ou un envoi direct du fournisseur au client (dropshipping) ?",
+            "besoin": 6,
+            "raison": "Le besoin exact n'est pas précisé et aucun déclenchement automatique de livraison à la réception n'est documenté."
+          }
+        ],
+        "avertissements": [
+          "Édition non précisée : aucune fonctionnalité Enterprise n'a été signalée par les lots.",
+          "Étapes L3.1 à L3.4 écartées : le client n'exige pas de multi-étapes ; la réception et la livraison en 1 étape sont le réglage par défaut d'Odoo, et activer Multi-Step Routes (qui active aussi Storage Locations) n'est pas demandé.",
+          "Ne pas choisir les options 2 ou 3 étapes (Input, Quality Control, Output) : elles ajouteraient des emplacements inutiles sans contrôle qualité.",
+          "Étape L2.1 écartée (doublon de L1.1) ; L2.2 écartée (doublon de L1.7) ; L2.3 écartée (doublon de L1.8 et L1.9, son délai étant À renseigner).",
+          "Étape L1.5 écartée : doublon de L1.9 pour le délai de Lumitech SAS, qui concerne le sur-mesure ; le délai du fournisseur des standards n'est pas fourni par le client.",
+          "Depuis Odoo 19.0, les routes Buy et Manufacture sont masquées par défaut et appliquées automatiquement selon la configuration du produit ; les afficher exige Multi-Step Routes, non demandé.",
+          "Si la RfQ générée par MTO est annulée, Odoo n'en recrée pas et un document recréé manuellement ne sera pas relié à la commande client : la modifier plutôt que l'annuler.",
+          "Une RfQ est toujours créée à la confirmation de la commande client, même si le stock est suffisant, et ses quantités s'ajustent tant qu'elle n'est pas confirmée.",
+          "Le champ Days to Purchase est un tampon global distinct du délai fournisseur : il n'est pas renseigné par les 15 jours de Lumitech.",
+          "Les prix d'achat (Unit Price) restent À renseigner.",
+          "Piste à tester : règle de réapprovisionnement pour les standards une fois les seuils connus ; non détaillée dans la documentation fournie."
+        ],
+        "markdown": "# Plan Odoo 20 — Atelier Lumière\n\nÉdition : Non précisée. Plan de paramétrage pour Atelier Lumière (distributeur de luminaires, un entrepôt à Lyon) : activation de la route MTO, création des produits standard (en stock) et sur mesure (MTO, fournisseur Lumitech SAS, délai 15 jours), vérification de la commande fournisseur générée automatiquement et liée à la commande client, réception et livraison en 1 étape (réglage par défaut, donc aucune étape de configuration d'entrepôt retenue).\n\nÉtapes : 4 Documenté, 6 À vérifier.\n\n## Besoins compris\n1. **Produits standard et sur mesure** : Gérer deux familles de produits : des luminaires standard tenus en stock et des luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.\n2. **Fournisseurs et délais** : Enregistrer les fournisseurs des produits : Lumitech SAS pour le sur-mesure avec un délai de livraison de 15 jours, et plusieurs fournisseurs possibles pour les standards.\n3. **Commande fournisseur automatique** : À la confirmation d'une commande client de sur-mesure, préparer automatiquement la commande fournisseur sans ressaisie.\n4. **Suivi commande client / fournisseur** : Pouvoir savoir à tout moment quelle commande fournisseur correspond à quelle commande client.\n5. **Entrepôt et réception** : Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.\n6. **Livraison client depuis Lyon** : Faire partir la livraison au client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.\n\n## Étapes\n1. **Activer la route MTO** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Settings**\n   - Champ : **Replenish on Order (MTO)** (section **Logistics**)\n   - Valeur : Case cochée, puis **Save**\n   - Nécessaire pour les luminaires sur mesure, jamais stockés : l'achat est déclenché après confirmation de la commande client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html#make-to-order ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route\n2. **Installer l'app Purchase (nécessaire aux fournisseurs et aux demandes de prix) si elle n'est pas déjà installée** — _À vérifier_\n   - Menu : Apps\n   - Champ : Purchase\n   - Valeur : Install\n   - À vérifier : Ajoutée à l'assemblage, sans source contrôlée.\n3. **Créer ou ouvrir le produit luminaire standard** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **New**\n   - Valeur : À renseigner (nom du produit)\n   - Créer le produit standard ou sélectionner un produit existant.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html\n4. **Définir le suivi du luminaire standard** — _À vérifier_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **Tracking**\n   - Valeur : **By Quantity**\n   - Un produit suivi permet de maintenir le stock. **By Quantity** est la valeur par défaut pour un produit de type **Goods** ; **By Lots** ou **By Unique Serial Number** restent possibles si le client le souhaite.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html#tracked-vs-untracked-goods ; https://www.odoo.com/documentation/20.0/applications/sales/rental/configure_products/products.html#initial-product-configuration\n   - À vérifier : Le choix de Tracking est présent, mais « By Quantity » par défaut pour Goods vient de la page location (rental), autre flux, et est généralisé.\n5. **Renseigner Lumitech SAS sur le produit standard** — _À vérifier_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet **Purchase**)\n   - Champ : **Vendor**\n   - Valeur : Lumitech SAS\n   - Cliquer sur **Add a line** dans l'onglet **Purchase** pour ajouter le fournisseur. Le prix unitaire (**Unit Price**) est À renseigner.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n   - À vérifier : Add a line et Vendor sont présents, mais le passage 4 indique le menu Purchase app > Products, non Inventory app.\n6. **Créer ou ouvrir le produit luminaire sur mesure** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **New**\n   - Valeur : À renseigner (nom du produit)\n   - Créer le produit sur mesure ou sélectionner un produit existant.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n7. **Appliquer la route MTO au luminaire sur mesure** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet *Inventory*, section *Operations*)\n   - Champ : **Routes**\n   - Valeur : **Replenish on Order (MTO)**\n   - Cocher la case. Odoo génère alors un devis d'achat brouillon dès la confirmation de la commande client, lié à celle-ci, sans stock conservé.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html#make-to-order ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n8. **Renseigner Lumitech SAS sur le produit sur mesure** — _À vérifier_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet **Purchase**)\n   - Champ : **Vendor**\n   - Valeur : Lumitech SAS\n   - Cliquer sur **Add a line**. Le prix unitaire (**Unit Price**) est À renseigner.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n   - À vérifier : Vendor via Add a line est présent, mais le menu indiqué diffère du passage 4 (Purchase app > Products).\n9. **Saisir le délai de Lumitech SAS sur le produit sur mesure** — _À vérifier_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet **Purchase**)\n   - Champ : **Lead Time**\n   - Valeur : 15 days\n   - Ce délai fournisseur est pris en compte dans la date prévisionnelle (**Expected Arrival** = **Order Deadline** + **Vendor Lead Time**).\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#purchase-lead-times\n   - À vérifier : Expected Arrival = Order Deadline + Vendor Lead Time est appuyé par le passage 12, mais le menu indiqué diffère du passage 4.\n10. **Confirmer la commande client et contrôler la RfQ générée** — _À vérifier_\n   - Menu : **Sales app ‣ Orders ‣ Orders**\n   - À la confirmation de la commande client contenant le produit MTO, une RfQ est créée et liée à la commande client, accessible par un smart button. Elle est créée même si le stock est suffisant. Elle doit être confirmée ou ajustée, pas annulée.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment.html#make-to-order\n   - À vérifier : Création de la RfQ liée à la commande client et création même avec stock suffisant sont présents ; « doit être confirmée » renforce le « should normally » du passage [1].\n\n## Tests\n### Commande client sur mesure vers commande fournisseur automatique\n1. Ouvrir Inventory app ‣ Products ‣ Products et vérifier que le luminaire sur mesure a la route Replenish on Order (MTO) et le fournisseur Lumitech SAS avec un délai de 15 jours\n2. Créer un devis dans Sales app ‣ Orders ‣ Orders avec ce luminaire\n3. Cliquer sur Confirm\n4. Cliquer sur le smart button Purchase de la commande client\n5. Vérifier que la RfQ pour Lumitech SAS est créée, liée à la commande client, avec la date d'arrivée prévue tenant compte de 15 jours\n6. Confirmer ou ajuster la RfQ sans l'annuler\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time\n\n### Réception fournisseur directe en stock à Lyon puis livraison client\n1. Confirmer la commande fournisseur (Confirm Order) depuis la RfQ\n2. Ouvrir la réception depuis le smart button Receipt\n3. Cliquer sur Validate : la marchandise entre directement en stock à Lyon sans contrôle qualité\n4. Ouvrir la livraison de la commande client depuis Inventory app\n5. Cliquer sur Validate pour expédier au client depuis Lyon\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html#receive-goods-directly-1-step\n\n## Questions ouvertes\n- Qui valide les commandes fournisseurs avant envoi : le responsable achats ou personne ? (besoin 3) — La décision n'est pas prise ; elle conditionne le paramétrage de la commande fournisseur automatique.\n- Quelle est la liste des fournisseurs des luminaires standard ? (besoin 2) — Le document indique plusieurs fournisseurs possibles sans les nommer.\n- Quels sont les prix d'achat négociés des articles ? (besoin 2) — Nécessaires pour les fiches produits et les commandes fournisseurs.\n- Quelle est la liste des articles (standard et sur mesure) ? (besoin 1) — Nécessaire pour créer les produits.\n- Quels sont les seuils de réapprovisionnement des luminaires standard tenus en stock ? (besoin 1) — Les standards sont tenus en stock mais aucune règle de réapprovisionnement n'est donnée.\n- Le suivi des luminaires standard se fait-il par quantité, par lots ou par numéros de série ? (besoin 1) — Le choix n'a pas été décidé par le client.\n- Le sur mesure est-il acheté chez Lumitech SAS ou fabriqué par Atelier Lumière ? (besoin 1) — Non précisé ; une fabrication nécessiterait une route de fabrication.\n- La livraison « dès réception » est-elle une livraison depuis le stock de Lyon ou un envoi direct du fournisseur au client (dropshipping) ? (besoin 6) — Le besoin exact n'est pas précisé et aucun déclenchement automatique de livraison à la réception n'est documenté.\n\n## Avertissements\n- Édition non précisée : aucune fonctionnalité Enterprise n'a été signalée par les lots.\n- Étapes L3.1 à L3.4 écartées : le client n'exige pas de multi-étapes ; la réception et la livraison en 1 étape sont le réglage par défaut d'Odoo, et activer Multi-Step Routes (qui active aussi Storage Locations) n'est pas demandé.\n- Ne pas choisir les options 2 ou 3 étapes (Input, Quality Control, Output) : elles ajouteraient des emplacements inutiles sans contrôle qualité.\n- Étape L2.1 écartée (doublon de L1.1) ; L2.2 écartée (doublon de L1.7) ; L2.3 écartée (doublon de L1.8 et L1.9, son délai étant À renseigner).\n- Étape L1.5 écartée : doublon de L1.9 pour le délai de Lumitech SAS, qui concerne le sur-mesure ; le délai du fournisseur des standards n'est pas fourni par le client.\n- Depuis Odoo 19.0, les routes Buy et Manufacture sont masquées par défaut et appliquées automatiquement selon la configuration du produit ; les afficher exige Multi-Step Routes, non demandé.\n- Si la RfQ générée par MTO est annulée, Odoo n'en recrée pas et un document recréé manuellement ne sera pas relié à la commande client : la modifier plutôt que l'annuler.\n- Une RfQ est toujours créée à la confirmation de la commande client, même si le stock est suffisant, et ses quantités s'ajustent tant qu'elle n'est pas confirmée.\n- Le champ Days to Purchase est un tampon global distinct du délai fournisseur : il n'est pas renseigné par les 15 jours de Lumitech.\n- Les prix d'achat (Unit Price) restent À renseigner.\n- Piste à tester : règle de réapprovisionnement pour les standards une fois les seuils connus ; non détaillée dans la documentation fournie.\n\n_Coût : 0.193 USD · durée : 70 s_",
+        "cout": {
+          "usd": 0.19303,
+          "details": [
+            {
+              "etape": "extraction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 4192,
+              "sortie": 2585,
+              "usd": 0.03423
+            },
+            {
+              "etape": "lot 1",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.04159,
+              "dureeMs": 38653
+            },
+            {
+              "etape": "lot 2",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.0344,
+              "dureeMs": 29439
+            },
+            {
+              "etape": "lot 3",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.03241,
+              "dureeMs": 27020
+            },
+            {
+              "etape": "assemblage",
+              "modele": "claude-sonnet-5-5",
+              "entree": 8803,
+              "sortie": 3279,
+              "usd": 0.0504
+            }
+          ]
+        },
+        "dureeMs": 70180
+      }
+    },
+    "thermo": {
+      "pdf": "thermo.pdf",
+      "grille": "grille-thermo.md",
+      "date": "2026-10-31T23:34:59",
+      "latenceMs": 92119,
+      "coutUsd": 0.3197,
+      "coutParAppel": [
+        {
+          "etape": "extraction",
+          "modele": "claude-sonnet-5-5",
+          "entree": 4689,
+          "sortie": 3592,
+          "usd": 0.0453
+        },
+        {
+          "etape": "lot 1",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.0416,
+          "dureeMs": 39921
+        },
+        {
+          "etape": "lot 2",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.03993,
+          "dureeMs": 36293
+        },
+        {
+          "etape": "lot 3",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.03482,
+          "dureeMs": 31865
+        },
+        {
+          "etape": "lot 4",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.0355,
+          "dureeMs": 30743
+        },
+        {
+          "etape": "lot 5",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.03388,
+          "dureeMs": 31371
+        },
+        {
+          "etape": "assemblage",
+          "modele": "claude-sonnet-5-5",
+          "entree": 13392,
+          "sortie": 6189,
+          "usd": 0.08867
+        }
+      ],
+      "erreur": null,
+      "plan": {
+        "client": "Thermo Services",
+        "edition": "Non précisée",
+        "resume": "Plan de paramétrage Odoo 20.0 pour Thermo Services : devis avec signature en ligne et acompte de 30 %, logo sur les documents, commande Daikin des gros modèles en MTO après signature, réapprovisionnement automatique des pièces à Nantes, tickets SAV par e-mail avec SLA de 4 h ouvrées, interventions Field Service avec pièces et facturation du temps, contrats d'entretien annuels à 180 €. Seules les étapes demandées sont retenues ; les prix, seuils, fournisseurs de pièces et heures ouvrées restent « À renseigner ».",
+        "besoins": [
+          {
+            "n": 1,
+            "titre": "Devis avec signature en ligne",
+            "besoin": "Réaliser les devis (pompes à chaleur et pose) dans Odoo au lieu d'Excel, avec signature en ligne du client.",
+            "contexte": "Devis avec les pompes et la pose ; actuellement sur Excel",
+            "extrait": "Ce qu'on voudrait c'est faire les devis dans l'outil, avec les pompes, la pose, et que le client puisse signer en ligne."
+          },
+          {
+            "n": 2,
+            "titre": "Acompte à la signature",
+            "besoin": "Demander obligatoirement un acompte de 30 % au client à la signature du devis.",
+            "contexte": "Acompte de 30 % à la signature, obligatoire",
+            "extrait": "Et on demande un acompte de 30 % à la signature, ça c'est obligatoire chez nous."
+          },
+          {
+            "n": 3,
+            "titre": "Commande fournisseur des gros modèles",
+            "besoin": "Commander chez Daikin les gros modèles de pompes uniquement après signature du devis par le client, sans les stocker.",
+            "contexte": "Fournisseur Daikin ; gros modèles non stockés car trop chers ; modèles courants en stock à l'entrepôt de Nantes",
+            "extrait": "les gros modèles, on les commande chez Daikin seulement quand le client a signé, on ne veut pas les stocker, c'est trop cher."
+          },
+          {
+            "n": 4,
+            "titre": "Réapprovisionnement des pièces détachées",
+            "besoin": "Gérer en stock les pièces détachées avec recommande automatique quand le niveau passe sous un seuil.",
+            "contexte": "Entrepôt à Nantes ; stock géré par Kevin ; seuil non défini",
+            "extrait": "Les pièces, oui, on en garde en stock, et quand on passe sous un certain niveau il faudrait que ça recommande tout seul."
+          },
+          {
+            "n": 5,
+            "titre": "Tickets SAV par e-mail",
+            "besoin": "Créer automatiquement un ticket de support à chaque e-mail reçu à l'adresse SAV en cas de panne, avec engagement de réponse en moins de 4 heures ouvrées.",
+            "contexte": "sav@thermo-services.fr ; réponse en moins de 4 heures ouvrées ; les clients appellent ou écrivent",
+            "extrait": "Il faudrait que ça crée un ticket automatiquement, et qu'on s'engage à répondre en moins de 4 heures ouvrées."
+          },
+          {
+            "n": 6,
+            "titre": "Planification des interventions",
+            "besoin": "Planifier un technicien qui se rend chez le client après la création du ticket de panne.",
+            "contexte": "Six techniciens sur la route",
+            "extrait": "Ensuite on planifie un technicien qui va chez le client."
+          },
+          {
+            "n": 7,
+            "titre": "Rapport d'intervention signé",
+            "besoin": "Permettre au technicien de remplir sur place un rapport d'intervention, d'y noter les pièces utilisées et de faire signer le client sur tablette.",
+            "contexte": "Signature du client sur la tablette",
+            "extrait": "Il remplit un rapport d'intervention, il note les pièces utilisées, et le client signe sur la tablette."
+          },
+          {
+            "n": 8,
+            "titre": "Facturation des interventions",
+            "besoin": "Facturer au client les pièces utilisées et le temps passé après l'intervention.",
+            "contexte": "Pièces et temps passé",
+            "extrait": "Après on facture les pièces et le temps passé."
+          },
+          {
+            "n": 9,
+            "titre": "Contrats d'entretien annuels",
+            "besoin": "Gérer des contrats d'entretien annuels facturés automatiquement chaque année.",
+            "contexte": "180 euros par an, facturation automatique annuelle",
+            "extrait": "on a des contrats d'entretien annuels, 180 euros par an, facturés automatiquement chaque année."
+          },
+          {
+            "n": 10,
+            "titre": "Facturation et suivi des paiements",
+            "besoin": "Établir les factures et suivre les paiements dans Odoo, sans comptabilité complète car l'expert-comptable garde son propre logiciel.",
+            "contexte": "Expert-comptable sur son logiciel ; compta complète peut-être plus tard",
+            "extrait": "nous on veut juste faire les factures et suivre les paiements."
+          },
+          {
+            "n": 11,
+            "titre": "Logo sur les documents",
+            "besoin": "Afficher le logo de la société sur les devis et les factures.",
+            "contexte": "Logo à envoyer par le client",
+            "extrait": "Oui il faut notre logo sur les devis et les factures, je vous l'enverrai."
+          }
+        ],
+        "donnees_client": [
+          {
+            "donnee": "Société",
+            "valeur": "Thermo Services",
+            "extrait": "nous c'est Thermo Services, on vend des pompes à chaleur aux particuliers et aux petites entreprises"
+          },
+          {
+            "donnee": "Interlocutrice",
+            "valeur": "Mme Durand, gérante",
+            "extrait": "Client (Mme Durand, gérante)"
+          },
+          {
+            "donnee": "Effectif",
+            "valeur": "une quinzaine, dont six techniciens sur la route",
+            "extrait": "On est une quinzaine, euh, six techniciens sur la route."
+          },
+          {
+            "donnee": "Clientèle",
+            "valeur": "particuliers et petites entreprises",
+            "extrait": "on vend des pompes à chaleur aux particuliers et aux petites entreprises"
+          },
+          {
+            "donnee": "Acompte",
+            "valeur": "30 % à la signature",
+            "extrait": "on demande un acompte de 30 % à la signature"
+          },
+          {
+            "donnee": "Site / entrepôt",
+            "valeur": "petit entrepôt à Nantes",
+            "extrait": "On a un petit entrepôt à Nantes."
+          },
+          {
+            "donnee": "Fournisseur",
+            "valeur": "Daikin",
+            "extrait": "on les commande chez Daikin seulement quand le client a signé"
+          },
+          {
+            "donnee": "Responsable du stock",
+            "valeur": "Kevin",
+            "extrait": "faudrait voir avec Kevin, c'est lui qui gère le stock."
+          },
+          {
+            "donnee": "Adresse e-mail SAV",
+            "valeur": "sav@thermo-services.fr",
+            "extrait": "nous écrivent à sav@thermo-services.fr quand il y a une panne"
+          },
+          {
+            "donnee": "Délai de réponse SAV",
+            "valeur": "moins de 4 heures ouvrées",
+            "extrait": "qu'on s'engage à répondre en moins de 4 heures ouvrées"
+          },
+          {
+            "donnee": "Contrat d'entretien annuel",
+            "valeur": "180 euros par an",
+            "extrait": "contrats d'entretien annuels, 180 euros par an, facturés automatiquement chaque année"
+          }
+        ],
+        "lots": [
+          {
+            "n": 1,
+            "besoins": [
+              1,
+              2,
+              10,
+              11
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 les devis (pompes et pose) avec signature en ligne, acompte de 30 % à la signature, facturation, suivi des paiements et logo sur devis et factures ?",
+            "contexte": "acompte de 30 % à la signature ; logo à envoyer ; expert-comptable garde son logiciel",
+            "statut": "À vérifier"
+          },
+          {
+            "n": 2,
+            "besoins": [
+              3,
+              4
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 la commande à Daikin des gros modèles après signature du devis, le stock des modèles courants et des pièces détachées à Nantes et la recommande automatique sous un seuil ?",
+            "contexte": "Daikin ; petit entrepôt à Nantes ; Kevin gère le stock ; seuil non défini",
+            "statut": "À vérifier"
+          },
+          {
+            "n": 3,
+            "besoins": [
+              5
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 la création automatique de tickets de support à la réception d'e-mails avec un engagement de réponse en moins de 4 heures ouvrées ?",
+            "contexte": "sav@thermo-services.fr ; moins de 4 heures ouvrées",
+            "statut": "À vérifier"
+          },
+          {
+            "n": 4,
+            "besoins": [
+              6,
+              7,
+              8
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 la planification des techniciens, le rapport d'intervention avec pièces utilisées et signature du client sur tablette, puis la facturation des pièces et du temps passé ?",
+            "contexte": "six techniciens sur la route ; signature sur la tablette ; facturation des pièces et du temps passé",
+            "statut": "À vérifier"
+          },
+          {
+            "n": 5,
+            "besoins": [
+              9
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 les contrats d'entretien annuels facturés automatiquement chaque année ?",
+            "contexte": "180 euros par an, facturés automatiquement chaque année",
+            "statut": "À vérifier"
+          }
+        ],
+        "etapes": [
+          {
+            "n": 1,
+            "ref": "L1.1",
+            "besoins": [
+              1
+            ],
+            "action": "Activer la signature en ligne",
+            "menu": "**Sales app ‣ Configuration ‣ Settings** (section **Quotations & Orders**)",
+            "champ": "Online Signature",
+            "valeur": "Cocher la case, puis cliquer sur **Save**",
+            "detail": "Requis pour que les clients confirment les devis par signature en ligne.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration",
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures"
+            ]
+          },
+          {
+            "n": 2,
+            "ref": "L1.2",
+            "besoins": [
+              2
+            ],
+            "action": "Activer le paiement en ligne (acompte partiel)",
+            "menu": "**Sales app ‣ Configuration ‣ Settings** (section **Quotations & Orders**)",
+            "champ": "Online Payment",
+            "valeur": "Cocher la case, puis cliquer sur **Save**",
+            "detail": "Le paiement peut être total ou partiel ; un champ supplémentaire **Payment X %** apparaît une fois l'option active.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration",
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments"
+            ]
+          },
+          {
+            "n": 3,
+            "ref": "L1.3",
+            "besoins": [
+              2
+            ],
+            "action": "Renseigner le pourcentage de paiement à la signature",
+            "menu": "**Sales app ‣ Configuration ‣ Settings** (section **Quotations & Orders**)",
+            "champ": "Payment X %",
+            "valeur": "30",
+            "detail": "Correspond à l'acompte de 30 % demandé par le client. Un fournisseur de paiement doit être configuré (**Configure Demo** pour une démo, **View Other Providers** pour d'autres).",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+            ],
+            "raison": "Le champ Payment X % existe, mais le passage dit qu'un fournisseur peut être configuré, pas qu'il doit l'être."
+          },
+          {
+            "n": 4,
+            "ref": "L1.6",
+            "besoins": [
+              1,
+              2
+            ],
+            "action": "Activer signature et paiement sur le modèle de devis",
+            "menu": "**Sales app ‣ Configuration ‣ Quotation Templates**",
+            "champ": "Online confirmation",
+            "valeur": "Cocher **Signature** et **Payment**",
+            "detail": "Utile pour réutiliser le même paramétrage pour les devis pompes et pose. Chemin de menu des modèles tiré de la note du passage 12.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/pdf_quote_builder.html#add-pdf-as-header-footer"
+            ]
+          },
+          {
+            "n": 5,
+            "ref": "L1.7",
+            "besoins": [
+              11
+            ],
+            "action": "Configurer le logo pour devis et factures",
+            "menu": "**Settings ‣ Companies ‣ Configure Document Layout**",
+            "champ": "Company logo",
+            "valeur": "Cliquer **Edit** et téléverser le logo fourni par le client",
+            "detail": "Le layout s'applique à tous les rapports de la société (donc devis et factures). Vérifier l'aperçu dans la fenêtre **Configure your document layout**.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#default-layout"
+            ]
+          },
+          {
+            "n": 6,
+            "ref": "L2.1",
+            "besoins": [
+              3
+            ],
+            "action": "Activer la route MTO",
+            "menu": "**Inventory app ‣ Configuration ‣ Settings**",
+            "champ": "Replenish on Order (MTO)",
+            "valeur": "Cocher la case (section **Logistics**), puis cliquer sur **Save**",
+            "detail": "Nécessaire pour les gros modèles commandés à Daikin après confirmation du devis.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route"
+            ]
+          },
+          {
+            "n": 7,
+            "ref": "",
+            "besoins": [
+              3,
+              4
+            ],
+            "action": "Créer le fournisseur Daikin",
+            "menu": "Purchase app ‣ Orders ‣ Vendors",
+            "champ": "Name",
+            "valeur": "Daikin",
+            "detail": "",
+            "statut": "À vérifier",
+            "source": [],
+            "raison": "Ajoutée à l'assemblage, sans source contrôlée."
+          },
+          {
+            "n": 8,
+            "ref": "L2.2",
+            "besoins": [
+              3
+            ],
+            "action": "Activer le champ Purchase sur la fiche du gros modèle",
+            "menu": "**Inventory app ‣ Products ‣ Products**",
+            "champ": "Purchase",
+            "valeur": "Case cochée (sous le nom du produit)",
+            "detail": "Cela fait apparaître l'onglet **Purchase** pour un produit acheté auprès d'un fournisseur afin de satisfaire les commandes clients.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/advanced_configuration/product_variants.html#add-product-variants-on-the-product-form"
+            ]
+          },
+          {
+            "n": 9,
+            "ref": "L2.3",
+            "besoins": [
+              3
+            ],
+            "action": "Renseigner Daikin comme fournisseur du gros modèle",
+            "menu": "**Purchase** tab de la fiche produit",
+            "champ": "Vendor",
+            "valeur": "Daikin",
+            "detail": "Cliquer sur **Add a line** si besoin. Le fournisseur est obligatoire pour générer la RfQ.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+            ],
+            "raison": "Le passage [3] décrit Add a line pour le fournisseur. Le « obligatoire » vient de [9], mais la version en ligne accepte aussi un PO confirmé à la place du fournisseur."
+          },
+          {
+            "n": 10,
+            "ref": "L2.4",
+            "besoins": [
+              3
+            ],
+            "action": "Renseigner le prix d'achat Daikin",
+            "menu": "**Purchase** tab de la fiche produit",
+            "champ": "Unit Price",
+            "valeur": "À renseigner",
+            "detail": "Le délai fournisseur annoncé se saisit dans la colonne **Delivery Lead Time** de la même ligne, valeur À renseigner.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+            ]
+          },
+          {
+            "n": 11,
+            "ref": "L2.5",
+            "besoins": [
+              3
+            ],
+            "action": "Appliquer la route MTO au gros modèle",
+            "menu": "",
+            "champ": "Replenish on Order (MTO)",
+            "valeur": "À sélectionner sur le produit",
+            "detail": "Une fois configuré, un PO est créé à chaque confirmation d'un devis (SO) contenant le produit, même si le stock suffit. L'emplacement exact du champ de route n'est pas dans les passages fournis.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto"
+            ],
+            "raison": "La route MTO est décrite dans [2], mais les passages ne montrent pas le champ Replenish on Order (MTO) sur la fiche produit ; l'emplacement reste absent des passages cités."
+          },
+          {
+            "n": 12,
+            "ref": "L2.6",
+            "besoins": [
+              4
+            ],
+            "action": "Créer une règle de réapprovisionnement pour chaque modèle courant et pièce détachée",
+            "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+            "champ": "Product",
+            "valeur": "Modèle courant ou pièce détachée concerné",
+            "detail": "Cliquer sur **New**. Chaque produit stocké à Nantes nécessite sa propre ligne.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+            ],
+            "raison": "Le passage [5] décrit la création d'une règle via Operations ‣ Replenishment ‣ New et le champ Product. « Chaque produit nécessite sa propre ligne » n'est pas dit explicitement."
+          },
+          {
+            "n": 13,
+            "ref": "L2.7",
+            "besoins": [
+              4
+            ],
+            "action": "Indiquer l'emplacement de stock de Nantes",
+            "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+            "champ": "Location",
+            "valeur": "Emplacement de stock de Nantes (À renseigner)",
+            "detail": "Emplacement où le produit est stocké.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+            ]
+          },
+          {
+            "n": 14,
+            "ref": "L2.8",
+            "besoins": [
+              4
+            ],
+            "action": "Définir le seuil minimum",
+            "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+            "champ": "Min",
+            "valeur": "À renseigner",
+            "detail": "Le seuil n'est pas défini par le client. Quand le stock prévisionnel passe sous cette valeur, une commande de réapprovisionnement est créée.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+            ]
+          },
+          {
+            "n": 15,
+            "ref": "L2.9",
+            "besoins": [
+              4
+            ],
+            "action": "Définir la quantité maximale",
+            "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+            "champ": "Max",
+            "valeur": "À renseigner",
+            "detail": "Quantité jusqu'à laquelle le stock est réapprovisionné.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+            ]
+          },
+          {
+            "n": 16,
+            "ref": "L2.10",
+            "besoins": [
+              4
+            ],
+            "action": "Afficher la colonne Trigger et choisir le mode de déclenchement",
+            "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+            "champ": "Trigger",
+            "valeur": "Auto",
+            "detail": "Activer la colonne via l'icône (adjust settings) à l'extrémité droite des titres de colonnes. **Auto** (sélectionné par défaut) crée automatiquement le PO sous le seuil ; **Manual** impose de valider via le bouton Order.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger"
+            ]
+          },
+          {
+            "n": 17,
+            "ref": "",
+            "besoins": [
+              4
+            ],
+            "action": "Renseigner le fournisseur des pièces détachées",
+            "menu": "Purchase tab de la fiche produit",
+            "champ": "Vendor",
+            "valeur": "À renseigner",
+            "detail": "",
+            "statut": "À vérifier",
+            "source": [],
+            "raison": "Ajoutée à l'assemblage, sans source contrôlée."
+          },
+          {
+            "n": 18,
+            "ref": "L3.1",
+            "besoins": [
+              5
+            ],
+            "action": "Ouvrir la page de configuration de l'équipe Helpdesk",
+            "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+            "champ": "",
+            "valeur": "À renseigner (équipe SAV concernée, existante ou créée avec **New**)",
+            "detail": "Cliquer sur le nom de l'équipe pour ouvrir sa page de paramètres.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias",
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets"
+            ]
+          },
+          {
+            "n": 19,
+            "ref": "L3.2",
+            "besoins": [
+              5
+            ],
+            "action": "Activer le canal e-mail de l'équipe",
+            "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+            "champ": "Email Alias",
+            "valeur": "Coché",
+            "detail": "Dans la section **Channels** de la page de l'équipe, cocher **Email Alias**.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets"
+            ]
+          },
+          {
+            "n": 20,
+            "ref": "L3.3",
+            "besoins": [
+              5
+            ],
+            "action": "Renseigner l'alias e-mail de l'équipe",
+            "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams** ‣ **Channels ‣ Email Alias**",
+            "champ": "Alias",
+            "valeur": "sav",
+            "detail": "Saisir la partie locale de l'adresse souhaitée (sav@thermo-services.fr). L'adresse complète dépend du domaine d'alias configuré ; sinon cliquer sur **Set an Alias Domain**, qui redirige vers **Settings** où activer **Custom Email Servers**. Les domaines personnalisés ne sont pas obligatoires. À la réception, l'objet devient le titre du ticket et le corps est ajouté à l'onglet **Description** et au chatter.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias"
+            ]
+          },
+          {
+            "n": 21,
+            "ref": "L3.4",
+            "besoins": [
+              5
+            ],
+            "action": "Vérifier que les SLA sont activés pour l'équipe",
+            "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+            "champ": "SLA Policies",
+            "valeur": "Coché",
+            "detail": "Dans la section **Performance** de l'équipe, la case est cochée par défaut sur une nouvelle équipe.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html"
+            ]
+          },
+          {
+            "n": 22,
+            "ref": "L3.5",
+            "besoins": [
+              5
+            ],
+            "action": "Créer la politique SLA",
+            "menu": "**Helpdesk app ‣ Configuration ‣ SLA Policies**",
+            "champ": "Title",
+            "valeur": "À renseigner",
+            "detail": "Cliquer sur **New**, saisir un **Title** et une **Description**. Alternative : via le smart button **SLA Policies** de l'équipe puis **New**. Compléter ensuite le reste du formulaire.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy"
+            ]
+          },
+          {
+            "n": 23,
+            "ref": "L3.6",
+            "besoins": [
+              5
+            ],
+            "action": "Définir les heures ouvrées de la politique SLA",
+            "menu": "",
+            "champ": "Working Hours",
+            "valeur": "À renseigner (calendrier ouvré du client)",
+            "detail": "Le champ **Working Hours** de la politique sert à calculer l'échéance, par défaut selon **Company Working Hours** dans **Settings app ‣ Employees ‣ Work Organization**. L'échéance est calculée à partir de la date de création du ticket.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#meet-sla-deadlines"
+            ]
+          },
+          {
+            "n": 24,
+            "ref": "L4.1",
+            "besoins": [
+              6,
+              7
+            ],
+            "action": "Activer Field Service",
+            "menu": "**Planning ‣ Configuration ‣ Settings**",
+            "champ": "**Field Service**",
+            "valeur": "Enabled, puis **Save**",
+            "detail": "Active les interventions sur site planifiées dans Planning, avec feuilles de travail, matériel et temps facturables et rapport client pour signature.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html"
+            ]
+          },
+          {
+            "n": 25,
+            "ref": "L4.2",
+            "besoins": [
+              7,
+              8
+            ],
+            "action": "Activer les produits et la facturation sur les shifts",
+            "menu": "**Planning ‣ Configuration ‣ Settings**",
+            "champ": "Billing et **Products**",
+            "valeur": "Enabled",
+            "detail": "Nécessaire pour ajouter les pièces utilisées sur les shifts d'intervention.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products"
+            ]
+          },
+          {
+            "n": 26,
+            "ref": "L4.3",
+            "besoins": [
+              8
+            ],
+            "action": "Configurer le produit de service pour le temps passé",
+            "menu": "**Sales app ‣ Products ‣ Products**",
+            "champ": "**Product Type**",
+            "valeur": "**Service**",
+            "detail": "Onglet **General Information** de la fiche produit. Le temps passé n'est facturable qu'avec un produit de type Service.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+            ]
+          },
+          {
+            "n": 27,
+            "ref": "L4.4",
+            "besoins": [
+              8
+            ],
+            "action": "Définir la politique de facturation du service",
+            "menu": "**Sales app ‣ Products ‣ Products**",
+            "champ": "**Invoicing Policy**",
+            "valeur": "**Based on Timesheets**",
+            "detail": "Permet de facturer le temps passé enregistré via les Timesheets de l'app Project.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+            ]
+          },
+          {
+            "n": 28,
+            "ref": "L4.5",
+            "besoins": [
+              8
+            ],
+            "action": "Définir la création du projet et de la tâche à la commande",
+            "menu": "**Sales app ‣ Products ‣ Products**",
+            "champ": "**Create on Order**",
+            "valeur": "**Project & Task**",
+            "detail": "Un projet et une tâche sont créés dans Project à la confirmation du sales order. L'option **Task** est possible, avec sélection d'un projet existant dans le champ **Project**.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+            ],
+            "raison": "Le passage 6 indique Project & Task dans Create on Order et l'option Task avec champ Project. Il ne dit pas que la création a lieu « à la confirmation » : il parle de la création d'une commande."
+          },
+          {
+            "n": 29,
+            "ref": "L4.6",
+            "besoins": [
+              6,
+              7
+            ],
+            "action": "Créer une intervention (shift) pour un technicien",
+            "menu": "**Planning app**",
+            "champ": "**Customer**, **Sales Order**, **Worksheet**, **Under warranty**",
+            "valeur": "À renseigner",
+            "detail": "Le shift peut être créé depuis Planning, un sales order ou un ticket helpdesk. Sélectionner le client, le sales order si l'intervention est facturable, et la worksheet. Puis publier le shift.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-planning"
+            ]
+          },
+          {
+            "n": 30,
+            "ref": "L4.7",
+            "besoins": [
+              7,
+              8
+            ],
+            "action": "Ajouter les pièces utilisées au shift",
+            "menu": "**Planning**, shift ‣ bouton **Products**",
+            "champ": "**Add**",
+            "valeur": "À renseigner (produits et quantités)",
+            "detail": "Se connecter au shift ou modifier un shift en cours, cliquer sur **0 Products**, **Add** sur la carte produit, ajuster les quantités avec **-** et **+**, puis **Back**. Les produits sont ajoutés au sales order lié (créé automatiquement s'il n'existe pas).",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products"
+            ]
+          },
+          {
+            "n": 31,
+            "ref": "L4.8",
+            "besoins": [
+              8
+            ],
+            "action": "Facturer le temps passé",
+            "menu": "Sales order",
+            "champ": "**Create Invoice**",
+            "valeur": "**Regular invoice**, puis **Create Draft Invoice**",
+            "detail": "Après saisie du temps sur la tâche, revenir au sales order, créer la facture brouillon puis cliquer sur **Confirm**. Les heures apparaissent dans la colonne **Delivered**.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#invoice-time-spent"
+            ]
+          },
+          {
+            "n": 32,
+            "ref": "L5.1",
+            "besoins": [
+              9
+            ],
+            "action": "Ouvrir la configuration des plans récurrents",
+            "menu": "**Subscriptions app ‣ Configuration ‣ Recurring Plans**",
+            "champ": "",
+            "valeur": "",
+            "detail": "Vérifier si le plan **Yearly** fourni par défaut convient. Si oui, passer directement à la création du produit.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#set-up-recurring-plans"
+            ]
+          },
+          {
+            "n": 33,
+            "ref": "L5.4",
+            "besoins": [
+              9
+            ],
+            "action": "Créer ou ouvrir le produit d'abonnement",
+            "menu": "**Subscriptions app ‣ Products ‣ Products**",
+            "champ": "",
+            "valeur": "",
+            "detail": "Cliquer sur un produit existant ou sur **New**. Laisser les options **Subscriptions** et **Sales** activées.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+            ]
+          },
+          {
+            "n": 34,
+            "ref": "L5.5",
+            "besoins": [
+              9
+            ],
+            "action": "Définir le type de produit",
+            "menu": "**Subscriptions app ‣ Products ‣ Products** ‣ onglet **General Information**",
+            "champ": "Product type",
+            "valeur": "**Service**",
+            "detail": "Le type est généralement **Service** pour un contrat d'entretien.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+            ]
+          },
+          {
+            "n": 35,
+            "ref": "L5.6",
+            "besoins": [
+              9
+            ],
+            "action": "Renseigner le prix de vente récurrent",
+            "menu": "**Subscriptions app ‣ Products ‣ Products** ‣ onglet **General Information**",
+            "champ": "Sales Price",
+            "valeur": "180",
+            "detail": "Montant récurrent payé par le client à chaque période de récurrence (180 € par an).",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+            ]
+          },
+          {
+            "n": 36,
+            "ref": "L5.7",
+            "besoins": [
+              9
+            ],
+            "action": "Ajouter la règle de prix récurrent annuelle",
+            "menu": "**Subscriptions app ‣ Products ‣ Products** ‣ onglet **Recurring Prices**",
+            "champ": "Add a price rule",
+            "valeur": "Plan annuel (**Yearly**), prix 180",
+            "detail": "Cliquer sur **Add a price rule** pour ajouter une ligne, puis sélectionner le plan récurrent annuel et indiquer 180 € comme prix récurrent.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+            ],
+            "raison": "Les passages mentionnent Add a price rule dans l'onglet Recurring Prices, mais pas la sélection du plan annuel ; ces règles servent aux remises et sont présentées comme facultatives."
+          }
+        ],
+        "parStatut": {
+          "Documenté": 28,
+          "À vérifier": 8
+        },
+        "tests": [
+          {
+            "titre": "Devis signé avec acompte de 30 % et commande Daikin",
+            "etapes": [
+              "Créer un devis avec un gros modèle et la pose",
+              "Envoyer le devis au client",
+              "Le client signe en ligne et paie 30 % (Payment X %)",
+              "Confirmer et vérifier la création automatique du PO vers Daikin",
+              "Créer la facture avec Create Invoice et contrôler le logo"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto"
+            ]
+          },
+          {
+            "titre": "Réapprovisionnement automatique d'une pièce détachée",
+            "etapes": [
+              "Créer la règle de réapprovisionnement (Min, Max, Trigger Auto)",
+              "Sortir du stock une quantité faisant passer sous le seuil",
+              "Vérifier la création automatique du PO dans Purchase"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger"
+            ]
+          },
+          {
+            "titre": "Ticket SAV par e-mail, intervention et facturation",
+            "etapes": [
+              "Envoyer un e-mail à sav@thermo-services.fr",
+              "Vérifier la création du ticket et du tag SLA",
+              "Créer le shift dans Planning pour un technicien",
+              "Ajouter les pièces avec Products ‣ Add",
+              "Faire signer le rapport sur tablette",
+              "Sur le sales order, cliquer Create Invoice puis Create Draft Invoice et Confirm"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias",
+              "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy",
+              "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-planning",
+              "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products",
+              "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#invoice-time-spent"
+            ]
+          },
+          {
+            "titre": "Contrat d'entretien annuel",
+            "etapes": [
+              "Créer un devis avec le produit d'entretien (Yearly, 180 €)",
+              "Confirmer pour générer l'abonnement",
+              "Vérifier la génération automatique de la facture annuelle"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#set-up-recurring-plans",
+              "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+            ]
+          }
+        ],
+        "questions_ouvertes": [
+          {
+            "question": "Quel est le seuil de réapprovisionnement de chaque pièce détachée (et la quantité à recommander) ?",
+            "besoin": 4,
+            "raison": "Seuil inconnu (à voir avec Kevin), nécessaire pour la recommande automatique."
+          },
+          {
+            "question": "Quels sont les fournisseurs des pièces détachées ?",
+            "besoin": 4,
+            "raison": "Aucun fournisseur nommé, nécessaire pour la recommande automatique."
+          },
+          {
+            "question": "Quels sont les modèles courants (en stock) et les gros modèles (commandés chez Daikin), avec prix d'achat et de vente ?",
+            "besoin": 3,
+            "raison": "Aucune liste de produits ni de prix ; la distinction stock/commande en dépend."
+          },
+          {
+            "question": "Quels sont les tarifs de la pose, du taux horaire et des pièces à facturer ?",
+            "besoin": 8,
+            "raison": "Aucun tarif précisé pour la facturation des interventions."
+          },
+          {
+            "question": "Comment l'acompte de 30 % doit-il être demandé (facture d'acompte, paiement en ligne à la signature) ?",
+            "besoin": 2,
+            "raison": "Mode de règlement non précisé ; un fournisseur de paiement en ligne est à choisir."
+          },
+          {
+            "question": "Que couvre le contrat d'entretien à 180 €/an (visites, pièces incluses) et quelle est la date de départ de facturation ?",
+            "besoin": 9,
+            "raison": "Contenu et périodicité exacte non décrits."
+          },
+          {
+            "question": "Quelle édition d'Odoo (Community ou Enterprise) est visée ?",
+            "besoin": 0,
+            "raison": "Signature, tickets, planification et abonnements peuvent en dépendre."
+          },
+          {
+            "question": "La comptabilité complète sera-t-elle utilisée plus tard ?",
+            "besoin": 10,
+            "raison": "Décision non prise."
+          },
+          {
+            "question": "Comment les clients seront-ils informés du délai de 4 heures et quels sont les horaires ouvrés ?",
+            "besoin": 5,
+            "raison": "Heures ouvrées non définies, nécessaires à la SLA."
+          },
+          {
+            "question": "Quelle est la durée de validité par défaut des devis ?",
+            "besoin": 1,
+            "raison": "Non précisée par le client."
+          },
+          {
+            "question": "Comment la signature du rapport d'intervention sur tablette doit-elle se faire, et quelle worksheet personnalisée utiliser ?",
+            "besoin": 7,
+            "raison": "Procédure et contenu de la worksheet non documentés."
+          },
+          {
+            "question": "Quels droits d'accès donner à Kevin (stock) ?",
+            "besoin": 4,
+            "raison": "Rôle de Kevin non couvert."
+          },
+          {
+            "question": "Comment transmettre les données à l'expert-comptable ?",
+            "besoin": 10,
+            "raison": "Export ou intégration vers son logiciel non documenté."
+          },
+          {
+            "question": "Quels noms donner au produit d'entretien et au plan récurrent ?",
+            "besoin": 9,
+            "raison": "Décision client non prise."
+          }
+        ],
+        "avertissements": [
+          "Édition non précisée : signature en ligne, Helpdesk, Field Service (Planning) et Subscriptions peuvent nécessiter Enterprise ; à confirmer.",
+          "Étapes L1.4, L1.5, L1.8 et L1.9 écartées : validité des devis non demandée, doublon avec le modèle de devis, et facture d'acompte manuelle faisant doublon avec le paiement en ligne.",
+          "Étapes L2.11 écartée (doublon avec la création du fournisseur) ; L2.4 et L2.6 à L2.10 appliquées aux pièces détachées seulement : pas de règle de réapprovisionnement pour le gros modèle (commandé à la signature, sans stock).",
+          "Étapes L5.2 et L5.3 écartées : le plan Yearly par défaut suffit ; à reprendre s'il ne convient pas.",
+          "Avec la route MTO, un PO est créé à chaque confirmation de devis, même si le stock suffit.",
+          "Aucun réglage multi-étapes (Multi-Step Routes) n'est ajouté : le client ne l'exige pas.",
+          "Un fournisseur de paiement en ligne doit être configuré pour l'acompte de 30 %.",
+          "Alias e-mail : sav@thermo-services.fr exige un domaine d'alias personnalisé (Custom Email Servers) ou une redirection ; sur On-premise, serveurs externes requis.",
+          "Champs de durée (4 heures) et Reach Stage de la SLA non documentés : à saisir dans le formulaire de la politique SLA.",
+          "Si Under warranty est coché, les pièces et services du shift ne sont pas facturés.",
+          "La signature en ligne des ventes ne couvre pas le rapport d'intervention ; la signature sur tablette est à vérifier dans l'interface.",
+          "La facturation du temps passé suit le flux Project/Timesheets, non directement depuis les shifts.",
+          "Création de l'entrepôt de Nantes non détaillée : à vérifier.",
+          "Suivi des paiements : utiliser l'enregistrement du paiement depuis la facture ; rapprochement bancaire non documenté.",
+          "Prix, seuils, délais et fournisseur des pièces : À renseigner."
+        ],
+        "markdown": "# Plan Odoo 20 — Thermo Services\n\nÉdition : Non précisée. Plan de paramétrage Odoo 20.0 pour Thermo Services : devis avec signature en ligne et acompte de 30 %, logo sur les documents, commande Daikin des gros modèles en MTO après signature, réapprovisionnement automatique des pièces à Nantes, tickets SAV par e-mail avec SLA de 4 h ouvrées, interventions Field Service avec pièces et facturation du temps, contrats d'entretien annuels à 180 €. Seules les étapes demandées sont retenues ; les prix, seuils, fournisseurs de pièces et heures ouvrées restent « À renseigner ».\n\nÉtapes : 28 Documenté, 8 À vérifier.\n\n## Besoins compris\n1. **Devis avec signature en ligne** : Réaliser les devis (pompes à chaleur et pose) dans Odoo au lieu d'Excel, avec signature en ligne du client.\n2. **Acompte à la signature** : Demander obligatoirement un acompte de 30 % au client à la signature du devis.\n3. **Commande fournisseur des gros modèles** : Commander chez Daikin les gros modèles de pompes uniquement après signature du devis par le client, sans les stocker.\n4. **Réapprovisionnement des pièces détachées** : Gérer en stock les pièces détachées avec recommande automatique quand le niveau passe sous un seuil.\n5. **Tickets SAV par e-mail** : Créer automatiquement un ticket de support à chaque e-mail reçu à l'adresse SAV en cas de panne, avec engagement de réponse en moins de 4 heures ouvrées.\n6. **Planification des interventions** : Planifier un technicien qui se rend chez le client après la création du ticket de panne.\n7. **Rapport d'intervention signé** : Permettre au technicien de remplir sur place un rapport d'intervention, d'y noter les pièces utilisées et de faire signer le client sur tablette.\n8. **Facturation des interventions** : Facturer au client les pièces utilisées et le temps passé après l'intervention.\n9. **Contrats d'entretien annuels** : Gérer des contrats d'entretien annuels facturés automatiquement chaque année.\n10. **Facturation et suivi des paiements** : Établir les factures et suivre les paiements dans Odoo, sans comptabilité complète car l'expert-comptable garde son propre logiciel.\n11. **Logo sur les documents** : Afficher le logo de la société sur les devis et les factures.\n\n## Étapes\n1. **Activer la signature en ligne** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings** (section **Quotations & Orders**)\n   - Champ : Online Signature\n   - Valeur : Cocher la case, puis cliquer sur **Save**\n   - Requis pour que les clients confirment les devis par signature en ligne.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures\n2. **Activer le paiement en ligne (acompte partiel)** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings** (section **Quotations & Orders**)\n   - Champ : Online Payment\n   - Valeur : Cocher la case, puis cliquer sur **Save**\n   - Le paiement peut être total ou partiel ; un champ supplémentaire **Payment X %** apparaît une fois l'option active.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments\n3. **Renseigner le pourcentage de paiement à la signature** — _À vérifier_\n   - Menu : **Sales app ‣ Configuration ‣ Settings** (section **Quotations & Orders**)\n   - Champ : Payment X %\n   - Valeur : 30\n   - Correspond à l'acompte de 30 % demandé par le client. Un fournisseur de paiement doit être configuré (**Configure Demo** pour une démo, **View Other Providers** pour d'autres).\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n   - À vérifier : Le champ Payment X % existe, mais le passage dit qu'un fournisseur peut être configuré, pas qu'il doit l'être.\n4. **Activer signature et paiement sur le modèle de devis** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Quotation Templates**\n   - Champ : Online confirmation\n   - Valeur : Cocher **Signature** et **Payment**\n   - Utile pour réutiliser le même paramétrage pour les devis pompes et pose. Chemin de menu des modèles tiré de la note du passage 12.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/pdf_quote_builder.html#add-pdf-as-header-footer\n5. **Configurer le logo pour devis et factures** — _Documenté_\n   - Menu : **Settings ‣ Companies ‣ Configure Document Layout**\n   - Champ : Company logo\n   - Valeur : Cliquer **Edit** et téléverser le logo fourni par le client\n   - Le layout s'applique à tous les rapports de la société (donc devis et factures). Vérifier l'aperçu dans la fenêtre **Configure your document layout**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#default-layout\n6. **Activer la route MTO** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Settings**\n   - Champ : Replenish on Order (MTO)\n   - Valeur : Cocher la case (section **Logistics**), puis cliquer sur **Save**\n   - Nécessaire pour les gros modèles commandés à Daikin après confirmation du devis.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route\n7. **Créer le fournisseur Daikin** — _À vérifier_\n   - Menu : Purchase app ‣ Orders ‣ Vendors\n   - Champ : Name\n   - Valeur : Daikin\n   - À vérifier : Ajoutée à l'assemblage, sans source contrôlée.\n8. **Activer le champ Purchase sur la fiche du gros modèle** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : Purchase\n   - Valeur : Case cochée (sous le nom du produit)\n   - Cela fait apparaître l'onglet **Purchase** pour un produit acheté auprès d'un fournisseur afin de satisfaire les commandes clients.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/manufacturing/advanced_configuration/product_variants.html#add-product-variants-on-the-product-form\n9. **Renseigner Daikin comme fournisseur du gros modèle** — _À vérifier_\n   - Menu : **Purchase** tab de la fiche produit\n   - Champ : Vendor\n   - Valeur : Daikin\n   - Cliquer sur **Add a line** si besoin. Le fournisseur est obligatoire pour générer la RfQ.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n   - À vérifier : Le passage [3] décrit Add a line pour le fournisseur. Le « obligatoire » vient de [9], mais la version en ligne accepte aussi un PO confirmé à la place du fournisseur.\n10. **Renseigner le prix d'achat Daikin** — _Documenté_\n   - Menu : **Purchase** tab de la fiche produit\n   - Champ : Unit Price\n   - Valeur : À renseigner\n   - Le délai fournisseur annoncé se saisit dans la colonne **Delivery Lead Time** de la même ligne, valeur À renseigner.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n11. **Appliquer la route MTO au gros modèle** — _À vérifier_\n   - Champ : Replenish on Order (MTO)\n   - Valeur : À sélectionner sur le produit\n   - Une fois configuré, un PO est créé à chaque confirmation d'un devis (SO) contenant le produit, même si le stock suffit. L'emplacement exact du champ de route n'est pas dans les passages fournis.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto\n   - À vérifier : La route MTO est décrite dans [2], mais les passages ne montrent pas le champ Replenish on Order (MTO) sur la fiche produit ; l'emplacement reste absent des passages cités.\n12. **Créer une règle de réapprovisionnement pour chaque modèle courant et pièce détachée** — _À vérifier_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Product\n   - Valeur : Modèle courant ou pièce détachée concerné\n   - Cliquer sur **New**. Chaque produit stocké à Nantes nécessite sa propre ligne.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n   - À vérifier : Le passage [5] décrit la création d'une règle via Operations ‣ Replenishment ‣ New et le champ Product. « Chaque produit nécessite sa propre ligne » n'est pas dit explicitement.\n13. **Indiquer l'emplacement de stock de Nantes** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Location\n   - Valeur : Emplacement de stock de Nantes (À renseigner)\n   - Emplacement où le produit est stocké.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n14. **Définir le seuil minimum** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Min\n   - Valeur : À renseigner\n   - Le seuil n'est pas défini par le client. Quand le stock prévisionnel passe sous cette valeur, une commande de réapprovisionnement est créée.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n15. **Définir la quantité maximale** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Max\n   - Valeur : À renseigner\n   - Quantité jusqu'à laquelle le stock est réapprovisionné.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n16. **Afficher la colonne Trigger et choisir le mode de déclenchement** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Trigger\n   - Valeur : Auto\n   - Activer la colonne via l'icône (adjust settings) à l'extrémité droite des titres de colonnes. **Auto** (sélectionné par défaut) crée automatiquement le PO sous le seuil ; **Manual** impose de valider via le bouton Order.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger\n17. **Renseigner le fournisseur des pièces détachées** — _À vérifier_\n   - Menu : Purchase tab de la fiche produit\n   - Champ : Vendor\n   - Valeur : À renseigner\n   - À vérifier : Ajoutée à l'assemblage, sans source contrôlée.\n18. **Ouvrir la page de configuration de l'équipe Helpdesk** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Valeur : À renseigner (équipe SAV concernée, existante ou créée avec **New**)\n   - Cliquer sur le nom de l'équipe pour ouvrir sa page de paramètres.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets\n19. **Activer le canal e-mail de l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : Email Alias\n   - Valeur : Coché\n   - Dans la section **Channels** de la page de l'équipe, cocher **Email Alias**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets\n20. **Renseigner l'alias e-mail de l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams** ‣ **Channels ‣ Email Alias**\n   - Champ : Alias\n   - Valeur : sav\n   - Saisir la partie locale de l'adresse souhaitée (sav@thermo-services.fr). L'adresse complète dépend du domaine d'alias configuré ; sinon cliquer sur **Set an Alias Domain**, qui redirige vers **Settings** où activer **Custom Email Servers**. Les domaines personnalisés ne sont pas obligatoires. À la réception, l'objet devient le titre du ticket et le corps est ajouté à l'onglet **Description** et au chatter.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias\n21. **Vérifier que les SLA sont activés pour l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : SLA Policies\n   - Valeur : Coché\n   - Dans la section **Performance** de l'équipe, la case est cochée par défaut sur une nouvelle équipe.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html\n22. **Créer la politique SLA** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ SLA Policies**\n   - Champ : Title\n   - Valeur : À renseigner\n   - Cliquer sur **New**, saisir un **Title** et une **Description**. Alternative : via le smart button **SLA Policies** de l'équipe puis **New**. Compléter ensuite le reste du formulaire.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy\n23. **Définir les heures ouvrées de la politique SLA** — _Documenté_\n   - Champ : Working Hours\n   - Valeur : À renseigner (calendrier ouvré du client)\n   - Le champ **Working Hours** de la politique sert à calculer l'échéance, par défaut selon **Company Working Hours** dans **Settings app ‣ Employees ‣ Work Organization**. L'échéance est calculée à partir de la date de création du ticket.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#meet-sla-deadlines\n24. **Activer Field Service** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : **Field Service**\n   - Valeur : Enabled, puis **Save**\n   - Active les interventions sur site planifiées dans Planning, avec feuilles de travail, matériel et temps facturables et rapport client pour signature.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html\n25. **Activer les produits et la facturation sur les shifts** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : Billing et **Products**\n   - Valeur : Enabled\n   - Nécessaire pour ajouter les pièces utilisées sur les shifts d'intervention.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products\n26. **Configurer le produit de service pour le temps passé** — _Documenté_\n   - Menu : **Sales app ‣ Products ‣ Products**\n   - Champ : **Product Type**\n   - Valeur : **Service**\n   - Onglet **General Information** de la fiche produit. Le temps passé n'est facturable qu'avec un produit de type Service.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n27. **Définir la politique de facturation du service** — _Documenté_\n   - Menu : **Sales app ‣ Products ‣ Products**\n   - Champ : **Invoicing Policy**\n   - Valeur : **Based on Timesheets**\n   - Permet de facturer le temps passé enregistré via les Timesheets de l'app Project.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n28. **Définir la création du projet et de la tâche à la commande** — _À vérifier_\n   - Menu : **Sales app ‣ Products ‣ Products**\n   - Champ : **Create on Order**\n   - Valeur : **Project & Task**\n   - Un projet et une tâche sont créés dans Project à la confirmation du sales order. L'option **Task** est possible, avec sélection d'un projet existant dans le champ **Project**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n   - À vérifier : Le passage 6 indique Project & Task dans Create on Order et l'option Task avec champ Project. Il ne dit pas que la création a lieu « à la confirmation » : il parle de la création d'une commande.\n29. **Créer une intervention (shift) pour un technicien** — _Documenté_\n   - Menu : **Planning app**\n   - Champ : **Customer**, **Sales Order**, **Worksheet**, **Under warranty**\n   - Valeur : À renseigner\n   - Le shift peut être créé depuis Planning, un sales order ou un ticket helpdesk. Sélectionner le client, le sales order si l'intervention est facturable, et la worksheet. Puis publier le shift.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-planning\n30. **Ajouter les pièces utilisées au shift** — _Documenté_\n   - Menu : **Planning**, shift ‣ bouton **Products**\n   - Champ : **Add**\n   - Valeur : À renseigner (produits et quantités)\n   - Se connecter au shift ou modifier un shift en cours, cliquer sur **0 Products**, **Add** sur la carte produit, ajuster les quantités avec **-** et **+**, puis **Back**. Les produits sont ajoutés au sales order lié (créé automatiquement s'il n'existe pas).\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products\n31. **Facturer le temps passé** — _Documenté_\n   - Menu : Sales order\n   - Champ : **Create Invoice**\n   - Valeur : **Regular invoice**, puis **Create Draft Invoice**\n   - Après saisie du temps sur la tâche, revenir au sales order, créer la facture brouillon puis cliquer sur **Confirm**. Les heures apparaissent dans la colonne **Delivered**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#invoice-time-spent\n32. **Ouvrir la configuration des plans récurrents** — _Documenté_\n   - Menu : **Subscriptions app ‣ Configuration ‣ Recurring Plans**\n   - Vérifier si le plan **Yearly** fourni par défaut convient. Si oui, passer directement à la création du produit.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#set-up-recurring-plans\n33. **Créer ou ouvrir le produit d'abonnement** — _Documenté_\n   - Menu : **Subscriptions app ‣ Products ‣ Products**\n   - Cliquer sur un produit existant ou sur **New**. Laisser les options **Subscriptions** et **Sales** activées.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n34. **Définir le type de produit** — _Documenté_\n   - Menu : **Subscriptions app ‣ Products ‣ Products** ‣ onglet **General Information**\n   - Champ : Product type\n   - Valeur : **Service**\n   - Le type est généralement **Service** pour un contrat d'entretien.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n35. **Renseigner le prix de vente récurrent** — _Documenté_\n   - Menu : **Subscriptions app ‣ Products ‣ Products** ‣ onglet **General Information**\n   - Champ : Sales Price\n   - Valeur : 180\n   - Montant récurrent payé par le client à chaque période de récurrence (180 € par an).\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n36. **Ajouter la règle de prix récurrent annuelle** — _À vérifier_\n   - Menu : **Subscriptions app ‣ Products ‣ Products** ‣ onglet **Recurring Prices**\n   - Champ : Add a price rule\n   - Valeur : Plan annuel (**Yearly**), prix 180\n   - Cliquer sur **Add a price rule** pour ajouter une ligne, puis sélectionner le plan récurrent annuel et indiquer 180 € comme prix récurrent.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n   - À vérifier : Les passages mentionnent Add a price rule dans l'onglet Recurring Prices, mais pas la sélection du plan annuel ; ces règles servent aux remises et sont présentées comme facultatives.\n\n## Tests\n### Devis signé avec acompte de 30 % et commande Daikin\n1. Créer un devis avec un gros modèle et la pose\n2. Envoyer le devis au client\n3. Le client signe en ligne et paie 30 % (Payment X %)\n4. Confirmer et vérifier la création automatique du PO vers Daikin\n5. Créer la facture avec Create Invoice et contrôler le logo\nPages : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto\n\n### Réapprovisionnement automatique d'une pièce détachée\n1. Créer la règle de réapprovisionnement (Min, Max, Trigger Auto)\n2. Sortir du stock une quantité faisant passer sous le seuil\n3. Vérifier la création automatique du PO dans Purchase\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger\n\n### Ticket SAV par e-mail, intervention et facturation\n1. Envoyer un e-mail à sav@thermo-services.fr\n2. Vérifier la création du ticket et du tag SLA\n3. Créer le shift dans Planning pour un technicien\n4. Ajouter les pièces avec Products ‣ Add\n5. Faire signer le rapport sur tablette\n6. Sur le sales order, cliquer Create Invoice puis Create Draft Invoice et Confirm\nPages : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-planning ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products ; https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#invoice-time-spent\n\n### Contrat d'entretien annuel\n1. Créer un devis avec le produit d'entretien (Yearly, 180 €)\n2. Confirmer pour générer l'abonnement\n3. Vérifier la génération automatique de la facture annuelle\nPages : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#set-up-recurring-plans ; https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n\n## Questions ouvertes\n- Quel est le seuil de réapprovisionnement de chaque pièce détachée (et la quantité à recommander) ? (besoin 4) — Seuil inconnu (à voir avec Kevin), nécessaire pour la recommande automatique.\n- Quels sont les fournisseurs des pièces détachées ? (besoin 4) — Aucun fournisseur nommé, nécessaire pour la recommande automatique.\n- Quels sont les modèles courants (en stock) et les gros modèles (commandés chez Daikin), avec prix d'achat et de vente ? (besoin 3) — Aucune liste de produits ni de prix ; la distinction stock/commande en dépend.\n- Quels sont les tarifs de la pose, du taux horaire et des pièces à facturer ? (besoin 8) — Aucun tarif précisé pour la facturation des interventions.\n- Comment l'acompte de 30 % doit-il être demandé (facture d'acompte, paiement en ligne à la signature) ? (besoin 2) — Mode de règlement non précisé ; un fournisseur de paiement en ligne est à choisir.\n- Que couvre le contrat d'entretien à 180 €/an (visites, pièces incluses) et quelle est la date de départ de facturation ? (besoin 9) — Contenu et périodicité exacte non décrits.\n- Quelle édition d'Odoo (Community ou Enterprise) est visée ? — Signature, tickets, planification et abonnements peuvent en dépendre.\n- La comptabilité complète sera-t-elle utilisée plus tard ? (besoin 10) — Décision non prise.\n- Comment les clients seront-ils informés du délai de 4 heures et quels sont les horaires ouvrés ? (besoin 5) — Heures ouvrées non définies, nécessaires à la SLA.\n- Quelle est la durée de validité par défaut des devis ? (besoin 1) — Non précisée par le client.\n- Comment la signature du rapport d'intervention sur tablette doit-elle se faire, et quelle worksheet personnalisée utiliser ? (besoin 7) — Procédure et contenu de la worksheet non documentés.\n- Quels droits d'accès donner à Kevin (stock) ? (besoin 4) — Rôle de Kevin non couvert.\n- Comment transmettre les données à l'expert-comptable ? (besoin 10) — Export ou intégration vers son logiciel non documenté.\n- Quels noms donner au produit d'entretien et au plan récurrent ? (besoin 9) — Décision client non prise.\n\n## Avertissements\n- Édition non précisée : signature en ligne, Helpdesk, Field Service (Planning) et Subscriptions peuvent nécessiter Enterprise ; à confirmer.\n- Étapes L1.4, L1.5, L1.8 et L1.9 écartées : validité des devis non demandée, doublon avec le modèle de devis, et facture d'acompte manuelle faisant doublon avec le paiement en ligne.\n- Étapes L2.11 écartée (doublon avec la création du fournisseur) ; L2.4 et L2.6 à L2.10 appliquées aux pièces détachées seulement : pas de règle de réapprovisionnement pour le gros modèle (commandé à la signature, sans stock).\n- Étapes L5.2 et L5.3 écartées : le plan Yearly par défaut suffit ; à reprendre s'il ne convient pas.\n- Avec la route MTO, un PO est créé à chaque confirmation de devis, même si le stock suffit.\n- Aucun réglage multi-étapes (Multi-Step Routes) n'est ajouté : le client ne l'exige pas.\n- Un fournisseur de paiement en ligne doit être configuré pour l'acompte de 30 %.\n- Alias e-mail : sav@thermo-services.fr exige un domaine d'alias personnalisé (Custom Email Servers) ou une redirection ; sur On-premise, serveurs externes requis.\n- Champs de durée (4 heures) et Reach Stage de la SLA non documentés : à saisir dans le formulaire de la politique SLA.\n- Si Under warranty est coché, les pièces et services du shift ne sont pas facturés.\n- La signature en ligne des ventes ne couvre pas le rapport d'intervention ; la signature sur tablette est à vérifier dans l'interface.\n- La facturation du temps passé suit le flux Project/Timesheets, non directement depuis les shifts.\n- Création de l'entrepôt de Nantes non détaillée : à vérifier.\n- Suivi des paiements : utiliser l'enregistrement du paiement depuis la facture ; rapprochement bancaire non documenté.\n- Prix, seuils, délais et fournisseur des pièces : À renseigner.\n\n_Coût : 0.320 USD · durée : 92 s_",
+        "cout": {
+          "usd": 0.3197,
+          "details": [
+            {
+              "etape": "extraction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 4689,
+              "sortie": 3592,
+              "usd": 0.0453
+            },
+            {
+              "etape": "lot 1",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.0416,
+              "dureeMs": 39921
+            },
+            {
+              "etape": "lot 2",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.03993,
+              "dureeMs": 36293
+            },
+            {
+              "etape": "lot 3",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.03482,
+              "dureeMs": 31865
+            },
+            {
+              "etape": "lot 4",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.0355,
+              "dureeMs": 30743
+            },
+            {
+              "etape": "lot 5",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.03388,
+              "dureeMs": 31371
+            },
+            {
+              "etape": "assemblage",
+              "modele": "claude-sonnet-5-5",
+              "entree": 13392,
+              "sortie": 6189,
+              "usd": 0.08867
+            }
+          ]
+        },
+        "dureeMs": 91753
+      }
+    },
+    "maigre": {
+      "pdf": "maigre.pdf",
+      "grille": null,
+      "date": "2026-10-31T23:35:40",
+      "latenceMs": 41089,
+      "coutUsd": 0.07002,
+      "coutParAppel": [
+        {
+          "etape": "extraction",
+          "modele": "claude-sonnet-5-5",
+          "entree": 3674,
+          "sortie": 611,
+          "usd": 0.01346
+        },
+        {
+          "etape": "lot 1",
+          "modele": "claude-sonnet-5-5",
+          "usd": 0.02976,
+          "dureeMs": 25808
+        },
+        {
+          "etape": "assemblage",
+          "modele": "claude-sonnet-5-5",
+          "entree": 3415,
+          "sortie": 1997,
+          "usd": 0.0268
+        }
+      ],
+      "erreur": null,
+      "plan": {
+        "client": "Non précisé",
+        "edition": "Non précisée",
+        "resume": "Plan de paramétrage d'une route MTO (Replenish on Order) avec achats auprès d'un fournisseur : activation du réglage MTO dans Inventory, installation de l'app Purchase si nécessaire, création du fournisseur, puis configuration du produit (route MTO, case Purchase, ligne fournisseur). Les données client (produit, fournisseur, prix, délai) sont à renseigner.",
+        "besoins": [
+          {
+            "n": 1,
+            "titre": "Route MTO et achats fournisseur",
+            "besoin": "Le client souhaite mettre en place une route de réapprovisionnement à la commande (MTO) avec des achats auprès d'un fournisseur.",
+            "contexte": "",
+            "extrait": "Besoin client : route MTO et achats fournisseur."
+          }
+        ],
+        "donnees_client": [],
+        "lots": [
+          {
+            "n": 1,
+            "besoins": [
+              1
+            ],
+            "question": "Comment paramétrer dans Odoo 20.0 une route MTO (réapprovisionnement à la commande) avec achats auprès d'un fournisseur ?",
+            "contexte": "route MTO et achats fournisseur",
+            "statut": "À vérifier"
+          }
+        ],
+        "etapes": [
+          {
+            "n": 1,
+            "ref": "",
+            "besoins": [
+              1
+            ],
+            "action": "Vérifier que l'application Purchase est installée (sinon l'installer) pour que la case Purchase et l'onglet Purchase apparaissent sur le produit",
+            "menu": "Apps",
+            "champ": "Purchase",
+            "valeur": "Installer si absente",
+            "detail": "",
+            "statut": "À vérifier",
+            "source": [],
+            "raison": "Ajoutée à l'assemblage, sans source contrôlée."
+          },
+          {
+            "n": 2,
+            "ref": "L1.1",
+            "besoins": [
+              1
+            ],
+            "action": "Activer le réglage de la route MTO",
+            "menu": "**Inventory app ‣ Configuration ‣ Settings**",
+            "champ": "**Replenish on Order (MTO)**",
+            "valeur": "Cocher la case (section **Logistics**, en bas de page), puis cliquer sur **Save**",
+            "detail": "Ce réglage est indispensable pour utiliser la route MTO.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route"
+            ]
+          },
+          {
+            "n": 3,
+            "ref": "",
+            "besoins": [
+              1
+            ],
+            "action": "Créer la fiche du fournisseur avant de le sélectionner sur le produit",
+            "menu": "Purchase app ‣ Orders ‣ Vendors",
+            "champ": "Name",
+            "valeur": "À renseigner",
+            "detail": "",
+            "statut": "À vérifier",
+            "source": [],
+            "raison": "Ajoutée à l'assemblage, sans source contrôlée."
+          },
+          {
+            "n": 4,
+            "ref": "L1.2",
+            "besoins": [
+              1
+            ],
+            "action": "Ouvrir ou créer la fiche produit",
+            "menu": "**Inventory app ‣ Products ‣ Products**",
+            "champ": "**New**",
+            "valeur": "Sélectionner un produit existant ou cliquer sur **New**",
+            "detail": "Le produit à réapprovisionner à la commande.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+            ]
+          },
+          {
+            "n": 5,
+            "ref": "L1.3",
+            "besoins": [
+              1
+            ],
+            "action": "Sélectionner la route MTO sur le produit",
+            "menu": "**Inventory app ‣ Products ‣ Products** (onglet *Inventory*, section *Operations*)",
+            "champ": "**Routes**",
+            "valeur": "**Replenish on Order (MTO)**",
+            "detail": "Cocher la case à côté de **Replenish on Order (MTO)** dans le champ **Routes**.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+            ]
+          },
+          {
+            "n": 6,
+            "ref": "L1.4",
+            "besoins": [
+              1
+            ],
+            "action": "Activer l'achat du produit",
+            "menu": "**Inventory app ‣ Products ‣ Products**",
+            "champ": "**Purchase**",
+            "valeur": "Case cochée",
+            "detail": "La case se trouve sous le nom du produit et fait apparaître l'onglet *Purchase*.",
+            "statut": "Documenté",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+            ]
+          },
+          {
+            "n": 7,
+            "ref": "L1.5",
+            "besoins": [
+              1
+            ],
+            "action": "Renseigner le fournisseur et le prix",
+            "menu": "**Inventory app ‣ Products ‣ Products** (onglet *Purchase*)",
+            "champ": "**Vendor** et **Unit Price**",
+            "valeur": "À renseigner",
+            "detail": "Cliquer sur **Add a line** dans l'onglet *Purchase* pour saisir le fournisseur et son prix. Le fournisseur est obligatoire pour que la RfQ soit générée. La colonne **Delivery Lead Time** est disponible par défaut sur cette ligne.",
+            "statut": "À vérifier",
+            "source": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+            ],
+            "raison": "Les étapes sont présentes (Add a line, Delivery Lead Time par défaut), mais la version en ligne admet un PO confirmé à la place du fournisseur, donc « obligatoire » n'est plus exact."
+          }
+        ],
+        "parStatut": {
+          "À vérifier": 3,
+          "Documenté": 4
+        },
+        "tests": [
+          {
+            "titre": "Commande client MTO générant un achat fournisseur",
+            "etapes": [
+              "Ouvrir Sales et cliquer sur New pour créer un devis avec le produit configuré en MTO",
+              "Cliquer sur Confirm pour confirmer la commande client",
+              "Ouvrir Purchase app ‣ Orders ‣ Requests for Quotation et vérifier qu'une RfQ brouillon est liée à la commande client, avec le fournisseur configuré",
+              "Ajuster si besoin puis cliquer sur Confirm Order pour confirmer l'achat",
+              "Vérifier dans Inventory la réception du produit et sa réservation pour la commande client"
+            ],
+            "pages": [
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products",
+              "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+            ]
+          }
+        ],
+        "questions_ouvertes": [
+          {
+            "question": "Quels sont les produits concernés par la route MTO ?",
+            "besoin": 1,
+            "raison": "Le document ne nomme aucun produit, donc on ne sait pas lesquels doivent être réapprovisionnés à la commande."
+          },
+          {
+            "question": "Quel est le fournisseur auprès duquel les achats sont réalisés ?",
+            "besoin": 1,
+            "raison": "Aucun fournisseur n'est nommé dans le document ; il est obligatoire pour générer la RfQ."
+          },
+          {
+            "question": "Quels sont les prix d'achat et les délais de livraison du fournisseur ?",
+            "besoin": 1,
+            "raison": "Aucun prix ni délai n'est indiqué, or ils sont nécessaires pour paramétrer les achats fournisseur."
+          },
+          {
+            "question": "Quelle édition d'Odoo (Community ou Enterprise) est utilisée ?",
+            "besoin": 0,
+            "raison": "Le document ne mentionne pas l'édition."
+          },
+          {
+            "question": "Quelle est la société cliente et qui est l'interlocuteur ?",
+            "besoin": 0,
+            "raison": "Le document ne donne aucune information d'identification du client."
+          }
+        ],
+        "avertissements": [
+          "Les étapes sans référence (installation de Purchase, création du fournisseur) ont été ajoutées car indispensables ; elles sont à vérifier.",
+          "Depuis Odoo 19.0, les routes Buy et Manufacture sont masquées par défaut dans le champ Routes et appliquées automatiquement selon la configuration du produit (par exemple la case Purchase).",
+          "Avec MTO, Odoo génère un PO brouillon juste après confirmation de la commande client, lié à celle-ci ; les quantités sont ajustées automatiquement tant que le PO n'est pas confirmé, et le produit est réservé pour la commande client concernée.",
+          "Le fournisseur, le prix d'achat et le délai d'achat ne figurent pas dans les données client : ils restent « À renseigner ».",
+          "L'édition d'Odoo n'est pas précisée : aucune exigence Enterprise n'est signalée par les lots."
+        ],
+        "markdown": "# Plan Odoo 20 — Non précisé\n\nÉdition : Non précisée. Plan de paramétrage d'une route MTO (Replenish on Order) avec achats auprès d'un fournisseur : activation du réglage MTO dans Inventory, installation de l'app Purchase si nécessaire, création du fournisseur, puis configuration du produit (route MTO, case Purchase, ligne fournisseur). Les données client (produit, fournisseur, prix, délai) sont à renseigner.\n\nÉtapes : 3 À vérifier, 4 Documenté.\n\n## Besoins compris\n1. **Route MTO et achats fournisseur** : Le client souhaite mettre en place une route de réapprovisionnement à la commande (MTO) avec des achats auprès d'un fournisseur.\n\n## Étapes\n1. **Vérifier que l'application Purchase est installée (sinon l'installer) pour que la case Purchase et l'onglet Purchase apparaissent sur le produit** — _À vérifier_\n   - Menu : Apps\n   - Champ : Purchase\n   - Valeur : Installer si absente\n   - À vérifier : Ajoutée à l'assemblage, sans source contrôlée.\n2. **Activer le réglage de la route MTO** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Settings**\n   - Champ : **Replenish on Order (MTO)**\n   - Valeur : Cocher la case (section **Logistics**, en bas de page), puis cliquer sur **Save**\n   - Ce réglage est indispensable pour utiliser la route MTO.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route\n3. **Créer la fiche du fournisseur avant de le sélectionner sur le produit** — _À vérifier_\n   - Menu : Purchase app ‣ Orders ‣ Vendors\n   - Champ : Name\n   - Valeur : À renseigner\n   - À vérifier : Ajoutée à l'assemblage, sans source contrôlée.\n4. **Ouvrir ou créer la fiche produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **New**\n   - Valeur : Sélectionner un produit existant ou cliquer sur **New**\n   - Le produit à réapprovisionner à la commande.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n5. **Sélectionner la route MTO sur le produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet *Inventory*, section *Operations*)\n   - Champ : **Routes**\n   - Valeur : **Replenish on Order (MTO)**\n   - Cocher la case à côté de **Replenish on Order (MTO)** dans le champ **Routes**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n6. **Activer l'achat du produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **Purchase**\n   - Valeur : Case cochée\n   - La case se trouve sous le nom du produit et fait apparaître l'onglet *Purchase*.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n7. **Renseigner le fournisseur et le prix** — _À vérifier_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet *Purchase*)\n   - Champ : **Vendor** et **Unit Price**\n   - Valeur : À renseigner\n   - Cliquer sur **Add a line** dans l'onglet *Purchase* pour saisir le fournisseur et son prix. Le fournisseur est obligatoire pour que la RfQ soit générée. La colonne **Delivery Lead Time** est disponible par défaut sur cette ligne.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n   - À vérifier : Les étapes sont présentes (Add a line, Delivery Lead Time par défaut), mais la version en ligne admet un PO confirmé à la place du fournisseur, donc « obligatoire » n'est plus exact.\n\n## Tests\n### Commande client MTO générant un achat fournisseur\n1. Ouvrir Sales et cliquer sur New pour créer un devis avec le produit configuré en MTO\n2. Cliquer sur Confirm pour confirmer la commande client\n3. Ouvrir Purchase app ‣ Orders ‣ Requests for Quotation et vérifier qu'une RfQ brouillon est liée à la commande client, avec le fournisseur configuré\n4. Ajuster si besoin puis cliquer sur Confirm Order pour confirmer l'achat\n5. Vérifier dans Inventory la réception du produit et sa réservation pour la commande client\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n\n## Questions ouvertes\n- Quels sont les produits concernés par la route MTO ? (besoin 1) — Le document ne nomme aucun produit, donc on ne sait pas lesquels doivent être réapprovisionnés à la commande.\n- Quel est le fournisseur auprès duquel les achats sont réalisés ? (besoin 1) — Aucun fournisseur n'est nommé dans le document ; il est obligatoire pour générer la RfQ.\n- Quels sont les prix d'achat et les délais de livraison du fournisseur ? (besoin 1) — Aucun prix ni délai n'est indiqué, or ils sont nécessaires pour paramétrer les achats fournisseur.\n- Quelle édition d'Odoo (Community ou Enterprise) est utilisée ? — Le document ne mentionne pas l'édition.\n- Quelle est la société cliente et qui est l'interlocuteur ? — Le document ne donne aucune information d'identification du client.\n\n## Avertissements\n- Les étapes sans référence (installation de Purchase, création du fournisseur) ont été ajoutées car indispensables ; elles sont à vérifier.\n- Depuis Odoo 19.0, les routes Buy et Manufacture sont masquées par défaut dans le champ Routes et appliquées automatiquement selon la configuration du produit (par exemple la case Purchase).\n- Avec MTO, Odoo génère un PO brouillon juste après confirmation de la commande client, lié à celle-ci ; les quantités sont ajustées automatiquement tant que le PO n'est pas confirmé, et le produit est réservé pour la commande client concernée.\n- Le fournisseur, le prix d'achat et le délai d'achat ne figurent pas dans les données client : ils restent « À renseigner ».\n- L'édition d'Odoo n'est pas précisée : aucune exigence Enterprise n'est signalée par les lots.\n\n_Coût : 0.070 USD · durée : 41 s_",
+        "cout": {
+          "usd": 0.07002,
+          "details": [
+            {
+              "etape": "extraction",
+              "modele": "claude-sonnet-5-5",
+              "entree": 3674,
+              "sortie": 611,
+              "usd": 0.01346
+            },
+            {
+              "etape": "lot 1",
+              "modele": "claude-sonnet-5-5",
+              "usd": 0.02976,
+              "dureeMs": 25808
+            },
+            {
+              "etape": "assemblage",
+              "modele": "claude-sonnet-5-5",
+              "entree": 3415,
+              "sortie": 1997,
+              "usd": 0.0268
+            }
+          ]
+        },
+        "dureeMs": 40862
+      }
+    }
+  }
+}

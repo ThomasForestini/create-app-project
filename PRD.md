@@ -21,7 +21,7 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 ### Core
 - [x] Question texte → réponse sourcée (statut *Documenté / À vérifier / Non couvert* + lien doc v20)
 - [x] Photo de QCM → bonne(s) réponse(s) + brève explication + source, signalement si la doc v20 contredit une question pensée v19
-- [ ] PDF client → plan de configuration Odoo 20 étape par étape (menus, champs, valeurs en EN)
+- [x] PDF client → plan de configuration Odoo 20 étape par étape (menus, champs, valeurs en EN)
 
 ### Technique
 - [x] Postgres + pgvector en conteneur sur le VPS Hostinger (à côté de n8n), bibliothèque Odoo 20 rechargée depuis `knowledge-20.0.sql.gz`
@@ -42,7 +42,8 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 ## 5. Constraints non-négociables
 
 - Précision avant tout : chaque réponse porte un statut et au moins une source ; jamais de réponse « Documenté » sans passage de doc qui la justifie.
-- Source de vérité = doc officielle Odoo **20** indexée. Les réponses en vert du PDF de certification ne servent jamais de corrigé.
+- Source de vérité = doc officielle Odoo **20** indexée (doc + transcripts Odoo Tutorials). Les réponses en vert du PDF de certification ne servent jamais de corrigé.
+- Repli internet (décidé le 31/10/2026) : seulement pour ce que la bibliothèque ne couvre pas ; une affirmation trouvée sur le web porte le statut 🌐 *Web* avec son URL, n'est jamais « Documenté », et n'est gardée que si la page citée la dit.
 - Libellés Odoo (menus, champs) en anglais comme dans l'interface ; explications en français.
 - Usage strictement personnel : tout message d'un autre `chat_id` est ignoré.
 - Aucun secret en clair dans le repo (credentials stockés dans n8n, `.env` gitignoré).
@@ -53,14 +54,14 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 - ≥ 90 % de bonnes réponses sur un échantillon de 30 questions du PDF de certification, corrigé vérifié à la main (doc + runbot).
 - ≤ 1 réponse marquée « Documenté » fausse sur cet échantillon (les erreurs doivent tomber en « À vérifier »).
 - Réponse reçue sur Telegram en < 60 s pour une photo de QCM, < 3 min pour un PDF client.
-- Coût moyen ≤ 0,05 USD par question et ≤ 0,20 USD par plan de configuration.
+- Coût moyen ≤ 0,05 USD par question et ≤ 0,40 USD par plan de configuration (relevé de 0,20 USD le 01/11/2026 : Sonnet 5.5 gardé pour rédiger les lots, repli web compris).
 
 ## 7. Implementation Phases
 
 - **Phase 1 — Socle + question texte** : pgvector sur VPS + import v20, bot Telegram filtré, workflow question texte → recherche → réponse sourcée à 3 statuts ; duel Sonnet 5.5 vs meilleur Gemini sur les jeux de test existants (106 doc + 12 de référence), modèle gagnant figé. ✅ Terminée le 2026-10-27
 - **Phase 2 — QCM photo** : photo → lecture de la question et des choix (vision) → réponse + explication + source ; corrigé vérifié de 30 questions ; mesure du taux de bonnes réponses. ✅ Terminée le 2026-10-31
-- **Phase 3 — PDF client** : PDF → extraction des besoins → plan de configuration Odoo 20 étape par étape ; validé sur les scénarios clients existants (dont MTO).
-- **Phase 4 — Robustesse** : format Telegram lisible (découpage messages longs), gestion d'erreurs visible, journal coûts/latence, workflows `[PROD]`.
+- **Phase 3 — PDF client** : PDF → extraction des besoins → plan de configuration Odoo 20 étape par étape ; validé sur les scénarios clients existants (dont MTO) ✅ Terminée le 2026-11-01 (MTO Complet 3/3 ; Thermo Partiel, reporté en Phase 4)
+- **Phase 4 — Robustesse** : format Telegram lisible (découpage messages longs), gestion d'erreurs visible, journal coûts/latence, workflows `[PROD]` ; plan « Complet » à chaque tirage sur les scénarios denses (Thermo, Partiel 2/2 en fin de Phase 3) et coût de Thermo ≤ 0,40 USD (0,40-0,41 USD en fin de Phase 3) — reporté de la Phase 3 le 01/11/2026.
 
 ## 8. Risks & Mitigations
 

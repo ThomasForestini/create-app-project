@@ -1,0 +1,2446 @@
+{
+  "1": {
+    "latenceS": 112,
+    "plan": {
+      "client": "Thermo Services",
+      "edition": "Non précisée",
+      "resume": "Plan Thermo Services : devis avec signature en ligne et acompte de 30 %, stock des modèles courants à Nantes, commande Daikin en MTO pour les gros modèles, tickets SAV par e-mail avec SLA de 4 h ouvrées, interventions Field Service avec rapport signé, facturation des pièces et du temps, contrat d'entretien annuel à 180 €. Les besoins 5 (recommande automatique) et 12 (logo, factures sans comptabilité complète) ne sont couverts par aucune étape.",
+      "besoins": [
+        {
+          "n": 1,
+          "titre": "Devis avec signature en ligne",
+          "besoin": "Réaliser les devis dans l'outil avec les pompes à chaleur et la pose, avec signature en ligne par le client.",
+          "contexte": "pompes (produit du devis)",
+          "extrait": "faire les devis dans l'outil, avec les pompes, la pose, et que le client puisse signer en ligne."
+        },
+        {
+          "n": 2,
+          "titre": "Acompte à la signature",
+          "besoin": "Demander un acompte de 30 % au client lors de la signature du devis, de façon obligatoire.",
+          "contexte": "30 % (acompte à la signature, obligatoire)",
+          "extrait": "on demande un acompte de 30 % à la signature, ça c'est obligatoire chez nous."
+        },
+        {
+          "n": 3,
+          "titre": "Modèles courants en stock",
+          "besoin": "Gérer en stock les modèles courants de pompes à chaleur dans l'entrepôt de Nantes.",
+          "contexte": "petit entrepôt à Nantes (entrepôt); modèles courants (pompes en stock)",
+          "extrait": "On a un petit entrepôt à Nantes. Les modèles courants on les a en stock"
+        },
+        {
+          "n": 4,
+          "titre": "Gros modèles commandés à la signature",
+          "besoin": "Commander chez Daikin les gros modèles de pompes uniquement après la signature du devis par le client, sans les stocker.",
+          "contexte": "Daikin (fournisseur des gros modèles commandés après signature); gros modèles (non stockés car trop cher)",
+          "extrait": "les gros modèles, on les commande chez Daikin seulement quand le client a signé, on ne veut pas les stocker, c'est trop cher."
+        },
+        {
+          "n": 5,
+          "titre": "Réapprovisionnement pièces détachées",
+          "besoin": "Gérer les pièces détachées en stock avec recommande automatique quand le niveau passe sous un seuil.",
+          "contexte": "Kevin (gère le stock)",
+          "extrait": "quand on passe sous un certain niveau il faudrait que ça recommande tout seul."
+        },
+        {
+          "n": 6,
+          "titre": "Tickets de support par e-mail",
+          "besoin": "Créer automatiquement un ticket de support lorsqu'un client écrit à l'adresse SAV en cas de panne.",
+          "contexte": "sav@thermo-services.fr (adresse e-mail SAV pour les pannes)",
+          "extrait": "les clients nous appellent ou nous écrivent à sav@thermo-services.fr quand il y a une panne. Il faudrait que ça crée un ticket automatiquement"
+        },
+        {
+          "n": 7,
+          "titre": "Engagement de délai de réponse",
+          "besoin": "Suivre un engagement de répondre aux tickets en moins de 4 heures ouvrées.",
+          "contexte": "4 heures ouvrées (délai de réponse aux tickets SAV)",
+          "extrait": "qu'on s'engage à répondre en moins de 4 heures ouvrées."
+        },
+        {
+          "n": 8,
+          "titre": "Planification des interventions",
+          "besoin": "Planifier un technicien qui se rend chez le client après la création du ticket.",
+          "contexte": "six techniciens (sur la route)",
+          "extrait": "Ensuite on planifie un technicien qui va chez le client."
+        },
+        {
+          "n": 9,
+          "titre": "Rapport d'intervention signé",
+          "besoin": "Permettre au technicien de remplir un rapport d'intervention, noter les pièces utilisées et faire signer le client sur tablette.",
+          "contexte": "tablette (signature du client sur place)",
+          "extrait": "Il remplit un rapport d'intervention, il note les pièces utilisées, et le client signe sur la tablette."
+        },
+        {
+          "n": 10,
+          "titre": "Facturation pièces et temps passé",
+          "besoin": "Facturer au client les pièces utilisées et le temps passé lors de l'intervention.",
+          "contexte": "",
+          "extrait": "Après on facture les pièces et le temps passé."
+        },
+        {
+          "n": 11,
+          "titre": "Contrats d'entretien annuels",
+          "besoin": "Gérer des contrats d'entretien annuels facturés automatiquement chaque année.",
+          "contexte": "180 euros par an (contrat d'entretien annuel)",
+          "extrait": "on a des contrats d'entretien annuels, 180 euros par an, facturés automatiquement chaque année."
+        },
+        {
+          "n": 12,
+          "titre": "Facturation et logo",
+          "besoin": "Faire les factures et suivre les paiements sans comptabilité complète, avec le logo sur les devis et les factures.",
+          "contexte": "expert-comptable (reste sur son propre logiciel); logo (à envoyer par le client)",
+          "extrait": "nous on veut juste faire les factures et suivre les paiements. [...] il faut notre logo sur les devis et les factures, je vous l'enverrai."
+        }
+      ],
+      "donnees_client": [
+        {
+          "donnee": "Société",
+          "valeur": "Thermo Services",
+          "objet": "général",
+          "extrait": "nous c'est Thermo Services"
+        },
+        {
+          "donnee": "Interlocutrice",
+          "valeur": "Mme Durand, gérante",
+          "objet": "général",
+          "extrait": "Client (Mme Durand, gérante)"
+        },
+        {
+          "donnee": "Effectif",
+          "valeur": "une quinzaine",
+          "objet": "général",
+          "extrait": "On est une quinzaine"
+        },
+        {
+          "donnee": "Techniciens",
+          "valeur": "six",
+          "objet": "interventions sur site",
+          "extrait": "six techniciens sur la route"
+        },
+        {
+          "donnee": "Acompte",
+          "valeur": "30 %",
+          "objet": "devis, à la signature",
+          "extrait": "un acompte de 30 % à la signature"
+        },
+        {
+          "donnee": "Site de stockage",
+          "valeur": "petit entrepôt à Nantes",
+          "objet": "stock",
+          "extrait": "On a un petit entrepôt à Nantes."
+        },
+        {
+          "donnee": "Fournisseur",
+          "valeur": "Daikin",
+          "objet": "gros modèles de pompes commandés après signature",
+          "extrait": "on les commande chez Daikin seulement quand le client a signé"
+        },
+        {
+          "donnee": "Responsable stock",
+          "valeur": "Kevin",
+          "objet": "pièces détachées",
+          "extrait": "faudrait voir avec Kevin, c'est lui qui gère le stock."
+        },
+        {
+          "donnee": "Adresse e-mail SAV",
+          "valeur": "sav@thermo-services.fr",
+          "objet": "tickets de support",
+          "extrait": "nous écrivent à sav@thermo-services.fr quand il y a une panne"
+        },
+        {
+          "donnee": "Délai de réponse",
+          "valeur": "moins de 4 heures ouvrées",
+          "objet": "tickets de support",
+          "extrait": "répondre en moins de 4 heures ouvrées"
+        },
+        {
+          "donnee": "Prix contrat d'entretien",
+          "valeur": "180 euros par an",
+          "objet": "contrats d'entretien annuels",
+          "extrait": "contrats d'entretien annuels, 180 euros par an"
+        }
+      ],
+      "lots": [
+        {
+          "n": 1,
+          "besoins": [
+            1,
+            2
+          ],
+          "question": "Comment paramétrer dans Odoo 20.0 les devis avec pompes et pose, signature en ligne et acompte de 30 % obligatoire à la signature ?",
+          "contexte": "30 % (acompte à la signature)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 2,
+          "besoins": [
+            3
+          ],
+          "question": "Comment paramétrer dans Odoo 20.0 les modèles courants de pompes gérés en stock dans l'entrepôt de Nantes ?",
+          "contexte": "petit entrepôt à Nantes (entrepôt); modèles courants (pompes en stock)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 3,
+          "besoins": [
+            4
+          ],
+          "question": "Comment paramétrer dans Odoo 20.0 la commande chez Daikin des gros modèles de pompes uniquement après signature du devis, sans stock ?",
+          "contexte": "Daikin (fournisseur des gros modèles commandés après signature)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 4,
+          "besoins": [
+            6,
+            7,
+            8
+          ],
+          "question": "Comment paramétrer dans Odoo 20.0 les tickets de support créés depuis l'adresse SAV, avec délai de réponse de 4 heures ouvrées et planification d'un technicien ?",
+          "contexte": "sav@thermo-services.fr (adresse e-mail SAV); 4 heures ouvrées (délai de réponse aux tickets); six techniciens (sur la route)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 5,
+          "besoins": [
+            9,
+            10,
+            11
+          ],
+          "question": "Comment paramétrer dans Odoo 20.0 le rapport d'intervention signé sur tablette, la facturation des pièces et du temps passé, et les contrats d'entretien annuels facturés automatiquement ?",
+          "contexte": "180 euros par an (contrat d'entretien annuel); tablette (signature du client)",
+          "statut": "À vérifier"
+        }
+      ],
+      "etapes": [
+        {
+          "n": 1,
+          "ref": "",
+          "besoins": [],
+          "action": "Installer les apps Sales, Purchase, Inventory, Helpdesk, Planning, Subscriptions",
+          "menu": "Apps",
+          "champ": "",
+          "valeur": "Sales, Purchase, Inventory, Helpdesk, Planning, Subscriptions",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Ajoutée par le code : apps citées dans les menus du plan."
+        },
+        {
+          "n": 2,
+          "ref": "L1.1",
+          "besoins": [
+            1,
+            2
+          ],
+          "action": "Ouvrir les réglages des ventes",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Quotations & Orders**",
+          "valeur": "Faire défiler jusqu'à la section **Quotations & Orders**",
+          "detail": "Les options de signature et de paiement en ligne se trouvent dans cette section.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ]
+        },
+        {
+          "n": 3,
+          "ref": "L1.2",
+          "besoins": [
+            1
+          ],
+          "action": "Activer la signature en ligne",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Online Signature**",
+          "valeur": "Case cochée",
+          "detail": "Cette fonction doit être activée pour que les clients confirment par signature en ligne.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ]
+        },
+        {
+          "n": 4,
+          "ref": "L1.3",
+          "besoins": [
+            2
+          ],
+          "action": "Activer le paiement en ligne",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Online Payment**",
+          "valeur": "Case cochée",
+          "detail": "Cette option demande un prépaiement en ligne, total ou partiel, pour confirmer la commande. Un champ **Payment X %** apparaît une fois l'option active.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ]
+        },
+        {
+          "n": 5,
+          "ref": "L1.4",
+          "besoins": [
+            1,
+            2
+          ],
+          "action": "Enregistrer les réglages",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Save**",
+          "valeur": "Cliquer sur **Save**",
+          "detail": "Sauvegarde des options activées.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ]
+        },
+        {
+          "n": 6,
+          "ref": "L1.5",
+          "besoins": [
+            1
+          ],
+          "action": "Activer la signature sur le devis",
+          "menu": "**Sales app ‣ Orders ‣ Quotations** (formulaire du devis, onglet **Other Info**)",
+          "champ": "**Online confirmation** ‣ **Signature**",
+          "valeur": "**Signature** activé",
+          "detail": "Sur un devis standard, l'option **Signature** se trouve dans l'onglet **Other Info**.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments"
+          ],
+          "raison": "L'option Signature dans Other Info est citée, mais le menu Sales app ‣ Orders ‣ Quotations n'figure pas dans les passages [3] et [5]."
+        },
+        {
+          "n": 7,
+          "ref": "L1.6",
+          "besoins": [
+            2
+          ],
+          "action": "Activer le paiement sur le devis",
+          "menu": "**Sales app ‣ Orders ‣ Quotations** (formulaire du devis, onglet **Other Info**)",
+          "champ": "**Online confirmation** ‣ **Payment**",
+          "valeur": "**Payment** coché",
+          "detail": "Activer l'option **Payment** du champ **Online confirmation**.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments"
+          ],
+          "raison": "L'option Payment dans Online confirmation (Other Info) est citée, mais le menu Sales app ‣ Orders ‣ Quotations n'figure pas dans le passage [5]."
+        },
+        {
+          "n": 8,
+          "ref": "L1.7",
+          "besoins": [
+            2
+          ],
+          "action": "Renseigner le pourcentage d'acompte sur le devis",
+          "menu": "**Sales app ‣ Orders ‣ Quotations** (formulaire du devis, onglet **Other Info**)",
+          "champ": "**Payment X %**",
+          "valeur": "30",
+          "detail": "Le champ de pourcentage apparaît quand le paiement en ligne est activé. Le client doit alors fournir signature et paiement pour confirmer.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/quote_template.html#settings-tab"
+          ]
+        },
+        {
+          "n": 9,
+          "ref": "",
+          "besoins": [
+            2
+          ],
+          "action": "Configurer un fournisseur de paiement en ligne pour l'acompte dans Odoo 20",
+          "menu": "",
+          "champ": "",
+          "valeur": "",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Non trouvée dans la documentation ni sur le web."
+        },
+        {
+          "n": 10,
+          "ref": "L2.1",
+          "besoins": [
+            3
+          ],
+          "action": "Ouvrir la liste des entrepôts",
+          "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+          "champ": "",
+          "valeur": "",
+          "detail": "Sélectionner un entrepôt existant ou cliquer sur **New** pour créer l'entrepôt de Nantes.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+          ]
+        },
+        {
+          "n": 11,
+          "ref": "L2.2",
+          "besoins": [
+            3
+          ],
+          "action": "Renseigner le nom de l'entrepôt",
+          "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+          "champ": "Warehouse",
+          "valeur": "Nantes",
+          "detail": "Champ obligatoire : nom complet de l'entrepôt.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+          ]
+        },
+        {
+          "n": 12,
+          "ref": "L2.3",
+          "besoins": [
+            3
+          ],
+          "action": "Renseigner le code court de l'entrepôt",
+          "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+          "champ": "Short Name",
+          "valeur": "À renseigner",
+          "detail": "Champ obligatoire, 5 caractères maximum, affiché sur les documents d'entrepôt. Le code par défaut d'Odoo est WH ; un code mémorable est recommandé.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+          ]
+        },
+        {
+          "n": 13,
+          "ref": "L2.4",
+          "besoins": [
+            3
+          ],
+          "action": "Renseigner l'adresse de l'entrepôt",
+          "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+          "champ": "Address",
+          "valeur": "À renseigner",
+          "detail": "Champ obligatoire : adresse de l'entrepôt de Nantes.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+          ]
+        },
+        {
+          "n": 14,
+          "ref": "L2.5",
+          "besoins": [
+            3
+          ],
+          "action": "Renseigner la société propriétaire",
+          "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+          "champ": "Company",
+          "valeur": "À renseigner",
+          "detail": "Champ obligatoire : société propriétaire de l'entrepôt.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+          ]
+        },
+        {
+          "n": 15,
+          "ref": "L3.1",
+          "besoins": [
+            4
+          ],
+          "action": "Ouvrir la fiche du gros modèle de pompe",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "",
+          "valeur": "Sélectionner le produit existant ou cliquer sur **New**",
+          "detail": "À répéter pour chaque gros modèle de pompe concerné (liste des modèles : À renseigner).",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+          ]
+        },
+        {
+          "n": 16,
+          "ref": "",
+          "besoins": [
+            4
+          ],
+          "action": "Créer le fournisseur Daikin",
+          "menu": "Purchase app ‣ Orders ‣ Vendors",
+          "champ": "Name",
+          "valeur": "Daikin",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Ajoutée par le code : fournisseur à créer avant de le sélectionner."
+        },
+        {
+          "n": 17,
+          "ref": "L3.2",
+          "besoins": [
+            4
+          ],
+          "action": "Renseigner Daikin comme fournisseur",
+          "menu": "**Purchase app ‣ Products ‣ Products**",
+          "champ": "**Purchase** tab ‣ **Add a line** ‣ **Vendor**",
+          "valeur": "Daikin",
+          "detail": "Le produit ayant un fournisseur, la route Buy s'applique automatiquement par défaut. Le prix unitaire (**Unit Price**) et le délai (**Lead Time**) sont à renseigner sur la même ligne.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/use_routes.html#additional-routes",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+          ]
+        },
+        {
+          "n": 18,
+          "ref": "L3.3",
+          "besoins": [
+            4
+          ],
+          "action": "Renseigner le prix d'achat Daikin",
+          "menu": "**Purchase app ‣ Products ‣ Products**",
+          "champ": "**Unit Price**",
+          "valeur": "À renseigner",
+          "detail": "Prix auquel Daikin vend le produit.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time"
+          ]
+        },
+        {
+          "n": 19,
+          "ref": "L3.4",
+          "besoins": [
+            4
+          ],
+          "action": "Renseigner le délai d'achat Daikin",
+          "menu": "**Purchase app ‣ Products ‣ Products**",
+          "champ": "**Lead Time**",
+          "valeur": "À renseigner",
+          "detail": "Délai annoncé par Daikin. Le libellé de colonne par défaut peut apparaître comme **Delivery Lead Time**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+          ]
+        },
+        {
+          "n": 20,
+          "ref": "L3.5",
+          "besoins": [
+            4
+          ],
+          "action": "Activer la route MTO sur le produit",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "**Inventory** tab ‣ **Operations** ‣ **Routes**",
+          "valeur": "**Replenish on Order (MTO)**",
+          "detail": "Cocher la case. Avec Buy, un PO est créé à chaque confirmation de commande client contenant le produit.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/use_routes.html#additional-routes"
+          ]
+        },
+        {
+          "n": 21,
+          "ref": "web",
+          "besoins": [
+            5
+          ],
+          "action": "créer une règle de réapprovisionnement pour chaque pièce détachée",
+          "menu": "Inventory ‣ Master Data ‣ Reordering Rules",
+          "champ": "Min Quantity / Max Quantity",
+          "valeur": "À renseigner (seuils et pièces non fournis).",
+          "detail": "Dans la documentation Odoo 20.0, la règle définit un minimum sous lequel le stock prévisionnel ne doit pas descendre et un maximum jusqu'auquel réapprovisionner (This is accomplished by specifying a minimum quantity that stock should not fall below and a maximum quantity that stock should not exceed.). Le réglage Trigger sur Auto crée automatiquement l'ordre d'achat quand le minimum est franchi (A purchase or manufacturing order is automatically created when the forecasted stock falls below the reordering rule's minimum quantity.). Le formulaire est aussi accessible depuis l'onglet Reordering Rules de la fiche produit (Open a stockable product, you'll find the Reordering Rules tab.).",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html",
+            "https://github.com/odoo/documentation-user/commit/b9a08ad20b34915a246caf8c0a6d6ba97368a299"
+          ],
+          "extraits": [
+            "Reordering rules are used to keep forecasted stock levels above a certain ...\n\n# Reordering rules\n\nThis is accomplished by specifying a minimum quanti...",
+            "- Auto: A purchase or manufacturing order is automatically created when the forecasted stock falls below the reordering rule’s minimum quantity.\n\n",
+            "Open a stockable product, you'll find the *Reordering Rules* tab.\n\n"
+          ],
+          "statut": "Web"
+        },
+        {
+          "n": 22,
+          "ref": "L4.1",
+          "besoins": [
+            6
+          ],
+          "action": "Ouvrir ou créer l'équipe Helpdesk SAV",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**Name**",
+          "valeur": "À renseigner",
+          "detail": "Cliquer sur **New** pour créer une équipe (ou ouvrir une équipe existante) et saisir son nom. Ne pas mettre d'information interne dans la description, qui est publiée sur le formulaire du site.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk.html#create-a-helpdesk-team"
+          ]
+        },
+        {
+          "n": 23,
+          "ref": "L4.2",
+          "besoins": [
+            6
+          ],
+          "action": "Activer le canal Email Alias",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**Email Alias**",
+          "valeur": "Coché",
+          "detail": "Dans la page de l'équipe, section **Channels**, cocher la case **Email Alias** pour créer des tickets depuis les e-mails reçus.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets"
+          ]
+        },
+        {
+          "n": 24,
+          "ref": "L4.3",
+          "besoins": [
+            6
+          ],
+          "action": "Renseigner l'alias e-mail de l'équipe",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams** (**Channels ‣ Email Alias**)",
+          "champ": "**Alias**",
+          "valeur": "sav",
+          "detail": "Saisir le nom d'alias souhaité (partie avant @). Le domaine dépend de la configuration de la base ; sinon cliquer sur **Set an Alias Domain**, redirigeant vers **Settings** où activer **Custom Email Servers**. Le sujet de l'e-mail devient le titre du ticket.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias"
+          ]
+        },
+        {
+          "n": 25,
+          "ref": "L4.4",
+          "besoins": [
+            7
+          ],
+          "action": "Vérifier que SLA Policies est activé sur l'équipe",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**SLA Policies**",
+          "valeur": "Coché (section **Performance**)",
+          "detail": "La fonction est activée par défaut sur les nouvelles équipes ; ne pas décocher la case.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html"
+          ]
+        },
+        {
+          "n": 26,
+          "ref": "L4.5",
+          "besoins": [
+            7
+          ],
+          "action": "Créer une politique SLA",
+          "menu": "**Helpdesk app ‣ Configuration ‣ SLA Policies**",
+          "champ": "**Title**",
+          "valeur": "À renseigner",
+          "detail": "Cliquer sur **New**, saisir un **Title** et une **Description**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy"
+          ]
+        },
+        {
+          "n": 27,
+          "ref": "L4.6",
+          "besoins": [
+            7
+          ],
+          "action": "Sélectionner l'équipe dans les critères du SLA",
+          "menu": "**Helpdesk app ‣ Configuration ‣ SLA Policies**",
+          "champ": "**Helpdesk Team**",
+          "valeur": "L'équipe SAV créée",
+          "detail": "Champ obligatoire dans la section **Criteria** : une politique ne s'applique qu'à une seule équipe.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#define-the-criteria-for-an-sla-policy"
+          ]
+        },
+        {
+          "n": 28,
+          "ref": "L4.7",
+          "besoins": [
+            7
+          ],
+          "action": "Définir la cible du SLA",
+          "menu": "**Helpdesk app ‣ Configuration ‣ SLA Policies**",
+          "champ": "**Reach Stage**",
+          "valeur": "À renseigner (étape à atteindre en 4 heures ouvrées, ex. première prise en charge)",
+          "detail": "Le délai de 4 heures ouvrées est à saisir dans la cible, avec l'étape à atteindre ; le libellé exact du champ de durée n'apparaît pas dans les passages. Les heures de travail sont déterminées par **Working Hours** de la politique.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#meet-sla-deadlines",
+            "https://www.youtube.com/watch?v=djFfUyldKQs&t=268s",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#establish-a-target-for-an-sla-policy"
+          ],
+          "raison": "Les passages [8, 9, 13] ne décrivent pas de champ de durée de 4 heures dans la cible ; ils indiquent seulement que Reach Stage et les heures de travail déterminent l'échéance. Le délai de 4 heures n'est pas rattaché à un champ cité."
+        },
+        {
+          "n": 29,
+          "ref": "L4.8",
+          "besoins": [
+            8,
+            9
+          ],
+          "action": "Activer Field Service dans Planning",
+          "menu": "**Planning ‣ Configuration ‣ Settings**",
+          "champ": "**Field Service**",
+          "valeur": "Coché puis **Save**",
+          "detail": "Prérequis pour planifier des interventions sur site.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html"
+          ]
+        },
+        {
+          "n": 30,
+          "ref": "L4.9",
+          "besoins": [
+            8
+          ],
+          "action": "Activer Field Service sur l'équipe Helpdesk",
+          "menu": "**Helpdesk ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**Field Service**",
+          "valeur": "Coché (section **After-Sales**)",
+          "detail": "Sélectionner l'équipe SAV, faire défiler jusqu'à la section **After-Sales** et activer **Field Service**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html#plan-field-service-interventions-from-a-ticket"
+          ]
+        },
+        {
+          "n": 31,
+          "ref": "L4.10",
+          "besoins": [
+            8
+          ],
+          "action": "Planifier une intervention depuis un ticket",
+          "menu": "**Helpdesk ‣ Tickets**",
+          "champ": "**Plan Intervention**",
+          "valeur": "Créer un shift (technicien, date : À renseigner)",
+          "detail": "Dans le ticket, cliquer sur **Plan Intervention** puis créer un shift. Un smart button **Scheduled** apparaît ensuite. Le shift doit avoir un **Customer** et être publié (**Publish**) pour démarrer l'intervention.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html#plan-field-service-interventions-from-a-ticket",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-planning",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-logging"
+          ],
+          "raison": "Les passages [6] et [14] décrivent Plan Intervention, la création du shift et le champ Customer ; [17] mentionne la publication. Toutefois, la publication est présentée comme requise pour démarrer l'intervention, et le passage [14] ne fixe pas de Publish obligatoire à la création."
+        },
+        {
+          "n": 32,
+          "ref": "L5.2",
+          "besoins": [
+            9
+          ],
+          "action": "Activer les Worksheets",
+          "menu": "**Planning ‣ Configuration ‣ Settings**",
+          "champ": "Worksheets (section **Field Service**)",
+          "valeur": "Enabled puis **Save**",
+          "detail": "Active aussi par défaut la fonction Customer Report, qui produit le rapport client signable.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#customer-report"
+          ]
+        },
+        {
+          "n": 33,
+          "ref": "L5.3",
+          "besoins": [
+            9
+          ],
+          "action": "Créer un modèle de worksheet : ouvrir la création",
+          "menu": "**Planning ‣ Configuration ‣ Worksheet Templates**",
+          "champ": "",
+          "valeur": "**New**",
+          "detail": "Le premier modèle de la liste est appliqué par défaut aux shifts, sauf sélection manuelle d'un autre.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration"
+          ]
+        },
+        {
+          "n": 34,
+          "ref": "L5.4",
+          "besoins": [
+            9
+          ],
+          "action": "Nommer le modèle de worksheet",
+          "menu": "**Planning ‣ Configuration ‣ Worksheet Templates**",
+          "champ": "Name",
+          "valeur": "À renseigner",
+          "detail": "Le nom du modèle n'est pas fourni dans les données client.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration"
+          ]
+        },
+        {
+          "n": 35,
+          "ref": "L5.5",
+          "besoins": [
+            9
+          ],
+          "action": "Ajouter les propriétés du modèle",
+          "menu": "**Planning ‣ Configuration ‣ Worksheet Templates**",
+          "champ": "Worksheet properties",
+          "valeur": "**Add Property**, à répéter pour chaque propriété (À renseigner)",
+          "detail": "Configurer chaque champ de propriété. Une propriété de type signature peut servir à la signature du technicien dans la worksheet ; la signature du client est collectée sur le rapport.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=4810s",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration"
+          ],
+          "raison": "Add Property appuyé, mais le type « signature » n'est pas précisé dans les passages, qui parlent seulement d'une propriété de signature."
+        },
+        {
+          "n": 36,
+          "ref": "L5.6",
+          "besoins": [
+            10
+          ],
+          "action": "Activer la facturation (Billing)",
+          "menu": "**Planning ‣ Configuration ‣ Settings**",
+          "champ": "Billing (section **Field Service**)",
+          "valeur": "Enabled puis **Save**",
+          "detail": "Installe Sales ; les réglages Products et Customer Report sont activés par défaut. Une intervention est facturée dès qu'elle est liée à un bon de commande.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#invoicing"
+          ]
+        },
+        {
+          "n": 37,
+          "ref": "L5.7",
+          "besoins": [
+            10
+          ],
+          "action": "Vérifier que Products est activé",
+          "menu": "**Planning ‣ Configuration ‣ Settings**",
+          "champ": "Products",
+          "valeur": "Enabled",
+          "detail": "Nécessaire pour ajouter des pièces depuis le shift ; elles sont ajoutées au bon de commande lié (créé automatiquement s'il n'y en a pas).",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products"
+          ]
+        },
+        {
+          "n": 38,
+          "ref": "L5.8",
+          "besoins": [
+            9,
+            10
+          ],
+          "action": "Ajouter les pièces utilisées sur le shift",
+          "menu": "",
+          "champ": "**0 Products** (bouton du shift)",
+          "valeur": "**Add** sur la fiche produit, quantité ajustée avec **-** et **+**, puis **Back**",
+          "detail": "Se fait après **Sign In** ou en modifiant un shift en cours, par le technicien.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products"
+          ]
+        },
+        {
+          "n": 39,
+          "ref": "L5.9",
+          "besoins": [
+            10
+          ],
+          "action": "Définir le Service to Bill de l'employé (temps passé)",
+          "menu": "**Planning ‣ Configuration ‣ Employees**",
+          "champ": "Service to Bill (onglet **Settings**, section **Planning**)",
+          "valeur": "À renseigner",
+          "detail": "Optionnel : utile seulement si le technicien est facturé à un taux spécifique ; sinon un service par défaut est utilisé.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2360s",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#time-based-invoicing"
+          ]
+        },
+        {
+          "n": 40,
+          "ref": "L5.10",
+          "besoins": [
+            10
+          ],
+          "action": "Lier le shift à un projet facturable avec Timesheets",
+          "menu": "",
+          "champ": "Project",
+          "valeur": "Projet configuré comme **Billable** avec **Timesheets** activé",
+          "detail": "Le service du bon de commande est alors facturé selon l'**Allocated Time**, mis à jour au **Sign In** et au **Complete**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#time-based-invoicing"
+          ]
+        },
+        {
+          "n": 41,
+          "ref": "L5.13",
+          "besoins": [
+            11
+          ],
+          "action": "Configurer le produit du contrat d'entretien",
+          "menu": "**Subscriptions app ‣ Products ‣ Products**",
+          "champ": "Product type",
+          "valeur": "**Service**",
+          "detail": "Ouvrir ou créer le produit (**New**) ; laisser les options **Subscriptions** et **Sales** activées.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s",
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+          ]
+        },
+        {
+          "n": 42,
+          "ref": "L5.14",
+          "besoins": [
+            11
+          ],
+          "action": "Fixer le prix récurrent annuel",
+          "menu": "**Subscriptions app ‣ Products ‣ Products**",
+          "champ": "Recurring Prices (**Add a price rule**) : Recurring Plan / Recurring Price",
+          "valeur": "Yearly / 180 €",
+          "detail": "Une ligne de prix par option de récurrence ; le plan Yearly doit exister au préalable. Facturation périodique automatique selon le contrat.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s",
+            "https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/overview.html#recurring-contracts-invoices",
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration"
+          ]
+        },
+        {
+          "n": 43,
+          "ref": "L5.15",
+          "besoins": [
+            9,
+            11
+          ],
+          "action": "Associer la worksheet au contrat d'entretien",
+          "menu": "",
+          "champ": "Worksheet",
+          "valeur": "Modèle de worksheet voulu (ex. **Intervention**)",
+          "detail": "Le produit de la vidéo combine Plan Services (rôle de technicien) et Worksheet ; non obligatoire pour un contrat sans visite annuelle.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration",
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s"
+          ]
+        },
+        {
+          "n": 44,
+          "ref": "",
+          "besoins": [
+            12
+          ],
+          "action": "Enregistrer les paiements clients avec l'application Invoicing sans comptabilité complète dans Odoo 20",
+          "menu": "",
+          "champ": "",
+          "valeur": "",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Non trouvée dans la documentation ni sur le web."
+        },
+        {
+          "n": 45,
+          "ref": "web",
+          "besoins": [
+            12
+          ],
+          "action": "ajouter le logo de la société aux documents",
+          "menu": "Settings ‣ Configure Document Layout",
+          "champ": "Company logo",
+          "valeur": "À renseigner (fichier logo non fourni).",
+          "detail": "Le logo se télécharge via le bouton Edit de cette fenêtre, et il est enregistré sur la fiche société (Company logo: Click the Edit button to upload or change the logo. This adds the logo to the company's record on the Company model). Ces paramètres de mise en page sont propres à la société mais s'appliquent à tous les rapports (Layout settings are company-specific but apply to all reports.), donc devis et factures sont couverts.",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html"
+          ],
+          "extraits": [
+            "- Company logo: Click the Edit button to upload or change the logo. This adds the logo to the company’s record on the *Company* model, which you can a...",
+            "Layout settings are company-specific but apply to all reports.\n\n"
+          ],
+          "statut": "Web"
+        },
+        {
+          "n": 46,
+          "ref": "",
+          "besoins": [
+            11
+          ],
+          "action": "Activer l'option abonnement sur un produit et créer le plan récurrent annuel (Yearly) dans Odoo 20 Subscriptions",
+          "menu": "",
+          "champ": "",
+          "valeur": "",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Trouvée sur le web mais rejetée au contrôle : La documentation indique que l'option abonnement est déjà activée par défaut et que le plan Yearly existe déjà ; l'étape ajoute donc une activation et une création non nécessaires, et l'édition Enterprise reste non précisée.."
+        }
+      ],
+      "parStatut": {
+        "À vérifier": 10,
+        "Documenté": 34,
+        "Web": 2
+      },
+      "tests": [
+        {
+          "titre": "Devis signé avec acompte de 30 %",
+          "etapes": [
+            "Ouvrir Sales app ‣ Orders ‣ Quotations et créer un devis avec une pompe et la pose",
+            "Vérifier Online confirmation: Signature et Payment 30 %",
+            "Envoyer le devis puis ouvrir l'aperçu client",
+            "Signer et payer l'acompte",
+            "Vérifier que le devis passe en Sales Order"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html"
+          ]
+        },
+        {
+          "titre": "Gros modèle commandé chez Daikin après signature",
+          "etapes": [
+            "Créer un devis avec un gros modèle de pompe",
+            "Confirmer le devis après signature",
+            "Ouvrir Purchase app et vérifier le PO brouillon créé pour Daikin",
+            "Confirmer le PO et valider la réception dans Inventory"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html"
+          ]
+        },
+        {
+          "titre": "Ticket SAV, intervention, rapport signé et facturation",
+          "etapes": [
+            "Envoyer un e-mail à sav@thermo-services.fr",
+            "Vérifier le ticket créé dans Helpdesk app ‣ Tickets et la politique SLA",
+            "Cliquer sur Plan Intervention et affecter un technicien",
+            "Dans Planning ‣ My Planning, cliquer sur Sign In, remplir l'onglet Worksheet puis Complete",
+            "Ajouter les pièces avec Products, puis Customer Preview ‣ Sign Report",
+            "Générer la facture des pièces et du temps passé"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html"
+          ]
+        },
+        {
+          "titre": "Contrat d'entretien annuel",
+          "etapes": [
+            "Créer un devis avec le produit d'entretien à 180 € par an",
+            "Confirmer le devis",
+            "Vérifier la facture récurrente annuelle générée"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html"
+          ]
+        }
+      ],
+      "questions_ouvertes": [
+        {
+          "question": "Quelle édition d'Odoo (Community ou Enterprise) est retenue ?",
+          "besoin": 0,
+          "raison": "Non mentionnée ; Helpdesk, Planning, Subscriptions sont probablement Enterprise."
+        },
+        {
+          "question": "Quel est le seuil de recommande des pièces détachées (à demander à Kevin) ?",
+          "besoin": 5,
+          "raison": "Nécessaire à la règle de réapprovisionnement."
+        },
+        {
+          "question": "Quels sont les fournisseurs et prix d'achat des pièces détachées ?",
+          "besoin": 5,
+          "raison": "Nécessaires à la recommande automatique."
+        },
+        {
+          "question": "Quels modèles sont courants et lesquels sont de gros modèles ?",
+          "besoin": 4,
+          "raison": "Liste des produits non donnée."
+        },
+        {
+          "question": "Quels sont les prix de vente des pompes et de la pose ?",
+          "besoin": 1,
+          "raison": "Absents, nécessaires aux devis."
+        },
+        {
+          "question": "Quel tarif horaire pour le temps passé et quel prix pour les pièces facturées ?",
+          "besoin": 10,
+          "raison": "Non précisés."
+        },
+        {
+          "question": "La comptabilité complète sera-t-elle utilisée plus tard ?",
+          "besoin": 12,
+          "raison": "Le client hésite, impacte le choix de l'application de facturation."
+        },
+        {
+          "question": "Quels sont les horaires de travail de l'équipe SAV et l'étape cible du SLA ?",
+          "besoin": 7,
+          "raison": "Nécessaires pour les 4 heures ouvrées."
+        },
+        {
+          "question": "Quel fournisseur de paiement en ligne utiliser pour l'acompte ?",
+          "besoin": 2,
+          "raison": "Non précisé."
+        },
+        {
+          "question": "Quels sont les noms des techniciens, le modèle de worksheet et le projet facturable ?",
+          "besoin": 9,
+          "raison": "Décisions du client non fournies."
+        }
+      ],
+      "avertissements": [
+        "Édition non précisée : Helpdesk, Planning (Field Service) et Subscriptions requièrent probablement Enterprise.",
+        "Étapes L2.6 et L2.7 (lots/séries) écartées : non demandées par le client.",
+        "Réception et livraison en 1 étape par défaut : aucun réglage Multi-Step Routes ajouté.",
+        "Depuis Odoo 19.0, la route Buy est masquée et appliquée automatiquement avec un fournisseur renseigné : pas d'activation manuelle de Buy.",
+        "Avec MTO, un PO brouillon est créé à chaque confirmation de commande, même si le stock suffit.",
+        "L1.5 et L1.6 sont à vérifier, ainsi que L4.7, L4.10 et L5.5.",
+        "Une politique SLA ne s'applique qu'à une seule équipe Helpdesk.",
+        "Sans adresse valide du client, la carte et l'itinéraire de l'intervention ne s'affichent pas.",
+        "Un shift sous garantie (Under Warranty) ne facture pas les produits ; un projet est nécessaire pour générer les timesheets.",
+        "Online Signature et Online Payment sont propres à chaque société en multi-sociétés.",
+        "La référence L4.8b écartée n'existe pas dans les lots.",
+        "Les prix, délais, seuils et fournisseurs de pièces restent À renseigner."
+      ],
+      "markdown": "# Plan Odoo 20 — Thermo Services\n\nÉdition : Non précisée. Plan Thermo Services : devis avec signature en ligne et acompte de 30 %, stock des modèles courants à Nantes, commande Daikin en MTO pour les gros modèles, tickets SAV par e-mail avec SLA de 4 h ouvrées, interventions Field Service avec rapport signé, facturation des pièces et du temps, contrat d'entretien annuel à 180 €. Les besoins 5 (recommande automatique) et 12 (logo, factures sans comptabilité complète) ne sont couverts par aucune étape.\n\nÉtapes : 10 À vérifier, 34 Documenté, 2 Web.\n\n## Besoins compris\n1. **Devis avec signature en ligne** : Réaliser les devis dans l'outil avec les pompes à chaleur et la pose, avec signature en ligne par le client.\n2. **Acompte à la signature** : Demander un acompte de 30 % au client lors de la signature du devis, de façon obligatoire.\n3. **Modèles courants en stock** : Gérer en stock les modèles courants de pompes à chaleur dans l'entrepôt de Nantes.\n4. **Gros modèles commandés à la signature** : Commander chez Daikin les gros modèles de pompes uniquement après la signature du devis par le client, sans les stocker.\n5. **Réapprovisionnement pièces détachées** : Gérer les pièces détachées en stock avec recommande automatique quand le niveau passe sous un seuil.\n6. **Tickets de support par e-mail** : Créer automatiquement un ticket de support lorsqu'un client écrit à l'adresse SAV en cas de panne.\n7. **Engagement de délai de réponse** : Suivre un engagement de répondre aux tickets en moins de 4 heures ouvrées.\n8. **Planification des interventions** : Planifier un technicien qui se rend chez le client après la création du ticket.\n9. **Rapport d'intervention signé** : Permettre au technicien de remplir un rapport d'intervention, noter les pièces utilisées et faire signer le client sur tablette.\n10. **Facturation pièces et temps passé** : Facturer au client les pièces utilisées et le temps passé lors de l'intervention.\n11. **Contrats d'entretien annuels** : Gérer des contrats d'entretien annuels facturés automatiquement chaque année.\n12. **Facturation et logo** : Faire les factures et suivre les paiements sans comptabilité complète, avec le logo sur les devis et les factures.\n\n## Étapes\n1. **Installer les apps Sales, Purchase, Inventory, Helpdesk, Planning, Subscriptions** — _À vérifier_\n   - Menu : Apps\n   - Valeur : Sales, Purchase, Inventory, Helpdesk, Planning, Subscriptions\n   - À vérifier : Ajoutée par le code : apps citées dans les menus du plan.\n2. **Ouvrir les réglages des ventes** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Quotations & Orders**\n   - Valeur : Faire défiler jusqu'à la section **Quotations & Orders**\n   - Les options de signature et de paiement en ligne se trouvent dans cette section.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n3. **Activer la signature en ligne** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Online Signature**\n   - Valeur : Case cochée\n   - Cette fonction doit être activée pour que les clients confirment par signature en ligne.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n4. **Activer le paiement en ligne** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Online Payment**\n   - Valeur : Case cochée\n   - Cette option demande un prépaiement en ligne, total ou partiel, pour confirmer la commande. Un champ **Payment X %** apparaît une fois l'option active.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n5. **Enregistrer les réglages** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Save**\n   - Valeur : Cliquer sur **Save**\n   - Sauvegarde des options activées.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n6. **Activer la signature sur le devis** — _À vérifier_\n   - Menu : **Sales app ‣ Orders ‣ Quotations** (formulaire du devis, onglet **Other Info**)\n   - Champ : **Online confirmation** ‣ **Signature**\n   - Valeur : **Signature** activé\n   - Sur un devis standard, l'option **Signature** se trouve dans l'onglet **Other Info**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments\n   - À vérifier : L'option Signature dans Other Info est citée, mais le menu Sales app ‣ Orders ‣ Quotations n'figure pas dans les passages [3] et [5].\n7. **Activer le paiement sur le devis** — _À vérifier_\n   - Menu : **Sales app ‣ Orders ‣ Quotations** (formulaire du devis, onglet **Other Info**)\n   - Champ : **Online confirmation** ‣ **Payment**\n   - Valeur : **Payment** coché\n   - Activer l'option **Payment** du champ **Online confirmation**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments\n   - À vérifier : L'option Payment dans Online confirmation (Other Info) est citée, mais le menu Sales app ‣ Orders ‣ Quotations n'figure pas dans le passage [5].\n8. **Renseigner le pourcentage d'acompte sur le devis** — _Documenté_\n   - Menu : **Sales app ‣ Orders ‣ Quotations** (formulaire du devis, onglet **Other Info**)\n   - Champ : **Payment X %**\n   - Valeur : 30\n   - Le champ de pourcentage apparaît quand le paiement en ligne est activé. Le client doit alors fournir signature et paiement pour confirmer.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/quote_template.html#settings-tab\n9. **Configurer un fournisseur de paiement en ligne pour l'acompte dans Odoo 20** — _À vérifier_\n   - À vérifier : Non trouvée dans la documentation ni sur le web.\n10. **Ouvrir la liste des entrepôts** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Sélectionner un entrepôt existant ou cliquer sur **New** pour créer l'entrepôt de Nantes.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n11. **Renseigner le nom de l'entrepôt** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : Warehouse\n   - Valeur : Nantes\n   - Champ obligatoire : nom complet de l'entrepôt.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n12. **Renseigner le code court de l'entrepôt** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : Short Name\n   - Valeur : À renseigner\n   - Champ obligatoire, 5 caractères maximum, affiché sur les documents d'entrepôt. Le code par défaut d'Odoo est WH ; un code mémorable est recommandé.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n13. **Renseigner l'adresse de l'entrepôt** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : Address\n   - Valeur : À renseigner\n   - Champ obligatoire : adresse de l'entrepôt de Nantes.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n14. **Renseigner la société propriétaire** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : Company\n   - Valeur : À renseigner\n   - Champ obligatoire : société propriétaire de l'entrepôt.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n15. **Ouvrir la fiche du gros modèle de pompe** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Valeur : Sélectionner le produit existant ou cliquer sur **New**\n   - À répéter pour chaque gros modèle de pompe concerné (liste des modèles : À renseigner).\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n16. **Créer le fournisseur Daikin** — _À vérifier_\n   - Menu : Purchase app ‣ Orders ‣ Vendors\n   - Champ : Name\n   - Valeur : Daikin\n   - À vérifier : Ajoutée par le code : fournisseur à créer avant de le sélectionner.\n17. **Renseigner Daikin comme fournisseur** — _Documenté_\n   - Menu : **Purchase app ‣ Products ‣ Products**\n   - Champ : **Purchase** tab ‣ **Add a line** ‣ **Vendor**\n   - Valeur : Daikin\n   - Le produit ayant un fournisseur, la route Buy s'applique automatiquement par défaut. Le prix unitaire (**Unit Price**) et le délai (**Lead Time**) sont à renseigner sur la même ligne.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/use_routes.html#additional-routes ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n18. **Renseigner le prix d'achat Daikin** — _Documenté_\n   - Menu : **Purchase app ‣ Products ‣ Products**\n   - Champ : **Unit Price**\n   - Valeur : À renseigner\n   - Prix auquel Daikin vend le produit.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time\n19. **Renseigner le délai d'achat Daikin** — _Documenté_\n   - Menu : **Purchase app ‣ Products ‣ Products**\n   - Champ : **Lead Time**\n   - Valeur : À renseigner\n   - Délai annoncé par Daikin. Le libellé de colonne par défaut peut apparaître comme **Delivery Lead Time**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n20. **Activer la route MTO sur le produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **Inventory** tab ‣ **Operations** ‣ **Routes**\n   - Valeur : **Replenish on Order (MTO)**\n   - Cocher la case. Avec Buy, un PO est créé à chaque confirmation de commande client contenant le produit.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#replenishment-workflow-using-mto ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/use_routes.html#additional-routes\n21. **créer une règle de réapprovisionnement pour chaque pièce détachée** — _Web_\n   - Menu : Inventory ‣ Master Data ‣ Reordering Rules\n   - Champ : Min Quantity / Max Quantity\n   - Valeur : À renseigner (seuils et pièces non fournis).\n   - Dans la documentation Odoo 20.0, la règle définit un minimum sous lequel le stock prévisionnel ne doit pas descendre et un maximum jusqu'auquel réapprovisionner (This is accomplished by specifying a minimum quantity that stock should not fall below and a maximum quantity that stock should not exceed.). Le réglage Trigger sur Auto crée automatiquement l'ordre d'achat quand le minimum est franchi (A purchase or manufacturing order is automatically created when the forecasted stock falls below the reordering rule's minimum quantity.). Le formulaire est aussi accessible depuis l'onglet Reordering Rules de la fiche produit (Open a stockable product, you'll find the Reordering Rules tab.).\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html ; https://github.com/odoo/documentation-user/commit/b9a08ad20b34915a246caf8c0a6d6ba97368a299\n22. **Ouvrir ou créer l'équipe Helpdesk SAV** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **Name**\n   - Valeur : À renseigner\n   - Cliquer sur **New** pour créer une équipe (ou ouvrir une équipe existante) et saisir son nom. Ne pas mettre d'information interne dans la description, qui est publiée sur le formulaire du site.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk.html#create-a-helpdesk-team\n23. **Activer le canal Email Alias** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **Email Alias**\n   - Valeur : Coché\n   - Dans la page de l'équipe, section **Channels**, cocher la case **Email Alias** pour créer des tickets depuis les e-mails reçus.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets\n24. **Renseigner l'alias e-mail de l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams** (**Channels ‣ Email Alias**)\n   - Champ : **Alias**\n   - Valeur : sav\n   - Saisir le nom d'alias souhaité (partie avant @). Le domaine dépend de la configuration de la base ; sinon cliquer sur **Set an Alias Domain**, redirigeant vers **Settings** où activer **Custom Email Servers**. Le sujet de l'e-mail devient le titre du ticket.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias\n25. **Vérifier que SLA Policies est activé sur l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **SLA Policies**\n   - Valeur : Coché (section **Performance**)\n   - La fonction est activée par défaut sur les nouvelles équipes ; ne pas décocher la case.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html\n26. **Créer une politique SLA** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ SLA Policies**\n   - Champ : **Title**\n   - Valeur : À renseigner\n   - Cliquer sur **New**, saisir un **Title** et une **Description**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy\n27. **Sélectionner l'équipe dans les critères du SLA** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ SLA Policies**\n   - Champ : **Helpdesk Team**\n   - Valeur : L'équipe SAV créée\n   - Champ obligatoire dans la section **Criteria** : une politique ne s'applique qu'à une seule équipe.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#define-the-criteria-for-an-sla-policy\n28. **Définir la cible du SLA** — _À vérifier_\n   - Menu : **Helpdesk app ‣ Configuration ‣ SLA Policies**\n   - Champ : **Reach Stage**\n   - Valeur : À renseigner (étape à atteindre en 4 heures ouvrées, ex. première prise en charge)\n   - Le délai de 4 heures ouvrées est à saisir dans la cible, avec l'étape à atteindre ; le libellé exact du champ de durée n'apparaît pas dans les passages. Les heures de travail sont déterminées par **Working Hours** de la politique.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#meet-sla-deadlines ; https://www.youtube.com/watch?v=djFfUyldKQs&t=268s ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#establish-a-target-for-an-sla-policy\n   - À vérifier : Les passages [8, 9, 13] ne décrivent pas de champ de durée de 4 heures dans la cible ; ils indiquent seulement que Reach Stage et les heures de travail déterminent l'échéance. Le délai de 4 heures n'est pas rattaché à un champ cité.\n29. **Activer Field Service dans Planning** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : **Field Service**\n   - Valeur : Coché puis **Save**\n   - Prérequis pour planifier des interventions sur site.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html\n30. **Activer Field Service sur l'équipe Helpdesk** — _Documenté_\n   - Menu : **Helpdesk ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **Field Service**\n   - Valeur : Coché (section **After-Sales**)\n   - Sélectionner l'équipe SAV, faire défiler jusqu'à la section **After-Sales** et activer **Field Service**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html#plan-field-service-interventions-from-a-ticket\n31. **Planifier une intervention depuis un ticket** — _À vérifier_\n   - Menu : **Helpdesk ‣ Tickets**\n   - Champ : **Plan Intervention**\n   - Valeur : Créer un shift (technicien, date : À renseigner)\n   - Dans le ticket, cliquer sur **Plan Intervention** puis créer un shift. Un smart button **Scheduled** apparaît ensuite. Le shift doit avoir un **Customer** et être publié (**Publish**) pour démarrer l'intervention.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html#plan-field-service-interventions-from-a-ticket ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-planning ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#intervention-logging\n   - À vérifier : Les passages [6] et [14] décrivent Plan Intervention, la création du shift et le champ Customer ; [17] mentionne la publication. Toutefois, la publication est présentée comme requise pour démarrer l'intervention, et le passage [14] ne fixe pas de Publish obligatoire à la création.\n32. **Activer les Worksheets** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : Worksheets (section **Field Service**)\n   - Valeur : Enabled puis **Save**\n   - Active aussi par défaut la fonction Customer Report, qui produit le rapport client signable.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#customer-report\n33. **Créer un modèle de worksheet : ouvrir la création** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Worksheet Templates**\n   - Valeur : **New**\n   - Le premier modèle de la liste est appliqué par défaut aux shifts, sauf sélection manuelle d'un autre.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration\n34. **Nommer le modèle de worksheet** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Worksheet Templates**\n   - Champ : Name\n   - Valeur : À renseigner\n   - Le nom du modèle n'est pas fourni dans les données client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration\n35. **Ajouter les propriétés du modèle** — _À vérifier_\n   - Menu : **Planning ‣ Configuration ‣ Worksheet Templates**\n   - Champ : Worksheet properties\n   - Valeur : **Add Property**, à répéter pour chaque propriété (À renseigner)\n   - Configurer chaque champ de propriété. Une propriété de type signature peut servir à la signature du technicien dans la worksheet ; la signature du client est collectée sur le rapport.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=4810s ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration\n   - À vérifier : Add Property appuyé, mais le type « signature » n'est pas précisé dans les passages, qui parlent seulement d'une propriété de signature.\n36. **Activer la facturation (Billing)** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : Billing (section **Field Service**)\n   - Valeur : Enabled puis **Save**\n   - Installe Sales ; les réglages Products et Customer Report sont activés par défaut. Une intervention est facturée dès qu'elle est liée à un bon de commande.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#invoicing\n37. **Vérifier que Products est activé** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : Products\n   - Valeur : Enabled\n   - Nécessaire pour ajouter des pièces depuis le shift ; elles sont ajoutées au bon de commande lié (créé automatiquement s'il n'y en a pas).\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products\n38. **Ajouter les pièces utilisées sur le shift** — _Documenté_\n   - Champ : **0 Products** (bouton du shift)\n   - Valeur : **Add** sur la fiche produit, quantité ajustée avec **-** et **+**, puis **Back**\n   - Se fait après **Sign In** ou en modifiant un shift en cours, par le technicien.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#products\n39. **Définir le Service to Bill de l'employé (temps passé)** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Employees**\n   - Champ : Service to Bill (onglet **Settings**, section **Planning**)\n   - Valeur : À renseigner\n   - Optionnel : utile seulement si le technicien est facturé à un taux spécifique ; sinon un service par défaut est utilisé.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=2360s ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#time-based-invoicing\n40. **Lier le shift à un projet facturable avec Timesheets** — _Documenté_\n   - Champ : Project\n   - Valeur : Projet configuré comme **Billable** avec **Timesheets** activé\n   - Le service du bon de commande est alors facturé selon l'**Allocated Time**, mis à jour au **Sign In** et au **Complete**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#time-based-invoicing\n41. **Configurer le produit du contrat d'entretien** — _Documenté_\n   - Menu : **Subscriptions app ‣ Products ‣ Products**\n   - Champ : Product type\n   - Valeur : **Service**\n   - Ouvrir ou créer le produit (**New**) ; laisser les options **Subscriptions** et **Sales** activées.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s ; https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n42. **Fixer le prix récurrent annuel** — _Documenté_\n   - Menu : **Subscriptions app ‣ Products ‣ Products**\n   - Champ : Recurring Prices (**Add a price rule**) : Recurring Plan / Recurring Price\n   - Valeur : Yearly / 180 €\n   - Une ligne de prix par option de récurrence ; le plan Yearly doit exister au préalable. Facturation périodique automatique selon le contrat.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s ; https://www.odoo.com/documentation/20.0/applications/finance/accounting/customer_invoices/overview.html#recurring-contracts-invoices ; https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#product-form-configuration\n43. **Associer la worksheet au contrat d'entretien** — _Documenté_\n   - Champ : Worksheet\n   - Valeur : Modèle de worksheet voulu (ex. **Intervention**)\n   - Le produit de la vidéo combine Plan Services (rôle de technicien) et Worksheet ; non obligatoire pour un contrat sans visite annuelle.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration ; https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s\n44. **Enregistrer les paiements clients avec l'application Invoicing sans comptabilité complète dans Odoo 20** — _À vérifier_\n   - À vérifier : Non trouvée dans la documentation ni sur le web.\n45. **ajouter le logo de la société aux documents** — _Web_\n   - Menu : Settings ‣ Configure Document Layout\n   - Champ : Company logo\n   - Valeur : À renseigner (fichier logo non fourni).\n   - Le logo se télécharge via le bouton Edit de cette fenêtre, et il est enregistré sur la fiche société (Company logo: Click the Edit button to upload or change the logo. This adds the logo to the company's record on the Company model). Ces paramètres de mise en page sont propres à la société mais s'appliquent à tous les rapports (Layout settings are company-specific but apply to all reports.), donc devis et factures sont couverts.\n   - Source : https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html\n46. **Activer l'option abonnement sur un produit et créer le plan récurrent annuel (Yearly) dans Odoo 20 Subscriptions** — _À vérifier_\n   - À vérifier : Trouvée sur le web mais rejetée au contrôle : La documentation indique que l'option abonnement est déjà activée par défaut et que le plan Yearly existe déjà ; l'étape ajoute donc une activation et une création non nécessaires, et l'édition Enterprise reste non précisée..\n\n## Tests\n### Devis signé avec acompte de 30 %\n1. Ouvrir Sales app ‣ Orders ‣ Quotations et créer un devis avec une pompe et la pose\n2. Vérifier Online confirmation: Signature et Payment 30 %\n3. Envoyer le devis puis ouvrir l'aperçu client\n4. Signer et payer l'acompte\n5. Vérifier que le devis passe en Sales Order\nPages : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html\n\n### Gros modèle commandé chez Daikin après signature\n1. Créer un devis avec un gros modèle de pompe\n2. Confirmer le devis après signature\n3. Ouvrir Purchase app et vérifier le PO brouillon créé pour Daikin\n4. Confirmer le PO et valider la réception dans Inventory\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html\n\n### Ticket SAV, intervention, rapport signé et facturation\n1. Envoyer un e-mail à sav@thermo-services.fr\n2. Vérifier le ticket créé dans Helpdesk app ‣ Tickets et la politique SLA\n3. Cliquer sur Plan Intervention et affecter un technicien\n4. Dans Planning ‣ My Planning, cliquer sur Sign In, remplir l'onglet Worksheet puis Complete\n5. Ajouter les pièces avec Products, puis Customer Preview ‣ Sign Report\n6. Générer la facture des pièces et du temps passé\nPages : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html\n\n### Contrat d'entretien annuel\n1. Créer un devis avec le produit d'entretien à 180 € par an\n2. Confirmer le devis\n3. Vérifier la facture récurrente annuelle générée\nPages : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html\n\n## Questions ouvertes\n- Quelle édition d'Odoo (Community ou Enterprise) est retenue ? — Non mentionnée ; Helpdesk, Planning, Subscriptions sont probablement Enterprise.\n- Quel est le seuil de recommande des pièces détachées (à demander à Kevin) ? (besoin 5) — Nécessaire à la règle de réapprovisionnement.\n- Quels sont les fournisseurs et prix d'achat des pièces détachées ? (besoin 5) — Nécessaires à la recommande automatique.\n- Quels modèles sont courants et lesquels sont de gros modèles ? (besoin 4) — Liste des produits non donnée.\n- Quels sont les prix de vente des pompes et de la pose ? (besoin 1) — Absents, nécessaires aux devis.\n- Quel tarif horaire pour le temps passé et quel prix pour les pièces facturées ? (besoin 10) — Non précisés.\n- La comptabilité complète sera-t-elle utilisée plus tard ? (besoin 12) — Le client hésite, impacte le choix de l'application de facturation.\n- Quels sont les horaires de travail de l'équipe SAV et l'étape cible du SLA ? (besoin 7) — Nécessaires pour les 4 heures ouvrées.\n- Quel fournisseur de paiement en ligne utiliser pour l'acompte ? (besoin 2) — Non précisé.\n- Quels sont les noms des techniciens, le modèle de worksheet et le projet facturable ? (besoin 9) — Décisions du client non fournies.\n\n## Avertissements\n- Édition non précisée : Helpdesk, Planning (Field Service) et Subscriptions requièrent probablement Enterprise.\n- Étapes L2.6 et L2.7 (lots/séries) écartées : non demandées par le client.\n- Réception et livraison en 1 étape par défaut : aucun réglage Multi-Step Routes ajouté.\n- Depuis Odoo 19.0, la route Buy est masquée et appliquée automatiquement avec un fournisseur renseigné : pas d'activation manuelle de Buy.\n- Avec MTO, un PO brouillon est créé à chaque confirmation de commande, même si le stock suffit.\n- L1.5 et L1.6 sont à vérifier, ainsi que L4.7, L4.10 et L5.5.\n- Une politique SLA ne s'applique qu'à une seule équipe Helpdesk.\n- Sans adresse valide du client, la carte et l'itinéraire de l'intervention ne s'affichent pas.\n- Un shift sous garantie (Under Warranty) ne facture pas les produits ; un projet est nécessaire pour générer les timesheets.\n- Online Signature et Online Payment sont propres à chaque société en multi-sociétés.\n- La référence L4.8b écartée n'existe pas dans les lots.\n- Les prix, délais, seuils et fournisseurs de pièces restent À renseigner.\n\n_Coût : 0.401 USD · durée : 111 s_",
+      "rejetsWeb": [
+        {
+          "operation": "Activer l'option abonnement sur un produit et créer le plan récurrent annuel (Yearly) dans Odoo 20 Subscriptions",
+          "action": "activer l'abonnement sur le produit « contrat d'entretien annuel » et créer le plan annuel",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html"
+          ],
+          "raison": "La documentation indique que l'option abonnement est déjà activée par défaut et que le plan Yearly existe déjà ; l'étape ajoute donc une activation et une création non nécessaires, et l'édition Enterprise reste non précisée."
+        }
+      ],
+      "cout": {
+        "usd": 0.40077,
+        "details": [
+          {
+            "etape": "extraction",
+            "modele": "claude-sonnet-5-5",
+            "entree": 5000,
+            "sortie": 3240,
+            "usd": 0.0424
+          },
+          {
+            "etape": "lot 1",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.06124,
+            "dureeMs": 34358
+          },
+          {
+            "etape": "lot 2",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.03826,
+            "dureeMs": 30500
+          },
+          {
+            "etape": "lot 3",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.03794,
+            "dureeMs": 31411
+          },
+          {
+            "etape": "lot 4",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.05555,
+            "dureeMs": 26741
+          },
+          {
+            "etape": "lot 5",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.0716,
+            "dureeMs": 50528
+          },
+          {
+            "etape": "assemblage",
+            "modele": "claude-sonnet-5-5",
+            "entree": 11244,
+            "sortie": 3584,
+            "usd": 0.05833
+          },
+          {
+            "etape": "contrôle web",
+            "modele": "claude-haiku-5-5",
+            "entree": 2181,
+            "sortie": 1156,
+            "usd": 0.0008
+          },
+          {
+            "etape": "web",
+            "modele": "claude-haiku-5-5",
+            "entree": 32890,
+            "sortie": 2729,
+            "recherches": 3,
+            "usd": 0.03465
+          }
+        ]
+      },
+      "dureeMs": 110924
+    }
+  },
+  "2": {
+    "latenceS": 101,
+    "plan": {
+      "client": "Thermo Services",
+      "edition": "Non précisée",
+      "resume": "Plan Thermo Services : devis avec signature en ligne, acompte de 30 % et logo ; stock de Nantes avec réapprovisionnement automatique des pièces ; achat des gros modèles chez Daikin par règle 0/0/1 ; tickets SAV par e-mail avec SLA, planification Field Service et rapport signé ; facturation du temps passé et contrat d'entretien annuel à 180 €/an. Les tarifs, seuils, modèles, pièces et logo restent À renseigner.",
+      "besoins": [
+        {
+          "n": 1,
+          "titre": "Devis avec signature en ligne",
+          "besoin": "Réaliser les devis dans l'outil avec les pompes à chaleur et la pose, et permettre au client de les signer en ligne.",
+          "contexte": "Excel (outil actuel des devis)",
+          "extrait": "Ce qu'on voudrait c'est faire les devis dans l'outil, avec les pompes, la pose, et que le client puisse signer en ligne."
+        },
+        {
+          "n": 2,
+          "titre": "Acompte à la signature",
+          "besoin": "Demander un acompte de 30 % à la signature du devis, obligatoire pour tous les devis.",
+          "contexte": "30 % (acompte à la signature, obligatoire)",
+          "extrait": "Et on demande un acompte de 30 % à la signature, ça c'est obligatoire chez nous."
+        },
+        {
+          "n": 3,
+          "titre": "Pompes courantes en stock",
+          "besoin": "Gérer en stock les modèles courants de pompes à chaleur dans le petit entrepôt de Nantes.",
+          "contexte": "Nantes (petit entrepôt)",
+          "extrait": "On a un petit entrepôt à Nantes. Les modèles courants on les a en stock"
+        },
+        {
+          "n": 4,
+          "titre": "Gros modèles commandés à la signature",
+          "besoin": "Commander les gros modèles de pompes chez Daikin seulement quand le client a signé le devis, sans les stocker.",
+          "contexte": "Daikin (fournisseur des gros modèles de pompes)",
+          "extrait": "les gros modèles, on les commande chez Daikin seulement quand le client a signé, on ne veut pas les stocker, c'est trop cher."
+        },
+        {
+          "n": 5,
+          "titre": "Réappro pièces détachées",
+          "besoin": "Garder les pièces détachées en stock et les recommander automatiquement quand le niveau passe sous un seuil.",
+          "contexte": "Kevin (gère le stock)",
+          "extrait": "Les pièces, oui, on en garde en stock, et quand on passe sous un certain niveau il faudrait que ça recommande tout seul."
+        },
+        {
+          "n": 6,
+          "titre": "Tickets SAV par e-mail",
+          "besoin": "Créer automatiquement un ticket de support quand un client appelle ou écrit en cas de panne, avec un engagement de réponse en moins de 4 heures ouvrées.",
+          "contexte": "sav@thermo-services.fr (adresse de réception des pannes); 4 heures ouvrées (délai de réponse aux tickets)",
+          "extrait": "Il faudrait que ça crée un ticket automatiquement, et qu'on s'engage à répondre en moins de 4 heures ouvrées."
+        },
+        {
+          "n": 7,
+          "titre": "Planification des techniciens",
+          "besoin": "Planifier un technicien qui se rend chez le client après la création du ticket.",
+          "contexte": "six techniciens (sur la route)",
+          "extrait": "Ensuite on planifie un technicien qui va chez le client."
+        },
+        {
+          "n": 8,
+          "titre": "Rapport d'intervention signé",
+          "besoin": "Permettre au technicien de remplir un rapport d'intervention, noter les pièces utilisées et faire signer le client sur tablette.",
+          "contexte": "tablette (support de signature du client)",
+          "extrait": "Il remplit un rapport d'intervention, il note les pièces utilisées, et le client signe sur la tablette."
+        },
+        {
+          "n": 9,
+          "titre": "Facturation des interventions",
+          "besoin": "Facturer les pièces utilisées et le temps passé après l'intervention.",
+          "contexte": "",
+          "extrait": "Après on facture les pièces et le temps passé."
+        },
+        {
+          "n": 10,
+          "titre": "Contrats d'entretien annuels",
+          "besoin": "Gérer des contrats d'entretien annuels facturés automatiquement chaque année.",
+          "contexte": "180 euros par an (contrat d'entretien annuel)",
+          "extrait": "on a des contrats d'entretien annuels, 180 euros par an, facturés automatiquement chaque année."
+        },
+        {
+          "n": 11,
+          "titre": "Facturation et paiements sans compta",
+          "besoin": "Faire les factures et suivre les paiements uniquement, la comptabilité restant chez l'expert-comptable sur son propre logiciel.",
+          "contexte": "expert-comptable (reste sur son logiciel)",
+          "extrait": "nous on veut juste faire les factures et suivre les paiements."
+        },
+        {
+          "n": 12,
+          "titre": "Logo sur documents",
+          "besoin": "Faire apparaître le logo de l'entreprise sur les devis et les factures.",
+          "contexte": "",
+          "extrait": "il faut notre logo sur les devis et les factures, je vous l'enverrai."
+        }
+      ],
+      "donnees_client": [
+        {
+          "donnee": "Société",
+          "valeur": "Thermo Services",
+          "objet": "général",
+          "extrait": "nous c'est Thermo Services"
+        },
+        {
+          "donnee": "Interlocutrice",
+          "valeur": "Mme Durand, gérante",
+          "objet": "général",
+          "extrait": "Client (Mme Durand, gérante)"
+        },
+        {
+          "donnee": "Effectif",
+          "valeur": "une quinzaine",
+          "objet": "général",
+          "extrait": "On est une quinzaine"
+        },
+        {
+          "donnee": "Techniciens",
+          "valeur": "six",
+          "objet": "techniciens sur la route",
+          "extrait": "six techniciens sur la route"
+        },
+        {
+          "donnee": "Acompte",
+          "valeur": "30 %",
+          "objet": "acompte à la signature des devis",
+          "extrait": "un acompte de 30 % à la signature"
+        },
+        {
+          "donnee": "Entrepôt",
+          "valeur": "Nantes",
+          "objet": "petit entrepôt",
+          "extrait": "On a un petit entrepôt à Nantes."
+        },
+        {
+          "donnee": "Fournisseur",
+          "valeur": "Daikin",
+          "objet": "gros modèles de pompes",
+          "extrait": "on les commande chez Daikin"
+        },
+        {
+          "donnee": "Responsable stock",
+          "valeur": "Kevin",
+          "objet": "stock",
+          "extrait": "c'est lui qui gère le stock"
+        },
+        {
+          "donnee": "E-mail SAV",
+          "valeur": "sav@thermo-services.fr",
+          "objet": "pannes",
+          "extrait": "nous écrivent à sav@thermo-services.fr"
+        },
+        {
+          "donnee": "Délai de réponse",
+          "valeur": "moins de 4 heures ouvrées",
+          "objet": "tickets de panne",
+          "extrait": "répondre en moins de 4 heures ouvrées"
+        },
+        {
+          "donnee": "Prix contrat d'entretien",
+          "valeur": "180 euros par an",
+          "objet": "contrat d'entretien annuel",
+          "extrait": "180 euros par an, facturés automatiquement chaque année"
+        }
+      ],
+      "lots": [
+        {
+          "n": 1,
+          "besoins": [
+            1,
+            2,
+            12
+          ],
+          "question": "Comment paramétrer les devis avec pompes et pose, signature en ligne, acompte de 30 % à la signature et logo sur les documents dans Odoo 20.0 ?",
+          "contexte": "30 % (acompte à la signature, obligatoire); Excel (outil actuel des devis)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 2,
+          "besoins": [
+            3,
+            5
+          ],
+          "question": "Comment paramétrer le stock des modèles courants de pompes et des pièces détachées avec réapprovisionnement automatique sous un seuil dans l'entrepôt de Nantes dans Odoo 20.0 ?",
+          "contexte": "Nantes (petit entrepôt); Kevin (gère le stock)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 3,
+          "besoins": [
+            4
+          ],
+          "question": "Comment paramétrer la commande des gros modèles de pompes chez Daikin uniquement après signature du devis, sans stock, dans Odoo 20.0 ?",
+          "contexte": "Daikin (fournisseur des gros modèles de pompes)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 4,
+          "besoins": [
+            6,
+            7,
+            8
+          ],
+          "question": "Comment paramétrer les tickets SAV créés par e-mail avec engagement de 4 heures ouvrées, la planification des techniciens et le rapport d'intervention signé sur tablette dans Odoo 20.0 ?",
+          "contexte": "sav@thermo-services.fr (adresse de réception des pannes); 4 heures ouvrées (délai de réponse aux tickets); six techniciens (sur la route)",
+          "statut": "À vérifier"
+        },
+        {
+          "n": 5,
+          "besoins": [
+            9,
+            10,
+            11
+          ],
+          "question": "Comment paramétrer la facturation des pièces et du temps passé, les contrats d'entretien annuels facturés automatiquement et le suivi des paiements sans comptabilité complète dans Odoo 20.0 ?",
+          "contexte": "180 euros par an (contrat d'entretien annuel); expert-comptable (reste sur son logiciel)",
+          "statut": "À vérifier"
+        }
+      ],
+      "etapes": [
+        {
+          "n": 1,
+          "ref": "",
+          "besoins": [],
+          "action": "Installer les apps Sales, Purchase, Inventory, Helpdesk, Planning, Project",
+          "menu": "Apps",
+          "champ": "",
+          "valeur": "Sales, Purchase, Inventory, Helpdesk, Planning, Project",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Ajoutée par le code : apps citées dans les menus du plan."
+        },
+        {
+          "n": 2,
+          "ref": "L1.1",
+          "besoins": [
+            1
+          ],
+          "action": "Activer les modèles de devis",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Quotation Templates**",
+          "valeur": "Case cochée (section **Quotations & Orders**)",
+          "detail": "Fait apparaître le champ **Default Template** et le lien **Quotation Templates** pour créer des modèles (ex. un modèle pompes + pose). Cliquer sur **Save** avant de quitter la page.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/quote_template.html#configuration"
+          ]
+        },
+        {
+          "n": 3,
+          "ref": "L1.2",
+          "besoins": [
+            1
+          ],
+          "action": "Activer la signature en ligne",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Online Signature**",
+          "valeur": "Case cochée (section **Quotations & Orders**)",
+          "detail": "Demande par défaut une signature en ligne pour valider les commandes ; modifiable commande par commande.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ]
+        },
+        {
+          "n": 4,
+          "ref": "L1.3",
+          "besoins": [
+            2
+          ],
+          "action": "Activer le paiement en ligne (acompte)",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Online Payment**",
+          "valeur": "Case cochée (section **Quotations & Orders**)",
+          "detail": "Demande un prépaiement total ou partiel pour confirmer la commande. Un champ supplémentaire (**Payment X %**) apparaît alors, où renseigner 30 %. Configurer un fournisseur via **Configure Demo** ou **View Other Providers**.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ],
+          "raison": "Donnée client appliquée au mauvais objet"
+        },
+        {
+          "n": 5,
+          "ref": "L1.4",
+          "besoins": [
+            1,
+            2
+          ],
+          "action": "Enregistrer les réglages",
+          "menu": "**Sales app ‣ Configuration ‣ Settings**",
+          "champ": "**Save**",
+          "valeur": "Cliquer sur Save",
+          "detail": "Les valeurs de Online Signature et Online Payment sont propres à chaque société (à répéter en multi-sociétés).",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration"
+          ]
+        },
+        {
+          "n": 6,
+          "ref": "L1.5",
+          "besoins": [
+            1,
+            2
+          ],
+          "action": "Activer signature et paiement sur le modèle de devis",
+          "menu": "**Sales app ‣ Configuration ‣ Quotation Templates**",
+          "champ": "**Online confirmation**",
+          "valeur": "**Signature** et **Payment**",
+          "detail": "Dans le formulaire du modèle, cocher les options Signature et Payment du champ Online confirmation. Sur un devis standard, ces options sont dans l'onglet **Other Info**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/pdf_quote_builder.html#add-pdf-as-header-footer"
+          ]
+        },
+        {
+          "n": 7,
+          "ref": "L1.6",
+          "besoins": [
+            2
+          ],
+          "action": "Définir l'acompte à 30 % sur le devis",
+          "menu": "**Sales app ‣ Orders ‣ Quotations** (onglet **Other Info**)",
+          "champ": "**Prepayment**",
+          "valeur": "30 %",
+          "detail": "Dans l'onglet Other Info, sous Confirmation, le prépaiement peut être saisi en pourcentage ou, nouveauté, en montant fixe (vidéo).",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.youtube.com/watch?v=lws8XFQa-3o&t=505s",
+            "https://www.youtube.com/watch?v=lws8XFQa-3o"
+          ],
+          "raison": "Le champ Prepayment dans Other Info vient uniquement d'une transcription vidéo non relue ; les pages officielles citées décrivent Payment X % et non ce champ."
+        },
+        {
+          "n": 8,
+          "ref": "L1.7",
+          "besoins": [
+            12
+          ],
+          "action": "Configurer le logo et la mise en page des documents",
+          "menu": "**Settings ‣ Companies ‣ Configure Document Layout**",
+          "champ": "**Company logo**",
+          "valeur": "Cliquer sur **Edit** pour téléverser le logo (fichier fourni par le client : À renseigner)",
+          "detail": "Choisir aussi Layout, Colors, Paper format, etc. Les réglages sont propres à la société et s'appliquent à tous les rapports ; l'aperçu est à droite de la fenêtre.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#default-layout"
+          ]
+        },
+        {
+          "n": 9,
+          "ref": "L2.1",
+          "besoins": [
+            3,
+            5
+          ],
+          "action": "Créer l'entrepôt de Nantes (si inexistant)",
+          "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+          "champ": "Warehouse / Short Name / Address / Company",
+          "valeur": "Warehouse : Nantes ; Short Name, Address, Company : À renseigner",
+          "detail": "Cliquer sur **New** ; les champs Warehouse, Short Name (5 caractères max), Address et Company sont obligatoires.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+          ]
+        },
+        {
+          "n": 10,
+          "ref": "L2.2",
+          "besoins": [
+            3,
+            5
+          ],
+          "action": "Ouvrir la fiche produit (pompe ou pièce détachée)",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "",
+          "valeur": "À renseigner (chaque modèle de pompe et chaque pièce détachée)",
+          "detail": "Sélectionner un produit existant ou cliquer sur **New**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration"
+          ]
+        },
+        {
+          "n": 11,
+          "ref": "L2.3",
+          "besoins": [
+            3,
+            5
+          ],
+          "action": "Définir le type de produit",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "Product Type",
+          "valeur": "**Goods**",
+          "detail": "Dans l'onglet General Information de la fiche produit.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration"
+          ]
+        },
+        {
+          "n": 12,
+          "ref": "L2.4",
+          "besoins": [
+            3,
+            5
+          ],
+          "action": "Activer le suivi de stock",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "Track Inventory",
+          "valeur": "Case cochée",
+          "detail": "Nécessaire pour que Odoo suive les niveaux de stock et déclenche les règles.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration"
+          ]
+        },
+        {
+          "n": 13,
+          "ref": "L2.5",
+          "besoins": [
+            5
+          ],
+          "action": "Vérifier la case Purchase",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "Purchase",
+          "valeur": "Case activée sous le nom du produit",
+          "detail": "L'app Purchase doit être installée.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method"
+          ]
+        },
+        {
+          "n": 14,
+          "ref": "L2.6",
+          "besoins": [
+            5
+          ],
+          "action": "Ajouter un fournisseur",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "Purchase tab (vendor pricelist)",
+          "valeur": "À renseigner (fournisseur)",
+          "detail": "Ajouter au moins un fournisseur ; Odoo utilise celui en haut de la liste pour générer les RFQ.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method"
+          ]
+        },
+        {
+          "n": 15,
+          "ref": "L2.7",
+          "besoins": [
+            5
+          ],
+          "action": "Ouvrir les règles de réapprovisionnement du produit",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "Reordering Rules (smart button)",
+          "valeur": "Cliquer puis **New**",
+          "detail": "Une règle peut aussi être créée depuis **Inventory app ‣ Operations ‣ Replenishment** en cliquant sur **New**.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/products/reordering.html#add-a-reordering-rule-to-a-product"
+          ],
+          "raison": "Le passage 12 dit de cliquer sur Create dans le tableau de bord des règles, et non New ; le bouton New figure au passage 4 pour Replenishment."
+        },
+        {
+          "n": 16,
+          "ref": "L2.8",
+          "besoins": [
+            5
+          ],
+          "action": "Renseigner le produit de la règle",
+          "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+          "champ": "Product",
+          "valeur": "À renseigner (produit)",
+          "detail": "Produit réapprovisionné par la règle.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+          ]
+        },
+        {
+          "n": 17,
+          "ref": "L2.9",
+          "besoins": [
+            5
+          ],
+          "action": "Renseigner l'emplacement de stock de Nantes",
+          "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+          "champ": "Location",
+          "valeur": "Emplacement de stock de l'entrepôt Nantes (À renseigner)",
+          "detail": "Emplacement où le produit est stocké.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+          ]
+        },
+        {
+          "n": 18,
+          "ref": "L2.10",
+          "besoins": [
+            5
+          ],
+          "action": "Renseigner le seuil minimum",
+          "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+          "champ": "Min",
+          "valeur": "À renseigner",
+          "detail": "Quand le stock prévisionnel passe sous ce seuil, une commande de réapprovisionnement est créée.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+          ]
+        },
+        {
+          "n": 19,
+          "ref": "L2.11",
+          "besoins": [
+            5
+          ],
+          "action": "Renseigner le maximum",
+          "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+          "champ": "Max",
+          "valeur": "À renseigner",
+          "detail": "Quantité maximale jusqu'à laquelle le stock est réapprovisionné.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+          ]
+        },
+        {
+          "n": 20,
+          "ref": "L2.12",
+          "besoins": [
+            5
+          ],
+          "action": "Afficher la colonne Trigger",
+          "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+          "champ": "Trigger (via l'icône adjust settings)",
+          "valeur": "Case Trigger cochée",
+          "detail": "La colonne n'est pas affichée par défaut.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger"
+          ]
+        },
+        {
+          "n": 21,
+          "ref": "L2.13",
+          "besoins": [
+            5
+          ],
+          "action": "Choisir le déclencheur automatique",
+          "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+          "champ": "Trigger",
+          "valeur": "**Auto**",
+          "detail": "Une RFQ est créée automatiquement quand le stock prévisionnel passe sous le minimum, via le scheduler ou la confirmation d'une commande client. Auto est la valeur par défaut.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger",
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#auto"
+          ],
+          "raison": "Les passages 5 et 23 disent qu'Auto est la valeur par défaut, mais la RFQ n'est générée que si la route Buy est sélectionnée ; l'affirmation omet cette condition."
+        },
+        {
+          "n": 22,
+          "ref": "L3.1",
+          "besoins": [
+            4
+          ],
+          "action": "Ouvrir la fiche du produit concerné",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "",
+          "valeur": "À renseigner (gros modèle de pompe Daikin)",
+          "detail": "Sélectionner le produit pour lequel la commande doit se déclencher à la confirmation de la commande client.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule"
+          ]
+        },
+        {
+          "n": 23,
+          "ref": "L3.2",
+          "besoins": [
+            4
+          ],
+          "action": "Ouvrir les règles de réapprovisionnement du produit",
+          "menu": "**Inventory app ‣ Products ‣ Products**",
+          "champ": "**Reordering Rules** (smart button)",
+          "valeur": "**New**",
+          "detail": "Cliquer sur le smart button **Reordering Rules** en haut de la fiche produit, puis sur **New** pour créer une règle.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule"
+          ]
+        },
+        {
+          "n": 24,
+          "ref": "L3.3",
+          "besoins": [
+            4
+          ],
+          "action": "Définir l'emplacement de la règle",
+          "menu": "",
+          "champ": "**Location**",
+          "valeur": "**WH/Stock** (valeur par défaut, à adapter si besoin)",
+          "detail": "Emplacement dans lequel les produits réapprovisionnés sont stockés.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule"
+          ]
+        },
+        {
+          "n": 25,
+          "ref": "L3.5",
+          "besoins": [
+            4
+          ],
+          "action": "Fixer le minimum à zéro",
+          "menu": "",
+          "champ": "**Min**",
+          "valeur": "0.00",
+          "detail": "Aucun stock n'est conservé.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule"
+          ]
+        },
+        {
+          "n": 26,
+          "ref": "L3.6",
+          "besoins": [
+            4
+          ],
+          "action": "Fixer le maximum à zéro",
+          "menu": "",
+          "champ": "**Max**",
+          "valeur": "0.00",
+          "detail": "Laisser la valeur à 0.00.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule"
+          ]
+        },
+        {
+          "n": 27,
+          "ref": "L3.7",
+          "besoins": [
+            4
+          ],
+          "action": "Fixer la quantité à commander à un",
+          "menu": "",
+          "champ": "**To Order**",
+          "valeur": "1.00",
+          "detail": "À chaque confirmation d'une commande client faisant passer la quantité prévue sous le Min, un PO d'une unité est créé.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule"
+          ]
+        },
+        {
+          "n": 28,
+          "ref": "L4.1",
+          "besoins": [
+            6
+          ],
+          "action": "Ouvrir la configuration de l'équipe Helpdesk",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "",
+          "valeur": "Sélectionner l'équipe SAV concernée (ou cliquer sur **New**)",
+          "detail": "Ouvrir la page de réglages de l'équipe pour y configurer les canaux de réception.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets"
+          ]
+        },
+        {
+          "n": 29,
+          "ref": "L4.2",
+          "besoins": [
+            6
+          ],
+          "action": "Activer le canal e-mail de l'équipe",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**Email Alias**",
+          "valeur": "Cocher la case **Email Alias** (sections **Channels**)",
+          "detail": "Les e-mails reçus créent des tickets : l'objet devient le titre du ticket et le corps est ajouté dans l'onglet **Description** et dans le chatter.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets"
+          ]
+        },
+        {
+          "n": 30,
+          "ref": "L4.3",
+          "besoins": [
+            6
+          ],
+          "action": "Renseigner l'alias de réception des pannes",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams** ‣ **Channels ‣ Email Alias**",
+          "champ": "**Alias**",
+          "valeur": "sav",
+          "detail": "Saisir le nom de l'alias (partie locale de sav@thermo-services.fr). Si aucun domaine personnalisé n'est configuré, cliquer sur **Set an Alias Domain** puis activer **Custom Email Servers** dans **Settings** ; le domaine thermo-services.fr doit correspondre à ce domaine d'alias.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias"
+          ],
+          "raison": "Le passage décrit le champ Alias et le domaine d'alias, mais ne mentionne pas la valeur « sav » ni l'alignement avec thermo-services.fr ; la généralisation dépasse les passages."
+        },
+        {
+          "n": 31,
+          "ref": "L4.4",
+          "besoins": [
+            6
+          ],
+          "action": "Vérifier que les SLA sont activés sur l'équipe",
+          "menu": "**Helpdesk app ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**SLA Policies** (section **Performance**)",
+          "valeur": "Case cochée",
+          "detail": "La fonction est activée par défaut sur les nouvelles équipes ; la décocher la désactive.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html"
+          ]
+        },
+        {
+          "n": 32,
+          "ref": "L4.5",
+          "besoins": [
+            6
+          ],
+          "action": "Créer la politique SLA",
+          "menu": "**Helpdesk app ‣ Configuration ‣ SLA Policies**",
+          "champ": "**Title**",
+          "valeur": "À renseigner",
+          "detail": "Cliquer sur **New**, saisir un **Title** et une **Description**. L'engagement de 4 heures ouvrées est à saisir dans le formulaire (champs non détaillés dans les passages).",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy"
+          ],
+          "raison": "Le passage mentionne Helpdesk app ‣ Configuration ‣ SLA Policies, New, Title et Description, mais ne détaille pas l'engagement de 4 heures ouvrées, ce que l'étape signale elle-même."
+        },
+        {
+          "n": 33,
+          "ref": "",
+          "besoins": [
+            6
+          ],
+          "action": "Définir une politique SLA de 4 heures ouvrées (Time, Working Hours) dans Helpdesk Odoo 20.0",
+          "menu": "",
+          "champ": "",
+          "valeur": "",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Trouvée sur le web mais rejetée au contrôle : Valeur de l'étape incomplète (étape d'atteinte à confirmer, calendrier à renseigner) et filtre sur les pannes non appuyé par les extraits; édition Enterprise requise à vérifier pour SLA.."
+        },
+        {
+          "n": 34,
+          "ref": "L4.6",
+          "besoins": [
+            7,
+            8
+          ],
+          "action": "Activer Field Service dans Planning",
+          "menu": "**Planning ‣ Configuration ‣ Settings**",
+          "champ": "**Field Service**",
+          "valeur": "Enabled, puis **Save**",
+          "detail": "Permet de planifier les interventions sur site dans l'application Planning.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html"
+          ]
+        },
+        {
+          "n": 35,
+          "ref": "L4.7",
+          "besoins": [
+            7
+          ],
+          "action": "Activer Field Service sur l'équipe Helpdesk",
+          "menu": "**Helpdesk ‣ Configuration ‣ Helpdesk Teams**",
+          "champ": "**Field Service** (section **After-Sales**)",
+          "valeur": "Enabled",
+          "detail": "Sélectionner l'équipe SAV, descendre à la section **After-Sales** et activer **Field Service**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html#plan-field-service-interventions-from-a-ticket"
+          ]
+        },
+        {
+          "n": 36,
+          "ref": "L4.10",
+          "besoins": [
+            8
+          ],
+          "action": "Activer les worksheets",
+          "menu": "**Planning ‣ Configuration ‣ Settings**",
+          "champ": "**Worksheets** (section **Field Service**)",
+          "valeur": "Enabled, puis **Save**",
+          "detail": "Active aussi par défaut la fonction Customer Report.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration"
+          ]
+        },
+        {
+          "n": 37,
+          "ref": "L4.11",
+          "besoins": [
+            8
+          ],
+          "action": "Créer un modèle de worksheet",
+          "menu": "**Planning ‣ Configuration ‣ Worksheet Templates**",
+          "champ": "**Name**",
+          "valeur": "À renseigner",
+          "detail": "Cliquer sur **New**, saisir un **Name**, puis sous **Worksheet properties** cliquer sur **Add Property** et configurer chaque champ de propriété (répéter pour chaque propriété). Le premier modèle de la liste est appliqué par défaut aux shifts.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration"
+          ]
+        },
+        {
+          "n": 38,
+          "ref": "L5.3",
+          "besoins": [
+            9
+          ],
+          "action": "Activer l'Analytic Accounting",
+          "menu": "**Accounting app ‣ Configuration ‣ Settings**",
+          "champ": "Analytic Accounting (section **Analytics**)",
+          "valeur": "Case cochée, puis **Save**",
+          "detail": "Vérifier que la case est cochée dans la section Analytics, puis enregistrer.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#app-and-settings-configuration"
+          ]
+        },
+        {
+          "n": 39,
+          "ref": "L5.4",
+          "besoins": [
+            9
+          ],
+          "action": "Activer les feuilles de temps",
+          "menu": "**Project app ‣ Configuration ‣ Settings**",
+          "champ": "Timesheets (section **Time Management**)",
+          "valeur": "Case cochée, puis **Save**",
+          "detail": "Nécessaire pour facturer le temps passé sur un projet.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#app-and-settings-configuration"
+          ]
+        },
+        {
+          "n": 40,
+          "ref": "L5.5",
+          "besoins": [
+            9
+          ],
+          "action": "Ouvrir ou créer le produit de service pour le temps passé",
+          "menu": "**Sales app ‣ Products ‣ Products**",
+          "champ": "New",
+          "valeur": "À renseigner (nom du produit)",
+          "detail": "Sélectionner un produit service existant ou cliquer sur New.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+          ]
+        },
+        {
+          "n": 41,
+          "ref": "L5.6",
+          "besoins": [
+            9
+          ],
+          "action": "Définir le type de produit Service",
+          "menu": "**Sales app ‣ Products ‣ Products** (onglet **General Information**)",
+          "champ": "Product Type",
+          "valeur": "**Service**",
+          "detail": "La facturation du temps passé n'est possible qu'avec des produits de type Service.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+          ]
+        },
+        {
+          "n": 42,
+          "ref": "L5.7",
+          "besoins": [
+            9
+          ],
+          "action": "Choisir la politique de facturation sur feuilles de temps",
+          "menu": "**Sales app ‣ Products ‣ Products** (onglet **General Information**)",
+          "champ": "Invoicing Policy",
+          "valeur": "**Based on Timesheets**",
+          "detail": "Ouvrir la liste déroulante du champ Invoicing Policy et sélectionner l'option.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+          ]
+        },
+        {
+          "n": 43,
+          "ref": "L5.8",
+          "besoins": [
+            9
+          ],
+          "action": "Définir la création du projet et de la tâche à la commande",
+          "menu": "**Sales app ‣ Products ‣ Products** (onglet **General Information**)",
+          "champ": "Create on Order",
+          "valeur": "**Project & Task**",
+          "detail": "Un projet et une tâche sont créés dans Project à la création d'une commande avec ce produit. L'option **Task** est possible à la place, avec choix d'un projet existant dans le champ **Project**.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration"
+          ]
+        },
+        {
+          "n": 44,
+          "ref": "",
+          "besoins": [
+            9
+          ],
+          "action": "Facturer les pièces utilisées lors d'une intervention Field Service (ajout de produits sur la tâche et facturation sur la commande client) dans Odoo 20.0",
+          "menu": "",
+          "champ": "",
+          "valeur": "",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Trouvée sur le web mais rejetée au contrôle : Extraits cités ne disent pas la valeur complète ni le champ Sales Order exact ; étape ajoute probablement un réglage voisin et le fait de facturer via commande client n'est pas tranché par les extraits; Field Service Billing requis mais édition Enterprise non vérifiée (point à confirmer).."
+        },
+        {
+          "n": 45,
+          "ref": "L5.9",
+          "besoins": [
+            10
+          ],
+          "action": "Créer le produit du contrat d'entretien annuel (type Service)",
+          "menu": "**Sales app ‣ Products ‣ Products**",
+          "champ": "Product Type",
+          "valeur": "**Service**",
+          "detail": "Dans la vidéo, le produit d'entretien est un service qui est aussi un abonnement. Le nom est À renseigner.",
+          "statut": "À vérifier",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s"
+          ],
+          "raison": "La vidéo montre bien un produit de type Service, mais le menu Sales app ‣ Products ‣ Products n'apparaît pas dans le passage cité [1]."
+        },
+        {
+          "n": 46,
+          "ref": "L5.10",
+          "besoins": [
+            10
+          ],
+          "action": "Activer l'abonnement sur le produit",
+          "menu": "",
+          "champ": "Subscription",
+          "valeur": "Case cochée",
+          "detail": "Le menu exact n'est pas précisé dans la vidéo, qui montre la case Subscription activée sur la fiche produit.",
+          "statut": "Vidéo",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s"
+          ]
+        },
+        {
+          "n": 47,
+          "ref": "L5.11",
+          "besoins": [
+            10
+          ],
+          "action": "Renseigner le plan récurrent et le prix annuel",
+          "menu": "Fiche produit, onglet **Prices**",
+          "champ": "Recurring Plan",
+          "valeur": "**Yearly** à 180 € par an",
+          "detail": "Le prix doit correspondre à la récurrence du produit ; ici annuelle. La vidéo montre 100 € à titre d'exemple, le client demande 180 €.",
+          "statut": "Documenté",
+          "source": [
+            "https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s",
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#set-up-recurring-plans"
+          ]
+        },
+        {
+          "n": 48,
+          "ref": "",
+          "besoins": [
+            10
+          ],
+          "action": "Facturation automatique annuelle des abonnements : paramétrage de la facturation récurrente et activation de l'abonnement sur la fiche produit dans Odoo 20.0",
+          "menu": "",
+          "champ": "",
+          "valeur": "",
+          "detail": "",
+          "statut": "À vérifier",
+          "source": [],
+          "raison": "Trouvée sur le web mais rejetée au contrôle : Étape crée le plan et active l'abonnement, mais l'extrait ne couvre pas Billing Period annuelle ni la configuration exacte; la mention Subscriptions activée par défaut est une donnée à vérifier et l'édition Enterprise reste à confirmer.."
+        }
+      ],
+      "parStatut": {
+        "À vérifier": 11,
+        "Documenté": 36,
+        "Vidéo": 1
+      },
+      "tests": [
+        {
+          "titre": "Devis signé avec acompte de 30 %",
+          "etapes": [
+            "Sales app ‣ Orders ‣ Quotations : créer un devis avec le modèle (pompe et pose)",
+            "Cliquer sur Send puis ouvrir le lien du portail client",
+            "Signer en ligne et payer l'acompte de 30 %",
+            "Vérifier que le devis est confirmé et que le logo apparaît sur le PDF"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html",
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/quote_template.html"
+          ]
+        },
+        {
+          "titre": "Gros modèle Daikin commandé à la signature",
+          "etapes": [
+            "Confirmer un devis contenant un gros modèle",
+            "Ouvrir Purchase app ‣ Orders ‣ Requests for Quotation",
+            "Vérifier la demande de prix Daikin de 1 unité"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html"
+          ]
+        },
+        {
+          "titre": "Réappro automatique des pièces détachées",
+          "etapes": [
+            "Faire passer le stock d'une pièce sous le Min",
+            "Lancer Inventory app ‣ Operations ‣ Run Scheduler (mode développeur)",
+            "Vérifier la RFQ créée dans Purchase app ‣ Orders ‣ Requests for Quotation"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html"
+          ]
+        },
+        {
+          "titre": "Ticket SAV, intervention et rapport signé",
+          "etapes": [
+            "Envoyer un e-mail à sav@thermo-services.fr",
+            "Vérifier le ticket créé et la politique SLA appliquée",
+            "Cliquer sur Plan Intervention et créer un shift avec le Customer",
+            "Sur tablette : Planning ‣ Planning ‣ My Planning, ouvrir l'intervention, cliquer sur Sign In",
+            "Remplir le rapport, noter les pièces, puis Customer Preview ‣ Sign Report"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html",
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html",
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html"
+          ]
+        },
+        {
+          "titre": "Facturation de l'intervention",
+          "etapes": [
+            "Après l'intervention, ouvrir la commande client liée",
+            "Cliquer sur Create Invoice",
+            "Confirmer la facture et enregistrer le paiement"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html",
+            "https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments.html"
+          ]
+        },
+        {
+          "titre": "Contrat d'entretien annuel",
+          "etapes": [
+            "Créer un devis avec le produit contrat d'entretien (180 €/an, Yearly)",
+            "Confirmer le devis",
+            "Vérifier l'abonnement créé et sa facture récurrente annuelle"
+          ],
+          "pages": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html"
+          ]
+        }
+      ],
+      "questions_ouvertes": [
+        {
+          "question": "Quel est le seuil de réapprovisionnement des pièces détachées (à voir avec Kevin) ?",
+          "besoin": 5,
+          "raison": "Min et Max À renseigner"
+        },
+        {
+          "question": "Quelles sont les pièces détachées concernées et chez quel fournisseur les recommander ?",
+          "besoin": 5,
+          "raison": "Fournisseur et références non indiqués"
+        },
+        {
+          "question": "Quels modèles sont « courants » (stock) et lesquels sont « gros modèles » (Daikin) ?",
+          "besoin": 4,
+          "raison": "Liste des modèles non fournie"
+        },
+        {
+          "question": "Quels sont les prix des pompes, de la pose, le taux horaire et le prix des pièces ?",
+          "besoin": 9,
+          "raison": "Aucun tarif hors contrat d'entretien"
+        },
+        {
+          "question": "Quel est le logo à utiliser ?",
+          "besoin": 12,
+          "raison": "Le client doit l'envoyer"
+        },
+        {
+          "question": "La comptabilité complète sera-t-elle utilisée plus tard ?",
+          "besoin": 11,
+          "raison": "Décision non prise"
+        },
+        {
+          "question": "Quel fournisseur de paiement en ligne pour l'acompte ?",
+          "besoin": 2,
+          "raison": "Non précisé"
+        },
+        {
+          "question": "Quels sont les détails de l'entrepôt de Nantes (nom court, adresse) et existe-t-il déjà ?",
+          "besoin": 3,
+          "raison": "Non fournis"
+        },
+        {
+          "question": "Quelles sont les horaires ouvrés de l'équipe SAV et les six techniciens à créer comme ressources de planning ?",
+          "besoin": 6,
+          "raison": "Nécessaire pour le SLA de 4 heures ouvrées et la planification"
+        },
+        {
+          "question": "Comment facturer les pièces (quantités livrées ou autre) et le temps passé ?",
+          "besoin": 9,
+          "raison": "Décision client non précisée"
+        },
+        {
+          "question": "Faut-il passer par une règle 0/0/1 ou la route MTO pour les gros modèles ?",
+          "besoin": 4,
+          "raison": "Choix non tranché"
+        }
+      ],
+      "avertissements": [
+        "Édition non précisée : vérifier si Enterprise est requise (Helpdesk, Field Service/Planning, Subscriptions, SLA).",
+        "Étape L3.4 écartée : la route Buy est masquée par défaut depuis Odoo 19.0.",
+        "Avec la règle 0/0/1, le produit reçu n'est pas réservé pour la commande client et le PO n'est pas lié à la commande ; la route MTO le fait.",
+        "Installation de l'application Accounting (L5.2) écartée : le client veut seulement facturer et suivre les paiements, comptabilité chez l'expert-comptable ; à confirmer.",
+        "Le champ Prepayment en montant fixe et la refonte du portail sont des nouveautés Odoo 20 non vérifiées ; l'acompte obligatoire pour tous les devis reste à confirmer.",
+        "Les règles automatiques sont masquées par défaut dans Replenishment ; le scheduler tourne une fois par jour.",
+        "Le rapport client n'est généré que si Billing ou worksheets sont utilisés.",
+        "Les alias e-mail en On-premise nécessitent des serveurs externes.",
+        "Le plan récurrent ne peut pas avoir l'unité Days comme Billing Period.",
+        "Les réglages Online Signature, Online Payment sont spécifiques à la société.",
+        "Reprise des données depuis Excel non couverte."
+      ],
+      "markdown": "# Plan Odoo 20 — Thermo Services\n\nÉdition : Non précisée. Plan Thermo Services : devis avec signature en ligne, acompte de 30 % et logo ; stock de Nantes avec réapprovisionnement automatique des pièces ; achat des gros modèles chez Daikin par règle 0/0/1 ; tickets SAV par e-mail avec SLA, planification Field Service et rapport signé ; facturation du temps passé et contrat d'entretien annuel à 180 €/an. Les tarifs, seuils, modèles, pièces et logo restent À renseigner.\n\nÉtapes : 11 À vérifier, 36 Documenté, 1 Vidéo.\n\n## Besoins compris\n1. **Devis avec signature en ligne** : Réaliser les devis dans l'outil avec les pompes à chaleur et la pose, et permettre au client de les signer en ligne.\n2. **Acompte à la signature** : Demander un acompte de 30 % à la signature du devis, obligatoire pour tous les devis.\n3. **Pompes courantes en stock** : Gérer en stock les modèles courants de pompes à chaleur dans le petit entrepôt de Nantes.\n4. **Gros modèles commandés à la signature** : Commander les gros modèles de pompes chez Daikin seulement quand le client a signé le devis, sans les stocker.\n5. **Réappro pièces détachées** : Garder les pièces détachées en stock et les recommander automatiquement quand le niveau passe sous un seuil.\n6. **Tickets SAV par e-mail** : Créer automatiquement un ticket de support quand un client appelle ou écrit en cas de panne, avec un engagement de réponse en moins de 4 heures ouvrées.\n7. **Planification des techniciens** : Planifier un technicien qui se rend chez le client après la création du ticket.\n8. **Rapport d'intervention signé** : Permettre au technicien de remplir un rapport d'intervention, noter les pièces utilisées et faire signer le client sur tablette.\n9. **Facturation des interventions** : Facturer les pièces utilisées et le temps passé après l'intervention.\n10. **Contrats d'entretien annuels** : Gérer des contrats d'entretien annuels facturés automatiquement chaque année.\n11. **Facturation et paiements sans compta** : Faire les factures et suivre les paiements uniquement, la comptabilité restant chez l'expert-comptable sur son propre logiciel.\n12. **Logo sur documents** : Faire apparaître le logo de l'entreprise sur les devis et les factures.\n\n## Étapes\n1. **Installer les apps Sales, Purchase, Inventory, Helpdesk, Planning, Project** — _À vérifier_\n   - Menu : Apps\n   - Valeur : Sales, Purchase, Inventory, Helpdesk, Planning, Project\n   - À vérifier : Ajoutée par le code : apps citées dans les menus du plan.\n2. **Activer les modèles de devis** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Quotation Templates**\n   - Valeur : Case cochée (section **Quotations & Orders**)\n   - Fait apparaître le champ **Default Template** et le lien **Quotation Templates** pour créer des modèles (ex. un modèle pompes + pose). Cliquer sur **Save** avant de quitter la page.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/quote_template.html#configuration\n3. **Activer la signature en ligne** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Online Signature**\n   - Valeur : Case cochée (section **Quotations & Orders**)\n   - Demande par défaut une signature en ligne pour valider les commandes ; modifiable commande par commande.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n4. **Activer le paiement en ligne (acompte)** — _À vérifier_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Online Payment**\n   - Valeur : Case cochée (section **Quotations & Orders**)\n   - Demande un prépaiement total ou partiel pour confirmer la commande. Un champ supplémentaire (**Payment X %**) apparaît alors, où renseigner 30 %. Configurer un fournisseur via **Configure Demo** ou **View Other Providers**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n   - À vérifier : Donnée client appliquée au mauvais objet\n5. **Enregistrer les réglages** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Settings**\n   - Champ : **Save**\n   - Valeur : Cliquer sur Save\n   - Les valeurs de Online Signature et Online Payment sont propres à chaque société (à répéter en multi-sociétés).\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/create_quotations.html#configuration\n6. **Activer signature et paiement sur le modèle de devis** — _Documenté_\n   - Menu : **Sales app ‣ Configuration ‣ Quotation Templates**\n   - Champ : **Online confirmation**\n   - Valeur : **Signature** et **Payment**\n   - Dans le formulaire du modèle, cocher les options Signature et Payment du champ Online confirmation. Sur un devis standard, ces options sont dans l'onglet **Other Info**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html#activate-online-signatures ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html#activate-online-payments ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/pdf_quote_builder.html#add-pdf-as-header-footer\n7. **Définir l'acompte à 30 % sur le devis** — _À vérifier_\n   - Menu : **Sales app ‣ Orders ‣ Quotations** (onglet **Other Info**)\n   - Champ : **Prepayment**\n   - Valeur : 30 %\n   - Dans l'onglet Other Info, sous Confirmation, le prépaiement peut être saisi en pourcentage ou, nouveauté, en montant fixe (vidéo).\n   - Source : https://www.youtube.com/watch?v=lws8XFQa-3o&t=505s ; https://www.youtube.com/watch?v=lws8XFQa-3o\n   - À vérifier : Le champ Prepayment dans Other Info vient uniquement d'une transcription vidéo non relue ; les pages officielles citées décrivent Payment X % et non ce champ.\n8. **Configurer le logo et la mise en page des documents** — _Documenté_\n   - Menu : **Settings ‣ Companies ‣ Configure Document Layout**\n   - Champ : **Company logo**\n   - Valeur : Cliquer sur **Edit** pour téléverser le logo (fichier fourni par le client : À renseigner)\n   - Choisir aussi Layout, Colors, Paper format, etc. Les réglages sont propres à la société et s'appliquent à tous les rapports ; l'aperçu est à droite de la fenêtre.\n   - Source : https://www.odoo.com/documentation/20.0/applications/studio/pdf_reports.html#default-layout\n9. **Créer l'entrepôt de Nantes (si inexistant)** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : Warehouse / Short Name / Address / Company\n   - Valeur : Warehouse : Nantes ; Short Name, Address, Company : À renseigner\n   - Cliquer sur **New** ; les champs Warehouse, Short Name (5 caractères max), Address et Company sont obligatoires.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n10. **Ouvrir la fiche produit (pompe ou pièce détachée)** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Valeur : À renseigner (chaque modèle de pompe et chaque pièce détachée)\n   - Sélectionner un produit existant ou cliquer sur **New**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration\n11. **Définir le type de produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : Product Type\n   - Valeur : **Goods**\n   - Dans l'onglet General Information de la fiche produit.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration\n12. **Activer le suivi de stock** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : Track Inventory\n   - Valeur : Case cochée\n   - Nécessaire pour que Odoo suive les niveaux de stock et déclenche les règles.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration\n13. **Vérifier la case Purchase** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : Purchase\n   - Valeur : Case activée sous le nom du produit\n   - L'app Purchase doit être installée.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method\n14. **Ajouter un fournisseur** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : Purchase tab (vendor pricelist)\n   - Valeur : À renseigner (fournisseur)\n   - Ajouter au moins un fournisseur ; Odoo utilise celui en haut de la liste pour générer les RFQ.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method\n15. **Ouvrir les règles de réapprovisionnement du produit** — _À vérifier_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : Reordering Rules (smart button)\n   - Valeur : Cliquer puis **New**\n   - Une règle peut aussi être créée depuis **Inventory app ‣ Operations ‣ Replenishment** en cliquant sur **New**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/products/reordering.html#add-a-reordering-rule-to-a-product\n   - À vérifier : Le passage 12 dit de cliquer sur Create dans le tableau de bord des règles, et non New ; le bouton New figure au passage 4 pour Replenishment.\n16. **Renseigner le produit de la règle** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Product\n   - Valeur : À renseigner (produit)\n   - Produit réapprovisionné par la règle.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n17. **Renseigner l'emplacement de stock de Nantes** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Location\n   - Valeur : Emplacement de stock de l'entrepôt Nantes (À renseigner)\n   - Emplacement où le produit est stocké.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n18. **Renseigner le seuil minimum** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Min\n   - Valeur : À renseigner\n   - Quand le stock prévisionnel passe sous ce seuil, une commande de réapprovisionnement est créée.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n19. **Renseigner le maximum** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Max\n   - Valeur : À renseigner\n   - Quantité maximale jusqu'à laquelle le stock est réapprovisionné.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n20. **Afficher la colonne Trigger** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Trigger (via l'icône adjust settings)\n   - Valeur : Case Trigger cochée\n   - La colonne n'est pas affichée par défaut.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger\n21. **Choisir le déclencheur automatique** — _À vérifier_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Trigger\n   - Valeur : **Auto**\n   - Une RFQ est créée automatiquement quand le stock prévisionnel passe sous le minimum, via le scheduler ou la confirmation d'une commande client. Auto est la valeur par défaut.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#trigger ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#auto\n   - À vérifier : Les passages 5 et 23 disent qu'Auto est la valeur par défaut, mais la RFQ n'est générée que si la route Buy est sélectionnée ; l'affirmation omet cette condition.\n22. **Ouvrir la fiche du produit concerné** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Valeur : À renseigner (gros modèle de pompe Daikin)\n   - Sélectionner le produit pour lequel la commande doit se déclencher à la confirmation de la commande client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule\n23. **Ouvrir les règles de réapprovisionnement du produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **Reordering Rules** (smart button)\n   - Valeur : **New**\n   - Cliquer sur le smart button **Reordering Rules** en haut de la fiche produit, puis sur **New** pour créer une règle.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule\n24. **Définir l'emplacement de la règle** — _Documenté_\n   - Champ : **Location**\n   - Valeur : **WH/Stock** (valeur par défaut, à adapter si besoin)\n   - Emplacement dans lequel les produits réapprovisionnés sont stockés.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule\n25. **Fixer le minimum à zéro** — _Documenté_\n   - Champ : **Min**\n   - Valeur : 0.00\n   - Aucun stock n'est conservé.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule\n26. **Fixer le maximum à zéro** — _Documenté_\n   - Champ : **Max**\n   - Valeur : 0.00\n   - Laisser la valeur à 0.00.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule\n27. **Fixer la quantité à commander à un** — _Documenté_\n   - Champ : **To Order**\n   - Valeur : 1.00\n   - À chaque confirmation d'une commande client faisant passer la quantité prévue sous le Min, un PO d'une unité est créé.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#reordering-rule\n28. **Ouvrir la configuration de l'équipe Helpdesk** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Valeur : Sélectionner l'équipe SAV concernée (ou cliquer sur **New**)\n   - Ouvrir la page de réglages de l'équipe pour y configurer les canaux de réception.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets\n29. **Activer le canal e-mail de l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **Email Alias**\n   - Valeur : Cocher la case **Email Alias** (sections **Channels**)\n   - Les e-mails reçus créent des tickets : l'objet devient le titre du ticket et le corps est ajouté dans l'onglet **Description** et dans le chatter.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#enable-channel-options-to-submit-tickets\n30. **Renseigner l'alias de réception des pannes** — _À vérifier_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams** ‣ **Channels ‣ Email Alias**\n   - Champ : **Alias**\n   - Valeur : sav\n   - Saisir le nom de l'alias (partie locale de sav@thermo-services.fr). Si aucun domaine personnalisé n'est configuré, cliquer sur **Set an Alias Domain** puis activer **Custom Email Servers** dans **Settings** ; le domaine thermo-services.fr doit correspondre à ce domaine d'alias.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html#email-alias\n   - À vérifier : Le passage décrit le champ Alias et le domaine d'alias, mais ne mentionne pas la valeur « sav » ni l'alignement avec thermo-services.fr ; la généralisation dépasse les passages.\n31. **Vérifier que les SLA sont activés sur l'équipe** — _Documenté_\n   - Menu : **Helpdesk app ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **SLA Policies** (section **Performance**)\n   - Valeur : Case cochée\n   - La fonction est activée par défaut sur les nouvelles équipes ; la décocher la désactive.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html\n32. **Créer la politique SLA** — _À vérifier_\n   - Menu : **Helpdesk app ‣ Configuration ‣ SLA Policies**\n   - Champ : **Title**\n   - Valeur : À renseigner\n   - Cliquer sur **New**, saisir un **Title** et une **Description**. L'engagement de 4 heures ouvrées est à saisir dans le formulaire (champs non détaillés dans les passages).\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html#create-a-new-sla-policy\n   - À vérifier : Le passage mentionne Helpdesk app ‣ Configuration ‣ SLA Policies, New, Title et Description, mais ne détaille pas l'engagement de 4 heures ouvrées, ce que l'étape signale elle-même.\n33. **Définir une politique SLA de 4 heures ouvrées (Time, Working Hours) dans Helpdesk Odoo 20.0** — _À vérifier_\n   - À vérifier : Trouvée sur le web mais rejetée au contrôle : Valeur de l'étape incomplète (étape d'atteinte à confirmer, calendrier à renseigner) et filtre sur les pannes non appuyé par les extraits; édition Enterprise requise à vérifier pour SLA..\n34. **Activer Field Service dans Planning** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : **Field Service**\n   - Valeur : Enabled, puis **Save**\n   - Permet de planifier les interventions sur site dans l'application Planning.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html\n35. **Activer Field Service sur l'équipe Helpdesk** — _Documenté_\n   - Menu : **Helpdesk ‣ Configuration ‣ Helpdesk Teams**\n   - Champ : **Field Service** (section **After-Sales**)\n   - Valeur : Enabled\n   - Sélectionner l'équipe SAV, descendre à la section **After-Sales** et activer **Field Service**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html#plan-field-service-interventions-from-a-ticket\n36. **Activer les worksheets** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Settings**\n   - Champ : **Worksheets** (section **Field Service**)\n   - Valeur : Enabled, puis **Save**\n   - Active aussi par défaut la fonction Customer Report.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration\n37. **Créer un modèle de worksheet** — _Documenté_\n   - Menu : **Planning ‣ Configuration ‣ Worksheet Templates**\n   - Champ : **Name**\n   - Valeur : À renseigner\n   - Cliquer sur **New**, saisir un **Name**, puis sous **Worksheet properties** cliquer sur **Add Property** et configurer chaque champ de propriété (répéter pour chaque propriété). Le premier modèle de la liste est appliqué par défaut aux shifts.\n   - Source : https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html#configuration\n38. **Activer l'Analytic Accounting** — _Documenté_\n   - Menu : **Accounting app ‣ Configuration ‣ Settings**\n   - Champ : Analytic Accounting (section **Analytics**)\n   - Valeur : Case cochée, puis **Save**\n   - Vérifier que la case est cochée dans la section Analytics, puis enregistrer.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#app-and-settings-configuration\n39. **Activer les feuilles de temps** — _Documenté_\n   - Menu : **Project app ‣ Configuration ‣ Settings**\n   - Champ : Timesheets (section **Time Management**)\n   - Valeur : Case cochée, puis **Save**\n   - Nécessaire pour facturer le temps passé sur un projet.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration ; https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#app-and-settings-configuration\n40. **Ouvrir ou créer le produit de service pour le temps passé** — _Documenté_\n   - Menu : **Sales app ‣ Products ‣ Products**\n   - Champ : New\n   - Valeur : À renseigner (nom du produit)\n   - Sélectionner un produit service existant ou cliquer sur New.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n41. **Définir le type de produit Service** — _Documenté_\n   - Menu : **Sales app ‣ Products ‣ Products** (onglet **General Information**)\n   - Champ : Product Type\n   - Valeur : **Service**\n   - La facturation du temps passé n'est possible qu'avec des produits de type Service.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n42. **Choisir la politique de facturation sur feuilles de temps** — _Documenté_\n   - Menu : **Sales app ‣ Products ‣ Products** (onglet **General Information**)\n   - Champ : Invoicing Policy\n   - Valeur : **Based on Timesheets**\n   - Ouvrir la liste déroulante du champ Invoicing Policy et sélectionner l'option.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n43. **Définir la création du projet et de la tâche à la commande** — _Documenté_\n   - Menu : **Sales app ‣ Products ‣ Products** (onglet **General Information**)\n   - Champ : Create on Order\n   - Valeur : **Project & Task**\n   - Un projet et une tâche sont créés dans Project à la création d'une commande avec ce produit. L'option **Task** est possible à la place, avec choix d'un projet existant dans le champ **Project**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html#service-product-configuration\n44. **Facturer les pièces utilisées lors d'une intervention Field Service (ajout de produits sur la tâche et facturation sur la commande client) dans Odoo 20.0** — _À vérifier_\n   - À vérifier : Trouvée sur le web mais rejetée au contrôle : Extraits cités ne disent pas la valeur complète ni le champ Sales Order exact ; étape ajoute probablement un réglage voisin et le fait de facturer via commande client n'est pas tranché par les extraits; Field Service Billing requis mais édition Enterprise non vérifiée (point à confirmer)..\n45. **Créer le produit du contrat d'entretien annuel (type Service)** — _À vérifier_\n   - Menu : **Sales app ‣ Products ‣ Products**\n   - Champ : Product Type\n   - Valeur : **Service**\n   - Dans la vidéo, le produit d'entretien est un service qui est aussi un abonnement. Le nom est À renseigner.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s\n   - À vérifier : La vidéo montre bien un produit de type Service, mais le menu Sales app ‣ Products ‣ Products n'apparaît pas dans le passage cité [1].\n46. **Activer l'abonnement sur le produit** — _Vidéo_\n   - Champ : Subscription\n   - Valeur : Case cochée\n   - Le menu exact n'est pas précisé dans la vidéo, qui montre la case Subscription activée sur la fiche produit.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s\n47. **Renseigner le plan récurrent et le prix annuel** — _Documenté_\n   - Menu : Fiche produit, onglet **Prices**\n   - Champ : Recurring Plan\n   - Valeur : **Yearly** à 180 € par an\n   - Le prix doit correspondre à la récurrence du produit ; ici annuelle. La vidéo montre 100 € à titre d'exemple, le client demande 180 €.\n   - Source : https://www.youtube.com/watch?v=7t-OPXcufLM&t=2685s ; https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html#set-up-recurring-plans\n48. **Facturation automatique annuelle des abonnements : paramétrage de la facturation récurrente et activation de l'abonnement sur la fiche produit dans Odoo 20.0** — _À vérifier_\n   - À vérifier : Trouvée sur le web mais rejetée au contrôle : Étape crée le plan et active l'abonnement, mais l'extrait ne couvre pas Billing Period annuelle ni la configuration exacte; la mention Subscriptions activée par défaut est une donnée à vérifier et l'édition Enterprise reste à confirmer..\n\n## Tests\n### Devis signé avec acompte de 30 %\n1. Sales app ‣ Orders ‣ Quotations : créer un devis avec le modèle (pompe et pose)\n2. Cliquer sur Send puis ouvrir le lien du portail client\n3. Signer en ligne et payer l'acompte de 30 %\n4. Vérifier que le devis est confirmé et que le logo apparaît sur le PDF\nPages : https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_signature_to_validate.html ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/get_paid_to_validate.html ; https://www.odoo.com/documentation/20.0/applications/sales/sales/sales_quotations/quote_template.html\n\n### Gros modèle Daikin commandé à la signature\n1. Confirmer un devis contenant un gros modèle\n2. Ouvrir Purchase app ‣ Orders ‣ Requests for Quotation\n3. Vérifier la demande de prix Daikin de 1 unité\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html\n\n### Réappro automatique des pièces détachées\n1. Faire passer le stock d'une pièce sous le Min\n2. Lancer Inventory app ‣ Operations ‣ Run Scheduler (mode développeur)\n3. Vérifier la RFQ créée dans Purchase app ‣ Orders ‣ Requests for Quotation\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html\n\n### Ticket SAV, intervention et rapport signé\n1. Envoyer un e-mail à sav@thermo-services.fr\n2. Vérifier le ticket créé et la politique SLA appliquée\n3. Cliquer sur Plan Intervention et créer un shift avec le Customer\n4. Sur tablette : Planning ‣ Planning ‣ My Planning, ouvrir l'intervention, cliquer sur Sign In\n5. Remplir le rapport, noter les pièces, puis Customer Preview ‣ Sign Report\nPages : https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/receiving_tickets.html ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html ; https://www.odoo.com/documentation/20.0/applications/services/helpdesk/advanced/after_sales.html ; https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html\n\n### Facturation de l'intervention\n1. Après l'intervention, ouvrir la commande client liée\n2. Cliquer sur Create Invoice\n3. Confirmer la facture et enregistrer le paiement\nPages : https://www.odoo.com/documentation/20.0/applications/sales/sales/invoicing/time_materials.html ; https://www.odoo.com/documentation/20.0/applications/finance/accounting/payments.html\n\n### Contrat d'entretien annuel\n1. Créer un devis avec le produit contrat d'entretien (180 €/an, Yearly)\n2. Confirmer le devis\n3. Vérifier l'abonnement créé et sa facture récurrente annuelle\nPages : https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html\n\n## Questions ouvertes\n- Quel est le seuil de réapprovisionnement des pièces détachées (à voir avec Kevin) ? (besoin 5) — Min et Max À renseigner\n- Quelles sont les pièces détachées concernées et chez quel fournisseur les recommander ? (besoin 5) — Fournisseur et références non indiqués\n- Quels modèles sont « courants » (stock) et lesquels sont « gros modèles » (Daikin) ? (besoin 4) — Liste des modèles non fournie\n- Quels sont les prix des pompes, de la pose, le taux horaire et le prix des pièces ? (besoin 9) — Aucun tarif hors contrat d'entretien\n- Quel est le logo à utiliser ? (besoin 12) — Le client doit l'envoyer\n- La comptabilité complète sera-t-elle utilisée plus tard ? (besoin 11) — Décision non prise\n- Quel fournisseur de paiement en ligne pour l'acompte ? (besoin 2) — Non précisé\n- Quels sont les détails de l'entrepôt de Nantes (nom court, adresse) et existe-t-il déjà ? (besoin 3) — Non fournis\n- Quelles sont les horaires ouvrés de l'équipe SAV et les six techniciens à créer comme ressources de planning ? (besoin 6) — Nécessaire pour le SLA de 4 heures ouvrées et la planification\n- Comment facturer les pièces (quantités livrées ou autre) et le temps passé ? (besoin 9) — Décision client non précisée\n- Faut-il passer par une règle 0/0/1 ou la route MTO pour les gros modèles ? (besoin 4) — Choix non tranché\n\n## Avertissements\n- Édition non précisée : vérifier si Enterprise est requise (Helpdesk, Field Service/Planning, Subscriptions, SLA).\n- Étape L3.4 écartée : la route Buy est masquée par défaut depuis Odoo 19.0.\n- Avec la règle 0/0/1, le produit reçu n'est pas réservé pour la commande client et le PO n'est pas lié à la commande ; la route MTO le fait.\n- Installation de l'application Accounting (L5.2) écartée : le client veut seulement facturer et suivre les paiements, comptabilité chez l'expert-comptable ; à confirmer.\n- Le champ Prepayment en montant fixe et la refonte du portail sont des nouveautés Odoo 20 non vérifiées ; l'acompte obligatoire pour tous les devis reste à confirmer.\n- Les règles automatiques sont masquées par défaut dans Replenishment ; le scheduler tourne une fois par jour.\n- Le rapport client n'est généré que si Billing ou worksheets sont utilisés.\n- Les alias e-mail en On-premise nécessitent des serveurs externes.\n- Le plan récurrent ne peut pas avoir l'unité Days comme Billing Period.\n- Les réglages Online Signature, Online Payment sont spécifiques à la société.\n- Reprise des données depuis Excel non couverte.\n\n_Coût : 0.414 USD · durée : 100 s_",
+      "rejetsWeb": [
+        {
+          "operation": "Facturer les pièces utilisées lors d'une intervention Field Service (ajout de produits sur la tâche et facturation sur la commande client) dans Odoo 20.0",
+          "action": "Activer la facturation Field Service, puis facturer les pièces via la commande client",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/planning/field_service.html"
+          ],
+          "raison": "Extraits cités ne disent pas la valeur complète ni le champ Sales Order exact ; étape ajoute probablement un réglage voisin et le fait de facturer via commande client n'est pas tranché par les extraits; Field Service Billing requis mais édition Enterprise non vérifiée (point à confirmer)."
+        },
+        {
+          "operation": "Facturation automatique annuelle des abonnements : paramétrage de la facturation récurrente et activation de l'abonnement sur la fiche produit dans Odoo 20.0",
+          "action": "Créer le plan récurrent annuel et activer l'abonnement sur la fiche produit",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/sales/subscriptions.html",
+            "https://www.odoo.com/documentation/17.0/applications/sales/subscriptions/configuration/subscription_products.html"
+          ],
+          "raison": "Étape crée le plan et active l'abonnement, mais l'extrait ne couvre pas Billing Period annuelle ni la configuration exacte; la mention Subscriptions activée par défaut est une donnée à vérifier et l'édition Enterprise reste à confirmer."
+        },
+        {
+          "operation": "Définir une politique SLA de 4 heures ouvrées (Time, Working Hours) dans Helpdesk Odoo 20.0",
+          "action": "Créer une politique SLA de 4 heures ouvrées pour les tickets de panne",
+          "source": [
+            "https://www.odoo.com/documentation/20.0/applications/services/helpdesk/overview/sla.html"
+          ],
+          "raison": "Valeur de l'étape incomplète (étape d'atteinte à confirmer, calendrier à renseigner) et filtre sur les pannes non appuyé par les extraits; édition Enterprise requise à vérifier pour SLA."
+        }
+      ],
+      "cout": {
+        "usd": 0.41414,
+        "details": [
+          {
+            "etape": "extraction",
+            "modele": "claude-sonnet-5-5",
+            "entree": 5000,
+            "sortie": 3156,
+            "usd": 0.04156
+          },
+          {
+            "etape": "lot 1",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.06616,
+            "dureeMs": 40253
+          },
+          {
+            "etape": "lot 2",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.05727,
+            "dureeMs": 35273
+          },
+          {
+            "etape": "lot 3",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.03546,
+            "dureeMs": 25448
+          },
+          {
+            "etape": "lot 4",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.06557,
+            "dureeMs": 27836
+          },
+          {
+            "etape": "lot 5",
+            "modele": "claude-sonnet-5-5",
+            "usd": 0.05008,
+            "dureeMs": 36525
+          },
+          {
+            "etape": "assemblage",
+            "modele": "claude-sonnet-5-5",
+            "entree": 11320,
+            "sortie": 4008,
+            "usd": 0.06272
+          },
+          {
+            "etape": "contrôle web",
+            "modele": "claude-haiku-5-5",
+            "entree": 2467,
+            "sortie": 348,
+            "usd": 0.00042
+          },
+          {
+            "etape": "web",
+            "modele": "claude-haiku-5-5",
+            "entree": 32596,
+            "sortie": 3289,
+            "recherches": 3,
+            "usd": 0.0349
+          }
+        ]
+      },
+      "dureeMs": 100018
+    }
+  }
+}

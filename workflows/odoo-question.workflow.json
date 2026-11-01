@@ -97,13 +97,25 @@
               "id": "qm",
               "name": "mode",
               "type": "string",
-              "value": "={{ ($json.body?.choix ?? $json.choix ?? []).length ? 'qcm' : 'texte' }}"
+              "value": "={{ ($json.body?.mode ?? $json.mode) === 'config' ? 'config' : ($json.body?.choix ?? $json.choix ?? []).length ? 'qcm' : 'texte' }}"
             },
             {
               "id": "qc",
               "name": "choix",
               "type": "array",
               "value": "={{ ($json.body?.choix ?? $json.choix ?? []) }}"
+            },
+            {
+              "id": "qx",
+              "name": "contexte",
+              "type": "string",
+              "value": "={{ String($json.body?.contexte ?? $json.contexte ?? '').trim() }}"
+            },
+            {
+              "id": "qw",
+              "name": "web",
+              "type": "boolean",
+              "value": "={{ ($json.body?.web ?? $json.web ?? true) !== false }}"
             }
           ]
         },
@@ -122,7 +134,7 @@
       "parameters": {
         "mode": "runOnceForEachItem",
         "language": "javaScript",
-        "jsCode": "// Why Code: repérage accent-insensible des termes du glossaire FR→EN dans la question, puis corps de la requête de planification.\nconst GLOSSARY = [{\"fr\": \"À facturer\", \"en\": [\"To Invoice\"]}, {\"fr\": \"À faire\", \"en\": [\"To-Do\"]}, {\"fr\": \"Achats\", \"en\": [\"Purchase\"]}, {\"fr\": \"Actions client\", \"en\": [\"Client Actions\"]}, {\"fr\": \"Actions de fenêtre\", \"en\": [\"Window Actions\"]}, {\"fr\": \"Actions de serveur\", \"en\": [\"Server Actions\"]}, {\"fr\": \"Actions intégrées\", \"en\": [\"Embedded Actions\"]}, {\"fr\": \"Actions planifiées\", \"en\": [\"Scheduled Actions\"]}, {\"fr\": \"Activités\", \"en\": [\"Activities\"]}, {\"fr\": \"Annuaire\", \"en\": [\"Directory\"]}, {\"fr\": \"Aperçu\", \"en\": [\"Overview\"]}, {\"fr\": \"Aperçu des activités\", \"en\": [\"Activity Overview\"]}, {\"fr\": \"Appliquer des mises à jour planifiées\", \"en\": [\"Apply Scheduled Upgrades\"]}, {\"fr\": \"Appliquer les mises à niveau de l’horaire\", \"en\": [\"Apply Schedule Upgrades\"]}, {\"fr\": \"Apprentissage\", \"en\": [\"Learning\"]}, {\"fr\": \"Assistants de configuration\", \"en\": [\"Configuration Wizards\"]}, {\"fr\": \"Automatisation\", \"en\": [\"Automation\"]}, {\"fr\": \"Bureau d'inscription\", \"en\": [\"Registration Desk\"]}, {\"fr\": \"Calendrier\", \"en\": [\"Calendar\"]}, {\"fr\": \"Campagnes\", \"en\": [\"Campaigns\"]}, {\"fr\": \"Canaux\", \"en\": [\"Channels\"]}, {\"fr\": \"Candidatures\", \"en\": [\"Applications\"]}, {\"fr\": \"Carte Marketing\", \"en\": [\"Marketing Card\"]}, {\"fr\": \"Champs\", \"en\": [\"Fields\"]}, {\"fr\": \"Charges\", \"en\": [\"Expenses\"]}, {\"fr\": \"Clients\", \"en\": [\"Customers\"]}, {\"fr\": \"Comptabilité\", \"en\": [\"Accounting\"]}, {\"fr\": \"Comptes IAP\", \"en\": [\"IAP Accounts\"]}, {\"fr\": \"Confidentialité\", \"en\": [\"Privacy\"]}, {\"fr\": \"Congés\", \"en\": [\"Time Off\"]}, {\"fr\": \"Congés des ressources\", \"en\": [\"Resource Time Off\"]}, {\"fr\": \"Conseils digest\", \"en\": [\"Digest Tips\"]}, {\"fr\": \"Contrats\", \"en\": [\"Contracts\"]}, {\"fr\": \"Contrats des employés\", \"en\": [\"Employee Contracts\"]}, {\"fr\": \"Cours\", \"en\": [\"Courses\"]}, {\"fr\": \"Déclencheurs d'actions planifiées\", \"en\": [\"Scheduled Actions Triggers\"]}, {\"fr\": \"Définitions de l'objectif\", \"en\": [\"Goal Definitions\"]}, {\"fr\": \"Défis\", \"en\": [\"Challenges\"]}, {\"fr\": \"Déjeuner\", \"en\": [\"Lunch\"]}, {\"fr\": \"Départements\", \"en\": [\"Departments\"]}, {\"fr\": \"Dépenses\", \"en\": [\"Expenses\"]}, {\"fr\": \"Destinataires\", \"en\": [\"Recipients\"]}, {\"fr\": \"Digest d'e-mails\", \"en\": [\"Digest Emails\"]}, {\"fr\": \"Discussion\", \"en\": [\"Discuss\"]}, {\"fr\": \"Droits d'accès\", \"en\": [\"Access Rights\"]}, {\"fr\": \"E-mail\", \"en\": [\"Email\"]}, {\"fr\": \"E-mail Marketing\", \"en\": [\"Email Marketing\", \"Mass Mailing\"]}, {\"fr\": \"E-mails\", \"en\": [\"Emails\"]}, {\"fr\": \"Emplois en ligne\", \"en\": [\"Online Jobs\"]}, {\"fr\": \"Employés\", \"en\": [\"Employees\"]}, {\"fr\": \"Équipement\", \"en\": [\"Equipment\"]}, {\"fr\": \"Étapes du parcours d'intégration\", \"en\": [\"Onboardings Steps\"]}, {\"fr\": \"Évaluations\", \"en\": [\"Ratings\"]}, {\"fr\": \"Événements\", \"en\": [\"Events\"]}, {\"fr\": \"Exporter une traduction\", \"en\": [\"Export Translation\"]}, {\"fr\": \"Fabrication\", \"en\": [\"Manufacturing\"]}, {\"fr\": \"Facturation\", \"en\": [\"Invoicing\"]}, {\"fr\": \"Favori GIF\", \"en\": [\"GIF favorite\"]}, {\"fr\": \"Feuilles de temps\", \"en\": [\"Timesheets\"]}, {\"fr\": \"Filtres définis par l'utilisateur\", \"en\": [\"User-defined Filters\"]}, {\"fr\": \"Fournisseurs\", \"en\": [\"Vendors\"]}, {\"fr\": \"Gestion\", \"en\": [\"Management\"]}, {\"fr\": \"Gestion des compétences\", \"en\": [\"Skills Management\"]}, {\"fr\": \"Historique des appels\", \"en\": [\"Call History\"]}, {\"fr\": \"Horaire de travail\", \"en\": [\"Working Schedules\"]}, {\"fr\": \"Import de traductions\", \"en\": [\"Import Translation\"]}, {\"fr\": \"Importation & Synchronisation\", \"en\": [\"Import & Synchronize\"]}, {\"fr\": \"Importer un module\", \"en\": [\"Import Module\"]}, {\"fr\": \"Interface utilisateur\", \"en\": [\"User Interface\"]}, {\"fr\": \"Inventaire\", \"en\": [\"Inventory\"]}, {\"fr\": \"Invités\", \"en\": [\"Guests\"]}, {\"fr\": \"Journalisation\", \"en\": [\"Logging\"]}, {\"fr\": \"Langues\", \"en\": [\"Languages\"]}, {\"fr\": \"Lettres postales\", \"en\": [\"Snailmail Letters\"]}, {\"fr\": \"Lien des aperçus\", \"en\": [\"Link Previews\"]}, {\"fr\": \"Liste noire des adresses e-mail\", \"en\": [\"Email Blacklist\"]}, {\"fr\": \"Liste noire des téléphones\", \"en\": [\"Phone Blacklist\"]}, {\"fr\": \"Listes de diffusion\", \"en\": [\"Mailing Lists\"]}, {\"fr\": \"Mes dépenses\", \"en\": [\"My Expenses\"]}, {\"fr\": \"Mes feuilles de temps\", \"en\": [\"My Timesheets\"]}, {\"fr\": \"Mes présences\", \"en\": [\"My Attendances\"]}, {\"fr\": \"Messages planifiés\", \"en\": [\"Scheduled Messages\"]}, {\"fr\": \"Mettre à jour la liste des Apps\", \"en\": [\"Update Apps List\"]}, {\"fr\": \"Mode kiosque\", \"en\": [\"Kiosk Mode\"]}, {\"fr\": \"Modèle de carte\", \"en\": [\"Card Template\"]}, {\"fr\": \"Modèles\", \"en\": [\"Models\"]}, {\"fr\": \"Modèles d'e-mail\", \"en\": [\"Email Templates\"]}, {\"fr\": \"Modèles de SMS\", \"en\": [\"SMS Templates\"]}, {\"fr\": \"Mon déjeuner\", \"en\": [\"My Lunch\"]}, {\"fr\": \"Mon lunch\", \"en\": [\"My Lunch\"]}, {\"fr\": \"Mon temps\", \"en\": [\"My Time\"]}, {\"fr\": \"Nettoyage de données\", \"en\": [\"Data Cleaning\"]}, {\"fr\": \"Objectifs\", \"en\": [\"Goals\"]}, {\"fr\": \"Opérations\", \"en\": [\"Operations\"]}, {\"fr\": \"Outils de ludification\", \"en\": [\"Gamification Tools\"]}, {\"fr\": \"Paramètres\", \"en\": [\"Parameters\", \"Settings\"]}, {\"fr\": \"Paramètres généraux\", \"en\": [\"General Settings\"]}, {\"fr\": \"Paramètres système\", \"en\": [\"System Parameters\"]}, {\"fr\": \"Paramètres utilisateur\", \"en\": [\"User Settings\"]}, {\"fr\": \"Parc automobile\", \"en\": [\"Fleet\"]}, {\"fr\": \"Parcours d'intégration\", \"en\": [\"Onboardings\"]}, {\"fr\": \"Partenaires IAP\", \"en\": [\"IAP Partners\"]}, {\"fr\": \"Périphériques de l'utilisateur\", \"en\": [\"User Devices\"]}, {\"fr\": \"Pièces jointes\", \"en\": [\"Attachments\"]}, {\"fr\": \"Pistes\", \"en\": [\"Leads\"]}, {\"fr\": \"Planification\", \"en\": [\"Planning\"]}, {\"fr\": \"Plans d'activité\", \"en\": [\"Activity Plans\"]}, {\"fr\": \"Point de Vente\", \"en\": [\"Point of Sale\"]}, {\"fr\": \"Précision décimale\", \"en\": [\"Decimal Accuracy\"]}, {\"fr\": \"Présences\", \"en\": [\"Attendances\"]}, {\"fr\": \"Profilage\", \"en\": [\"Profiling\"]}, {\"fr\": \"Projet\", \"en\": [\"Project\"]}, {\"fr\": \"Projets\", \"en\": [\"Projects\"]}, {\"fr\": \"Questions & Réponses\", \"en\": [\"Questions & Answers\"]}, {\"fr\": \"Raccourcis personnalisés\", \"en\": [\"Custom Shortcuts\"]}, {\"fr\": \"Rangs\", \"en\": [\"Ranks\"]}, {\"fr\": \"Rapport\", \"en\": [\"Report\"]}, {\"fr\": \"Rapports\", \"en\": [\"Reports\"]}, {\"fr\": \"Rapports de dépense\", \"en\": [\"Expense Reports\"]}, {\"fr\": \"Réactions à un message\", \"en\": [\"Message Reactions\"]}, {\"fr\": \"Recrutement\", \"en\": [\"Recruitment\"]}, {\"fr\": \"Recyclage des données\", \"en\": [\"Data Recycle\"]}, {\"fr\": \"Recycler les enregistrements\", \"en\": [\"Recycle Records\"]}, {\"fr\": \"Règles sur les enregistrements\", \"en\": [\"Record Rules\"]}, {\"fr\": \"Réparations\", \"en\": [\"Repairs\"]}, {\"fr\": \"Ressource\", \"en\": [\"Resource\"]}, {\"fr\": \"Ressources\", \"en\": [\"Resources\"]}, {\"fr\": \"Ressources humaines\", \"en\": [\"Human Resources\"]}, {\"fr\": \"Révision\", \"en\": [\"Review\"]}, {\"fr\": \"Rubriques\", \"en\": [\"Menu Items\"]}, {\"fr\": \"Sécurité\", \"en\": [\"Security\"]}, {\"fr\": \"Sélection des champs\", \"en\": [\"Fields Selection\"]}, {\"fr\": \"Séquences\", \"en\": [\"Sequences\"]}, {\"fr\": \"Serveurs ICE\", \"en\": [\"ICE servers\"]}, {\"fr\": \"Sessions\", \"en\": [\"Tracks\"]}, {\"fr\": \"Sessions RTC\", \"en\": [\"RTC sessions\"]}, {\"fr\": \"Site Web\", \"en\": [\"Website\"]}, {\"fr\": \"Sondages\", \"en\": [\"Surveys\"]}, {\"fr\": \"Sous-types\", \"en\": [\"Subtypes\"]}, {\"fr\": \"Structure de la base de données\", \"en\": [\"Database Structure\"]}, {\"fr\": \"Suivi de karma\", \"en\": [\"Karma Tracking\"]}, {\"fr\": \"Suivi de la campagne marketing\", \"en\": [\"Mailing Traces\"]}, {\"fr\": \"Tableau de bord\", \"en\": [\"Dashboard\"]}, {\"fr\": \"Tableaux de bord\", \"en\": [\"Dashboards\"]}, {\"fr\": \"Tâches\", \"en\": [\"Tasks\"]}, {\"fr\": \"Technique\", \"en\": [\"Technical\"]}, {\"fr\": \"Téléphone / SMS\", \"en\": [\"Phone / SMS\"]}, {\"fr\": \"Tracker de liens\", \"en\": [\"Link Tracker\"]}, {\"fr\": \"Traductions\", \"en\": [\"Translations\"]}, {\"fr\": \"Types d'activités\", \"en\": [\"Activity Types\"]}, {\"fr\": \"Utilisateurs & Sociétés\", \"en\": [\"Users & Companies\"]}, {\"fr\": \"Valeurs du suivi\", \"en\": [\"Tracking Values\"]}, {\"fr\": \"Valeurs par défaut de l'utilisateur\", \"en\": [\"User-defined Defaults\"]}, {\"fr\": \"Ventes\", \"en\": [\"Sales\"]}, {\"fr\": \"Visites\", \"en\": [\"Tours\"]}, {\"fr\": \"Visiteurs\", \"en\": [\"Visitors\"]}, {\"fr\": \"Vue d'ensemble\", \"en\": [\"Overview\"]}, {\"fr\": \"Vues\", \"en\": [\"Views\"]}, {\"fr\": \"Vues personnalisées\", \"en\": [\"Customized Views\"]}];\n\nconst normalize = (t) => t.normalize('NFD').replace(/\\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();\n\nconst question = $json.question;\nconst q = ` ${normalize(question)} `;\n// Termes les plus longs d'abord : « Notes de frais » avant « Notes ».\nconst hints = GLOSSARY\n  .filter((t) => { const n = normalize(t.fr); return n.length >= 3 && q.includes(` ${n} `); })\n  .sort((a, b) => b.fr.length - a.fr.length)\n  .slice(0, 8);\n\nconst glossary = hints.length\n  ? `\\nCorrespondances des libellés d'Odoo (français → anglais), à utiliser dans les sous-questions : ${hints.map((h) => `${h.fr} → ${h.en.join(' / ')}`).join(' ; ')}.\\n`\n  : '';\n\nconst prompt = `Version Odoo : 20.0.\nQuestion du consultant : « ${question} »\n${glossary}\nProduis \"subQuestions\" : la question décomposée en sous-questions de recherche en anglais, une par module ou par étape fonctionnelle (ex. pour vente → livraison → facture → paiement : une pour la configuration préalable, une par étape). Une seule si la question est simple, 5 au maximum. Chaque sous-question est une phrase précise avec les termes exacts de l'interface et de la documentation Odoo (ex. \"How to register a payment on a customer invoice\").`;\n\nreturn {\n  json: {\n    question,\n    model: $json.model,\n    glossaryHints: hints,\n    planBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 600,\n      system: \"Tu prépares une recherche dans la documentation officielle d'Odoo (rédigée en anglais).\",\n      messages: [{ role: 'user', content: prompt }],\n      tools: [{\n        name: 'search_plan',\n        description: 'Sous-questions de recherche en anglais',\n        input_schema: {\n          type: 'object',\n          properties: { subQuestions: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: 5 } },\n          required: ['subQuestions'],\n        },\n      }],\n      tool_choice: { type: 'tool', name: 'search_plan' },\n    },\n  },\n};\n"
+        "jsCode": "// Why Code: repérage accent-insensible des termes du glossaire FR→EN dans la question, puis corps de la requête de planification.\nconst GLOSSARY = [{\"fr\": \"À facturer\", \"en\": [\"To Invoice\"]}, {\"fr\": \"À faire\", \"en\": [\"To-Do\"]}, {\"fr\": \"Achats\", \"en\": [\"Purchase\"]}, {\"fr\": \"Actions client\", \"en\": [\"Client Actions\"]}, {\"fr\": \"Actions de fenêtre\", \"en\": [\"Window Actions\"]}, {\"fr\": \"Actions de serveur\", \"en\": [\"Server Actions\"]}, {\"fr\": \"Actions intégrées\", \"en\": [\"Embedded Actions\"]}, {\"fr\": \"Actions planifiées\", \"en\": [\"Scheduled Actions\"]}, {\"fr\": \"Activités\", \"en\": [\"Activities\"]}, {\"fr\": \"Annuaire\", \"en\": [\"Directory\"]}, {\"fr\": \"Aperçu\", \"en\": [\"Overview\"]}, {\"fr\": \"Aperçu des activités\", \"en\": [\"Activity Overview\"]}, {\"fr\": \"Appliquer des mises à jour planifiées\", \"en\": [\"Apply Scheduled Upgrades\"]}, {\"fr\": \"Appliquer les mises à niveau de l’horaire\", \"en\": [\"Apply Schedule Upgrades\"]}, {\"fr\": \"Apprentissage\", \"en\": [\"Learning\"]}, {\"fr\": \"Assistants de configuration\", \"en\": [\"Configuration Wizards\"]}, {\"fr\": \"Automatisation\", \"en\": [\"Automation\"]}, {\"fr\": \"Bureau d'inscription\", \"en\": [\"Registration Desk\"]}, {\"fr\": \"Calendrier\", \"en\": [\"Calendar\"]}, {\"fr\": \"Campagnes\", \"en\": [\"Campaigns\"]}, {\"fr\": \"Canaux\", \"en\": [\"Channels\"]}, {\"fr\": \"Candidatures\", \"en\": [\"Applications\"]}, {\"fr\": \"Carte Marketing\", \"en\": [\"Marketing Card\"]}, {\"fr\": \"Champs\", \"en\": [\"Fields\"]}, {\"fr\": \"Charges\", \"en\": [\"Expenses\"]}, {\"fr\": \"Clients\", \"en\": [\"Customers\"]}, {\"fr\": \"Comptabilité\", \"en\": [\"Accounting\"]}, {\"fr\": \"Comptes IAP\", \"en\": [\"IAP Accounts\"]}, {\"fr\": \"Confidentialité\", \"en\": [\"Privacy\"]}, {\"fr\": \"Congés\", \"en\": [\"Time Off\"]}, {\"fr\": \"Congés des ressources\", \"en\": [\"Resource Time Off\"]}, {\"fr\": \"Conseils digest\", \"en\": [\"Digest Tips\"]}, {\"fr\": \"Contrats\", \"en\": [\"Contracts\"]}, {\"fr\": \"Contrats des employés\", \"en\": [\"Employee Contracts\"]}, {\"fr\": \"Cours\", \"en\": [\"Courses\"]}, {\"fr\": \"Déclencheurs d'actions planifiées\", \"en\": [\"Scheduled Actions Triggers\"]}, {\"fr\": \"Définitions de l'objectif\", \"en\": [\"Goal Definitions\"]}, {\"fr\": \"Défis\", \"en\": [\"Challenges\"]}, {\"fr\": \"Déjeuner\", \"en\": [\"Lunch\"]}, {\"fr\": \"Départements\", \"en\": [\"Departments\"]}, {\"fr\": \"Dépenses\", \"en\": [\"Expenses\"]}, {\"fr\": \"Destinataires\", \"en\": [\"Recipients\"]}, {\"fr\": \"Digest d'e-mails\", \"en\": [\"Digest Emails\"]}, {\"fr\": \"Discussion\", \"en\": [\"Discuss\"]}, {\"fr\": \"Droits d'accès\", \"en\": [\"Access Rights\"]}, {\"fr\": \"E-mail\", \"en\": [\"Email\"]}, {\"fr\": \"E-mail Marketing\", \"en\": [\"Email Marketing\", \"Mass Mailing\"]}, {\"fr\": \"E-mails\", \"en\": [\"Emails\"]}, {\"fr\": \"Emplois en ligne\", \"en\": [\"Online Jobs\"]}, {\"fr\": \"Employés\", \"en\": [\"Employees\"]}, {\"fr\": \"Équipement\", \"en\": [\"Equipment\"]}, {\"fr\": \"Étapes du parcours d'intégration\", \"en\": [\"Onboardings Steps\"]}, {\"fr\": \"Évaluations\", \"en\": [\"Ratings\"]}, {\"fr\": \"Événements\", \"en\": [\"Events\"]}, {\"fr\": \"Exporter une traduction\", \"en\": [\"Export Translation\"]}, {\"fr\": \"Fabrication\", \"en\": [\"Manufacturing\"]}, {\"fr\": \"Facturation\", \"en\": [\"Invoicing\"]}, {\"fr\": \"Favori GIF\", \"en\": [\"GIF favorite\"]}, {\"fr\": \"Feuilles de temps\", \"en\": [\"Timesheets\"]}, {\"fr\": \"Filtres définis par l'utilisateur\", \"en\": [\"User-defined Filters\"]}, {\"fr\": \"Fournisseurs\", \"en\": [\"Vendors\"]}, {\"fr\": \"Gestion\", \"en\": [\"Management\"]}, {\"fr\": \"Gestion des compétences\", \"en\": [\"Skills Management\"]}, {\"fr\": \"Historique des appels\", \"en\": [\"Call History\"]}, {\"fr\": \"Horaire de travail\", \"en\": [\"Working Schedules\"]}, {\"fr\": \"Import de traductions\", \"en\": [\"Import Translation\"]}, {\"fr\": \"Importation & Synchronisation\", \"en\": [\"Import & Synchronize\"]}, {\"fr\": \"Importer un module\", \"en\": [\"Import Module\"]}, {\"fr\": \"Interface utilisateur\", \"en\": [\"User Interface\"]}, {\"fr\": \"Inventaire\", \"en\": [\"Inventory\"]}, {\"fr\": \"Invités\", \"en\": [\"Guests\"]}, {\"fr\": \"Journalisation\", \"en\": [\"Logging\"]}, {\"fr\": \"Langues\", \"en\": [\"Languages\"]}, {\"fr\": \"Lettres postales\", \"en\": [\"Snailmail Letters\"]}, {\"fr\": \"Lien des aperçus\", \"en\": [\"Link Previews\"]}, {\"fr\": \"Liste noire des adresses e-mail\", \"en\": [\"Email Blacklist\"]}, {\"fr\": \"Liste noire des téléphones\", \"en\": [\"Phone Blacklist\"]}, {\"fr\": \"Listes de diffusion\", \"en\": [\"Mailing Lists\"]}, {\"fr\": \"Mes dépenses\", \"en\": [\"My Expenses\"]}, {\"fr\": \"Mes feuilles de temps\", \"en\": [\"My Timesheets\"]}, {\"fr\": \"Mes présences\", \"en\": [\"My Attendances\"]}, {\"fr\": \"Messages planifiés\", \"en\": [\"Scheduled Messages\"]}, {\"fr\": \"Mettre à jour la liste des Apps\", \"en\": [\"Update Apps List\"]}, {\"fr\": \"Mode kiosque\", \"en\": [\"Kiosk Mode\"]}, {\"fr\": \"Modèle de carte\", \"en\": [\"Card Template\"]}, {\"fr\": \"Modèles\", \"en\": [\"Models\"]}, {\"fr\": \"Modèles d'e-mail\", \"en\": [\"Email Templates\"]}, {\"fr\": \"Modèles de SMS\", \"en\": [\"SMS Templates\"]}, {\"fr\": \"Mon déjeuner\", \"en\": [\"My Lunch\"]}, {\"fr\": \"Mon lunch\", \"en\": [\"My Lunch\"]}, {\"fr\": \"Mon temps\", \"en\": [\"My Time\"]}, {\"fr\": \"Nettoyage de données\", \"en\": [\"Data Cleaning\"]}, {\"fr\": \"Objectifs\", \"en\": [\"Goals\"]}, {\"fr\": \"Opérations\", \"en\": [\"Operations\"]}, {\"fr\": \"Outils de ludification\", \"en\": [\"Gamification Tools\"]}, {\"fr\": \"Paramètres\", \"en\": [\"Parameters\", \"Settings\"]}, {\"fr\": \"Paramètres généraux\", \"en\": [\"General Settings\"]}, {\"fr\": \"Paramètres système\", \"en\": [\"System Parameters\"]}, {\"fr\": \"Paramètres utilisateur\", \"en\": [\"User Settings\"]}, {\"fr\": \"Parc automobile\", \"en\": [\"Fleet\"]}, {\"fr\": \"Parcours d'intégration\", \"en\": [\"Onboardings\"]}, {\"fr\": \"Partenaires IAP\", \"en\": [\"IAP Partners\"]}, {\"fr\": \"Périphériques de l'utilisateur\", \"en\": [\"User Devices\"]}, {\"fr\": \"Pièces jointes\", \"en\": [\"Attachments\"]}, {\"fr\": \"Pistes\", \"en\": [\"Leads\"]}, {\"fr\": \"Planification\", \"en\": [\"Planning\"]}, {\"fr\": \"Plans d'activité\", \"en\": [\"Activity Plans\"]}, {\"fr\": \"Point de Vente\", \"en\": [\"Point of Sale\"]}, {\"fr\": \"Précision décimale\", \"en\": [\"Decimal Accuracy\"]}, {\"fr\": \"Présences\", \"en\": [\"Attendances\"]}, {\"fr\": \"Profilage\", \"en\": [\"Profiling\"]}, {\"fr\": \"Projet\", \"en\": [\"Project\"]}, {\"fr\": \"Projets\", \"en\": [\"Projects\"]}, {\"fr\": \"Questions & Réponses\", \"en\": [\"Questions & Answers\"]}, {\"fr\": \"Raccourcis personnalisés\", \"en\": [\"Custom Shortcuts\"]}, {\"fr\": \"Rangs\", \"en\": [\"Ranks\"]}, {\"fr\": \"Rapport\", \"en\": [\"Report\"]}, {\"fr\": \"Rapports\", \"en\": [\"Reports\"]}, {\"fr\": \"Rapports de dépense\", \"en\": [\"Expense Reports\"]}, {\"fr\": \"Réactions à un message\", \"en\": [\"Message Reactions\"]}, {\"fr\": \"Recrutement\", \"en\": [\"Recruitment\"]}, {\"fr\": \"Recyclage des données\", \"en\": [\"Data Recycle\"]}, {\"fr\": \"Recycler les enregistrements\", \"en\": [\"Recycle Records\"]}, {\"fr\": \"Règles sur les enregistrements\", \"en\": [\"Record Rules\"]}, {\"fr\": \"Réparations\", \"en\": [\"Repairs\"]}, {\"fr\": \"Ressource\", \"en\": [\"Resource\"]}, {\"fr\": \"Ressources\", \"en\": [\"Resources\"]}, {\"fr\": \"Ressources humaines\", \"en\": [\"Human Resources\"]}, {\"fr\": \"Révision\", \"en\": [\"Review\"]}, {\"fr\": \"Rubriques\", \"en\": [\"Menu Items\"]}, {\"fr\": \"Sécurité\", \"en\": [\"Security\"]}, {\"fr\": \"Sélection des champs\", \"en\": [\"Fields Selection\"]}, {\"fr\": \"Séquences\", \"en\": [\"Sequences\"]}, {\"fr\": \"Serveurs ICE\", \"en\": [\"ICE servers\"]}, {\"fr\": \"Sessions\", \"en\": [\"Tracks\"]}, {\"fr\": \"Sessions RTC\", \"en\": [\"RTC sessions\"]}, {\"fr\": \"Site Web\", \"en\": [\"Website\"]}, {\"fr\": \"Sondages\", \"en\": [\"Surveys\"]}, {\"fr\": \"Sous-types\", \"en\": [\"Subtypes\"]}, {\"fr\": \"Structure de la base de données\", \"en\": [\"Database Structure\"]}, {\"fr\": \"Suivi de karma\", \"en\": [\"Karma Tracking\"]}, {\"fr\": \"Suivi de la campagne marketing\", \"en\": [\"Mailing Traces\"]}, {\"fr\": \"Tableau de bord\", \"en\": [\"Dashboard\"]}, {\"fr\": \"Tableaux de bord\", \"en\": [\"Dashboards\"]}, {\"fr\": \"Tâches\", \"en\": [\"Tasks\"]}, {\"fr\": \"Technique\", \"en\": [\"Technical\"]}, {\"fr\": \"Téléphone / SMS\", \"en\": [\"Phone / SMS\"]}, {\"fr\": \"Tracker de liens\", \"en\": [\"Link Tracker\"]}, {\"fr\": \"Traductions\", \"en\": [\"Translations\"]}, {\"fr\": \"Types d'activités\", \"en\": [\"Activity Types\"]}, {\"fr\": \"Utilisateurs & Sociétés\", \"en\": [\"Users & Companies\"]}, {\"fr\": \"Valeurs du suivi\", \"en\": [\"Tracking Values\"]}, {\"fr\": \"Valeurs par défaut de l'utilisateur\", \"en\": [\"User-defined Defaults\"]}, {\"fr\": \"Ventes\", \"en\": [\"Sales\"]}, {\"fr\": \"Visites\", \"en\": [\"Tours\"]}, {\"fr\": \"Visiteurs\", \"en\": [\"Visitors\"]}, {\"fr\": \"Vue d'ensemble\", \"en\": [\"Overview\"]}, {\"fr\": \"Vues\", \"en\": [\"Views\"]}, {\"fr\": \"Vues personnalisées\", \"en\": [\"Customized Views\"]}];\n\nconst normalize = (t) => t.normalize('NFD').replace(/\\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, ' ').trim();\n\nconst question = $json.question;\nconst q = ` ${normalize(question)} `;\n// Termes les plus longs d'abord : « Notes de frais » avant « Notes ».\nconst hints = GLOSSARY\n  .filter((t) => { const n = normalize(t.fr); return n.length >= 3 && q.includes(` ${n} `); })\n  .sort((a, b) => b.fr.length - a.fr.length)\n  .slice(0, 8);\n\nconst glossary = hints.length\n  ? `\\nCorrespondances des libellés d'Odoo (français → anglais), à utiliser dans les sous-questions : ${hints.map((h) => `${h.fr} → ${h.en.join(' / ')}`).join(' ; ')}.\\n`\n  : '';\n\n// Mode config : un besoin client couvre souvent plusieurs fonctions (ex. intervention + rapport signé + facturation).\nconst maxSub = $json.mode === 'config' ? 7 : 5;\nconst prompt = `Version Odoo : 20.0.\nQuestion du consultant : « ${question} »\n${glossary}\nProduis \"subQuestions\" : la question décomposée en sous-questions de recherche en anglais, une par module ou par étape fonctionnelle (ex. pour vente → livraison → facture → paiement : une pour la configuration préalable, une par étape). Une seule si la question est simple, ${maxSub} au maximum${maxSub > 5 ? ', une par fonction à paramétrer' : ''}. Chaque sous-question est une phrase précise avec les termes exacts de l'interface et de la documentation Odoo (ex. \"How to register a payment on a customer invoice\").`;\n\nreturn {\n  json: {\n    question,\n    model: $json.model,\n    glossaryHints: hints,\n    planBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 600,\n      system: \"Tu prépares une recherche dans la documentation officielle d'Odoo (rédigée en anglais).\",\n      messages: [{ role: 'user', content: prompt }],\n      tools: [{\n        name: 'search_plan',\n        description: 'Sous-questions de recherche en anglais',\n        input_schema: {\n          type: 'object',\n          properties: { subQuestions: { type: 'array', items: { type: 'string' }, minItems: 1, maxItems: maxSub } },\n          required: ['subQuestions'],\n        },\n      }],\n      tool_choice: { type: 'tool', name: 'search_plan' },\n    },\n  },\n};\n"
       }
     },
     {
@@ -180,7 +192,7 @@
       "parameters": {
         "mode": "runOnceForEachItem",
         "language": "javaScript",
-        "jsCode": "// Why Code: lecture du plan renvoyé par Claude (outil forcé) et construction du lot d'embeddings (préfixe de tâche propre à gemini-embedding-2).\nconst input = $('Build plan request').first().json;\nconst tool = ($json.content ?? []).find((c) => c.type === 'tool_use');\nlet subQuestions = tool?.input?.subQuestions ?? [];\nsubQuestions = subQuestions.filter((s) => typeof s === 'string' && s.trim()).slice(0, 5);\n\n// La question d'origine d'abord, puis chaque sous-question : chacune apporte ses passages à tour de rôle.\nconst queries = [input.question, ...subQuestions];\n// gemini-embedding-2 n'accepte pas taskType : la tâche est donnée en préfixe (« task: … | query: … »).\nconst embedBody = {\n  requests: queries.map((q) => ({\n    model: 'models/gemini-embedding-2',\n    content: { parts: [{ text: `task: question answering | query: ${q}` }] },\n    outputDimensionality: 1536,\n  })),\n};\n\nreturn { json: { question: input.question, model: input.model, subQuestions, queries, embedBody } };\n"
+        "jsCode": "// Why Code: lecture du plan renvoyé par Claude (outil forcé) et construction du lot d'embeddings (préfixe de tâche propre à gemini-embedding-2).\nconst input = $('Build plan request').first().json;\nconst tool = ($json.content ?? []).find((c) => c.type === 'tool_use');\nlet subQuestions = tool?.input?.subQuestions ?? [];\nsubQuestions = subQuestions.filter((s) => typeof s === 'string' && s.trim()).slice(0, $('Normalize input').first().json.mode === 'config' ? 7 : 5);\n\n// La question d'origine d'abord, puis chaque sous-question : chacune apporte ses passages à tour de rôle.\nconst queries = [input.question, ...subQuestions];\n// gemini-embedding-2 n'accepte pas taskType : la tâche est donnée en préfixe (« task: … | query: … »).\nconst embedBody = {\n  requests: queries.map((q) => ({\n    model: 'models/gemini-embedding-2',\n    content: { parts: [{ text: `task: question answering | query: ${q}` }] },\n    outputDimensionality: 1536,\n  })),\n};\n\nreturn { json: { question: input.question, model: input.model, subQuestions, queries, embedBody } };\n"
       }
     },
     {
@@ -228,7 +240,7 @@
       ],
       "parameters": {
         "operation": "executeQuery",
-        "query": "-- materialized : chaque vecteur est converti une seule fois (sinon la conversion texte → vector est refaite à chaque ligne).\nwith q as materialized (\n  select t.ord, t.v::vector as vec\n  from jsonb_array_elements_text($1::jsonb) with ordinality as t(v, ord)\n)\nselect q.ord, r.*\nfrom q cross join lateral (\n  select n.chunk_id, n.source_id, s.title, n.breadcrumb, n.url, s.url_fr, n.content, n.similarity\n  from (\n    select c.id as chunk_id, c.source_id, c.breadcrumb, c.url, c.content, 1 - (c.embedding <=> q.vec) as similarity\n    from knowledge_chunks c\n    where c.odoo_version = '20.0'\n    order by c.embedding <=> q.vec\n    limit 80\n  ) n join knowledge_sources s on s.id = n.source_id\n  where s.kind = 'odoo_documentation' and s.status = 'ingested'\n  order by n.similarity desc\n  limit 40\n) r\norder by q.ord, r.similarity desc",
+        "query": "-- materialized : chaque vecteur est converti une seule fois (sinon la conversion texte → vector est refaite à chaque ligne).\nwith q as materialized (\n  select t.ord, t.v::vector as vec\n  from jsonb_array_elements_text($1::jsonb) with ordinality as t(v, ord)\n)\nselect q.ord, r.*\nfrom q cross join lateral (\n  select n.chunk_id, n.source_id, s.kind, s.title, n.breadcrumb, n.url, s.url_fr, n.content, n.similarity\n  from (\n    select c.id as chunk_id, c.source_id, c.breadcrumb, c.url, c.content, 1 - (c.embedding <=> q.vec) as similarity\n    from knowledge_chunks c\n    where c.odoo_version = '20.0'\n    order by c.embedding <=> q.vec\n    limit 80\n  ) n join knowledge_sources s on s.id = n.source_id\n  where s.kind in ('odoo_documentation', 'youtube_video') and s.status = 'ingested'\n  order by n.similarity desc\n  limit 40\n) r\norder by q.ord, r.similarity desc",
         "options": {
           "queryReplacement": "={{ [ JSON.stringify($json.embeddings.map((e) => '[' + e.values.join(',') + ']')) ] }}"
         }
@@ -242,7 +254,7 @@
     },
     {
       "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a09",
-      "name": "Select passages",
+      "name": "Pick passages",
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
@@ -252,7 +264,7 @@
       "parameters": {
         "mode": "runOnceForAllItems",
         "language": "javaScript",
-        "jsCode": "// Why Code: sélection diversifiée à tour de rôle entre plusieurs listes avec plafond par page, qu'aucun nœud natif n'exprime.\nconst plan = $('Build embed request').first().json;\nconst lists = plan.queries.map(() => []);\nfor (const item of $input.all()) {\n  const r = item.json;\n  if (r.ord) lists[Number(r.ord) - 1].push(r);\n}\n\n// Chaque liste (question, puis sous-questions) apporte à tour de rôle son meilleur passage pas encore retenu,\n// sans dépasser PER_PAGE passages par page : aucune page ne peut occuper toute la sélection.\nconst LIMIT = plan.subQuestions.length > 1 ? 12 : 8;\nconst PER_PAGE = 3;\nconst chosen = [];\nconst ids = new Set();\nconst perSource = new Map();\nconst cursors = lists.map(() => 0);\nwhile (chosen.length < LIMIT) {\n  let progressed = false;\n  for (let i = 0; i < lists.length && chosen.length < LIMIT; i++) {\n    const list = lists[i];\n    while (cursors[i] < list.length && (ids.has(list[cursors[i]].chunk_id) || (perSource.get(list[cursors[i]].source_id) ?? 0) >= PER_PAGE)) cursors[i]++;\n    if (cursors[i] >= list.length) continue;\n    const row = list[cursors[i]++];\n    ids.add(row.chunk_id);\n    perSource.set(row.source_id, (perSource.get(row.source_id) ?? 0) + 1);\n    chosen.push({ row, query: i });\n    progressed = true;\n  }\n  if (!progressed) break;\n}\n\nconst passages = chosen.map(({ row, query }, i) => ({\n  n: i + 1,\n  chunkId: row.chunk_id,\n  title: row.title,\n  breadcrumb: row.breadcrumb,\n  url: row.url,\n  urlFr: row.url_fr,\n  similarity: Math.round(Number(row.similarity) * 1000) / 1000,\n  query,\n  content: row.content,\n}));\nconst bestSimilarity = lists[0]?.[0] ? Number(lists[0][0].similarity) : null;\n\nreturn [{ json: { question: plan.question, model: plan.model, subQuestions: plan.subQuestions, bestSimilarity, passages } }];\n"
+        "jsCode": "// Why Code: sélection diversifiée à tour de rôle entre plusieurs listes avec plafond par page, qu'aucun nœud natif n'exprime.\nconst plan = $('Build embed request').first().json;\nconst lists = plan.queries.map(() => []);\nfor (const item of $input.all()) {\n  const r = item.json;\n  if (r.ord) lists[Number(r.ord) - 1].push(r);\n}\n\n// Chaque liste (question, puis sous-questions) apporte à tour de rôle son meilleur passage pas encore retenu,\n// sans dépasser PER_PAGE passages par page : aucune page ne peut occuper toute la sélection.\n// Mode config : pages de procédure longues (ex. field_service, sla) : plus de passages par page.\nconst config = $('Normalize input').first().json.mode === 'config';\nconst LIMIT = config ? 16 : plan.subQuestions.length > 1 ? 12 : 8;\nconst PER_PAGE = config ? 5 : 3;\nconst chosen = [];\nconst ids = new Set();\nconst perSource = new Map();\nconst cursors = lists.map(() => 0);\nwhile (chosen.length < LIMIT) {\n  let progressed = false;\n  for (let i = 0; i < lists.length && chosen.length < LIMIT; i++) {\n    const list = lists[i];\n    while (cursors[i] < list.length && (ids.has(list[cursors[i]].chunk_id) || (perSource.get(list[cursors[i]].source_id) ?? 0) >= PER_PAGE)) cursors[i]++;\n    if (cursors[i] >= list.length) continue;\n    const row = list[cursors[i]++];\n    ids.add(row.chunk_id);\n    perSource.set(row.source_id, (perSource.get(row.source_id) ?? 0) + 1);\n    chosen.push({ row, query: i });\n    progressed = true;\n  }\n  if (!progressed) break;\n}\n\nconst passages = chosen.map(({ row, query }, i) => ({\n  n: i + 1,\n  chunkId: row.chunk_id,\n  kind: row.kind,\n  title: row.title,\n  breadcrumb: row.breadcrumb,\n  url: row.url,\n  urlFr: row.url_fr,\n  similarity: Math.round(Number(row.similarity) * 1000) / 1000,\n  query,\n  content: row.content,\n}));\nconst bestSimilarity = lists[0]?.[0] ? Number(lists[0][0].similarity) : null;\n\n// Mode config : pages dont au moins 3 passages sont retenus (2 au plus), à charger en entier.\nconst fullPages = !config ? [] : [...perSource.entries()].filter(([, k]) => k >= 3).sort((x, y) => y[1] - x[1]).slice(0, 2).map(([id]) => id);\nreturn [{ json: { question: plan.question, model: plan.model, subQuestions: plan.subQuestions, bestSimilarity, passages, fullPages } }];\n"
       }
     },
     {
@@ -261,13 +273,13 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        1760,
+        2200,
         100
       ],
       "parameters": {
         "mode": "runOnceForEachItem",
         "language": "javaScript",
-        "jsCode": "// Why Code: prompt de rédaction (consignes de l'ancien projet), passages numérotés et corps de requête propre au fournisseur.\nconst RULES = `Tu es l'assistant d'un consultant fonctionnel Odoo. Tu réponds en français, pour Odoo 20.0 uniquement.\n\nRègles impératives :\n1. Appuie-toi sur les passages numérotés fournis. Chaque élément de \"summary\", \"prerequisites\", \"steps\" et \"warnings\" cite dans \"sources\" les numéros des passages qui l'appuient : ces éléments seront présentés comme DOCUMENTÉS, puis contrôlés sur la page officielle en ligne.\n2. Une citation doit soutenir précisément l'affirmation, dans son contexte :\n   - ne généralise pas un passage qui décrit un cas particulier : une localisation fiscale (un pays), un exemple chiffré, une migration de version, ou un autre flux (ex. sous-traitance en dropship pour une question de sous-traitance avec réapprovisionnement) ;\n   - ne présente pas comme obligatoire ce que le passage présente comme possible, optionnel ou « par défaut » ;\n   - si un réglage n'est cité que dans un autre contexte, ne l'inclus pas, ou mets-le dans \"hypotheses\".\n3. N'invente jamais de menu, de champ, de paramètre ou de module documenté. Une information utile absente des passages va dans \"hypotheses\" (À VÉRIFIER) ou dans \"gaps\" (NON COUVERT), jamais dans les étapes.\n4. Recopie les libellés d'interface et les chemins de menu exactement comme dans les passages (en anglais, entre ** **), sans les traduire ; tu peux ajouter une explication en français.\n5. \"steps\" : instructions documentées, dans l'ordre, une action par étape, avec le chemin de menu complet quand il est connu. Pour un processus qui traverse plusieurs modules, couvre chaque étape pour laquelle un passage existe.\n6. \"coverage\" : \"complete\" si les passages répondent entièrement, \"partial\" s'ils répondent en partie, \"insufficient\" s'ils ne permettent pas de répondre (dans ce cas, dis-le dans \"summary\" et ne mets dans \"steps\" que ce qui est documenté).\n7. \"hypotheses\" : quand la documentation est insuffisante ou partielle, tu peux proposer des pistes de solution à tester. Chacune commence par « Piste à tester : », s'appuie sur des fonctions standard, et ne doit jamais être présentée comme une fonctionnalité native confirmée. Laisse la liste vide si les passages suffisent.\n8. \"gaps\" : ce que ni les passages ni les pistes ne couvrent.\n9. \"warnings\" : limites, prérequis d'édition (Enterprise / Community) ou effets de bord signalés par les passages.\n10. Odoo évolue à chaque version : quand un passage présente un élément comme une nouveauté ou un changement (« As of Odoo 19.0 », « new in Odoo 20 »), dis-le dans \"warnings\". Si la question vise une autre version qu'Odoo 20 (17, 18, 19…), dis-le dans \"warnings\" : les passages décrivent Odoo 20 et la procédure peut différer dans cette version.\n11. Si la question ne porte pas sur Odoo, ou si aucun passage ne s'y rapporte : \"coverage\" vaut \"insufficient\", \"summary\" le dit sans citer de source, \"steps\" reste vide.`;\n\n// Mode QCM : la question arrive suivie de ses choix lettrés (A., B., C.…).\nconst norm = $('Normalize input').first().json;\nconst qcm = norm.mode === 'qcm';\nconst letters = norm.choix.map((_, i) => String.fromCharCode(65 + i));\nconst QCM_RULES = `\n\nMode QCM : la question est une question à choix multiples de la certification Odoo, souvent écrite pour Odoo 19, suivie de ses choix lettrés.\n12. \"answer_letters\" : la ou les lettres des bonnes réponses pour Odoo 20, d'après les passages. Une seule lettre, sauf si l'énoncé demande plusieurs réponses ou si plusieurs choix sont vrais selon les passages. Si les passages ne permettent pas de trancher, donne le choix le plus probable, mets \"coverage\" à \"partial\" ou \"insufficient\" et explique ton raisonnement dans \"hypotheses\".\n13. \"summary\" : l'explication courte du choix, avec ses sources. Les autres listes restent courtes : pas de procédure complète, seulement ce qui justifie la réponse.\n14. \"version_gap\" : si les passages d'Odoo 20 montrent qu'un élément de la question ou des choix a changé (libellé renommé, option supprimée, comportement différent d'Odoo 19), décris l'écart en une phrase ; sinon chaîne vide.`;\nconst cited = { type: 'object', properties: { text: { type: 'string' }, sources: { type: 'array', items: { type: 'integer' } } }, required: ['text', 'sources'], additionalProperties: false };\nconst ANSWER_SCHEMA = {\n  type: 'object',\n  properties: {\n    summary: cited,\n    prerequisites: { type: 'array', items: cited },\n    steps: { type: 'array', items: { type: 'object', properties: { title: { type: 'string' }, detail: { type: 'string' }, sources: { type: 'array', items: { type: 'integer' } } }, required: ['title', 'detail', 'sources'], additionalProperties: false } },\n    warnings: { type: 'array', items: cited },\n    coverage: { type: 'string', enum: ['complete', 'partial', 'insufficient'] },\n    hypotheses: { type: 'array', items: { type: 'string' } },\n    gaps: { type: 'array', items: { type: 'string' } },\n  },\n  required: ['summary', 'prerequisites', 'steps', 'warnings', 'coverage', 'hypotheses', 'gaps'],\n  additionalProperties: false,\n};\nif (qcm) {\n  ANSWER_SCHEMA.properties.answer_letters = { type: 'array', items: { type: 'string', enum: letters }, minItems: 1 };\n  ANSWER_SCHEMA.properties.version_gap = { type: 'string' };\n  ANSWER_SCHEMA.required.push('answer_letters', 'version_gap');\n}\nconst SYSTEM = qcm ? RULES + QCM_RULES : RULES;\n// Gemini n'accepte pas forcément additionalProperties : retiré de sa copie du schéma.\nconst withoutAdditional = (s) => JSON.parse(JSON.stringify(s, (k, v) => (k === 'additionalProperties' ? undefined : v)));\n\nconst blocks = $json.passages.map((p) => `[${p.n}] ${p.breadcrumb}\\n${p.content}`).join('\\n\\n---\\n\\n');\nconst user = `Passages de la documentation officielle d'Odoo 20.0 :\\n\\n${blocks || '(aucun passage trouvé)'}\\n\\n---\\n\\nQuestion : ${$json.question}`;\nconst model = $json.model;\n\nreturn {\n  json: {\n    model,\n    provider: model.startsWith('gemini') ? 'gemini' : 'claude',\n    claudeBody: {\n      model,\n      max_tokens: 16000,\n      output_config: { effort: 'medium', format: { type: 'json_schema', schema: ANSWER_SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: user }],\n    },\n    geminiBody: {\n      systemInstruction: { parts: [{ text: SYSTEM }] },\n      contents: [{ role: 'user', parts: [{ text: user }] }],\n      generationConfig: { responseMimeType: 'application/json', responseJsonSchema: withoutAdditional(ANSWER_SCHEMA) },\n    },\n  },\n};\n"
+        "jsCode": "// Why Code: prompt de rédaction (consignes de l'ancien projet), passages numérotés et corps de requête propre au fournisseur.\nconst RULES = `Tu es l'assistant d'un consultant fonctionnel Odoo. Tu réponds en français, pour Odoo 20.0 uniquement.\n\nRègles impératives :\n1. Appuie-toi sur les passages numérotés fournis. Chaque élément de \"summary\", \"prerequisites\", \"steps\" et \"warnings\" cite dans \"sources\" les numéros des passages qui l'appuient : ces éléments seront présentés comme DOCUMENTÉS, puis contrôlés sur la page officielle en ligne.\n2. Une citation doit soutenir précisément l'affirmation, dans son contexte :\n   - ne généralise pas un passage qui décrit un cas particulier : une localisation fiscale (un pays), un exemple chiffré, une migration de version, ou un autre flux (ex. sous-traitance en dropship pour une question de sous-traitance avec réapprovisionnement) ;\n   - ne présente pas comme obligatoire ce que le passage présente comme possible, optionnel ou « par défaut » ;\n   - si un réglage n'est cité que dans un autre contexte, ne l'inclus pas, ou mets-le dans \"hypotheses\".\n3. N'invente jamais de menu, de champ, de paramètre ou de module documenté. Une information utile absente des passages va dans \"hypotheses\" (À VÉRIFIER) ou dans \"gaps\" (NON COUVERT), jamais dans les étapes.\n4. Recopie les libellés d'interface et les chemins de menu exactement comme dans les passages (en anglais, entre ** **), sans les traduire ; tu peux ajouter une explication en français.\n5. \"steps\" : instructions documentées, dans l'ordre, une action par étape, avec le chemin de menu complet quand il est connu. Pour un processus qui traverse plusieurs modules, couvre chaque étape pour laquelle un passage existe.\n6. \"coverage\" : \"complete\" si les passages répondent entièrement, \"partial\" s'ils répondent en partie, \"insufficient\" s'ils ne permettent pas de répondre (dans ce cas, dis-le dans \"summary\" et ne mets dans \"steps\" que ce qui est documenté).\n7. \"hypotheses\" : quand la documentation est insuffisante ou partielle, tu peux proposer des pistes de solution à tester. Chacune commence par « Piste à tester : », s'appuie sur des fonctions standard, et ne doit jamais être présentée comme une fonctionnalité native confirmée. Laisse la liste vide si les passages suffisent.\n8. \"gaps\" : ce que ni les passages ni les pistes ne couvrent.\n9. \"warnings\" : limites, prérequis d'édition (Enterprise / Community) ou effets de bord signalés par les passages.\n10. Odoo évolue à chaque version : quand un passage présente un élément comme une nouveauté ou un changement (« As of Odoo 19.0 », « new in Odoo 20 »), dis-le dans \"warnings\". Si la question vise une autre version qu'Odoo 20 (17, 18, 19…), dis-le dans \"warnings\" : les passages décrivent Odoo 20 et la procédure peut différer dans cette version.\n11. Les passages marqués « vidéo » sont des transcripts automatiques des vidéos Odoo Tutorials, non relus : cite-les seulement pour ce que la documentation ne couvre pas.\n12. Si la question ne porte pas sur Odoo, ou si aucun passage ne s'y rapporte : \"coverage\" vaut \"insufficient\", \"summary\" le dit sans citer de source, \"steps\" reste vide.`;\n\n// Mode QCM : la question arrive suivie de ses choix lettrés (A., B., C.…).\nconst norm = $('Normalize input').first().json;\nconst qcm = norm.mode === 'qcm';\nconst letters = norm.choix.map((_, i) => String.fromCharCode(65 + i));\nconst QCM_RULES = `\n\nMode QCM : la question est une question à choix multiples de la certification Odoo, souvent écrite pour Odoo 19, suivie de ses choix lettrés.\n13. \"answer_letters\" : la ou les lettres des bonnes réponses pour Odoo 20, d'après les passages. Une seule lettre, sauf si l'énoncé demande plusieurs réponses ou si plusieurs choix sont vrais selon les passages. Si les passages ne permettent pas de trancher, donne le choix le plus probable, mets \"coverage\" à \"partial\" ou \"insufficient\" et explique ton raisonnement dans \"hypotheses\".\n14. \"summary\" : l'explication courte du choix, avec ses sources. Les autres listes restent courtes : pas de procédure complète, seulement ce qui justifie la réponse.\n15. \"version_gap\" : si les passages d'Odoo 20 montrent qu'un élément de la question ou des choix a changé (libellé renommé, option supprimée, comportement différent d'Odoo 19), décris l'écart en une phrase ; sinon chaîne vide.`;\n// Mode config : un besoin client à traduire en étapes de paramétrage.\nconst config = norm.mode === 'config';\nconst CONFIG_RULES = `\n\nMode configuration : la question est un besoin client à paramétrer dans Odoo 20.0, suivie des données client quand il y en a.\n13. \"steps\" : une étape par opération de paramétrage (activer un réglage, renseigner un champ, créer un enregistrement), dans l'ordre d'exécution, prérequis compris : le réglage avant le champ qu'il fait apparaître, l'enregistrement créé avant d'être sélectionné. Pour chaque étape :\n   - \"title\" : l'action, verbe et objet, en français (ex. « Activer la route MTO ») ;\n   - \"menu\" : le chemin de menu complet en anglais, tel que dans les passages (ex. **Inventory app ‣ Configuration ‣ Settings**) ; chaîne vide s'il n'est pas documenté ;\n   - \"champ\" : le libellé exact du champ, de l'onglet ou de la case, en anglais ; chaîne vide s'il n'y en a pas ;\n   - \"valeur\" : la valeur à saisir ou à sélectionner, en anglais pour une option d'Odoo (ex. **Replenish on Order (MTO)**), ou une donnée recopiée telle quelle des données client. Une donnée métier absente des données client (prix, délai, quantité, nom) s'écrit « À renseigner » : n'en invente jamais. Place chaque donnée client dans le champ qui lui correspond : le délai annoncé d'un fournisseur va dans le délai d'achat de ce fournisseur, jamais dans le délai de livraison au client. Applique chaque donnée client seulement à l'objet auquel les données client la rattachent (indiqué entre parenthèses), jamais à un autre, et ne propose pas d'étape conditionnelle (« si le produit est aussi acheté chez… »).\n   Quand un passage décrit une procédure (ex. « enable the **Purchase** checkbox… then… »), reprends chacune de ses opérations en étape (case à cocher, onglet, champ), sans en sauter.\n14. Ne propose que ce que le besoin demande : aucun réglage avancé (routes multi-étapes, contrôle qualité, autre édition) que le besoin n'exige pas. Une décision que le client n'a pas prise va dans \"gaps\".\n15. Signale dans \"warnings\" l'édition requise (Enterprise) quand un passage l'indique.\n16. Si deux passages se contredisent et que l'un décrit un changement de version (« As of Odoo 19.0 », « masqué par défaut depuis… »), suis le changement le plus récent, ne reprends pas l'instruction ancienne, et signale le conflit dans \"warnings\".`;\nconst cited = { type: 'object', properties: { text: { type: 'string' }, sources: { type: 'array', items: { type: 'integer' } } }, required: ['text', 'sources'], additionalProperties: false };\nconst ANSWER_SCHEMA = {\n  type: 'object',\n  properties: {\n    summary: cited,\n    prerequisites: { type: 'array', items: cited },\n    steps: { type: 'array', items: { type: 'object', properties: { title: { type: 'string' }, detail: { type: 'string' }, sources: { type: 'array', items: { type: 'integer' } } }, required: ['title', 'detail', 'sources'], additionalProperties: false } },\n    warnings: { type: 'array', items: cited },\n    coverage: { type: 'string', enum: ['complete', 'partial', 'insufficient'] },\n    hypotheses: { type: 'array', items: { type: 'string' } },\n    gaps: { type: 'array', items: { type: 'string' } },\n  },\n  required: ['summary', 'prerequisites', 'steps', 'warnings', 'coverage', 'hypotheses', 'gaps'],\n  additionalProperties: false,\n};\nif (qcm) {\n  ANSWER_SCHEMA.properties.answer_letters = { type: 'array', items: { type: 'string', enum: letters }, minItems: 1 };\n  ANSWER_SCHEMA.properties.version_gap = { type: 'string' };\n  ANSWER_SCHEMA.required.push('answer_letters', 'version_gap');\n}\nif (config) {\n  ANSWER_SCHEMA.properties.steps.items = { type: 'object', properties: { title: { type: 'string' }, menu: { type: 'string' }, champ: { type: 'string' }, valeur: { type: 'string' }, detail: { type: 'string' }, sources: { type: 'array', items: { type: 'integer' } } }, required: ['title', 'menu', 'champ', 'valeur', 'detail', 'sources'], additionalProperties: false };\n}\nconst SYSTEM = qcm ? RULES + QCM_RULES : config ? RULES + CONFIG_RULES : RULES;\n// Gemini n'accepte pas forcément additionalProperties : retiré de sa copie du schéma.\nconst withoutAdditional = (s) => JSON.parse(JSON.stringify(s, (k, v) => (k === 'additionalProperties' ? undefined : v)));\n\nconst blocks = $json.passages.map((p) => `[${p.n}] ${p.kind === 'youtube_video' ? `(vidéo Odoo Tutorials, transcript automatique) ${p.title}` : p.breadcrumb}\\n${p.content}`).join('\\n\\n---\\n\\n');\nconst user = `Passages de la documentation officielle d'Odoo 20.0 :\\n\\n${blocks || '(aucun passage trouvé)'}\\n\\n---\\n\\nQuestion : ${$json.question}${config && norm.contexte ? `\\n\\nDonnées client : ${norm.contexte}` : ''}`;\nconst model = $json.model;\n\nreturn {\n  json: {\n    model,\n    provider: model.startsWith('gemini') ? 'gemini' : 'claude',\n    claudeBody: {\n      model,\n      max_tokens: 16000,\n      output_config: { effort: 'medium', format: { type: 'json_schema', schema: ANSWER_SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: user }],\n    },\n    geminiBody: {\n      systemInstruction: { parts: [{ text: SYSTEM }] },\n      contents: [{ role: 'user', parts: [{ text: user }] }],\n      generationConfig: { responseMimeType: 'application/json', responseJsonSchema: withoutAdditional(ANSWER_SCHEMA) },\n    },\n  },\n};\n"
       }
     },
     {
@@ -276,7 +288,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        1980,
+        2420,
         100
       ],
       "parameters": {
@@ -312,7 +324,7 @@
       "maxTries": 2,
       "waitBetweenTries": 2000,
       "position": [
-        2200,
+        2640,
         0
       ],
       "parameters": {
@@ -346,7 +358,7 @@
       "maxTries": 2,
       "waitBetweenTries": 2000,
       "position": [
-        2200,
+        2640,
         200
       ],
       "parameters": {
@@ -386,13 +398,13 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2420,
+        2860,
         100
       ],
       "parameters": {
         "mode": "runOnceForEachItem",
         "language": "javaScript",
-        "jsCode": "// Why Code: lecture de la réponse (Claude ou Gemini), contrôle des numéros de passages et choix des pages à relire en ligne.\nconst sel = $('Select passages').first().json;\nconst norm = $('Normalize input').first().json;\n\nconst raw = Array.isArray($json.content)\n  ? ($json.content.find((c) => c.type === 'text')?.text ?? '')\n  : ($json.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('');\nlet a;\ntry { a = JSON.parse(raw); } catch (e) { throw new Error(`Réponse du modèle illisible : ${raw.slice(0, 200)}`); }\n\n// Numéros inexistants retirés : une affirmation sans source valide ne sera jamais « Documenté ».\nconst byN = new Map(sel.passages.map((p) => [p.n, p]));\nconst clean = (s) => [...new Set(s ?? [])].filter((n) => byN.has(n)).sort((x, y) => x - y);\nconst items = [\n  { id: 's', role: 'résumé', text: a.summary.text, sources: clean(a.summary.sources) },\n  ...a.prerequisites.map((i, k) => ({ id: `p${k}`, role: 'prérequis', text: i.text, sources: clean(i.sources) })),\n  ...a.steps.map((i, k) => ({ id: `t${k}`, role: 'étape', title: i.title, text: i.detail, sources: clean(i.sources) })),\n  ...a.warnings.map((i, k) => ({ id: `w${k}`, role: 'avertissement', text: i.text, sources: clean(i.sources) })),\n];\n\n// Pages relues en ligne : les 3 pages citées par le plus d'affirmations (URL sans ancre).\nconst pageOf = (url) => url.split('#')[0];\nconst count = new Map();\nfor (const it of items) {\n  for (const page of new Set(it.sources.map((n) => pageOf(byN.get(n).url)))) count.set(page, (count.get(page) ?? 0) + 1);\n}\nconst pages = [...count.entries()]\n  .sort((x, y) => y[1] - x[1])\n  .slice(0, 3)\n  .map(([url]) => ({ url, liveUrl: norm.docsBase + url.split('/documentation/20.0/')[1] }));\n\nreturn { json: { answer: a, items, pages, usage: $json.usage ?? $json.usageMetadata ?? null } };\n"
+        "jsCode": "// Why Code: lecture de la réponse (Claude ou Gemini), contrôle des numéros de passages et choix des pages à relire en ligne.\nconst sel = $('Select passages').first().json;\nconst norm = $('Normalize input').first().json;\n\nconst raw = Array.isArray($json.content)\n  ? ($json.content.find((c) => c.type === 'text')?.text ?? '')\n  : ($json.candidates?.[0]?.content?.parts ?? []).map((p) => p.text ?? '').join('');\nlet a;\ntry { a = JSON.parse(raw); } catch (e) { throw new Error(`Réponse du modèle illisible : ${raw.slice(0, 200)}`); }\n\n// Numéros inexistants retirés : une affirmation sans source valide ne sera jamais « Documenté ».\nconst byN = new Map(sel.passages.map((p) => [p.n, p]));\nconst clean = (s) => [...new Set(s ?? [])].filter((n) => byN.has(n)).sort((x, y) => x - y);\nconst items = [\n  { id: 's', role: 'résumé', text: a.summary.text, sources: clean(a.summary.sources) },\n  ...a.prerequisites.map((i, k) => ({ id: `p${k}`, role: 'prérequis', text: i.text, sources: clean(i.sources) })),\n  ...a.steps.map((i, k) => ({ id: `t${k}`, role: 'étape', title: i.title, text: i.detail, sources: clean(i.sources), ...(i.menu !== undefined ? { menu: i.menu, champ: i.champ, valeur: i.valeur } : {}) })),\n  ...a.warnings.map((i, k) => ({ id: `w${k}`, role: 'avertissement', text: i.text, sources: clean(i.sources) })),\n];\n\n// Pages relues en ligne : les 3 pages citées par le plus d'affirmations (URL sans ancre).\nconst pageOf = (url) => url.split('#')[0];\nconst count = new Map();\nfor (const it of items) {\n  for (const page of new Set(it.sources.map((n) => pageOf(byN.get(n).url)))) count.set(page, (count.get(page) ?? 0) + 1);\n}\nconst pages = [...count.entries()]\n  .filter(([url]) => url.includes('/documentation/20.0/'))\n  .sort((x, y) => y[1] - x[1])\n  .slice(0, 3)\n  .map(([url]) => ({ url, liveUrl: norm.docsBase + url.split('/documentation/20.0/')[1] }));\n\nreturn { json: { answer: a, items, pages, usage: $json.usage ?? $json.usageMetadata ?? null } };\n"
       }
     },
     {
@@ -401,7 +413,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        2640,
+        3080,
         100
       ],
       "parameters": {
@@ -434,7 +446,7 @@
       "type": "n8n-nodes-base.splitOut",
       "typeVersion": 1,
       "position": [
-        2860,
+        3300,
         0
       ],
       "parameters": {
@@ -450,7 +462,7 @@
       "typeVersion": 4.5,
       "onError": "continueRegularOutput",
       "position": [
-        3080,
+        3520,
         0
       ],
       "parameters": {
@@ -477,13 +489,13 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3300,
+        3740,
         0
       ],
       "parameters": {
         "mode": "runOnceForAllItems",
         "language": "javaScript",
-        "jsCode": "// Why Code: texte des pages officielles relues en direct, repli sur les extraits de la bibliothèque, prompt de contrôle.\nconst chk = $('Check citations').first().json;\nconst sel = $('Select passages').first().json;\nconst wanted = $('One item per page').all().map((i) => i.json);\nconst fetched = $input.all();\n\nconst ENTITIES = { '&nbsp;': ' ', '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '\"', '&#39;': \"'\", '&rsquo;': '’', '&lsquo;': '‘', '&#8217;': '’' };\nconst toText = (html) => {\n  const main = html.match(/<div role=\"main\">([\\s\\S]*?)<\\/main>/);\n  if (!main) return '';\n  return main[1]\n    .replace(/<(script|style)[^>]*>[\\s\\S]*?<\\/\\1>/g, ' ')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&[#a-z0-9]+;/gi, (e) => ENTITIES[e] ?? ' ')\n    .replace(/\\s+/g, ' ')\n    .trim();\n};\nconst pages = wanted.map((p, i) => {\n  const html = fetched[i]?.json?.html;\n  const text = typeof html === 'string' ? toText(html) : '';\n  return { url: p.url, liveUrl: p.liveUrl, online: text.length > 200, text: text.slice(0, 30000) };\n});\nconst online = pages.filter((p) => p.online);\nconst siteStatus = online.length === pages.length ? 'en ligne' : online.length ? 'partiel' : 'indisponible';\n\nconst SYSTEM = `Tu contrôles les citations d'une réponse sur Odoo 20.0.\nTu ne juges pas si c'est vrai dans Odoo : seulement si les passages cités, et eux seuls, le disent, pour la question posée.\nPour chaque affirmation, fais trois contrôles :\n- \"content\" : chaque menu, libellé, réglage, valeur et étape de l'affirmation figure dans les passages cités, dans le même ordre s'il y en a un.\n- \"context\" : les passages cités décrivent le même cas que la question. Faux si un passage vient d'une localisation fiscale (un pays) que la question ne cite pas, d'un exemple particulier généralisé, d'une autre fonctionnalité ou d'un autre flux, ou d'une migration de version.\n- \"scope\" : l'affirmation ne va pas au-delà des passages. Faux si elle présente comme obligatoire, nécessaire, requis ou préalable (c'est le cas de toute affirmation de rôle « prérequis ») ce que les passages présentent comme possible, facultatif, par défaut ou conditionnel ; ou si elle généralise (« dans tous les cas », « toujours ») au-delà de ce que disent les passages.\nLa version actuelle de la page officielle en ligne est fournie quand elle a pu être lue : elle fait foi. Si elle contredit l'affirmation ou ne contient plus l'élément (menu renommé, option supprimée, procédure changée), le verdict est \"unsupported\" et la raison commence par « Modifié en ligne : ».\nVerdict : \"supported\" seulement si les trois contrôles sont vrais ; \"partial\" si le contenu est présent mais que le contexte ou la portée ne l'est pas, ou si seule une partie est appuyée ; \"unsupported\" si les passages ne disent pas cela.\nDonne une raison courte en français.`;\n\nconst toCheck = chk.items.filter((i) => i.sources.length > 0);\nconst citedN = new Set(toCheck.flatMap((i) => i.sources));\nconst passageBlocks = sel.passages.filter((p) => citedN.has(p.n)).map((p) => `[${p.n}] ${p.breadcrumb} (${p.url})\\n${p.content}`).join('\\n\\n---\\n\\n');\nconst liveBlocks = online.length\n  ? online.map((p) => `Page ${p.liveUrl} :\\n${p.text}`).join('\\n\\n---\\n\\n')\n  : 'Site officiel indisponible : contrôle sur les passages de la bibliothèque seulement.';\nconst list = toCheck.map((i) => `- id \"${i.id}\", rôle ${i.role}, sources [${i.sources.join(', ')}] : ${i.title ? i.title + ' — ' : ''}${i.text}`).join('\\n');\nconst user = `Question posée : ${sel.question}\\n\\nPassages cités (bibliothèque) :\\n\\n${passageBlocks}\\n\\n---\\n\\nVersion en ligne des pages citées :\\n\\n${liveBlocks}\\n\\n---\\n\\nAffirmations à contrôler :\\n${list}`;\n\nconst VERDICT_SCHEMA = {\n  type: 'object',\n  properties: {\n    verdicts: {\n      type: 'array',\n      items: {\n        type: 'object',\n        properties: {\n          id: { type: 'string' },\n          content: { type: 'boolean' },\n          context: { type: 'boolean' },\n          scope: { type: 'boolean' },\n          verdict: { type: 'string', enum: ['supported', 'partial', 'unsupported'] },\n          reason: { type: 'string' },\n        },\n        required: ['id', 'content', 'context', 'scope', 'verdict', 'reason'],\n        additionalProperties: false,\n      },\n    },\n  },\n  required: ['verdicts'],\n  additionalProperties: false,\n};\n\nreturn [{\n  json: {\n    siteStatus,\n    pages: pages.map(({ text, ...p }) => p),\n    verifyBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 8000,\n      output_config: { format: { type: 'json_schema', schema: VERDICT_SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: user }],\n    },\n  },\n}];\n"
+        "jsCode": "// Why Code: texte des pages officielles relues en direct, repli sur les extraits de la bibliothèque, prompt de contrôle.\nconst chk = $('Check citations').first().json;\nconst sel = $('Select passages').first().json;\nconst wanted = $('One item per page').all().map((i) => i.json);\nconst fetched = $input.all();\n\nconst ENTITIES = { '&nbsp;': ' ', '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '\"', '&#39;': \"'\", '&rsquo;': '’', '&lsquo;': '‘', '&#8217;': '’' };\nconst toText = (html) => {\n  const main = html.match(/<div role=\"main\">([\\s\\S]*?)<\\/main>/);\n  if (!main) return '';\n  return main[1]\n    .replace(/<(script|style)[^>]*>[\\s\\S]*?<\\/\\1>/g, ' ')\n    .replace(/<[^>]+>/g, ' ')\n    .replace(/&[#a-z0-9]+;/gi, (e) => ENTITIES[e] ?? ' ')\n    .replace(/\\s+/g, ' ')\n    .trim();\n};\nconst pages = wanted.map((p, i) => {\n  const html = fetched[i]?.json?.html;\n  const text = typeof html === 'string' ? toText(html) : '';\n  return { url: p.url, liveUrl: p.liveUrl, online: text.length > 200, text: text.slice(0, 30000) };\n});\nconst online = pages.filter((p) => p.online);\nconst siteStatus = online.length === pages.length ? 'en ligne' : online.length ? 'partiel' : 'indisponible';\n\nconst SYSTEM = `Tu contrôles les citations d'une réponse sur Odoo 20.0.\nTu ne juges pas si c'est vrai dans Odoo : seulement si les passages cités, et eux seuls, le disent, pour la question posée.\nPour chaque affirmation, fais trois contrôles :\n- \"content\" : chaque menu, libellé, réglage, valeur et étape de l'affirmation figure dans les passages cités, dans le même ordre s'il y en a un.\n- \"context\" : les passages cités décrivent le même cas que la question. Faux si un passage vient d'une localisation fiscale (un pays) que la question ne cite pas, d'un exemple particulier généralisé, d'une autre fonctionnalité ou d'un autre flux, ou d'une migration de version.\n- \"scope\" : l'affirmation ne va pas au-delà des passages. Faux si elle présente comme obligatoire, nécessaire, requis ou préalable (c'est le cas de toute affirmation de rôle « prérequis ») ce que les passages présentent comme possible, facultatif, par défaut ou conditionnel ; ou si elle généralise (« dans tous les cas », « toujours ») au-delà de ce que disent les passages.\nLa version actuelle de la page officielle en ligne est fournie quand elle a pu être lue : elle fait foi. Si elle contredit l'affirmation ou ne contient plus l'élément (menu renommé, option supprimée, procédure changée), le verdict est \"unsupported\" et la raison commence par « Modifié en ligne : ».\nVerdict : \"supported\" seulement si les trois contrôles sont vrais ; \"partial\" si le contenu est présent mais que le contexte ou la portée ne l'est pas, ou si seule une partie est appuyée ; \"unsupported\" si les passages ne disent pas cela.\nDonne une raison courte en français.${$('Normalize input').first().json.mode === 'config' ? `\nUne étape de paramétrage indique entre crochets son menu, son champ et sa valeur : contrôle-les comme le reste. Une valeur « À renseigner » ou une donnée propre au client (nom, délai, prix) n'a pas à figurer dans les passages, mais elle doit être appliquée à l'objet auquel les données client la rattachent : une étape qui l'applique à un autre objet (ex. le fournisseur d'une famille de produits sur une autre famille), même au conditionnel, est \"unsupported\" avec la raison « Donnée client appliquée au mauvais objet ».` : ''}`;\n\nconst toCheck = chk.items.filter((i) => i.sources.length > 0);\nconst citedN = new Set(toCheck.flatMap((i) => i.sources));\nconst passageBlocks = sel.passages.filter((p) => citedN.has(p.n)).map((p) => `[${p.n}] ${p.breadcrumb} (${p.url})\\n${p.content}`).join('\\n\\n---\\n\\n');\nconst liveBlocks = online.length\n  ? online.map((p) => `Page ${p.liveUrl} :\\n${p.text}`).join('\\n\\n---\\n\\n')\n  : 'Site officiel indisponible : contrôle sur les passages de la bibliothèque seulement.';\nconst list = toCheck.map((i) => `- id \"${i.id}\", rôle ${i.role}, sources [${i.sources.join(', ')}] : ${i.title ? i.title + ' — ' : ''}${i.text}${i.menu !== undefined ? ` [menu : ${i.menu || '—'} ; champ : ${i.champ || '—'} ; valeur : ${i.valeur || '—'}]` : ''}`).join('\\n');\nconst norm = $('Normalize input').first().json;\nconst user = `Question posée : ${sel.question}${norm.mode === 'config' && norm.contexte ? `\\n\\nDonnées client : ${norm.contexte}` : ''}\\n\\nPassages cités (bibliothèque) :\\n\\n${passageBlocks}\\n\\n---\\n\\nVersion en ligne des pages citées :\\n\\n${liveBlocks}\\n\\n---\\n\\nAffirmations à contrôler :\\n${list}`;\n\nconst VERDICT_SCHEMA = {\n  type: 'object',\n  properties: {\n    verdicts: {\n      type: 'array',\n      items: {\n        type: 'object',\n        properties: {\n          id: { type: 'string' },\n          content: { type: 'boolean' },\n          context: { type: 'boolean' },\n          scope: { type: 'boolean' },\n          verdict: { type: 'string', enum: ['supported', 'partial', 'unsupported'] },\n          reason: { type: 'string' },\n        },\n        required: ['id', 'content', 'context', 'scope', 'verdict', 'reason'],\n        additionalProperties: false,\n      },\n    },\n  },\n  required: ['verdicts'],\n  additionalProperties: false,\n};\n\nreturn [{\n  json: {\n    siteStatus,\n    pages: pages.map(({ text, ...p }) => p),\n    verifyBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 8000,\n      output_config: { format: { type: 'json_schema', schema: VERDICT_SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: user }],\n    },\n  },\n}];\n"
       }
     },
     {
@@ -495,7 +507,7 @@
       "maxTries": 2,
       "waitBetweenTries": 2000,
       "position": [
-        3520,
+        3960,
         0
       ],
       "parameters": {
@@ -535,13 +547,154 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        3740,
+        4180,
         100
       ],
       "parameters": {
         "mode": "runOnceForAllItems",
         "language": "javaScript",
-        "jsCode": "// Why Code: fusion des verdicts du contrôle, statut global, sources citées, coût et latence.\nconst norm = $('Normalize input').first().json;\nconst sel = $('Select passages').first().json;\nconst chk = $('Check citations').first().json;\nconst a = chk.answer;\n\nconst verdicts = new Map();\nlet controle = { site: 'non effectué', pages: [] };\nif ($('Verify claims (Claude)').isExecuted) {\n  const v = $('Verify claims (Claude)').first().json;\n  const raw = (v.content ?? []).find((c) => c.type === 'text')?.text ?? '{}';\n  try { for (const d of JSON.parse(raw).verdicts ?? []) verdicts.set(d.id, d); } catch (e) { /* aucun verdict : tout reste « À vérifier » */ }\n  const bv = $('Build verify request').first().json;\n  controle = { site: bv.siteStatus, pages: bv.pages.map((p) => ({ url: p.liveUrl, lue: p.online })) };\n}\n\n// « Documenté » seulement si l'affirmation cite un passage ET que le contrôle la juge appuyée.\nconst toItem = (i) => {\n  const v = verdicts.get(i.id);\n  const documented = i.sources.length > 0 && v?.verdict === 'supported';\n  const out = { texte: i.text, statut: documented ? 'Documenté' : 'À vérifier', sources: i.sources };\n  if (i.title) out.titre = i.title;\n  if (!documented) out.raison = i.sources.length === 0 ? 'Aucune source citée.' : (v?.reason ?? 'Non contrôlé.');\n  return out;\n};\nconst byId = (prefix) => chk.items.filter((i) => i.id.startsWith(prefix)).map(toItem);\nconst resume = toItem(chk.items[0]);\nconst prerequis = byId('p');\nconst etapes = byId('t');\nconst avertissements = byId('w');\nconst all = [resume, ...prerequis, ...etapes, ...avertissements];\n\nconst documented = all.filter((i) => i.statut === 'Documenté').length;\nlet statut;\nif (a.coverage === 'insufficient' || documented === 0) statut = 'Non couvert';\nelse if (a.coverage === 'complete' && documented === all.length && a.hypotheses.length === 0) statut = 'Documenté';\nelse statut = 'À vérifier';\n\nconst citedN = new Set(all.flatMap((i) => i.sources));\nconst sources = sel.passages.filter((p) => citedN.has(p.n)).map((p) => ({ n: p.n, titre: p.breadcrumb, url: p.url, urlFr: p.urlFr }));\n\n// Coût en USD (tarifs par million de tokens, sortie = réponse + réflexion : Anthropic au 06/10/2026, Gemini au 27/10/2026).\n// gemini-4-argon passe à 4 / 20 USD le 01/12/2026, gemini-3.8-flash à 1,50 / 7,50 USD le 01/01/2027.\nconst PRICES = {\n  'claude-sonnet-5-5': [2, 10], 'claude-haiku-5-5': [0.1, 0.5], 'claude-opus-5-5': [4, 20],\n  'gemini-4-argon': [2, 10], 'gemini-3.1-pro-preview': [2, 12], 'gemini-pro-latest': [2, 12],\n  'gemini-3.8-flash': [0.75, 3.75], 'gemini-3.1-flash-lite': [0.25, 1.5], 'gemini-embedding-2': [0.2, 0],\n};\nconst claudeTokens = (u) => [(u?.input_tokens ?? 0) + (u?.cache_creation_input_tokens ?? 0) + (u?.cache_read_input_tokens ?? 0), u?.output_tokens ?? 0];\nconst geminiTokens = (u) => [u?.promptTokenCount ?? 0, (u?.candidatesTokenCount ?? 0) + (u?.thoughtsTokenCount ?? 0)];\nconst calls = [\n  { etape: 'sous-questions', model: 'claude-haiku-5-5', tokens: claudeTokens($('Plan sub-questions (Claude)').first().json.usage) },\n  { etape: 'embeddings', model: 'gemini-embedding-2', tokens: [$('Embed queries (Gemini)').first().json.usageMetadata?.promptTokenCount ?? 0, 0] },\n  { etape: 'rédaction', model: norm.model, tokens: norm.model.startsWith('gemini') ? geminiTokens(chk.usage) : claudeTokens(chk.usage) },\n];\nif ($('Verify claims (Claude)').isExecuted) {\n  calls.push({ etape: 'contrôle', model: 'claude-haiku-5-5', tokens: claudeTokens($('Verify claims (Claude)').first().json.usage) });\n}\nlet usd = 0;\nconst details = calls.map((c) => {\n  const p = PRICES[c.model];\n  const cost = p ? (c.tokens[0] * p[0] + c.tokens[1] * p[1]) / 1e6 : null;\n  if (cost === null) usd = null; else if (usd !== null) usd += cost;\n  return { etape: c.etape, modele: c.model, entree: c.tokens[0], sortie: c.tokens[1], usd: cost === null ? null : Math.round(cost * 1e5) / 1e5 };\n});\n\n// Mode QCM : lettres limitées aux choix reçus ; explication = résumé contrôlé.\nconst qcm = norm.mode === 'qcm'\n  ? {\n    choix: norm.choix,\n    bonnes_reponses: [...new Set(a.answer_letters ?? [])].filter((l) => l.charCodeAt(0) - 65 < norm.choix.length).sort(),\n    explication: resume.texte,\n    ecart_version: a.version_gap || null,\n  }\n  : {};\n\nreturn [{\n  json: {\n    statut,\n    question: sel.question,\n    modele: norm.model,\n    couverture: a.coverage,\n    resume,\n    prerequis,\n    etapes,\n    avertissements,\n    pistes: a.hypotheses,\n    nonCouvert: a.gaps,\n    sources,\n    controle,\n    sousQuestions: sel.subQuestions,\n    cout: { usd: usd === null ? null : Math.round(usd * 1e5) / 1e5, details },\n    dureeMs: Date.now() - norm.startedAt,\n    ...qcm,\n  },\n}];\n"
+        "jsCode": "// Why Code: fusion des verdicts du contrôle, statut global, sources citées, coût et latence.\nconst norm = $('Normalize input').first().json;\nconst sel = $('Select passages').first().json;\nconst chk = $('Check citations').first().json;\nconst a = chk.answer;\n\nconst verdicts = new Map();\nlet controle = { site: 'non effectué', pages: [] };\nif ($('Verify claims (Claude)').isExecuted) {\n  const v = $('Verify claims (Claude)').first().json;\n  const raw = (v.content ?? []).find((c) => c.type === 'text')?.text ?? '{}';\n  try { for (const d of JSON.parse(raw).verdicts ?? []) verdicts.set(d.id, d); } catch (e) { /* aucun verdict : tout reste « À vérifier » */ }\n  const bv = $('Build verify request').first().json;\n  controle = { site: bv.siteStatus, pages: bv.pages.map((p) => ({ url: p.liveUrl, lue: p.online })) };\n}\n\nconst urlOf = new Map(sel.passages.map((p) => [p.n, p.url]));\nconst kindOf = new Map(sel.passages.map((p) => [p.n, p.kind]));\n// « Documenté » seulement si l'affirmation cite un passage ET que le contrôle la juge appuyée.\nconst toItem = (i) => {\n  const v = verdicts.get(i.id);\n  const supported = i.sources.length > 0 && v?.verdict === 'supported';\n  // Appuyée seulement par des transcripts vidéo : statut Vidéo, jamais Documenté.\n  const docBacked = i.sources.some((n) => kindOf.get(n) !== 'youtube_video');\n  const out = { texte: i.text, statut: supported ? (docBacked ? 'Documenté' : 'Vidéo') : 'À vérifier', sources: i.sources };\n  if (i.menu !== undefined) Object.assign(out, { action: i.title, menu: i.menu, champ: i.champ, valeur: i.valeur, source: [...new Set(i.sources.map((n) => urlOf.get(n)))] });\n  else if (i.title) out.titre = i.title;\n  if (!supported) out.raison = i.sources.length === 0 ? 'Aucune source citée.' : (v?.reason ?? 'Non contrôlé.');\n  return out;\n};\nconst byId = (prefix) => chk.items.filter((i) => i.id.startsWith(prefix)).map(toItem);\nconst resume = toItem(chk.items[0]);\nconst prerequis = byId('p');\nconst etapes = byId('t');\nconst avertissements = byId('w');\nconst all = [resume, ...prerequis, ...etapes, ...avertissements];\n\nconst documented = all.filter((i) => i.statut === 'Documenté').length;\nlet statut;\nif (a.coverage === 'insufficient' || documented === 0 && !all.some((i) => i.statut === 'Vidéo')) statut = 'Non couvert';\nelse if (a.coverage === 'complete' && documented === all.length && a.hypotheses.length === 0) statut = 'Documenté';\nelse statut = 'À vérifier';\n\nconst citedN = new Set(all.flatMap((i) => i.sources));\nconst sources = sel.passages.filter((p) => citedN.has(p.n)).map((p) => ({ n: p.n, titre: p.kind === 'youtube_video' ? `🎬 ${p.title}` : p.breadcrumb, url: p.url, urlFr: p.urlFr }));\n\n// Coût en USD (tarifs par million de tokens, sortie = réponse + réflexion : Anthropic au 06/10/2026, Gemini au 27/10/2026).\n// gemini-4-argon passe à 4 / 20 USD le 01/12/2026, gemini-3.8-flash à 1,50 / 7,50 USD le 01/01/2027.\nconst PRICES = {\n  'claude-sonnet-5-5': [2, 10], 'claude-haiku-5-5': [0.1, 0.5], 'claude-opus-5-5': [4, 20],\n  'gemini-4-argon': [2, 10], 'gemini-3.1-pro-preview': [2, 12], 'gemini-pro-latest': [2, 12],\n  'gemini-3.8-flash': [0.75, 3.75], 'gemini-3.1-flash-lite': [0.25, 1.5], 'gemini-embedding-2': [0.2, 0],\n};\nconst claudeTokens = (u) => [(u?.input_tokens ?? 0) + (u?.cache_creation_input_tokens ?? 0) + (u?.cache_read_input_tokens ?? 0), u?.output_tokens ?? 0];\nconst geminiTokens = (u) => [u?.promptTokenCount ?? 0, (u?.candidatesTokenCount ?? 0) + (u?.thoughtsTokenCount ?? 0)];\nconst calls = [\n  { etape: 'sous-questions', model: 'claude-haiku-5-5', tokens: claudeTokens($('Plan sub-questions (Claude)').first().json.usage) },\n  { etape: 'embeddings', model: 'gemini-embedding-2', tokens: [$('Embed queries (Gemini)').first().json.usageMetadata?.promptTokenCount ?? 0, 0] },\n  { etape: 'rédaction', model: norm.model, tokens: norm.model.startsWith('gemini') ? geminiTokens(chk.usage) : claudeTokens(chk.usage) },\n];\nif ($('Verify claims (Claude)').isExecuted) {\n  calls.push({ etape: 'contrôle', model: 'claude-haiku-5-5', tokens: claudeTokens($('Verify claims (Claude)').first().json.usage) });\n}\nlet usd = 0;\nconst details = calls.map((c) => {\n  const p = PRICES[c.model];\n  const cost = p ? (c.tokens[0] * p[0] + c.tokens[1] * p[1]) / 1e6 : null;\n  if (cost === null) usd = null; else if (usd !== null) usd += cost;\n  return { etape: c.etape, modele: c.model, entree: c.tokens[0], sortie: c.tokens[1], usd: cost === null ? null : Math.round(cost * 1e5) / 1e5 };\n});\n\n// Mode QCM : lettres limitées aux choix reçus ; explication = résumé contrôlé.\nconst qcm = norm.mode === 'qcm'\n  ? {\n    choix: norm.choix,\n    bonnes_reponses: [...new Set(a.answer_letters ?? [])].filter((l) => l.charCodeAt(0) - 65 < norm.choix.length).sort(),\n    explication: resume.texte,\n    ecart_version: a.version_gap || null,\n  }\n  : {};\n\n// Points à compléter sur le web : ce que la bibliothèque ne couvre pas (4 au plus).\nconst webPoints = !norm.web || a.coverage === 'complete' && !a.gaps.length ? []\n  : (a.gaps.length ? a.gaps : [norm.mode === 'qcm' ? sel.question : `Réponse complète à la question : ${sel.question}`]).slice(0, 4);\n\nreturn [{\n  json: {\n    statut,\n    question: sel.question,\n    modele: norm.model,\n    couverture: a.coverage,\n    resume,\n    prerequis,\n    etapes,\n    avertissements,\n    pistes: a.hypotheses,\n    nonCouvert: a.gaps,\n    sources,\n    controle,\n    sousQuestions: sel.subQuestions,\n    cout: { usd: usd === null ? null : Math.round(usd * 1e5) / 1e5, details },\n    dureeMs: Date.now() - norm.startedAt,\n    ...qcm,\n    webPoints,\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a21",
+      "name": "Web needed?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        4400,
+        100
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "wn",
+              "leftValue": "={{ $json.webPoints.length > 0 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a22",
+      "name": "Build web request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4620,
+        0
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: prompt de complément web (points numérotés, format d'étape en mode config) et corps de requête.\nconst f = $json;\nconst norm = $('Normalize input').first().json;\nconst config = norm.mode === 'config';\nconst SYSTEM = `Tu complètes une réponse sur Odoo 20.0 avec le web, seulement pour les points listés. Tu réponds en français.\nRègles :\n1. Cherche TOUJOURS avec l'outil web_search avant de répondre. N'affirme rien que les résultats ne disent pas.\n2. Préfère odoo.com/documentation/20.0, puis le forum et les slides odoo.com, puis les autres sites. Si une page vise une autre version qu'Odoo 20, dis-le.\n3. Recopie les libellés d'interface en anglais entre ** **, comme sur la page.\n4. Pour chaque point, écris un paragraphe court qui commence par son repère ([P1], [P2]…). Si tu ne trouves rien de fiable, écris « [Pn] Non trouvé. » Sois bref : 2 à 4 phrases par point. N'ajoute aucun réglage multi-étapes (**Multi-Step Routes**, cross-dock, réception ou livraison en 2 ou 3 étapes) ni module tiers que l'opération ne demande pas explicitement.${config ? `\n5. Pour un point trouvé, la première ligne du paragraphe est : Action : … | Menu : … | Champ : … | Valeur : … (« À renseigner » pour une donnée client absente ; une donnée client ne s'applique qu'à son objet).` : ''}`;\nconst points = f.webPoints.map((p, i) => `[P${i + 1}] ${p}`).join('\\n');\nconst user = `Question : ${f.question}${config && norm.contexte ? `\\n\\nDonnées client : ${norm.contexte}` : ''}\\n\\nPoints à compléter :\\n${points}`;\nreturn [{\n  json: {\n    webBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 12000,\n      output_config: { effort: 'low' },\n      system: SYSTEM,\n      tools: [{ type: 'web_search_20260318', name: 'web_search', max_uses: 2, allowed_callers: ['direct'] }],\n      messages: [{ role: 'user', content: user }],\n    },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a23",
+      "name": "Search web (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "retryOnFail": true,
+      "maxTries": 2,
+      "waitBetweenTries": 2000,
+      "onError": "continueRegularOutput",
+      "position": [
+        4840,
+        0
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.webBody) }}",
+        "options": {
+          "timeout": 90000
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a24",
+      "name": "Merge web results",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        5060,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: lecture des citations web (repères [Pn]), filtre sur les URL des résultats, fusion dans la réponse et coût.\nconst base = $('Finalize answer').first().json;\nconst norm = $('Normalize input').first().json;\nif (!$('Search web (Claude)').isExecuted) return [{ json: (({ webPoints, ...r }) => r)(base) }];\n\nconst r = $('Search web (Claude)').first().json;\nconst content = Array.isArray(r.content) ? r.content : [];\nconst resultUrls = new Set(content.filter((c) => c.type === 'web_search_tool_result' && Array.isArray(c.content)).flatMap((c) => c.content.map((x) => x.url)));\n\n// Texte découpé par repère ; les citations d'un bloc vont au repère en cours.\nconst seg = {};\nlet cur = null;\nfor (const c of content.filter((x) => x.type === 'text')) {\n  for (const part of c.text.split(/(\\[P\\d+\\])/)) {\n    const m = part.match(/^\\[P(\\d+)\\]$/);\n    if (m) { cur = Number(m[1]); seg[cur] ??= { text: '', cites: [] }; } else if (cur) seg[cur].text += part;\n  }\n  if (cur) seg[cur].cites.push(...(c.citations ?? []).filter((x) => x.type === 'web_search_result_location'));\n}\n\n// Gardé seulement si cité, avec une URL issue des résultats de la recherche.\nconst otherVersion = (u) => (u.match(/odoo\\.com\\/documentation\\/((?!20\\.0)[^/]+)\\//) ?? [])[1];\nconst web = [];\nfor (const [k, s] of Object.entries(seg)) {\n  const cites = s.cites.filter((x) => resultUrls.has(x.url));\n  // Gras orphelin autour du repère ([Pn] en gras) retiré.\n  const text = s.text.trim().replace(/^\\*\\*\\s*/, '').replace(/^(Non trouvé[^*\\n]*?)\\*\\*/i, '$1').replace(/\\s*\\*\\*$/, '').trim();\n  if (!cites.length) continue;\n  const unresolved = /^Non trouvé/i.test(text);\n  const urls = [...new Set(cites.map((x) => x.url))];\n  const versions = [...new Set(urls.map(otherVersion).filter(Boolean))];\n  const item = { point: base.webPoints[Number(k) - 1], texte: text, statut: 'Web', source: urls, extraits: [...new Set(cites.map((x) => x.cited_text))].slice(0, 3) };\n  if (unresolved) item.raison = 'Point non résolu : seuls des éléments voisins ont été trouvés sur le web.';\n  else if (versions.length) item.raison = `Page web d'une autre version d'Odoo (${versions.join(', ')}).`;\n  item.resolu = !unresolved;\n  const line = text.replace(/\\*\\*/g, '').match(/Action\\s*:\\s*(.*?)\\s*\\|\\s*Menu\\s*:\\s*(.*?)\\s*\\|\\s*Champ\\s*:\\s*(.*?)\\s*\\|\\s*Valeur\\s*:\\s*([^\\n]*)/);\n  const clean = (s) => s.replace(/^\\*\\*\\s*|\\s*\\*\\*$/g, '').trim();\n  if (line && !unresolved) Object.assign(item, { action: clean(line[1]), menu: clean(line[2]), champ: clean(line[3]), valeur: clean(line[4]), texte: text.replace(/\\*\\*/g, '').replace(line[0], '').trim() });\n  web.push(item);\n}\n\nconst found = new Set(web.filter((i) => i.resolu).map((i) => i.point));\nconst u = r.usage ?? {};\nconst entree = (u.input_tokens ?? 0) + (u.cache_creation_input_tokens ?? 0) + (u.cache_read_input_tokens ?? 0);\nconst sortie = u.output_tokens ?? 0;\nconst recherches = u.server_tool_use?.web_search_requests ?? 0;\n// Haiku 5.5 : 0,10 / 0,50 USD par million de tokens ; recherche web : 10 USD les 1 000.\nconst usdWeb = Math.round(((entree * 0.1 + sortie * 0.5) / 1e6 + recherches * 0.01) * 1e5) / 1e5;\nconst details = [...base.cout.details, { etape: 'web', modele: 'claude-haiku-5-5', entree, sortie, recherches, usd: usdWeb }];\nconst usd = base.cout.usd === null ? null : Math.round((base.cout.usd + usdWeb) * 1e5) / 1e5;\n\nconst { webPoints, ...rest } = base;\nconst out = { ...rest, nonCouvert: base.nonCouvert.filter((g) => !found.has(g)), web, cout: { usd, details }, dureeMs: Date.now() - norm.startedAt };\nif (norm.mode === 'config') {\n  const steps = web.filter((i) => i.action).map(({ point, ...i }) => i);\n  out.etapes = [...base.etapes, ...steps];\n  out.web = web.filter((i) => !i.action);\n}\nif (base.statut === 'Non couvert' && web.some((i) => i.resolu)) out.statut = 'Web';\nreturn [{ json: out }];\n"
+      }
+    },
+    {
+      "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a31",
+      "name": "Load full pages",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.7,
+      "alwaysOutputData": true,
+      "position": [
+        1760,
+        100
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Tous les passages des pages retenues en entier (mode config), dans l'ordre de la page.\nselect c.id as chunk_id, c.source_id, s.kind, s.title, c.breadcrumb, c.url, s.url_fr, c.content\nfrom knowledge_chunks c join knowledge_sources s on s.id = c.source_id\nwhere c.source_id = any(array(select jsonb_array_elements_text($1::jsonb))::uuid[])\norder by c.source_id, c.ordinal",
+        "options": {
+          "queryReplacement": "={{ [ JSON.stringify($json.fullPages) ] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "2kZXmPiVRr0deiOp",
+          "name": "Odoo pgvector"
+        }
+      }
+    },
+    {
+      "id": "3f6c2a51-0b8e-4c1d-9a7e-1c2d3e4f5a32",
+      "name": "Select passages",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1980,
+        100
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: ajout des autres passages des pages chargées en entier (procédures longues), puis renumérotation.\nconst base = $('Pick passages').first().json;\nconst have = new Set(base.passages.map((p) => p.chunkId));\nconst MAX_EXTRA = 12;\nconst extra = $input.all().map((i) => i.json).filter((r) => r.chunk_id && !have.has(r.chunk_id)).slice(0, MAX_EXTRA)\n  .map((r) => ({ chunkId: r.chunk_id, kind: r.kind, title: r.title, breadcrumb: r.breadcrumb, url: r.url, urlFr: r.url_fr, similarity: null, query: null, content: r.content }));\nconst passages = [...base.passages, ...extra].map((p, i) => ({ ...p, n: i + 1 }));\nconst { fullPages, ...rest } = base;\nreturn [{ json: { ...rest, passages, pagesCompletes: fullPages.length, passagesAjoutes: extra.length } }];\n"
       }
     }
   ],
@@ -627,18 +780,7 @@
       "main": [
         [
           {
-            "node": "Select passages",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Select passages": {
-      "main": [
-        [
-          {
-            "node": "Build answer request",
+            "node": "Pick passages",
             "type": "main",
             "index": 0
           }
@@ -763,6 +905,90 @@
         [
           {
             "node": "Finalize answer",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Finalize answer": {
+      "main": [
+        [
+          {
+            "node": "Web needed?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Web needed?": {
+      "main": [
+        [
+          {
+            "node": "Build web request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge web results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build web request": {
+      "main": [
+        [
+          {
+            "node": "Search web (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Search web (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Merge web results",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Pick passages": {
+      "main": [
+        [
+          {
+            "node": "Load full pages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Load full pages": {
+      "main": [
+        [
+          {
+            "node": "Select passages",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Select passages": {
+      "main": [
+        [
+          {
+            "node": "Build answer request",
             "type": "main",
             "index": 0
           }

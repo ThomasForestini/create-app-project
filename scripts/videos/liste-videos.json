@@ -1,0 +1,6257 @@
+{
+ "source": "Google Doc « Odoo Tutorials – Toutes les vidéos (liens YouTube) », lu le 01/11/2026",
+ "videos": [
+  {
+   "id": "IyDlRBAIzq4",
+   "title": "Create an Odoo Database",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "NoxYrnnHgfk",
+   "title": "Navigate in Odoo",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "6W3jnlOsiCY",
+   "title": "Google Calendar Sync",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "vobkBzA6vvY",
+   "title": "Outlook Calendar Sync",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "D01_EK-Fz7U",
+   "title": "Filters and Views",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "yZf6D1PAh2g",
+   "title": "Multi-Company Basics",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "jTS4KVi_awU",
+   "title": "Multi-Company Transactions",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "UUPTknL_FnM",
+   "title": "In-App Services (Tokens and Credits)",
+   "course": "Getting Started",
+   "section": "Getting Started"
+  },
+  {
+   "id": "JJtGJTYkss4",
+   "title": "Odoo Calendar",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "vyvFgOfBoPI",
+   "title": "Schedule Activities",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "mhFibjoVYmc",
+   "title": "Contacts - Basics",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "HxLfnOEWb6Y",
+   "title": "Contacts - Views & More",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "Q1GTp2i_d_4",
+   "title": "Importing and Exporting Data",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "rXtQ2D0w2eY",
+   "title": "Chatter Basics",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "uG2UD-YGl48",
+   "title": "Canned Responses",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "ug7b3MJidsU",
+   "title": "Digest Emails",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "mZG-3xHtUyo",
+   "title": "Custom KPIs for Digest Emails",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "w6GLW3IE-UU",
+   "title": "Group Access Rights",
+   "course": "Getting Started",
+   "section": "Using Odoo"
+  },
+  {
+   "id": "Ls3sjiqHCHE",
+   "title": "Odoo Discuss: Direct Messages",
+   "course": "Getting Started",
+   "section": "Odoo Discuss"
+  },
+  {
+   "id": "IfU-kxnWEEY",
+   "title": "Odoo Discuss: Voice & Video Calls",
+   "course": "Getting Started",
+   "section": "Odoo Discuss"
+  },
+  {
+   "id": "j9_0duO--yM",
+   "title": "Odoo Discuss: Channels",
+   "course": "Getting Started",
+   "section": "Odoo Discuss"
+  },
+  {
+   "id": "4k4wSQ6sqpw",
+   "title": "Odoo Discuss: WhatsApp Basics",
+   "course": "Getting Started",
+   "section": "Odoo Discuss"
+  },
+  {
+   "id": "36uvGBoE-kM",
+   "title": "WhatsApp: Advanced Setup",
+   "course": "Getting Started",
+   "section": "Odoo Discuss"
+  },
+  {
+   "id": "vYsVnbnpnHo",
+   "title": "Business Flow: Furniture Store",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "tSMOE0fhCNM",
+   "title": "Business Flow: Events and Marketing",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "T-Cjbx3Ie3g",
+   "title": "Business Flow: Restaurant",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "MVbwvUxnKkA",
+   "title": "Business Flow: eLearning",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "bj9WHRnFUso",
+   "title": "Business Flow: Subscriptions as an Online Business",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "72Wbk0mr0jg",
+   "title": "Business Flow: Administrative Department",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "Q5XbA16x2SE",
+   "title": "Business Flow: Construction Project",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "CLU-zOXwuwM",
+   "title": "Business Flow: Airproof",
+   "course": "Getting Started",
+   "section": "Business Flows"
+  },
+  {
+   "id": "KxZAdEGpYAw",
+   "title": "Introduction to Odoo CRM",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "rr4kezi9w28",
+   "title": "CRM Basics and Pipelines",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "eFe-yv_fkFI",
+   "title": "CRM Basics: Probabilities & Sales Teams",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "pPNuQNZzSLY",
+   "title": "CRM Scheduling Activities",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "FSG9fOkxxBM",
+   "title": "Custom Activities",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "7QmhZrmA7SA",
+   "title": "Activity Plans",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "u6kfb1oyneU",
+   "title": "Won and Lost Opportunities",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "27UYtZJ9HKI",
+   "title": "Sales Teams Setup & Leads Assignment",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "r9NEJ7fWfWQ",
+   "title": "CRM Activities Automations and Reporting",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "uypSO1MBMrw",
+   "title": "Sales Team Reporting",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "_YZcjjU0xUM",
+   "title": "Gmail Mailbox Plugin",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "0iXhQr3WYEU",
+   "title": "Outlook Mailbox Plugin",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "lKvueXqSNmQ",
+   "title": "Marketing Attribution Report",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "c0vTFtwZlVI",
+   "title": "Scheduled Activities & Moving Opportunities",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "B9ErlstQ1Ac",
+   "title": "Partner Autocomplete",
+   "course": "CRM",
+   "section": "CRM Basics"
+  },
+  {
+   "id": "BSEf-EldDIA",
+   "title": "CRM Lead & Opportunity Basics",
+   "course": "CRM",
+   "section": "Lead Generation"
+  },
+  {
+   "id": "y3ZVeeM3WEc",
+   "title": "Lead Generation - Forms & Email Aliases",
+   "course": "CRM",
+   "section": "Lead Generation"
+  },
+  {
+   "id": "HFQ1c-VV3Qw",
+   "title": "Lead Generation - Events, Appointments, and Website Visitors",
+   "course": "CRM",
+   "section": "Lead Generation"
+  },
+  {
+   "id": "GX_RyFvvxlY",
+   "title": "Lead Enrichment",
+   "course": "CRM",
+   "section": "Lead Generation"
+  },
+  {
+   "id": "-nN9zMkI15s",
+   "title": "Lead Mining",
+   "course": "CRM",
+   "section": "Lead Generation"
+  },
+  {
+   "id": "cSML0JkQ0Hg",
+   "title": "Predictive Lead Scoring",
+   "course": "CRM",
+   "section": "Lead Management"
+  },
+  {
+   "id": "Hs08DaYWI3M",
+   "title": "Gamification",
+   "course": "CRM",
+   "section": "Performance Analysis"
+  },
+  {
+   "id": "CXg2jaWum_w",
+   "title": "Design your website: text and colors",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "E6Z66h0PKpE",
+   "title": "Website configurator",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "-HCfwpavx-c",
+   "title": "Design your website: images and motion",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "u9JibGB8AgU",
+   "title": "Contact forms",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "GJlsJm8Df_c",
+   "title": "Navigation: links & menus",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "uSpCz6eij_Y",
+   "title": "Translations",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "xL2iq5VE6qo",
+   "title": "Mobile version",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "uuHdPgfV9xo",
+   "title": "Register a free domain name",
+   "course": "Website & eCommerce",
+   "section": "Building your website"
+  },
+  {
+   "id": "WAKnzNmQfW4",
+   "title": "Blogs",
+   "course": "Website & eCommerce",
+   "section": "Market your website"
+  },
+  {
+   "id": "UE7Nn15KQ7o",
+   "title": "Search Engine Optimization (SEO)",
+   "course": "Website & eCommerce",
+   "section": "Market your website"
+  },
+  {
+   "id": "VDZUVl5IEOc",
+   "title": "Website analytics",
+   "course": "Website & eCommerce",
+   "section": "Market your website"
+  },
+  {
+   "id": "ZdvUMijWGlk",
+   "title": "Multi-website",
+   "course": "Website & eCommerce",
+   "section": "Market your website"
+  },
+  {
+   "id": "SLAMX3gPyEg",
+   "title": "Create your product",
+   "course": "Website & eCommerce",
+   "section": "Create and organize your eCommerce product catalog"
+  },
+  {
+   "id": "CyE2xp81Em8",
+   "title": "Product Variants & Stock Management",
+   "course": "Website & eCommerce",
+   "section": "Create and organize your eCommerce product catalog"
+  },
+  {
+   "id": "Bi_a8pEKjmw",
+   "title": "Organize your Product Catalog",
+   "course": "Website & eCommerce",
+   "section": "Create and organize your eCommerce product catalog"
+  },
+  {
+   "id": "0UpaFTX_7UU",
+   "title": "Pricing",
+   "course": "Website & eCommerce",
+   "section": "Create and organize your eCommerce product catalog"
+  },
+  {
+   "id": "anZYr4mQin0",
+   "title": "Design your product catalog",
+   "course": "Website & eCommerce",
+   "section": "Design your eCommerce shop and product pages"
+  },
+  {
+   "id": "JCYSF63peRE",
+   "title": "Additional features",
+   "course": "Website & eCommerce",
+   "section": "Design your eCommerce shop and product pages"
+  },
+  {
+   "id": "Ft3-kQ-b7Rc",
+   "title": "Cart Checkout",
+   "course": "Website & eCommerce",
+   "section": "Build your eCommerce customer experience"
+  },
+  {
+   "id": "VNZC-8HoRPw",
+   "title": "Delivery methods",
+   "course": "Website & eCommerce",
+   "section": "Build your eCommerce customer experience"
+  },
+  {
+   "id": "rZJ5fDDl9_0",
+   "title": "Payment methods",
+   "course": "Website & eCommerce",
+   "section": "Build your eCommerce customer experience"
+  },
+  {
+   "id": "stiOhRZAJ8I",
+   "title": "Click and Collect",
+   "course": "Website & eCommerce",
+   "section": "Build your eCommerce customer experience"
+  },
+  {
+   "id": "6rUytZhF_As",
+   "title": "Customer Portal and Account",
+   "course": "Website & eCommerce",
+   "section": "Build your eCommerce customer experience"
+  },
+  {
+   "id": "5rqQp24yq6M",
+   "title": "Gift cards, loyalty programs and eWallets",
+   "course": "Website & eCommerce",
+   "section": "Build your eCommerce customer experience"
+  },
+  {
+   "id": "LekSm6_T1JE",
+   "title": "Order Management",
+   "course": "Website & eCommerce",
+   "section": "Sell and manage your eCommerce orders"
+  },
+  {
+   "id": "2AlMd445x8w",
+   "title": "Selling Strategies",
+   "course": "Website & eCommerce",
+   "section": "Sell and manage your eCommerce orders"
+  },
+  {
+   "id": "CZOXYz73gZM",
+   "title": "Getting started",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting basics"
+  },
+  {
+   "id": "XjQZDubLzJA",
+   "title": "Chart of accounts",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting basics"
+  },
+  {
+   "id": "p-PKOa7XHL8",
+   "title": "Update your chart of accounts",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting basics"
+  },
+  {
+   "id": "VEmb4DrI_Pw",
+   "title": "Import an opening balance",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting basics"
+  },
+  {
+   "id": "--wsuIKjPjY",
+   "title": "Vendor bill digitization",
+   "course": "Accounting and Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "GzPRSxlYNQw",
+   "title": "Payment terms & terms and conditions",
+   "course": "Accounting and Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "Xl_TkVccuxs",
+   "title": "Payments and outstanding accounts",
+   "course": "Accounting and Invoicing",
+   "section": "Payments"
+  },
+  {
+   "id": "WpfLINarbVE",
+   "title": "Online payments",
+   "course": "Accounting and Invoicing",
+   "section": "Payments"
+  },
+  {
+   "id": "kQGs985Kmes",
+   "title": "Cash discounts",
+   "course": "Accounting and Invoicing",
+   "section": "Payments"
+  },
+  {
+   "id": "tVhhXw-VnGE",
+   "title": "Bank configuration",
+   "course": "Accounting and Invoicing",
+   "section": "Bank and cash"
+  },
+  {
+   "id": "97Skkg-wjwQ",
+   "title": "Bank transactions & bank synchronization",
+   "course": "Accounting and Invoicing",
+   "section": "Bank and cash"
+  },
+  {
+   "id": "P8EItiKqm5k",
+   "title": "Bank reconciliation",
+   "course": "Accounting and Invoicing",
+   "section": "Bank and cash"
+  },
+  {
+   "id": "U43jzqotC9Y",
+   "title": "Reconciliation models",
+   "course": "Accounting and Invoicing",
+   "section": "Bank and cash"
+  },
+  {
+   "id": "n_T0dnPz4Fg",
+   "title": "SEPA Credit Transfer",
+   "course": "Accounting and Invoicing",
+   "section": "Bank and cash"
+  },
+  {
+   "id": "aEJqDP-B7EE",
+   "title": "SEPA Direct Debit",
+   "course": "Accounting and Invoicing",
+   "section": "Bank and cash"
+  },
+  {
+   "id": "Pk5D_40CW80",
+   "title": "Taxes and VAT",
+   "course": "Accounting and Invoicing",
+   "section": "Taxes"
+  },
+  {
+   "id": "hEgG4ExZt70",
+   "title": "Cash basis",
+   "course": "Accounting and Invoicing",
+   "section": "Taxes"
+  },
+  {
+   "id": "gROf9hemmlo",
+   "title": "Fiscal positions",
+   "course": "Accounting and Invoicing",
+   "section": "Taxes"
+  },
+  {
+   "id": "fpFP7LeZjkg",
+   "title": "Tax return",
+   "course": "Accounting and Invoicing",
+   "section": "Taxes"
+  },
+  {
+   "id": "JHXeK-FPQow",
+   "title": "Extra taxes (ecotax, alcohol, luxury,...)",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "y1-jDIwahyE",
+   "title": "Asset creation and management",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "kbTt8YiT5q0",
+   "title": "Asset models and automation",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "7h27klDRjG8",
+   "title": "Expense and revenue recognition and one-shot entries",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "XXd5ZxPgOsM",
+   "title": "Analytic accounting",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "Rq0q4qPAE5U",
+   "title": "Analytic budgets",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "HLiuk0OwOuo",
+   "title": "US tax compliance - Avatax",
+   "course": "Accounting and Invoicing",
+   "section": "Accounting management"
+  },
+  {
+   "id": "5YieUrBCoMU",
+   "title": "Multi-company and branch management",
+   "course": "Accounting and Invoicing",
+   "section": "Reporting"
+  },
+  {
+   "id": "miONjMNmz6M",
+   "title": "Financial reports",
+   "course": "Accounting and Invoicing",
+   "section": "Reporting"
+  },
+  {
+   "id": "_iWuppq7klY",
+   "title": "Inventory valuation",
+   "course": "Accounting and Invoicing",
+   "section": "Inventory valuation"
+  },
+  {
+   "id": "rjyRpnp8hlI",
+   "title": "Inventory valuation (Continental)",
+   "course": "Accounting and Invoicing",
+   "section": "Inventory valuation"
+  },
+  {
+   "id": "WDxmu3tuoiw",
+   "title": "Inventory valuation (Anglo-Saxon)",
+   "course": "Accounting and Invoicing",
+   "section": "Inventory valuation"
+  },
+  {
+   "id": "2FIHBXqq99k",
+   "title": "Multi-currency - Realized Gains/Losses",
+   "course": "Accounting and Invoicing",
+   "section": "End of period"
+  },
+  {
+   "id": "yxPUqt9TPMA",
+   "title": "Multi-currency - Unrealized Gains/Losses",
+   "course": "Accounting and Invoicing",
+   "section": "End of period"
+  },
+  {
+   "id": "_-ydqXCp4N8",
+   "title": "Closing the fiscal year",
+   "course": "Accounting and Invoicing",
+   "section": "End of period"
+  },
+  {
+   "id": "6_mi7NKfzpA",
+   "title": "Inventory Basics: Receive and Store Stock",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "zIswRW3wIkw",
+   "title": "Inventory Basics & Outgoing Shipments",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "ZfixUdS64j8",
+   "title": "Basic Warehouse Setup",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "SM0NBkX_V2s",
+   "title": "Warehouses & Locations",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "nDfTxCAihFs",
+   "title": "Units of Measure",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "3kRnqfKyljk",
+   "title": "Inventory Adjustments & Cycle Counts",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "u_JhVbCjslA",
+   "title": "Integrate Landed Costs",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "gTBdKnX3IQw",
+   "title": "Access Rights for Inventory Teams",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "sBtSYPszKfM",
+   "title": "Make-to-Order (MTO)",
+   "course": "Inventory",
+   "section": "Inventory basics"
+  },
+  {
+   "id": "nJ2grHTSOwo",
+   "title": "Reordering Rules",
+   "course": "Inventory",
+   "section": "Replenishment"
+  },
+  {
+   "id": "z_YjeJxAO04",
+   "title": "Lead Times",
+   "course": "Inventory",
+   "section": "Replenishment"
+  },
+  {
+   "id": "5KjbxYNlQ9k",
+   "title": "Resupply Warehouse",
+   "course": "Inventory",
+   "section": "Replenishment"
+  },
+  {
+   "id": "XWJjWc0Vl04",
+   "title": "Lots & Serial Numbers",
+   "course": "Inventory",
+   "section": "Traceability"
+  },
+  {
+   "id": "N8--9n9i43c",
+   "title": "Working with Perishable Products",
+   "course": "Inventory",
+   "section": "Traceability"
+  },
+  {
+   "id": "alUnAL4PNDw",
+   "title": "Expiration Dates",
+   "course": "Inventory",
+   "section": "Traceability"
+  },
+  {
+   "id": "qkhDUezyZuc",
+   "title": "Push & Pull Rules",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "UuGF3-2e5So",
+   "title": "Putaway Rules",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "N9PK8FgBvxI",
+   "title": "Storage Categories",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "xssYTTyH2Mo",
+   "title": "Cross-Docking",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "9j1zvMuPFMk",
+   "title": "Consignment",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "QvGcaPxRYhs",
+   "title": "Dispatch Management System",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "YCuhjW5JVHE",
+   "title": "Consignment Notes (CMRs)",
+   "course": "Inventory",
+   "section": "Warehouse transfers"
+  },
+  {
+   "id": "neyn_3ShmdM",
+   "title": "Reservation Methods",
+   "course": "Inventory",
+   "section": "Reserve products"
+  },
+  {
+   "id": "K7HR1gJf1dk",
+   "title": "Removal Strategies Overview",
+   "course": "Inventory",
+   "section": "Reserve products"
+  },
+  {
+   "id": "rV6iGcv7qW0",
+   "title": "FIFO & LIFO Removal Strategy",
+   "course": "Inventory",
+   "section": "Reserve products"
+  },
+  {
+   "id": "cX0Q_G7b9Vo",
+   "title": "FEFO Removal Strategy",
+   "course": "Inventory",
+   "section": "Reserve products"
+  },
+  {
+   "id": "wrSIHzmHnZM",
+   "title": "Closest Location Removal Strategy",
+   "course": "Inventory",
+   "section": "Reserve products"
+  },
+  {
+   "id": "XAGgrZJO-ak",
+   "title": "Least Packages Removal Strategy",
+   "course": "Inventory",
+   "section": "Reserve products"
+  },
+  {
+   "id": "t5pyxwbDG6Q",
+   "title": "Packaging",
+   "course": "Inventory",
+   "section": "Packages and Packagings"
+  },
+  {
+   "id": "cXHGO6080dI",
+   "title": "Packages",
+   "course": "Inventory",
+   "section": "Packages and Packagings"
+  },
+  {
+   "id": "XW8BaggHBTE",
+   "title": "Ship Multi-Box Packages",
+   "course": "Inventory",
+   "section": "Packages and Packagings"
+  },
+  {
+   "id": "6jgEliiBU8Y",
+   "title": "Multi-Package Shipments",
+   "course": "Inventory",
+   "section": "Packages and Packagings"
+  },
+  {
+   "id": "o9987zzf9Rg",
+   "title": "Shipping Policy",
+   "course": "Inventory",
+   "section": "Packages and Packagings"
+  },
+  {
+   "id": "EXzYonqzDSw",
+   "title": "Custom Returns Operation",
+   "course": "Inventory",
+   "section": "Packages and Packagings"
+  },
+  {
+   "id": "oGTIn2TOdkY",
+   "title": "Batch Transfers",
+   "course": "Inventory",
+   "section": "Daily operations"
+  },
+  {
+   "id": "xUwEzgmfXsg",
+   "title": "Cluster Picking",
+   "course": "Inventory",
+   "section": "Daily operations"
+  },
+  {
+   "id": "UmpGUNpAM7Q",
+   "title": "Print Shipping Labels",
+   "course": "Inventory",
+   "section": "Daily operations"
+  },
+  {
+   "id": "Gcmuw4qR5Wc",
+   "title": "Wave Picking",
+   "course": "Inventory",
+   "section": "Daily operations"
+  },
+  {
+   "id": "XvAe_B29mB8",
+   "title": "MRP Overview",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Overview"
+  },
+  {
+   "id": "r5JewejnfQ4",
+   "title": "Manufacturing Order & Work Order Basics",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Overview"
+  },
+  {
+   "id": "EQMjhnHTV5s",
+   "title": "Bill of Materials Basics",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "7Sfp9zO3IaQ",
+   "title": "Work Center Basics",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "rEB-GIz-etI",
+   "title": "Alternative Work Centers",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "W4kmt-YFAF0",
+   "title": "Work Center Parameters",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "d8GUY9jLEmc",
+   "title": "Work Order Dependencies",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "ILpbH7X6vzo",
+   "title": "From Sales Order to Manufacturing Order",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "grZ9oj8CqNI",
+   "title": "Manufacturing Steps",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "4laFf9MnH6I",
+   "title": "Manufacturing Planning",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "Vd1MDPaA4hk",
+   "title": "Manufacturing Lead Times",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "c5cFwTaD2I8",
+   "title": "Split and Merge Manufacturing Orders",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "UUr5EK3ocxU",
+   "title": "Manufacture w/ Lots and Serial Numbers",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "yj6ko6AVjqQ",
+   "title": "Maintenance Requests",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "MRP Basics"
+  },
+  {
+   "id": "p5szofPcN8I",
+   "title": "Manufacturing in One Step",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Manufacturing Orders"
+  },
+  {
+   "id": "qqNEEBNtArA",
+   "title": "Manufacture in 2 or 3 Steps",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Manufacturing Orders"
+  },
+  {
+   "id": "OIrkwN0RXRo",
+   "title": "Manufacturing Backorders",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Manufacturing Orders"
+  },
+  {
+   "id": "QlYltSfU4FU",
+   "title": "Managing Equipment Maintenance",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "XOq9meepDQ8",
+   "title": "Make-to-Order Manufacturing (MTO)",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "J65h3-WFIKU",
+   "title": "By-Products",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "XddbBYkDAl4",
+   "title": "Scrap Orders",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "5Pn9iBsXQBo",
+   "title": "Manufacturing with Product Variants",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "vtjeMGcG8aM",
+   "title": "Replenishment Methods for Manufacturing",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "yP2Tji_WyNY",
+   "title": "Flexible Consumption",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "a8Dl1Ip0jtI",
+   "title": "Sub-Assemblies",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "f-w5sVsl0Vg",
+   "title": "Engineer To Order",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "nyXngfghtaY",
+   "title": "Product Kits",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "GPMH4r3CpDo",
+   "title": "Manufacturing Efficiency",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Advanced Processes"
+  },
+  {
+   "id": "jdCEOpNXsrk",
+   "title": "Shop Floor Overview",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Shop Floor"
+  },
+  {
+   "id": "Jh-hvxXaiq8",
+   "title": "Process an MO",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Shop Floor"
+  },
+  {
+   "id": "5c5WolVW6pg",
+   "title": "Manage Components",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Shop Floor"
+  },
+  {
+   "id": "M3Cb_86Rtbo",
+   "title": "Process Repairs & Returns",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Shop Floor"
+  },
+  {
+   "id": "6zUVbOa5arY",
+   "title": "Recurrent Maintenance",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Maintenance"
+  },
+  {
+   "id": "G4elSiAOLlY",
+   "title": "Production Costs",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Costing"
+  },
+  {
+   "id": "cTk1jTgM2Og",
+   "title": "FIFO, AVCO, Standard — Manufacturing Costs",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Costing"
+  },
+  {
+   "id": "wV2rYy2QMBY",
+   "title": "Basic Subcontracting",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Subcontracting"
+  },
+  {
+   "id": "okZLvUoUhqg",
+   "title": "Resupply Subcontractor",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Subcontracting"
+  },
+  {
+   "id": "WnivsvI6IYI",
+   "title": "Dropship to Subcontractor",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Subcontracting"
+  },
+  {
+   "id": "7y2P8Qugag4",
+   "title": "Production Analysis",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Reporting"
+  },
+  {
+   "id": "RWY3nh16T_E",
+   "title": "Allocation Reports",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Reporting"
+  },
+  {
+   "id": "ZBBDLRoRPcs",
+   "title": "Overall Equipment Effectiveness",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Reporting"
+  },
+  {
+   "id": "SBpBYwP-3Mo",
+   "title": "Master Production Schedule (MPS) Part 1/2 - The MPS Dashboard",
+   "course": "MRP - Manufacturing & Shop Floor",
+   "section": "Planning"
+  },
+  {
+   "id": "b5eVusXHEvg",
+   "title": "Product creation",
+   "course": "Point of Sale",
+   "section": "Product management"
+  },
+  {
+   "id": "afMyzJIKVw8",
+   "title": "Product variants",
+   "course": "Point of Sale",
+   "section": "Product management"
+  },
+  {
+   "id": "H8e2CakLhaQ",
+   "title": "Product combos",
+   "course": "Point of Sale",
+   "section": "Product management"
+  },
+  {
+   "id": "w_DKgHcIV0U",
+   "title": "Receipts and Invoices",
+   "course": "Point of Sale",
+   "section": "POS setup"
+  },
+  {
+   "id": "eHr4tS8Wmss",
+   "title": "Payment methods",
+   "course": "Point of Sale",
+   "section": "POS setup"
+  },
+  {
+   "id": "C10IWU7oEQU",
+   "title": "Set up pricelists",
+   "course": "Point of Sale",
+   "section": "Sales management"
+  },
+  {
+   "id": "cBh_hZjkPIU",
+   "title": "Build loyalty",
+   "course": "Point of Sale",
+   "section": "Sales management"
+  },
+  {
+   "id": "mgzo2HgmN5U",
+   "title": "Preparation Display",
+   "course": "Point of Sale",
+   "section": "Devices management"
+  },
+  {
+   "id": "CqV29x-7tRE",
+   "title": "Set up printers",
+   "course": "Point of Sale",
+   "section": "Devices management"
+  },
+  {
+   "id": "nfnekkigFXs",
+   "title": "Payment terminals",
+   "course": "Point of Sale",
+   "section": "Devices management"
+  },
+  {
+   "id": "3pfUEX2B3Z4",
+   "title": "Sell products",
+   "course": "Point of Sale",
+   "section": "Retail practice"
+  },
+  {
+   "id": "RTHx4qY6AJ4",
+   "title": "Handle quotations",
+   "course": "Point of Sale",
+   "section": "Retail practice"
+  },
+  {
+   "id": "QeUI8d0RBfE",
+   "title": "Ship later",
+   "course": "Point of Sale",
+   "section": "Retail practice"
+  },
+  {
+   "id": "mTXTgpBuLBY",
+   "title": "Manage presets",
+   "course": "Point of Sale",
+   "section": "Restaurant practice"
+  },
+  {
+   "id": "XVhrrXhenwY",
+   "title": "Manage your floors and tables",
+   "course": "Point of Sale",
+   "section": "Restaurant practice"
+  },
+  {
+   "id": "pdtrg1Lt-FQ",
+   "title": "Self-ordering kiosk",
+   "course": "Point of Sale",
+   "section": "Restaurant practice"
+  },
+  {
+   "id": "8QviDPrj39I",
+   "title": "Invoicing for what is ordered",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "JpqZFT7RLaw",
+   "title": "Invoicing for what is delivered",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "uPMpMH1A6vk",
+   "title": "Selling products",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "kK7IBFi8FEE",
+   "title": "Create your First Sales Quotation",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "pJ7YgbYToD0",
+   "title": "Adding headers and footers to quote templates and products",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "IwvVR2H7gvE",
+   "title": "Sales Basics and Your First Quotation",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "Q0MKrE5YfnQ",
+   "title": "Your First Quotation",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "LvGCY5rXISg",
+   "title": "Create Products",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "_XMyu9EKnPo",
+   "title": "Create Product Variants",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "MBrOVjjfdJw",
+   "title": "Quotation Templates",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "SIvlo2JFU_U",
+   "title": "PDF Quote Builder",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "dhlNDmD3l-o",
+   "title": "Product Documents",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "SNsRDT9qB34",
+   "title": "Online Quotation",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "Nk3Ro_2vqP4",
+   "title": "Invoicing Policies",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "8V2DXRZH9qo",
+   "title": "Pipeline Management for a B2B Equipment Supplier",
+   "course": "Sales",
+   "section": "Quotations"
+  },
+  {
+   "id": "RdniKQlnxTQ",
+   "title": "Promotion Basics & Discounts",
+   "course": "Sales",
+   "section": "Promotions"
+  },
+  {
+   "id": "b9kA7iBHmmA",
+   "title": "Coupons",
+   "course": "Sales",
+   "section": "Promotions"
+  },
+  {
+   "id": "CymB_sD11bI",
+   "title": "Loyalty Programs",
+   "course": "Sales",
+   "section": "Promotions"
+  },
+  {
+   "id": "zjUHM0TSKZ0",
+   "title": "Gift Card Programs",
+   "course": "Sales",
+   "section": "Promotions"
+  },
+  {
+   "id": "d97m_ns40qU",
+   "title": "Sales Tax: Part 1",
+   "course": "Sales",
+   "section": "Sales Tax"
+  },
+  {
+   "id": "gNuXCNm3kH0",
+   "title": "Sales Tax: Part 2",
+   "course": "Sales",
+   "section": "Sales Tax"
+  },
+  {
+   "id": "PwbZ-6gDxmg",
+   "title": "Sales Tax: Part 3",
+   "course": "Sales",
+   "section": "Sales Tax"
+  },
+  {
+   "id": "fyFPOUx2LJc",
+   "title": "Delivery Prices",
+   "course": "Sales",
+   "section": "Delivery"
+  },
+  {
+   "id": "X5lTOpEsoT8",
+   "title": "Delivery Lead Times",
+   "course": "Sales",
+   "section": "Delivery"
+  },
+  {
+   "id": "V4BdvVcuajY",
+   "title": "Dropshipping",
+   "course": "Sales",
+   "section": "Delivery"
+  },
+  {
+   "id": "VeQxtSIfMuc",
+   "title": "Pricelists: Multiple Prices Per Product",
+   "course": "Sales",
+   "section": "Pricelists"
+  },
+  {
+   "id": "d-upMNmIftU",
+   "title": "Pricelists - Discounts and Margins",
+   "course": "Sales",
+   "section": "Pricelists"
+  },
+  {
+   "id": "0F0hlB6dl-Q",
+   "title": "Commission Plans",
+   "course": "Sales",
+   "section": "Commissions"
+  },
+  {
+   "id": "l_wf90mwWo0",
+   "title": "Gelato Connector",
+   "course": "Sales",
+   "section": "Integrations"
+  },
+  {
+   "id": "W_0-gUc87WI",
+   "title": "Quote calculator Basics",
+   "course": "Sales",
+   "section": "Integrations"
+  },
+  {
+   "id": "n0_MO0CWo6s",
+   "title": "Configure a Shopify connector account",
+   "course": "Sales",
+   "section": "Integrations"
+  },
+  {
+   "id": "6SHsfl8gVbk",
+   "title": "Set up the Shopify connector",
+   "course": "Sales",
+   "section": "Integrations"
+  },
+  {
+   "id": "xkinWzs6zA0",
+   "title": "Shopify connector account form overview",
+   "course": "Sales",
+   "section": "Integrations"
+  },
+  {
+   "id": "PYTLui2GWjY",
+   "title": "Shopify connector delivery flow for Odoo 19",
+   "course": "Sales",
+   "section": "Integrations"
+  },
+  {
+   "id": "U1nFe6wYfxA",
+   "title": "Using the Product Import Template",
+   "course": "Sales",
+   "section": "General"
+  },
+  {
+   "id": "EAFNE9v6PiA",
+   "title": "Sign Basics",
+   "course": "Sign",
+   "section": "Sign"
+  },
+  {
+   "id": "MP-DJQXRIjs",
+   "title": "Project basics and your first task",
+   "course": "Project & Timesheets",
+   "section": "Project Management"
+  },
+  {
+   "id": "yZzHsTRyy4s",
+   "title": "Creating tasks from emails and web forms",
+   "course": "Project & Timesheets",
+   "section": "Tasks Management"
+  },
+  {
+   "id": "QUWAKXQqV38",
+   "title": "Creating tasks from sales orders",
+   "course": "Project & Timesheets",
+   "section": "Tasks Management"
+  },
+  {
+   "id": "RToV-_h828g",
+   "title": "Recurring tasks",
+   "course": "Project & Timesheets",
+   "section": "Tasks Management"
+  },
+  {
+   "id": "T9GDplA2_LM",
+   "title": "Visibility and collaboration",
+   "course": "Project & Timesheets",
+   "section": "Tasks Management"
+  },
+  {
+   "id": "cdWe4hRFqP8",
+   "title": "Automations",
+   "course": "Project & Timesheets",
+   "section": "Tasks Management"
+  },
+  {
+   "id": "kkNVgjA4lx0",
+   "title": "Timesheets configuration and leaderboard",
+   "course": "Project & Timesheets",
+   "section": "Time Management"
+  },
+  {
+   "id": "MY2WDMRx3CA",
+   "title": "Invoicing project tasks",
+   "course": "Project & Timesheets",
+   "section": "Invoicing"
+  },
+  {
+   "id": "tqELamDjaNU",
+   "title": "Measuring project's profitability",
+   "course": "Project & Timesheets",
+   "section": "Reporting and Analytics"
+  },
+  {
+   "id": "LX_kRgiqUj0",
+   "title": "Purchase Basics: Your First Request for Quotation",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "fge0ttQ94Xg",
+   "title": "Purchase Basics: Paying your First Vendor",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "PM18TP8MZ0I",
+   "title": "Purchase Lead Times",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "y1b18-c3F_s",
+   "title": "Reordering Rules",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "MtO2XNCE-xw",
+   "title": "Vendor Pricelists",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "VubhZlCYDp0",
+   "title": "Approvals & Warnings",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "LK1UpEUBOCw",
+   "title": "Suggested quantities on POs",
+   "course": "Purchase",
+   "section": "Buy and Receive"
+  },
+  {
+   "id": "qybxkC1tENs",
+   "title": "Blanket Orders",
+   "course": "Purchase",
+   "section": "Manage Deals"
+  },
+  {
+   "id": "Yu48MWUVxgI",
+   "title": "Bill Control",
+   "course": "Purchase",
+   "section": "Manage Deals"
+  },
+  {
+   "id": "YUTArZ4STcM",
+   "title": "Purchase Agreements: Alternative RFQs - Calls for Tender",
+   "course": "Purchase",
+   "section": "Manage Deals"
+  },
+  {
+   "id": "xjdqJVy6VUo",
+   "title": "Purchase Agreement: Purchase Template",
+   "course": "Purchase",
+   "section": "Manage Deals"
+  },
+  {
+   "id": "KI78WxaAJg8",
+   "title": "EDI Purchase to Sales Order",
+   "course": "Purchase",
+   "section": "Manage Deals"
+  },
+  {
+   "id": "X0oPzFw8JpI",
+   "title": "Employees Basics",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "b9CWKYAJrr4",
+   "title": "Presence Control",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "OEdRSbbYI14",
+   "title": "Departments",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "EnMondApUtY",
+   "title": "Add an Employee",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "bVbR3tqTHpQ",
+   "title": "Onboarding",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "CDoc2ndAufI",
+   "title": "Certifications",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "ZmEFgl3N2vY",
+   "title": "Badges",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "idf86c350U0",
+   "title": "Offboarding",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "G3bEOwfrVrc",
+   "title": "Employee Retention Rate",
+   "course": "Human Resources",
+   "section": "Manage your employees"
+  },
+  {
+   "id": "zdaELnDd13I",
+   "title": "Attendances Basics",
+   "course": "Human Resources",
+   "section": "Attendances"
+  },
+  {
+   "id": "gB_y1GRLwys",
+   "title": "Attendances Management",
+   "course": "Human Resources",
+   "section": "Attendances"
+  },
+  {
+   "id": "IMTzJoWrtU0",
+   "title": "Overtime",
+   "course": "Human Resources",
+   "section": "Attendances"
+  },
+  {
+   "id": "uzwSxfGEK8Q",
+   "title": "Recruitment Basics",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "0Uj0n0ERx6I",
+   "title": "Create Job Positions",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "xEcOUeBWGL0",
+   "title": "Add Applicants",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "-xHbo21qjJI",
+   "title": "Interview Forms",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "O-ruLrLXoNE",
+   "title": "Applicant Skills",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "_tGbu-b1bIc",
+   "title": "Schedule Interviews",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "WXn5il2wB0o",
+   "title": "Hire an Applicant",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "6JfjBoIzgZw",
+   "title": "Recruitment Analytics",
+   "course": "Human Resources",
+   "section": "Recruitment"
+  },
+  {
+   "id": "ot51_hzEptc",
+   "title": "Referrals Basics",
+   "course": "Human Resources",
+   "section": "Referrals"
+  },
+  {
+   "id": "FYkWjKTKX6o",
+   "title": "Share Job Positions",
+   "course": "Human Resources",
+   "section": "Referrals"
+  },
+  {
+   "id": "M8BSg8VMta4",
+   "title": "Share Jobs",
+   "course": "Human Resources",
+   "section": "Referrals"
+  },
+  {
+   "id": "pBlGLhBoRvY",
+   "title": "Referral Points",
+   "course": "Human Resources",
+   "section": "Referrals"
+  },
+  {
+   "id": "oQRxU4puI34",
+   "title": "Referral Rewards",
+   "course": "Human Resources",
+   "section": "Referrals"
+  },
+  {
+   "id": "TV0k3ro2sjI",
+   "title": "Referral Alerts",
+   "course": "Human Resources",
+   "section": "Referrals"
+  },
+  {
+   "id": "caV-_fU5qfg",
+   "title": "Appraisals Basics",
+   "course": "Human Resources",
+   "section": "Appraisals"
+  },
+  {
+   "id": "SIz5PVhBYxg",
+   "title": "Conduct Appraisals",
+   "course": "Human Resources",
+   "section": "Appraisals"
+  },
+  {
+   "id": "mGrfdLDNGiw",
+   "title": "Appraisal Goals",
+   "course": "Human Resources",
+   "section": "Appraisals"
+  },
+  {
+   "id": "O19X_lNEwIA",
+   "title": "Appraisal Reporting",
+   "course": "Human Resources",
+   "section": "Appraisals"
+  },
+  {
+   "id": "q9dmuj9huFk",
+   "title": "Payroll Basics",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "qjfJXsg_zSA",
+   "title": "Salary Configuration",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "MobxHDWEzXs",
+   "title": "Contract Templates",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "M0_egHzEC0E",
+   "title": "Employee Contracts",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "m0t1Z4NY0Ww",
+   "title": "Salary Attachments",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "ijVjz469WHc",
+   "title": "Work Entries",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "jjLrgiQoJsc",
+   "title": "Payslips",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "wZducJaKuGI",
+   "title": "Payroll Batches",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "NrTLOOuVehQ",
+   "title": "Payroll Reporting",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "3jVpL2ONOTQ",
+   "title": "Payroll Localization Basics",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "GHMAZTwJ-9c",
+   "title": "Email Expenses",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "blvPSbgssoI",
+   "title": "Log Expenses",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "PV2nsCeWVCs",
+   "title": "Expense Reports",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "6FdP5pOvxwc",
+   "title": "Manage Expenses",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "B4iSBSeSK24",
+   "title": "Re-invoice Expenses",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "rye1ajtwCis",
+   "title": "Create Expenses Cards",
+   "course": "Human Resources",
+   "section": "Payroll and Expenses"
+  },
+  {
+   "id": "W3K_9S3Qsj8",
+   "title": "Time Off Basics",
+   "course": "Human Resources",
+   "section": "Time Off"
+  },
+  {
+   "id": "p9K5DoMcPSM",
+   "title": "Time Off Types",
+   "course": "Human Resources",
+   "section": "Time Off"
+  },
+  {
+   "id": "BJRERAiOozA",
+   "title": "Accrual Plans",
+   "course": "Human Resources",
+   "section": "Time Off"
+  },
+  {
+   "id": "imNcKd8BQec",
+   "title": "Allocations",
+   "course": "Human Resources",
+   "section": "Time Off"
+  },
+  {
+   "id": "pJfKPgeEiGA",
+   "title": "Time Off Management",
+   "course": "Human Resources",
+   "section": "Time Off"
+  },
+  {
+   "id": "PhZYGTNxu6s",
+   "title": "Time Off Reporting",
+   "course": "Human Resources",
+   "section": "Time Off"
+  },
+  {
+   "id": "CmztKGWVph0",
+   "title": "Frontdesk Basics",
+   "course": "Human Resources",
+   "section": "Frontdesk"
+  },
+  {
+   "id": "hHFoy_a2iSo",
+   "title": "Frontdesk Management",
+   "course": "Human Resources",
+   "section": "Frontdesk"
+  },
+  {
+   "id": "_oFiIVuXV7k",
+   "title": "Fleet Basics",
+   "course": "Human Resources",
+   "section": "Fleet"
+  },
+  {
+   "id": "ie9X1MNUFcs",
+   "title": "Adding Vehicles",
+   "course": "Human Resources",
+   "section": "Fleet"
+  },
+  {
+   "id": "zFNHNHI2p6M",
+   "title": "Servicing Vehicles",
+   "course": "Human Resources",
+   "section": "Fleet"
+  },
+  {
+   "id": "hAomtwNerdM",
+   "title": "Manage Accidents",
+   "course": "Human Resources",
+   "section": "Fleet"
+  },
+  {
+   "id": "vSOihwvGf_4",
+   "title": "Fleet Reporting",
+   "course": "Human Resources",
+   "section": "Fleet"
+  },
+  {
+   "id": "_MkDQ7hrDn0",
+   "title": "Lunch Basics",
+   "course": "Human Resources",
+   "section": "Lunch"
+  },
+  {
+   "id": "ydg64NYZZzI",
+   "title": "Placing Lunch Orders",
+   "course": "Human Resources",
+   "section": "Lunch"
+  },
+  {
+   "id": "qcCQOCjGvT0",
+   "title": "Managing Orders",
+   "course": "Human Resources",
+   "section": "Lunch"
+  },
+  {
+   "id": "cKCytSOotDo",
+   "title": "Approvals Basics",
+   "course": "Human Resources",
+   "section": "Approvals"
+  },
+  {
+   "id": "Xn9_LuE9Hio",
+   "title": "Approvals Management",
+   "course": "Human Resources",
+   "section": "Approvals"
+  },
+  {
+   "id": "k4Cqt15-q4o",
+   "title": "Key Odoo concepts",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Introduction to Spreadsheet and Dashboards"
+  },
+  {
+   "id": "xOI9LwyCaTc",
+   "title": "Odoo Spreadsheet basics",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Introduction to Spreadsheet and Dashboards"
+  },
+  {
+   "id": "joSxXsb8viI",
+   "title": "Odoo Dashboards basics",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Introduction to Spreadsheet and Dashboards"
+  },
+  {
+   "id": "930h9cU1Mmc",
+   "title": "Insert an Odoo list",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Insert and link to Odoo data"
+  },
+  {
+   "id": "_hm2FEmGIgE",
+   "title": "Insert an Odoo pivot table",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Insert and link to Odoo data"
+  },
+  {
+   "id": "nF-aQW215cM",
+   "title": "Insert an Odoo chart",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Insert and link to Odoo data"
+  },
+  {
+   "id": "kybT3hvHaY0",
+   "title": "Manipulate a pivot table",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Work with data"
+  },
+  {
+   "id": "hYlqTrgtXQw",
+   "title": "Dashboard from scratch",
+   "course": "Spreadsheet & Dashboards",
+   "section": "Present and visualize data"
+  },
+  {
+   "id": "kU1cGTZPCy0",
+   "title": "Quality - Spreadsheet checks",
+   "course": "Spreadsheet & Dashboards",
+   "section": "App integrations"
+  },
+  {
+   "id": "kVqxEJLQftE",
+   "title": "Quality - Spreadsheet template formatting",
+   "course": "Spreadsheet & Dashboards",
+   "section": "App integrations"
+  },
+  {
+   "id": "_sI-HH1C8XQ",
+   "title": "Marketing Basics",
+   "course": "Marketing",
+   "section": "Basics"
+  },
+  {
+   "id": "MD8gRS9hWso",
+   "title": "Email Marketing Essentials",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "cV6PQyqiPuk",
+   "title": "Email Campaigns",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "-2t8tZJYi4U",
+   "title": "Mailing Lists",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "NRd9igxqhXs",
+   "title": "Email Marketing Templates",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "YZEOYyp9WwE",
+   "title": "Advanced Email Marketing Templates",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "cQhdh0xZSGc",
+   "title": "Manage Opt-Outs",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "FUhTrqxWnsQ",
+   "title": "A/B Testing",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "E2OzRM62Avo",
+   "title": "Lost Leads Reactivation Email",
+   "course": "Marketing",
+   "section": "Email Marketing"
+  },
+  {
+   "id": "3L8DFFDUQhU",
+   "title": "SMS Marketing",
+   "course": "Marketing",
+   "section": "SMS Marketing"
+  },
+  {
+   "id": "X5xor7wu_i0",
+   "title": "Your First SMS Marketing Message",
+   "course": "Marketing",
+   "section": "SMS Marketing"
+  },
+  {
+   "id": "zfpwtFFw9Oc",
+   "title": "Social Marketing Basics",
+   "course": "Marketing",
+   "section": "Social Marketing"
+  },
+  {
+   "id": "Hx8m-ae2Adc",
+   "title": "Social Marketing Campaigns",
+   "course": "Marketing",
+   "section": "Social Marketing"
+  },
+  {
+   "id": "mQqkd3Vl7eU",
+   "title": "Social Marketing Campaign Channels",
+   "course": "Marketing",
+   "section": "Social Marketing"
+  },
+  {
+   "id": "vph-8Elcbbo",
+   "title": "Push Notifications and Live Chat",
+   "course": "Marketing",
+   "section": "Social Marketing"
+  },
+  {
+   "id": "p8tDeDQHbaE",
+   "title": "Marketing Automation Essentials",
+   "course": "Marketing",
+   "section": "Marketing Automation"
+  },
+  {
+   "id": "Ln5BjZoiDpc",
+   "title": "Marketing Activities",
+   "course": "Marketing",
+   "section": "Marketing Automation"
+  },
+  {
+   "id": "cu9CjGydnY8",
+   "title": "Testing/Running Campaigns",
+   "course": "Marketing",
+   "section": "Marketing Automation"
+  },
+  {
+   "id": "LsatXuSWhR0",
+   "title": "What is Studio?",
+   "course": "Studio",
+   "section": "Studio basics"
+  },
+  {
+   "id": "pnjArt5VWz8",
+   "title": "Studio Basics",
+   "course": "Studio",
+   "section": "Studio basics"
+  },
+  {
+   "id": "Iu-V_K79rxs",
+   "title": "Simple fields",
+   "course": "Studio",
+   "section": "Studio basics"
+  },
+  {
+   "id": "FKaddmfb9Io",
+   "title": "Add a field",
+   "course": "Studio",
+   "section": "Studio basics"
+  },
+  {
+   "id": "5a2Xg0SroaU",
+   "title": "Relational fields",
+   "course": "Studio",
+   "section": "Studio basics"
+  },
+  {
+   "id": "iDrishPekE0",
+   "title": "Customize views",
+   "course": "Studio",
+   "section": "Studio basics"
+  },
+  {
+   "id": "Nv77L1Ypa8k",
+   "title": "Create your app",
+   "course": "Studio",
+   "section": "Create your app"
+  },
+  {
+   "id": "LugaO3xwzno",
+   "title": "Customize your app (part 1)",
+   "course": "Studio",
+   "section": "Create your app"
+  },
+  {
+   "id": "8mUTIqp8bko",
+   "title": "Customize your app (part 2)",
+   "course": "Studio",
+   "section": "Create your app"
+  },
+  {
+   "id": "7ndKKlq8Oq4",
+   "title": "Filter rules and domains",
+   "course": "Studio",
+   "section": "Create your app"
+  },
+  {
+   "id": "5jrwei9tM8s",
+   "title": "Customize reports",
+   "course": "Studio",
+   "section": "Reports"
+  },
+  {
+   "id": "t6LjUIl2fZI",
+   "title": "Create a new report",
+   "course": "Studio",
+   "section": "Reports"
+  },
+  {
+   "id": "1IQB_q-2YW8",
+   "title": "Automations",
+   "course": "Studio",
+   "section": "Automations"
+  },
+  {
+   "id": "im_l0-t4NvE",
+   "title": "Approval rules",
+   "course": "Studio",
+   "section": "Automations"
+  },
+  {
+   "id": "DrWrfZvRprQ",
+   "title": "Subscription Basics",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "8HT9FhG9I5Q",
+   "title": "Subscription Products",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "Ir8foeWnSYI",
+   "title": "Renewing and Closing Subscriptions",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "H8sHo0MBqro",
+   "title": "Upsell Subscriptions",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "Dtow9yZnKh0",
+   "title": "Subscription Reports",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "R23ygFQrhmw",
+   "title": "Automation Rules",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "ZabnNmxnU8M",
+   "title": "Self-Service Subscriptions",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "OXLuF4a0vFY",
+   "title": "Scheduled actions in Subscriptions",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "7vBU1eDC94Y",
+   "title": "Subscriptions MRR Reports",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "G_AD4FqQY6w",
+   "title": "Subscriptions Behavioral Reports",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "mVqSrelaGSk",
+   "title": "Subscriptions with Deliveries",
+   "course": "Subscription",
+   "section": "Subscription"
+  },
+  {
+   "id": "MjUkxWFo0Zo",
+   "title": "Accounting integration and Workflow Actions",
+   "course": "Documents",
+   "section": "Overview"
+  },
+  {
+   "id": "CE-SahTUC9A",
+   "title": "Configuring a Rental Product",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "dMHpiJvEXss",
+   "title": "Planning and Reporting",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "hpQHu6U_IKk",
+   "title": "Create a Rental Order",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "TN51MBlSZKM",
+   "title": "Configure a Rental Service",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "2AyqLK4LFyo",
+   "title": "Hotel Booking",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "NdOm9Pav20k",
+   "title": "Rental Contracts And Down Payments",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "WzqGDN2X350",
+   "title": "Default Rental Time Windows",
+   "course": "Rental",
+   "section": "Rental"
+  },
+  {
+   "id": "0GUx0Lcr1ZY",
+   "title": "eLearning Basics",
+   "course": "eLearning",
+   "section": "eLearning"
+  },
+  {
+   "id": "rcaueKHwSZw",
+   "title": "Content, Questions, and Publishing",
+   "course": "eLearning",
+   "section": "eLearning"
+  },
+  {
+   "id": "GewHZ9JKQHQ",
+   "title": "Helpdesk Overview",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "wW1QcF-j1Mw",
+   "title": "Helpdesk Teams",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "yIemkwQy3a4",
+   "title": "Website & Email Tickets",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "pBwzouccajY",
+   "title": "Service Level Agreements (SLAs)",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "cUrdQ3opMn8",
+   "title": "Helpdesk Stages",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "H0Pbd77drj0",
+   "title": "Helpdesk Tickets",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "IAIKEdUXUoU",
+   "title": "Inactive Tickets",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "-qGMM8GlmKA",
+   "title": "Channels: How to Receive Tickets",
+   "course": "Helpdesk",
+   "section": "Overview"
+  },
+  {
+   "id": "gaDZEbUwEdA",
+   "title": "Live Chat: Setup",
+   "course": "Helpdesk",
+   "section": "Live Chat"
+  },
+  {
+   "id": "u2vi8mSVSMc",
+   "title": "Live Chat: Chat Bot",
+   "course": "Helpdesk",
+   "section": "Live Chat"
+  },
+  {
+   "id": "m-BKhVwK6Og",
+   "title": "Live Chat: Participate",
+   "course": "Helpdesk",
+   "section": "Live Chat"
+  },
+  {
+   "id": "d_offvCa3H4",
+   "title": "Live Chat: From Chatbot to SO",
+   "course": "Helpdesk",
+   "section": "Live Chat"
+  },
+  {
+   "id": "ZpDk44rmMp4",
+   "title": "Live Chat: Track Visitor Activity",
+   "course": "Helpdesk",
+   "section": "Live Chat"
+  },
+  {
+   "id": "vnza7R-Eb2o",
+   "title": "Customer Ratings",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "thwZnwPquTI",
+   "title": "After-Sales Features",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "_qLdR4wjrqs",
+   "title": "Track & Bill Time",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "XZq_U7a9h6s",
+   "title": "Helpdesk Reporting",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "NFIrswF1HKo",
+   "title": "Help Center",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "HnVlbKd7ctc",
+   "title": "Help Center - elearning",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "8tJqZO19LiA",
+   "title": "Help Center - Forums",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "QKKhtM88afg",
+   "title": "Help Center - Knowledge",
+   "course": "Helpdesk",
+   "section": "Advanced"
+  },
+  {
+   "id": "fIEpGdvGtb8",
+   "title": "Create articles",
+   "course": "Knowledge",
+   "section": "Creation"
+  },
+  {
+   "id": "M5nPgM9syyA",
+   "title": "Access rights",
+   "course": "Knowledge",
+   "section": "Collaboration"
+  },
+  {
+   "id": "V_OWRXpdMc4",
+   "title": "Knowledge and Odoo apps",
+   "course": "Knowledge",
+   "section": "Integration"
+  },
+  {
+   "id": "DqGzYS5AeCk",
+   "title": "Your first Field Service task",
+   "course": "Field Service",
+   "section": "Overview"
+  },
+  {
+   "id": "fLZmB77dO9I",
+   "title": "Product management in Field Service",
+   "course": "Field Service",
+   "section": "Overview"
+  },
+  {
+   "id": "6pNcqEMXCxc",
+   "title": "Customizing worksheets",
+   "course": "Field Service",
+   "section": "Overview"
+  },
+  {
+   "id": "fz_pa1VZAeA",
+   "title": "Using maps in Field Service",
+   "course": "Field Service",
+   "section": "Overview"
+  },
+  {
+   "id": "BM8zmnNpNuo",
+   "title": "Planning basics and your first shift",
+   "course": "Planning",
+   "section": "Planning"
+  },
+  {
+   "id": "o6BPck13VeU",
+   "title": "Switching and unassigning shifts",
+   "course": "Planning",
+   "section": "Planning"
+  },
+  {
+   "id": "CbH3weDMQok",
+   "title": "Plan Services from a SO (Odoo 19.4)",
+   "course": "Planning",
+   "section": "Field Service Interventions"
+  },
+  {
+   "id": "G9ywTuUIrpw",
+   "title": "Plan Services from a Project",
+   "course": "Planning",
+   "section": "Field service and project operations"
+  },
+  {
+   "id": "32q1sHe9ANQ",
+   "title": "Field Service Products, Roles, & Worksheets",
+   "course": "Planning",
+   "section": "Field service and project operations"
+  },
+  {
+   "id": "0Kv5Mh01ZoU",
+   "title": "Engineering Change Orders",
+   "course": "PLM",
+   "section": "Basics"
+  },
+  {
+   "id": "6BT7G5_x3U4",
+   "title": "ECO Approvals",
+   "course": "PLM",
+   "section": "Basics"
+  },
+  {
+   "id": "CTztJyMxLUw",
+   "title": "Quality Basics",
+   "course": "Quality",
+   "section": "Quality Basics"
+  },
+  {
+   "id": "iygwkattF-M",
+   "title": "Setting Up Quality Control Points",
+   "course": "Quality",
+   "section": "Quality Basics"
+  },
+  {
+   "id": "UdGiwZG41E4",
+   "title": "Quality Checks",
+   "course": "Quality",
+   "section": "Quality Basics"
+  },
+  {
+   "id": "dXPyXCPCyH8",
+   "title": "Quality Alerts",
+   "course": "Quality",
+   "section": "Quality Basics"
+  },
+  {
+   "id": "TRUJuId47_o",
+   "title": "Failure Locations",
+   "course": "Quality",
+   "section": "Quality Basics"
+  },
+  {
+   "id": "eCsIr7NOx54",
+   "title": "Worksheet Checks",
+   "course": "Quality",
+   "section": "Check Types"
+  },
+  {
+   "id": "rr1SntCB5sk",
+   "title": "Measure Checks",
+   "course": "Quality",
+   "section": "Check Types"
+  },
+  {
+   "id": "V9F_1uJLrR4",
+   "title": "Take a Picture Checks",
+   "course": "Quality",
+   "section": "Check Types"
+  },
+  {
+   "id": "S-qhZNQ0MVs",
+   "title": "Quality Checks For Incoming Shipments",
+   "course": "Quality",
+   "section": "Check Types"
+  },
+  {
+   "id": "obE8tTD1dAw",
+   "title": "Linking Quality Checks with Manufacturing Orders",
+   "course": "Quality",
+   "section": "Check Types"
+  },
+  {
+   "id": "NkedcI8epAU",
+   "title": "Appointments Basics",
+   "course": "Appointments",
+   "section": "Appointments"
+  },
+  {
+   "id": "NkjhP-V5hfM",
+   "title": "Creating Opportunities",
+   "course": "Appointments",
+   "section": "Appointments"
+  },
+  {
+   "id": "sReUxSnbGPg",
+   "title": "Flexible Scheduling",
+   "course": "Appointments",
+   "section": "Appointments"
+  },
+  {
+   "id": "aCwSxElUeX8",
+   "title": "Events Basics",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "9UTcV9zp5jQ",
+   "title": "Communication & Attendance",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "_lmEDgja50U",
+   "title": "Attendance by Barcode",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "TyypyA1abpg",
+   "title": "Event Tracks",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "qKdFUdzcqBg",
+   "title": "Talk Proposals",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "eVT09SUnBwQ",
+   "title": "Communicate with Speakers",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "I28Mdj2Taas",
+   "title": "Events Lead Generation",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "HtNn4rodpIk",
+   "title": "Live Broadcast & Gamification",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "ZMxq_GzjLfM",
+   "title": "Community Rooms",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "QMapKBCBhvg",
+   "title": "Online Exhibitors",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "ZJu62k6DyD8",
+   "title": "Exhibitor Booths",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "KxwSc8epcX0",
+   "title": "Event Templates",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "j9GYWgaXK68",
+   "title": "Edit and Publish SEO-friendly Events",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "I2Knk_d5Buw",
+   "title": "Measure Your Success",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "MGJiqCc6LrI",
+   "title": "Multi-slot events",
+   "course": "Events",
+   "section": "Events"
+  },
+  {
+   "id": "iZ-W5qMYJy0",
+   "title": "Survey Essentials",
+   "course": "Surveys",
+   "section": "Surveys"
+  },
+  {
+   "id": "JYI0-RMdCfw",
+   "title": "Questions & Sections",
+   "course": "Surveys",
+   "section": "Surveys"
+  },
+  {
+   "id": "3y0cGtE2YUY",
+   "title": "Survey Analysis",
+   "course": "Surveys",
+   "section": "Surveys"
+  },
+  {
+   "id": "u89NA8sppfg",
+   "title": "Conditional Displays",
+   "course": "Surveys",
+   "section": "Surveys"
+  },
+  {
+   "id": "CBwt-I5iNfw",
+   "title": "Live Session Survey",
+   "course": "Surveys",
+   "section": "Surveys"
+  },
+  {
+   "id": "DxBkKs4wxo4",
+   "title": "Picking with Reserved Lots & Serial Numbers",
+   "course": "Barcode",
+   "section": "Barcode"
+  },
+  {
+   "id": "1p82qk8cMpg",
+   "title": "Scan Barcodes on Product Packaging",
+   "course": "Barcode",
+   "section": "Barcode"
+  },
+  {
+   "id": "6zBz93AIXBo",
+   "title": "Process and Cancel MOs Using Barcodes",
+   "course": "Barcode",
+   "section": "Barcode"
+  },
+  {
+   "id": "2ojxIbTq41Q",
+   "title": "Consuming Components Using Barcodes",
+   "course": "Barcode",
+   "section": "Barcode"
+  },
+  {
+   "id": "LGJJemFE-C0",
+   "title": "Barcode Basics",
+   "course": "Barcode",
+   "section": "Autres"
+  },
+  {
+   "id": "hpd2vpcovuc",
+   "title": "Printing Barcodes",
+   "course": "Barcode",
+   "section": "Autres"
+  },
+  {
+   "id": "Xsq2lf9O7aQ",
+   "title": "Barcode Commands and Operations",
+   "course": "Barcode",
+   "section": "Autres"
+  },
+  {
+   "id": "tLvhPwEIj2g",
+   "title": "Scanning Products in a PoS",
+   "course": "Barcode",
+   "section": "Autres"
+  },
+  {
+   "id": "myzf7yEq8Hg",
+   "title": "Scanning Receipts and Deliveries",
+   "course": "Barcode",
+   "section": "Autres"
+  },
+  {
+   "id": "DQVfnM8OMbU",
+   "title": "Scanning Inventory Adjustments and Internal Transfers",
+   "course": "Barcode",
+   "section": "Autres"
+  },
+  {
+   "id": "0_B44ukXVs4",
+   "title": "IoT Box Basics",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "gnTaiW65ncg",
+   "title": "IoT Box: Advanced Configuration",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "7xlgVrhMhEU",
+   "title": "Flashing an Image onto the IoT",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "9maW3p7nrsM",
+   "title": "IoT Box: Using Ethernet",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "9kj0o0Tzd2Y",
+   "title": "IoT Box: Wi-Fi",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "VfX54CJPNLI",
+   "title": "Windows IoT",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "ae4EcAaatBE",
+   "title": "Connecting a Device",
+   "course": "Internet of Things (IoT)",
+   "section": "Internet of Things (IoT)"
+  },
+  {
+   "id": "F53iQcG-24s",
+   "title": "Sales Calls With VoIP",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Basics"
+  },
+  {
+   "id": "yXoc5UZkTqk",
+   "title": "Working as a Support Agent",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Basics"
+  },
+  {
+   "id": "mSTlcYPkR-M",
+   "title": "Set Up Odoo VoIP with Axivox",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Basics"
+  },
+  {
+   "id": "Nc7O4Y2ZU2M",
+   "title": "Make, Receive, Transfer, and Forward Calls",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Basics"
+  },
+  {
+   "id": "p4dCxjJHKE8",
+   "title": "Voicemails and Audio Messages",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Basics"
+  },
+  {
+   "id": "_aNTHUI3sJI",
+   "title": "Devices and Integrations",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "kprVOjx5AL8",
+   "title": "Call Queues",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "bWB7CfCGOdc",
+   "title": "Dynamic Caller ID",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "17WoOtnT51M",
+   "title": "Conference Calls",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "5AXacek99H4",
+   "title": "Introduction to Dial Plans",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "fDcM7kfcnHE",
+   "title": "Advanced Dial Plans",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "e8kzL5E6cNw",
+   "title": "Manage Odoo VoIP Users in Axivox",
+   "course": "VoIP: Voice over IP",
+   "section": "VoIP Advanced"
+  },
+  {
+   "id": "TNgGx44kSG4",
+   "title": "Multi company",
+   "course": "Features and Global Settings",
+   "section": "Features and Global Settings"
+  },
+  {
+   "id": "P7KuI6DEOlA",
+   "title": "Branded T-shirts: Case",
+   "course": "Business Cases",
+   "section": "Branded T-shirts"
+  },
+  {
+   "id": "5N-aKmDxeBI",
+   "title": "Branded T-shirts: Solution",
+   "course": "Business Cases",
+   "section": "Branded T-shirts"
+  },
+  {
+   "id": "bTEW3bRzzO0",
+   "title": "Motorcycle Company: Case",
+   "course": "Business Cases",
+   "section": "Electric Motorbike"
+  },
+  {
+   "id": "rpyb7iliIyA",
+   "title": "Motorcycle Company: Solution",
+   "course": "Business Cases",
+   "section": "Electric Motorbike"
+  },
+  {
+   "id": "Tc6Vj5y6v-8",
+   "title": "AirProof Drones: Case",
+   "course": "Business Cases",
+   "section": "AirProof 2.0"
+  },
+  {
+   "id": "ciGoeS3ptsw",
+   "title": "AirProof Drones: Solution",
+   "course": "Business Cases",
+   "section": "AirProof 2.0"
+  },
+  {
+   "id": "OkuOzZ0-wnM",
+   "title": "Superstar Logistic: Case",
+   "course": "Business Cases",
+   "section": "Advanced Inventory Management"
+  },
+  {
+   "id": "W_M307-GHkY",
+   "title": "Superstar Logistic: Solution",
+   "course": "Business Cases",
+   "section": "Advanced Inventory Management"
+  },
+  {
+   "id": "IFStcJJg_JA",
+   "title": "AI Agents",
+   "course": "Odoo AI - Business Cases",
+   "section": "Overview"
+  },
+  {
+   "id": "816hbNEsfOE",
+   "title": "AI Live Chat",
+   "course": "Odoo AI - Business Cases",
+   "section": "Overview"
+  },
+  {
+   "id": "LPqeVE9rSAo",
+   "title": "AI Fields",
+   "course": "Odoo AI - Business Cases",
+   "section": "Overview"
+  },
+  {
+   "id": "z8k7Xcw50oI",
+   "title": "Writing and Improving text with AI",
+   "course": "Odoo AI - Business Cases",
+   "section": "Overview"
+  },
+  {
+   "id": "ujXFTj6t0rM",
+   "title": "Proximity-Based Warehouse Selection",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "noZodzEr-xs",
+   "title": "AI Packing Instructions for 3PLs",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "BSjZ-gU0isg",
+   "title": "Vendor Performance Based on Quality Alerts",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "2iWuGO1fyGk",
+   "title": "Stock Inventory Report with Automatic UoM Conversion",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "UYepXqyDAOc",
+   "title": "Target-Margin Auto Pricing",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "VqEDlvRI8SA",
+   "title": "AI BoM Component Monitoring",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "LV8tR4avLFg",
+   "title": "Know What You Owe",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "56EKtx7Mps0",
+   "title": "Scrap & Rework Rate",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "EiBHwchznw8",
+   "title": "Detect Inventory Adjustment Patterns",
+   "course": "Odoo AI - Business Cases",
+   "section": "Supply Chain"
+  },
+  {
+   "id": "oQbgBrmj2Pg",
+   "title": "AI-Assisted Workflows",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "ZLARq16z_Es",
+   "title": "AI Helpdesk Ticket Routing",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "0fgVZwYHCQk",
+   "title": "Extract Task Details from Sales Orders",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "vl_v0vWSLpo",
+   "title": "Server Action Code Reviewer",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "0BjKrOTuPhQ",
+   "title": "Analyzing Analytic Budget Reports with AI",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "k2WUS1gQPhc",
+   "title": "AI Document Sorting",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "uxNplP1wuq0",
+   "title": "Rank Customers by Revenue & Profitability",
+   "course": "Odoo AI - Business Cases",
+   "section": "Administration"
+  },
+  {
+   "id": "Nipm2CiPhO4",
+   "title": "AI-Powered Applicant Screening",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "0U8Mw24LWBE",
+   "title": "Driven Fleet Service Alerts",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "HUKO4ERWDno",
+   "title": "AI That Turns Basic Contacts into Powerful Profiles",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "Hb8gUF71cTY",
+   "title": "Timesheets Description QC with AI",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "9-1mW93hucA",
+   "title": "Automatic Expense Categorization",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "FQ8s5tgDDOg",
+   "title": "Skill-Based Task Assignment",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "7B2Up7UqZI4",
+   "title": "Assessing Maintenance Risk and Optimizing Ops with AI",
+   "course": "Odoo AI - Business Cases",
+   "section": "Human Resources"
+  },
+  {
+   "id": "63oKGbVtJZY",
+   "title": "Vibe Check CRM Leads using AI",
+   "course": "Odoo AI - Business Cases",
+   "section": "Marketing"
+  },
+  {
+   "id": "fDU9GCR_up0",
+   "title": "Website Copy Integration",
+   "course": "Odoo AI - Business Cases",
+   "section": "Marketing"
+  },
+  {
+   "id": "-fkVvLs7R2I",
+   "title": "AI: Generate Images",
+   "course": "Odoo AI - Business Cases",
+   "section": "Marketing"
+  },
+  {
+   "id": "6Jm48oSRlcA",
+   "title": "Creation of the database",
+   "course": "Odoo Academy - Accounting",
+   "section": "Database sharing and configuration"
+  },
+  {
+   "id": "24dGNQUiVH8",
+   "title": "General settings",
+   "course": "Odoo Academy - Accounting",
+   "section": "Database sharing and configuration"
+  },
+  {
+   "id": "AP1rzq5oHAQ",
+   "title": "Creation folder and alias - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "UWiq_39GSHI",
+   "title": "Creation folder and alias - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "mjGA9_voZyU",
+   "title": "Creation folder and alias - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "97G7C6bxHso",
+   "title": "Split a document and enable actions - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "PqpffS6VJBg",
+   "title": "Split a document and enable actions - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "KtaGQoBkR9M",
+   "title": "Split a document and enable actions - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "qecW4VeUcKo",
+   "title": "Request missing document - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "koyzNNNQl8s",
+   "title": "Request missing document - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "o0ro8yY3mmQ",
+   "title": "Request missing document - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "Ucnx2XlmRoo",
+   "title": "Indexed content - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "Z6_kxAzznhQ",
+   "title": "Indexed content - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "tNW__A5mFTU",
+   "title": "Indexed content - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Application Documents"
+  },
+  {
+   "id": "acJTiaIi2X0",
+   "title": "Accounts Payable - Assets - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "ecOwTgJA1Rk",
+   "title": "Accounts Payable - Assets - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "MRluYB6k2AQ",
+   "title": "Accounts Payable - Asset - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "IzUKkAeRMjw",
+   "title": "Accounts Payable - Account and VAT code creation - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "7JLeqcLFSG4",
+   "title": "Accounts Payable - Account and VAT code creation - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "djZPMjmfUBk",
+   "title": "Accounts Payable - Account and VAT code creation - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "JnGwojeWaUA",
+   "title": "Accounts Payable - Deferred expenses - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "_J1UXsfu0yI",
+   "title": "Accounts Payable - Deferred expenses - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "23l8Lm0gYwU",
+   "title": "Accounts Payable - Deferred expenses - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "fehpD3nlkBU",
+   "title": "Accounts Payable - Cutoff - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "gH1UYKu7IVQ",
+   "title": "Accounts Payable - Cutoff - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "60T_GEpcAW4",
+   "title": "Accounts Payable - Cutoff - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "ff7sgHyzoIA",
+   "title": "Accounts Payable - Autopost - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "-m1D449FwsI",
+   "title": "Accounts Payable - Autopost - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "pIxSm4lz1qs",
+   "title": "Accounts Payable - Autopost - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "PS024ns8iZg",
+   "title": "Accounts Payable - Credit note - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "IViG1aC3hKM",
+   "title": "Accounts Payable - Credit note - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "aNgcVOAT2wY",
+   "title": "Accounts Payable - Credit note - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "9w86IV-DH9E",
+   "title": "Accounts Payable - Remove bill and resequence - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "CFOZvxpq8Tw",
+   "title": "Accounts Payable - Remove bill and resequence - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "JTlLwUrKSzs",
+   "title": "Accounts Payable - Remove bill and resequence - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Payable"
+  },
+  {
+   "id": "8FZgnvcpWs8",
+   "title": "Accounts Receivable - Sales - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "FBZu9W_uVU4",
+   "title": "Accounts receivable - Sales - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "quzr-F696kc",
+   "title": "Accounts Receivable - Sales - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "wQ8uoFf7HU0",
+   "title": "Accounts Receivable - PEPPOL - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "xy3QCl9edms",
+   "title": "Accounts receivable - PEPPOL - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "szn_khByIgQ",
+   "title": "Accounts receivable - PEPPOL - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "cq3n4xZh78Y",
+   "title": "Accounts Receivable - Fiscal positions - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "1PEJlzQJXXU",
+   "title": "Accounts Receivable - Fiscal positions - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "Hr8uA0Nlnks",
+   "title": "Accounts Receivable - Fiscal position - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "QmtYN4rQdSY",
+   "title": "Accounts Receivable - Foreign currency - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "rCg2JiQA5uU",
+   "title": "Accounts receivable - Foreign currency - Exercise - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "ZR_0ItI1DVY",
+   "title": "Accounts receivable - Foreign currency - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "uOwY4-TXk-8",
+   "title": "Accounts receivable - Import Excel file - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "6CMKND_-7hM",
+   "title": "Accounts receivable - Import Excel file - Exercice - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "qmzr1TbIzc0",
+   "title": "Accounts receivable - Import Excel file - Exercise - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Accounts Receivable"
+  },
+  {
+   "id": "muvguMJu4G8",
+   "title": "Miscellaneous - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Miscellaneous"
+  },
+  {
+   "id": "U0z3O75eLNA",
+   "title": "Miscellaneous - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Miscellaneous"
+  },
+  {
+   "id": "jZ2y7872ADs",
+   "title": "Miscellaneous - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Miscellaneous"
+  },
+  {
+   "id": "9UoAR6-dzdk",
+   "title": "Supplier payments - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Miscellaneous"
+  },
+  {
+   "id": "UqG04wgRjmg",
+   "title": "Supplier payments - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Miscellaneous"
+  },
+  {
+   "id": "-cIXdYcU1cA",
+   "title": "Supplier payments - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Miscellaneous"
+  },
+  {
+   "id": "aVAsg7yuLes",
+   "title": "Creation of manual bank transactions - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "UK0CC6SZk64",
+   "title": "Creation of manual bank transactions - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "GCbmgTbdgtQ",
+   "title": "Creation of manual bank transactions - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "BSCw-4CRnuw",
+   "title": "Online synchronization - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "dPVZturmVrM",
+   "title": "Online synchronization - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "KQAlkIA7yIg",
+   "title": "Online synchronization - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "WOqNvQhUsF0",
+   "title": "Codabox/Codaclean - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "1LCGDQc4VyA",
+   "title": "Manual reconciliation - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "QTWsIISJzcM",
+   "title": "Manual reconciliation - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "VqnERhtZTDw",
+   "title": "Manual reconciliation - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "fGqasFr24so",
+   "title": "Automatic reconciliation template - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "dzrNSrXohjQ",
+   "title": "Automatic reconciliation template - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "5UOb80JY430",
+   "title": "Automatic reconciliation template - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "N8g9DFeGIus",
+   "title": "Manual reconciliation template - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "ul-_c80J-DI",
+   "title": "Manual reconciliation template - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "V3EbjCVMUoo",
+   "title": "Manual reconciliation template - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "Qb7V9Y7ueGs",
+   "title": "OCR on credit cards - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "rjKfMtr4cQo",
+   "title": "OCR on credit cards - Presentation exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "tSIAw51kygM",
+   "title": "OCR on credit cards - Correction exercise",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "a8g1pFROVD4",
+   "title": "Loan management - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "6DlZl63G8eo",
+   "title": "Loan management - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "27k8_Dv6rns",
+   "title": "Loan management - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "FnF3gLYzYNU",
+   "title": "Cash discount - Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "UMolIQxbUGY",
+   "title": "Cash discount - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "QkjscSWkd2o",
+   "title": "Cash discount - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "6hhVAnV3brc",
+   "title": "Financials and reconciliation - Demonstration 7",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "6RD8vfhrzAc",
+   "title": "Financials and reconciliation - Exercise 7 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "93_F9MS5wP4",
+   "title": "Financials and reconciliation - Exercise 7 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "P3nECIvY5cg",
+   "title": "Financials and reconciliation - Demonstration 8",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "kVNxSG4NU8g",
+   "title": "Financials and reconciliation - Exercise 8 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "dP_wqWO9MoA",
+   "title": "Financials and reconciliation - Exercise 8 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "XgncruoNPYI",
+   "title": "Financials and reconciliation - Demonstration 9",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "OGZPIBadV9g",
+   "title": "Financials and reconciliation - Exercise 9 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "2XRrL1lMzB4",
+   "title": "Financials and reconciliation - Exercise 9 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Financials and reconciliation"
+  },
+  {
+   "id": "37unkU7CKkU",
+   "title": "Reporting - Demonstration 1",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "rMX5xOSme28",
+   "title": "Reporting - Exercise 1 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "JEZDGT6Gc24",
+   "title": "Reporting - Exercise 1 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "DQJjxnON1u0",
+   "title": "Reporting - Demonstration 2",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "VmIn8MzG4w8",
+   "title": "Reporting - Exercise 2 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "vAmMHH4tMWo",
+   "title": "Reporting - Exercise 2 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "EZLiv6OpHKI",
+   "title": "Reporting - Demonstration 3",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "LmvOGMvv0r8",
+   "title": "Reporting - Exercise 3 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "ChO4r_NmZqo",
+   "title": "Reporting - Exercise 3 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "x6LfQzIuuNI",
+   "title": "Reporting - Demonstration 4",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "7L1y1MvY7MU",
+   "title": "Reporting - Exercise 4 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "ipjSNkavo5U",
+   "title": "Reporting - Exercise 4 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "imwsSZRCedE",
+   "title": "Reporting - Demonstration 5",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "UDb4OSmkKKM",
+   "title": "Reporting - Exercise 5 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "evKph0thzEY",
+   "title": "Reporting - Exercise 5 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "PGUkPq3Pz44",
+   "title": "Reporting - Demonstration 6",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "lU0Boe0clOE",
+   "title": "Reporting - Exercise 6 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "7QYHotsGsFU",
+   "title": "Reporting - Exercise 6 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "F_Tav1ejx-A",
+   "title": "Reporting - Demonstration 7",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "R40v3-b4fPs",
+   "title": "Reporting - Exercise 7 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "6mDdyiGfeOc",
+   "title": "Reporting - Exercise 7 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "EOvDDEqRvFI",
+   "title": "Reporting - Closing Demonstration",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "OH-s2uxWpiI",
+   "title": "Reporting - Demonstration 8",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "LJjKK5y8myA",
+   "title": "Reporting - Exercise 8 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "TA-cYhXXfsM",
+   "title": "Reporting - Exercise 8 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "Iy0wkxtnwqo",
+   "title": "Reporting - Demonstration 9",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "Zm_1VZCKgBc",
+   "title": "Reporting - Exercise 9 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "WWeyTE4FGV4",
+   "title": "Reporting - Exercise 9 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "8Noy-FfEDx0",
+   "title": "Reporting - Demonstration 10",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "l8HB3xXrj7w",
+   "title": "Reporting - Exercise 10 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "WksQjsrshyk",
+   "title": "Reporting - Exercise 10 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Reporting and Odoo Spreadsheet"
+  },
+  {
+   "id": "rR5OB8D6rfo",
+   "title": "Cost Accounting - Demonstration 1",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "sPHihfaw1v8",
+   "title": "Cost Accounting - Exercise 1 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "MhLdL2o1Mcg",
+   "title": "Cost Accounting - Exercise 1 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "EMBFjuvhkG8",
+   "title": "Cost Accounting - Demonstration 2",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "0yQFiXjpI10",
+   "title": "Cost Accounting - Exercise 2 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "qWtR2L36ZCY",
+   "title": "Cost Accounting - Exercise 2 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "GZ4ozDRQJ4g",
+   "title": "Cost Accounting - Demonstration 3",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "SCrPtYMIjic",
+   "title": "Cost Accounting - Exercise 3 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "Gw-BA1jjusU",
+   "title": "Cost Accounting - Exercise 3 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "rnt9x9Us4BY",
+   "title": "Cost Accounting - Demonstration 4",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "irjocK70y1o",
+   "title": "Cost Accounting - Exercise 4 - Presentation",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "CEmu08dV-Ak",
+   "title": "Cost Accounting - Exercise 4 - Correction",
+   "course": "Odoo Academy - Accounting",
+   "section": "Accounting - Cost Accounting"
+  },
+  {
+   "id": "IUmDdc38WTA",
+   "title": "And now ?",
+   "course": "Odoo Academy - Accounting",
+   "section": "And after ?"
+  },
+  {
+   "id": "RI1YLS4qfKw",
+   "title": "Introduction",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Introduction"
+  },
+  {
+   "id": "PZpZ3UtbUjY",
+   "title": "Creation of the database",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation database"
+  },
+  {
+   "id": "lDpwjhdVj_8",
+   "title": "Creation of quotation & partner - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation quotation"
+  },
+  {
+   "id": "7YMVc3IzO04",
+   "title": "Creation of quotation & partner - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation quotation"
+  },
+  {
+   "id": "BxY0EZ4emHg",
+   "title": "Creation of quotation & partner - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation quotation"
+  },
+  {
+   "id": "ff5MDnMPrnY",
+   "title": "Creation quotation & adding products - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation quotation"
+  },
+  {
+   "id": "xXgREq6wLqQ",
+   "title": "Creation quotes & adding products - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation quotation"
+  },
+  {
+   "id": "rsfYSpEkkRw",
+   "title": "Creation quotes & adding products - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Creation quotation"
+  },
+  {
+   "id": "J-516AzTiFA",
+   "title": "Sending quotation - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Sending quotation and creation sales invoice"
+  },
+  {
+   "id": "8gWpwQB0L4o",
+   "title": "Sending quotation - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Sending quotation and creation sales invoice"
+  },
+  {
+   "id": "EJ9EGRWHCTk",
+   "title": "Sending quotation - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Sending quotation and creation sales invoice"
+  },
+  {
+   "id": "r704afqaPUU",
+   "title": "Creation invoice - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Sending quotation and creation sales invoice"
+  },
+  {
+   "id": "L1JQVmBz7fQ",
+   "title": "Creation invoice - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Sending quotation and creation sales invoice"
+  },
+  {
+   "id": "QzDVFE0dFGo",
+   "title": "Creation invoice - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Sending quotation and creation sales invoice"
+  },
+  {
+   "id": "pPHc8cjG57s",
+   "title": "Sending PEPPOL invoice - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "k37ziQpYbik",
+   "title": "Sending PEPPOL invoice - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "gieQMj4pe-g",
+   "title": "Sending PEPPOL invoice - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "7FDbyZNsxVU",
+   "title": "Creation invoice from invoicing - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "nd6aLiskZP4",
+   "title": "Creation invoice from invoicing - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "o3ZgydTzcis",
+   "title": "Creation invoice from invoicing - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "bm2gDmPbmPI",
+   "title": "Recurring invoices and catalog - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "P5Ow1v02eOQ",
+   "title": "Recurring invoices and catalog - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "iOBqsT73bYA",
+   "title": "Recurring invoices and catalog - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Invoicing"
+  },
+  {
+   "id": "lMoFVfNuK5w",
+   "title": "Customer invoice payment - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment invoices and creation credit note"
+  },
+  {
+   "id": "9L7kwtUCBO0",
+   "title": "Customer invoice payment - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment invoices and creation credit note"
+  },
+  {
+   "id": "aZXGAnz5TBc",
+   "title": "Customer invoice payment - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment invoices and creation credit note"
+  },
+  {
+   "id": "b4oP5oeDORI",
+   "title": "Credit note - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment invoices and creation credit note"
+  },
+  {
+   "id": "I5UYyHHl98A",
+   "title": "Credit note - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment invoices and creation credit note"
+  },
+  {
+   "id": "o48aogqClKo",
+   "title": "Credit note - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment invoices and creation credit note"
+  },
+  {
+   "id": "N_SyR90P_BE",
+   "title": "Customer management - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Follow-up customers"
+  },
+  {
+   "id": "SwBsyrYTKkA",
+   "title": "Customer management - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Follow-up customers"
+  },
+  {
+   "id": "S97rXyToKEo",
+   "title": "Customer management - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Follow-up customers"
+  },
+  {
+   "id": "s810YttcvCI",
+   "title": "Follow-up - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Follow-up customers"
+  },
+  {
+   "id": "sz3jrgHUQEw",
+   "title": "Follow-up - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Follow-up customers"
+  },
+  {
+   "id": "FHdUmYyavQ8",
+   "title": "Follow-up - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Follow-up customers"
+  },
+  {
+   "id": "iTFIqrdWKUw",
+   "title": "Purchases - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "wVbm1AIjIVE",
+   "title": "Purchases - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "6WnvTDCgZc4",
+   "title": "Purchases - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "ZYSKEO1waMc",
+   "title": "Purchase review - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "pk1gRcgRSto",
+   "title": "Purchase review - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "-piuHlEcBCc",
+   "title": "Purchase review - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "Qxg-tADvkWY",
+   "title": "Processing e-invoices - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "Q1IFX-TraCg",
+   "title": "Processing e-invoices - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "VK8rhYs1MA0",
+   "title": "Processing e-invoices - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Purchases"
+  },
+  {
+   "id": "YSJ_7T6Y4Kg",
+   "title": "Payment method - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "5X6knjrHzzk",
+   "title": "Payment method - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "RmwQAaKB0cE",
+   "title": "Payment method - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "68OIVYsZSKo",
+   "title": "QR-code payment - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "HNIjAcIgpTM",
+   "title": "QR-code payment - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "XVUVkDp9J6g",
+   "title": "QR-code payment - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "WAQIhazJiqE",
+   "title": "SEPA Payment - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "l5zsTQ82bz4",
+   "title": "SEPA Payment - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "iISXkiTZz8w",
+   "title": "SEPA Payment - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Payment purchases"
+  },
+  {
+   "id": "ePJBJwrd5Uw",
+   "title": "Mobile App - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Mobile App"
+  },
+  {
+   "id": "4J-ruPZt64I",
+   "title": "Mobile app - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Mobile App"
+  },
+  {
+   "id": "Niqtv3eOTmY",
+   "title": "Mobile App - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Mobile App"
+  },
+  {
+   "id": "aZNHGy-IJkg",
+   "title": "Reporting - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Reporting"
+  },
+  {
+   "id": "BPm4esLVjF8",
+   "title": "Reporting - Presentation exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Reporting"
+  },
+  {
+   "id": "B21eq7YwAeE",
+   "title": "Reporting - Correction exercise",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Reporting"
+  },
+  {
+   "id": "g7B1t9dw9JI",
+   "title": "Transmission to your accountant - Demonstration",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "Transmission to your accountant"
+  },
+  {
+   "id": "LmtSrYGvzqk",
+   "title": "The end",
+   "course": "Odoo Academy - (e-)Invoicing",
+   "section": "The End"
+  },
+  {
+   "id": "YgvWtgfFV2g",
+   "title": "Introduction",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Introduction"
+  },
+  {
+   "id": "NfLmpR8YAUE",
+   "title": "Création de la base de données",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Partage et configuration de la base de données"
+  },
+  {
+   "id": "rKyyuxsa30U",
+   "title": "Configuration générale",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Partage et configuration de la base de données"
+  },
+  {
+   "id": "efrVnDqMyuc",
+   "title": "Création dossier & alias e-mail - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "UitM0PQkHys",
+   "title": "Création dossier & alias e-mail - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "Xdg6i5Di0aU",
+   "title": "Création dossier & alias e-mail - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "0qaqxe16oAQ",
+   "title": "Diviser un document et activer les actions - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "zTWudkFiTAI",
+   "title": "Diviser un document et activer les actions - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "APeKnL0SikQ",
+   "title": "Diviser un document et activer les actions - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "Z9enjChbs1I",
+   "title": "Requête de documents manquants - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "UzHJRKzc7do",
+   "title": "Requête de documents manquants - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "JgVAn022cPI",
+   "title": "Requête de documents manquants - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "jjKG0PJaoH4",
+   "title": "Recherche indexée - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "Bc9bcFkWhG4",
+   "title": "Recherche indexée - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "rfCCNfGuVd8",
+   "title": "Recherche indexée - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Application Documents"
+  },
+  {
+   "id": "DzbQxFQqQHU",
+   "title": "Fonctionnement OCR",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "IfqX9lAkXtE",
+   "title": "Création compte & code TVA - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "j79IAMn6P6Y",
+   "title": "Création compte & code TVA - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "6p0VEaJ1Z-w",
+   "title": "Création compte & code TVA - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "-_yPSFOILEM",
+   "title": "Gestion des actifs - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "VE6gadotroQ",
+   "title": "Gestion des actifs - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "LIFvsZbX-I0",
+   "title": "Gestion des actifs - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "IUb3b4o0LLc",
+   "title": "Charges à reporter - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "vmxjrqYvNs4",
+   "title": "Charges à reporter - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "aOHW4I1xEYc",
+   "title": "Charges à reporter - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "BuX-WDUOsSI",
+   "title": "Factures à recevoir - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "qJiF9b1cEqo",
+   "title": "Factures à recevoir - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "NfcYIwBBwyY",
+   "title": "Factures à recevoir - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "tGjjhEsIkKk",
+   "title": "Privé / Professionnel - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "rF98htjVK5I",
+   "title": "Privé / Professionnel - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "SzEWWNI8qrQ",
+   "title": "Privé / Professionnel - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "qWpWC0_ZCeQ",
+   "title": "Supprimer les lignes à 0 - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "glYgXYht5HE",
+   "title": "Supprimer les lignes à 0 - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "4YY9Igw1lfE",
+   "title": "Supprimer les lignes à 0 - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "q9BsegOjiwg",
+   "title": "Comptabilisation automatique - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "HAW_XDU5gO8",
+   "title": "Comptabilisation automatique - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "jGQmRPj-_Ds",
+   "title": "Comptabilisation automatique - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Achats"
+  },
+  {
+   "id": "xcLHFEyHbj4",
+   "title": "Ventes - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "BSuwGjyB5OM",
+   "title": "Ventes - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "PLL2lmfHGn8",
+   "title": "Ventes - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "G-ywuwSqQrQ",
+   "title": "Peppol - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "9RVi1CUmWew",
+   "title": "Peppol - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "Y2C_90RfrCM",
+   "title": "Peppol - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "LCRAbVQl844",
+   "title": "Factures à vérifier - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "1bxehWygaJE",
+   "title": "Factures à vérifier - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "K94V4U8-s7M",
+   "title": "Factures à vérifier - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "Ks10oatRMA8",
+   "title": "Positions fiscales - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "Pzm56--zeEw",
+   "title": "Positions fiscales - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "G3GKKm1pHVo",
+   "title": "Positions fiscales - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "akwYyIrWTic",
+   "title": "Devises - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "3oNiRLFuy-Y",
+   "title": "Devises - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "Od_QeA0MBC8",
+   "title": "Devises - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Ventes"
+  },
+  {
+   "id": "w2z01w2Js2w",
+   "title": "Opérations diverses - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "hoYghfTZjy8",
+   "title": "Opérations diverses - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "hYGPgswARqQ",
+   "title": "Opérations diverses - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "8QW4RXjg6Ic",
+   "title": "SODA - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "Y-oH8cTEetQ",
+   "title": "SODA - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "lmQDYtHs2XU",
+   "title": "SODA - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "bCSeNsGHIck",
+   "title": "Import Excel - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "3so6tycRthU",
+   "title": "Import Excel - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Opérations diverses"
+  },
+  {
+   "id": "L95vouNtqIQ",
+   "title": "Paiements SEPA - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "1rWKhQ5_oW8",
+   "title": "Paiements SEPA - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "hV-Cxokajd8",
+   "title": "Paiements SEPA - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "dcV4H1nDS-U",
+   "title": "Création transactions bancaires manuelles - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "UVCtC0C0Ftg",
+   "title": "Création transactions bancaires manuelles - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "0fVFFxoz1EU",
+   "title": "Création transactions bancaires manuelles - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "dWUxz0f4fMs",
+   "title": "Synchronisation bancaire - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "XYi4b5R2ihQ",
+   "title": "Synchronisation bancaire - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "9klSJL6dk0I",
+   "title": "Synchronisation bancaire - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "GzgBIBaoYpk",
+   "title": "Codabox / Codaclean - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "E9hL_rpytQI",
+   "title": "Rapprochement bancaire - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "y8LgiTGqhqg",
+   "title": "Rapprochement bancaire - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "pT2ovnjujNY",
+   "title": "Rapprochement bancaire - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "DiM7fjk6vuQ",
+   "title": "Modèles de rapprochement automatiques - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "15HK311G1Ns",
+   "title": "Modèles de rapprochement automatiques - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "7rkvYus_eoI",
+   "title": "Modèles de rapprochement automatiques - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "m9s3SQwJ73o",
+   "title": "Modèles de rapprochement manuels - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "fVcZpYPbfz4",
+   "title": "Modèles de rapprochement manuels - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "9VB1lO431qI",
+   "title": "Modèles de rapprochement manuels - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "JuG4nQ203gI",
+   "title": "OCR sur les cartes de crédit - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "AeOy1KHmbmI",
+   "title": "OCR sur les cartes de crédit - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "Zsx0k9RsOzM",
+   "title": "OCR sur les cartes de crédit - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "FOJS-Qad7YI",
+   "title": "Emprunt - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "Iv2bQF0dNN0",
+   "title": "Emprunt - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "JmoegtZ-0qs",
+   "title": "Emprunt - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "Qm_gIoSYzno",
+   "title": "Escompte - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "zlHPRqLcyNs",
+   "title": "Escompte - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "AVcDtbq-e6w",
+   "title": "Escompte - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "HD2HsJ-4sA0",
+   "title": "Comment annuler un lettrage via le livre des tiers - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "vcv0fFrdJ6I",
+   "title": "Comment annuler un lettrage via le livre des tiers - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "1Wi6nfSIsBo",
+   "title": "Comment annuler un lettrage via le livre des tiers - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité - Banques et réconciliations"
+  },
+  {
+   "id": "mizMuLBtaBY",
+   "title": "Recherche depuis les écritures comptables - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "jCHs5DsCQQY",
+   "title": "Recherche depuis les écritures comptables - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "z5kRkMCyo2w",
+   "title": "Recherche depuis les écritures comptables - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "Tl4mibOAmsk",
+   "title": "Réconciliation Clients - Fournisseurs - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "lGkLBxxIkzw",
+   "title": "Réconciliation Clients - Fournisseurs - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "Tdd6mVKeegU",
+   "title": "Réconciliation Clients - Fournisseurs - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "2aAJ4QZy-6k",
+   "title": "Balance résiduelle - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "-u1pCcfDvyw",
+   "title": "Balance résiduelle - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "1Zllua7faQ8",
+   "title": "Balance résiduelle - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "33SLeM3yMsI",
+   "title": "Réconciliation depuis le grand livre - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "cY-a8lLT-v8",
+   "title": "Réconciliation depuis le grand livre - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "yQKhpCQ7fiU",
+   "title": "Réconciliation depuis le grand livre - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "5u-_6P58oiM",
+   "title": "Audit du journal - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "8UWoomDNzuE",
+   "title": "Audit du journal - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "1HDrEPeHv0Q",
+   "title": "Audit du journal - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "PRn2ZpHbnXE",
+   "title": "Déclaration TVA - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "e-VkFhCFA5Q",
+   "title": "Déclaration TVA - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "CyPY1SUlKBs",
+   "title": "Déclaration de TVA - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "cfhjIOsZVXE",
+   "title": "Rapports standards - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "X3-WtwN4H20",
+   "title": "Rapports standards - Présentation exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "X1XVV_wEGVg",
+   "title": "Rapports standards - Correction exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "MsOUNpIEW3w",
+   "title": "Dossiers de travail - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "4eUC5o06TgY",
+   "title": "Dossiers de travail - Présentation de l'exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "5y1dN3f-3C4",
+   "title": "Dossiers de travail - Correction de l'exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "ZV1fcLP9ICM",
+   "title": "Feuilles de calcul - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "vlpGXWhkMRE",
+   "title": "Feuilles de calcul - Présentation de l'exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "i1_LP71Y_Qs",
+   "title": "Feuilles de calcul - Correction de l'exercice",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Reporting et feuilles de calcul"
+  },
+  {
+   "id": "mG3sw-AHoH4",
+   "title": "Création des plans analytiques - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "gAvZzbDGvKI",
+   "title": "Création des plans analytiques - Présentation",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "VnRm9X9hcWE",
+   "title": "Création des plans analytiques - Correction",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "Tepi_fku1AQ",
+   "title": "Répartition analytique - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "7D_TcIntb1k",
+   "title": "Répartition analytique - Présentation",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "ZIPHr-VKR4Q",
+   "title": "Répartition analytique - Correction",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "4UV4yf4Pfl0",
+   "title": "Edition en masse de la distribution analytique - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "HvYogv3LGno",
+   "title": "Edition en masse de la distribution analytique - Présentation",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "FgKh4r4D-t0",
+   "title": "Edition en masse de la distribution analytique - Correction",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "j5uXHDiVbxs",
+   "title": "Création d'un rapport analytique - Démonstration",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "TF6lsufDVNg",
+   "title": "Création d'un rapport analytique - Presentation",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "tXpzaNfsoAc",
+   "title": "Création d'un rapport analytique - Correction",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Comptabilité analytique"
+  },
+  {
+   "id": "wUbBsMObqvA",
+   "title": "Et pour la suite ?",
+   "course": "Odoo Academy - Comptabilité",
+   "section": "Et après ?"
+  },
+  {
+   "id": "KGNRSNHF1oc",
+   "title": "Overview: How you can use Odoo to manage your firm",
+   "course": "Odoo Accounting Firms Program (US/CA)",
+   "section": "Odoo Accounting Firms Program (US/CA)"
+  },
+  {
+   "id": "jIQut5OyT-c",
+   "title": "Configuración de Datos Maestros",
+   "course": "Smart Tutorial - Localización de México",
+   "section": "Basico"
+  },
+  {
+   "id": "CW5JDNug1uU",
+   "title": "Facturación en el Punto de venta (18.0+) | Localización Mexicana",
+   "course": "Smart Tutorial - Localización de México",
+   "section": "Basico"
+  },
+  {
+   "id": "wePBbRlicrg",
+   "title": "Valoración de inventario",
+   "course": "Smart Tutorial - Localización de México",
+   "section": "Avanzado"
+  },
+  {
+   "id": "n62Wlq24z-w",
+   "title": "Facturación multidivisa (18.0+) | Localización Mexicana",
+   "course": "Smart Tutorial - Localización de México",
+   "section": "Avanzado"
+  },
+  {
+   "id": "gXTZ4G76ZNA",
+   "title": "Introduction",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Introduction"
+  },
+  {
+   "id": "QCw_aX606E0",
+   "title": "Slides",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Introduction"
+  },
+  {
+   "id": "u-eECMSBGkQ",
+   "title": "Création de la base de données",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création base de données"
+  },
+  {
+   "id": "QOHZeK3b-kk",
+   "title": "Création de devis & partenaire - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création de devis"
+  },
+  {
+   "id": "3axX9A7jD0o",
+   "title": "Création de devis & partenaire - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création de devis"
+  },
+  {
+   "id": "3WjnP2EhUMc",
+   "title": "Création de devis & partenaire - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création de devis"
+  },
+  {
+   "id": "wB5yQLQSpe4",
+   "title": "Création de devis & ajout de produits - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création de devis"
+  },
+  {
+   "id": "R5q4I4RoWwg",
+   "title": "Création de devis & ajout de produits - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création de devis"
+  },
+  {
+   "id": "O8n3ioRfLtk",
+   "title": "Création de devis & ajout de produits - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Création de devis"
+  },
+  {
+   "id": "x_m3RuLPNWI",
+   "title": "Envoi du devis - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Envoi de devis et création facture de vente"
+  },
+  {
+   "id": "n91HK3c2dUQ",
+   "title": "Envoi du devis - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Envoi de devis et création facture de vente"
+  },
+  {
+   "id": "Pyx-bVsoB3s",
+   "title": "Envoi du devis - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Envoi de devis et création facture de vente"
+  },
+  {
+   "id": "0kzjcO5exBA",
+   "title": "Création de facture - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Envoi de devis et création facture de vente"
+  },
+  {
+   "id": "BC3wypnJ0QU",
+   "title": "Création de facture - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Envoi de devis et création facture de vente"
+  },
+  {
+   "id": "uNaFi1FXdBY",
+   "title": "Création de facture - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Envoi de devis et création facture de vente"
+  },
+  {
+   "id": "yjmCrJJ6RCM",
+   "title": "C'est quoi PEPPOL ?",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "j1IqT7Kam6M",
+   "title": "Envoi de facture par PEPPOL - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "jk_oOkMNHzc",
+   "title": "Envoi de facture par PEPPOL - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "Uhew1ilr54M",
+   "title": "Envoi de facture par PEPPOL - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "PEPPOL"
+  },
+  {
+   "id": "0DtmPG6-Yzk",
+   "title": "Création de facture depuis facturation - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "fqp-4O8vRnU",
+   "title": "Création de facture depuis facturation - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "Bg92UAv_rl4",
+   "title": "Création de facture depuis facturation - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "TQcWjFgZQGY",
+   "title": "Factures récurrentes et utilisation du catalogue - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "3oYYbM7E2BI",
+   "title": "Factures récurrentes et utilisation du catalogue - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "T6BoDTwCqZI",
+   "title": "Factures récurrentes et utilisation du catalogue - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "wXfdYRsJDt8",
+   "title": "Modification de facture - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "ynq_7qrYAa0",
+   "title": "Modification de facture - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "DW4IiVdziUo",
+   "title": "Modification de facture - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Facturation"
+  },
+  {
+   "id": "GRABA_EmpW4",
+   "title": "Paiement et création d'activité - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiement factures et création de note de crédit"
+  },
+  {
+   "id": "cDSjpvpZaSs",
+   "title": "Paiement et création d'activité - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiement factures et création de note de crédit"
+  },
+  {
+   "id": "OT6OoCALiq4",
+   "title": "Paiement et création d'activité - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiement factures et création de note de crédit"
+  },
+  {
+   "id": "PXlOVWM2MJE",
+   "title": "Note de crédit - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiement factures et création de note de crédit"
+  },
+  {
+   "id": "eIme-8UUqZg",
+   "title": "Note de crédit - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiement factures et création de note de crédit"
+  },
+  {
+   "id": "QDRIfyWenr8",
+   "title": "Note de crédit - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiement factures et création de note de crédit"
+  },
+  {
+   "id": "vw6I1RTGfec",
+   "title": "Relances - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Suivi client et relances impayés"
+  },
+  {
+   "id": "svTmf-9vPMA",
+   "title": "Relances - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Suivi client et relances impayés"
+  },
+  {
+   "id": "F0inUEEGFaQ",
+   "title": "Relances - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Suivi client et relances impayés"
+  },
+  {
+   "id": "f4-97JyQ5ms",
+   "title": "Niveaux de relances - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Suivi client et relances impayés"
+  },
+  {
+   "id": "UQPTJrbYsq4",
+   "title": "Niveaux de relances - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Suivi client et relances impayés"
+  },
+  {
+   "id": "CWOQgVDpfMM",
+   "title": "Niveaux de relances - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Suivi client et relances impayés"
+  },
+  {
+   "id": "s-IWPImK3Tg",
+   "title": "Achats - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "_1_7DGrtsqk",
+   "title": "Achats - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "6tWbRcYLSCI",
+   "title": "Achats - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "E07ovCQDRPs",
+   "title": "Révision des factures - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "SDmvVSD3ZJ4",
+   "title": "Révision des factures - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "v_0xeOUS39A",
+   "title": "Traitement factures électroniques - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "fXoi-SHw-K0",
+   "title": "Traitement factures électroniques - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "wxdYGm4mzS0",
+   "title": "Traitement factures électroniques - Correction",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Achats"
+  },
+  {
+   "id": "DxrCIiKMG08",
+   "title": "Ajout d'un mode de paiement - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "cvzwgGpwHsE",
+   "title": "Ajout d'un mode de paiement - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "7PgZx2aZL8A",
+   "title": "Ajout d'un mode de paiement - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "cwAZp1xOjBg",
+   "title": "Paiement des factures - QR code - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "FsfwR4SexmA",
+   "title": "Paiement des factures - QR code - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "5Y1pv3dIe68",
+   "title": "Paiement des factures - QR code - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "D6XqpzLKCYw",
+   "title": "Paiement SEPA - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "YT5QWBVU5Jk",
+   "title": "Paiement SEPA - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "aBIOZT07DCw",
+   "title": "Paiement SEPA - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Paiements achats"
+  },
+  {
+   "id": "_l5ECHn1DpQ",
+   "title": "Application mobile - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Application mobile"
+  },
+  {
+   "id": "Dei7u8M9hhw",
+   "title": "Application mobile - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Application mobile"
+  },
+  {
+   "id": "NV0_0V7Ead8",
+   "title": "Application mobile - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Application mobile"
+  },
+  {
+   "id": "gqFkOmnGbGE",
+   "title": "Reporting - Démonstration",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Reporting"
+  },
+  {
+   "id": "sJDTpKbM9rI",
+   "title": "Reporting - Présentation exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Reporting"
+  },
+  {
+   "id": "VU6QvAcFac8",
+   "title": "Reporting - Correction exercice",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Reporting"
+  },
+  {
+   "id": "Qw69ebajHCk",
+   "title": "Transmission au comptable",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Transmission à votre comptable"
+  },
+  {
+   "id": "oDw9pKnStTU",
+   "title": "Fin",
+   "course": "Odoo Academy - (e)-facturation",
+   "section": "Fin"
+  },
+  {
+   "id": "ua9qrs8mQjI",
+   "title": "Módulos y Conceptos básicos - Localización de Argentina",
+   "course": "Smart Tutorial - Localización de Argentina",
+   "section": "Módulos y Conceptos básicos"
+  },
+  {
+   "id": "4cZGHloWnWY",
+   "title": "Configuración de la Localización y Datos Maestros - Localización de Argentina",
+   "course": "Smart Tutorial - Localización de Argentina",
+   "section": "Módulos y Conceptos básicos"
+  },
+  {
+   "id": "PABl8mKPCbg",
+   "title": "Base de datos de prueba en Runbot - Localización de Argentina",
+   "course": "Smart Tutorial - Localización de Argentina",
+   "section": "Módulos y Conceptos básicos"
+  },
+  {
+   "id": "KMizoi2BTnY",
+   "title": "Tipos de documentos especiales: Configuración y factura MiPyME (NC y ND) - Localización de Argentina",
+   "course": "Smart Tutorial - Localización de Argentina",
+   "section": "Módulos y Conceptos básicos"
+  },
+  {
+   "id": "4sBA1F5gOZA",
+   "title": "Impuestos: IIBB (Ingresos Brutos) - Localización de Argentina",
+   "course": "Smart Tutorial - Localización de Argentina",
+   "section": "Flujos principales"
+  },
+  {
+   "id": "STMlmUL_vx4",
+   "title": "Introduction to Upgrades",
+   "course": "Technical Training",
+   "section": "Upgrades"
+  },
+  {
+   "id": "BDagx35HKTc",
+   "title": "Custom Upgrade Process",
+   "course": "Technical Training",
+   "section": "Upgrades"
+  },
+  {
+   "id": "NJ2ncCxfEPY",
+   "title": "Upgrading your Custom Module",
+   "course": "Technical Training",
+   "section": "Upgrades"
+  },
+  {
+   "id": "NAKhrIh-sZo",
+   "title": "Writing Upgrade Scripts",
+   "course": "Technical Training",
+   "section": "Upgrades"
+  },
+  {
+   "id": "c0xja8Ap9CI",
+   "title": "The Upgrade Util",
+   "course": "Technical Training",
+   "section": "Upgrades"
+  },
+  {
+   "id": "iCfcEfk9P7E",
+   "title": "Introduction",
+   "course": "Technical Training",
+   "section": "Autres"
+  },
+  {
+   "id": "WFflrcONhao",
+   "title": "Introduction & prerequisites",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[0\\] Introduction"
+  },
+  {
+   "id": "MfGWDpS8HkQ",
+   "title": "The use case",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[0\\] Introduction"
+  },
+  {
+   "id": "1PHnGh_belM",
+   "title": "What's a module ?",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[1\\] Module Structure"
+  },
+  {
+   "id": "s4N4pnXAT6o",
+   "title": "Module composition",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[1\\] Module Structure"
+  },
+  {
+   "id": "sGTjCar1DbI",
+   "title": "ORM & models basics",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[2\\] Models & Fields"
+  },
+  {
+   "id": "-6yMIZBYiD0",
+   "title": "ORM & models basics - demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[2\\] Models & Fields"
+  },
+  {
+   "id": "x1BPgqgn2mY",
+   "title": "Fields & attributes",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[2\\] Models & Fields"
+  },
+  {
+   "id": "aVAcBblCf14",
+   "title": "Fields & attributes - demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[2\\] Models & Fields"
+  },
+  {
+   "id": "5U8N2Gk4uwg",
+   "title": "Data introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[3\\] Data introduction"
+  },
+  {
+   "id": "YOMEpxlKWEA",
+   "title": "Introduction to Security - Theory",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[4\\] Introduction to Security"
+  },
+  {
+   "id": "v8h1vKHRL3E",
+   "title": "Introduction to Security - Code",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[4\\] Introduction to Security"
+  },
+  {
+   "id": "x1IAYCmMzSM",
+   "title": "Actions Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[5\\] Actions & Menus"
+  },
+  {
+   "id": "e5bAMPNNXC8",
+   "title": "Actions and Menus - Theory",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[5\\] Actions & Menus"
+  },
+  {
+   "id": "yUXRieByiOA",
+   "title": "Actions and Menus - Code",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[5\\] Actions & Menus"
+  },
+  {
+   "id": "E42KU9KWK-s",
+   "title": "Views Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "ARf0CLpRpSI",
+   "title": "Fields Attributes",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "HNE6HAdtq9o",
+   "title": "Attributes Demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "3aIB72GvN0I",
+   "title": "Basic Views",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "SlJqmBw7cRo",
+   "title": "List views",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "swk8qLNW76E",
+   "title": "Form Views",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "IL62CieaJYI",
+   "title": "Search Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "UJL03FbosSQ",
+   "title": "Search Domains",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "INEp_zn3RvI",
+   "title": "Search Views",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "QJEcFXbuOrs",
+   "title": "Search views - demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[6\\] Basic Views"
+  },
+  {
+   "id": "YZJTndY41BY",
+   "title": "Different Relations",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "L7JJyysXQOU",
+   "title": "Many 2 one",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "0WO5yR6HNMg",
+   "title": "Many 2 one - code",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "mON7GbbM9ME",
+   "title": "One 2 many",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "ZcZh5ZQOXrk",
+   "title": "One 2 many - code",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "HqIRw1alR58",
+   "title": "Many 2 many",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "RMYcfYHIHF4",
+   "title": "Many 2 many - code",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "zHiCvkeUxek",
+   "title": "Relational Fields - End Demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[7\\] Relational Fields"
+  },
+  {
+   "id": "QHKxnv4bEgQ",
+   "title": "Compute Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "mK0WZKH3DdE",
+   "title": "Compute Information",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "B6MYWzU6YBY",
+   "title": "Related Computes",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "d2yes1i7UvM",
+   "title": "Multiple Records",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "j1s-UZwCqoU",
+   "title": "Related Fields",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "fWDKlHuwmtk",
+   "title": "Inverse Functions",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "wY76LjER3J4",
+   "title": "Computation demo (1)",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "nwg6WPil91o",
+   "title": "Computation demo (2)",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "TTzPqlHvtgQ",
+   "title": "Computation demo (3)",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "LlYhOxB7ZmQ",
+   "title": "Computation demo (4)",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "MfIIqQ5PTs4",
+   "title": "Demo - result",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[8\\] Fields computation"
+  },
+  {
+   "id": "_t6BEdvrqRo",
+   "title": "Onchange Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[9\\] Fields Onchange"
+  },
+  {
+   "id": "2ohPQUGCPcQ",
+   "title": "Onchange & Soft warnings",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[9\\] Fields Onchange"
+  },
+  {
+   "id": "sBJY1ZpSLJ0",
+   "title": "Onchange demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[9\\] Fields Onchange"
+  },
+  {
+   "id": "QxG5NsapsVc",
+   "title": "Actions Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[10\\] Actions"
+  },
+  {
+   "id": "V276QxNMUU8",
+   "title": "Actions basics",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[10\\] Actions"
+  },
+  {
+   "id": "9YmRbZTWAbU",
+   "title": "Action definition",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[10\\] Actions"
+  },
+  {
+   "id": "J6APDrTnc8c",
+   "title": "Opening views",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[10\\] Actions"
+  },
+  {
+   "id": "pSFfPOVe1U8",
+   "title": "Raising errors",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[10\\] Actions"
+  },
+  {
+   "id": "IaBuG1FKr70",
+   "title": "Actions demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[10\\] Actions"
+  },
+  {
+   "id": "17qDEK4oEoE",
+   "title": "Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[11\\] Constraints"
+  },
+  {
+   "id": "JJa9X8KMww0",
+   "title": "SQL constraints",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[11\\] Constraints"
+  },
+  {
+   "id": "Zpk-XAaPFT4",
+   "title": "Python constraints",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[11\\] Constraints"
+  },
+  {
+   "id": "cgPib0b9yiE",
+   "title": "Constraints technicalities",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[11\\] Constraints"
+  },
+  {
+   "id": "fhPNqnLAUJI",
+   "title": "Constraints demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[11\\] Constraints"
+  },
+  {
+   "id": "YQ5FakOEtQM",
+   "title": "Inline view introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[12\\] Inline Views"
+  },
+  {
+   "id": "7ce1stzNUL8",
+   "title": "Inline view definition",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[12\\] Inline Views"
+  },
+  {
+   "id": "S4JUKfxYMG0",
+   "title": "Inline view demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[12\\] Inline Views"
+  },
+  {
+   "id": "9S2bz6SBuKA",
+   "title": "Widgets Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[13\\] Widgets"
+  },
+  {
+   "id": "JcjIilIpM68",
+   "title": "Widgets Definition",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[13\\] Widgets"
+  },
+  {
+   "id": "5wCY4TK6ptc",
+   "title": "Widgets Demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[13\\] Widgets"
+  },
+  {
+   "id": "rJZWocLtnCY",
+   "title": "Ordering Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[14\\] Ordering"
+  },
+  {
+   "id": "taw_l86kIU0",
+   "title": "Model Ordering",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[14\\] Ordering"
+  },
+  {
+   "id": "cwRO4X8mfTc",
+   "title": "Manual Ordering",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[14\\] Ordering"
+  },
+  {
+   "id": "IGIcRtA7CO4",
+   "title": "Ordering Demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[14\\] Ordering"
+  },
+  {
+   "id": "B766DLnEDXc",
+   "title": "Ordering Demo result",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[14\\] Ordering"
+  },
+  {
+   "id": "P237uGrchhc",
+   "title": "Advanced Views Intro",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[15\\] Advanced Views"
+  },
+  {
+   "id": "IQnONcOl66M",
+   "title": "Views evolution",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[15\\] Advanced Views"
+  },
+  {
+   "id": "Sqz-Dz7I7Is",
+   "title": "Fields Attributes",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[15\\] Advanced Views"
+  },
+  {
+   "id": "QkjethNcEKE",
+   "title": "List View Attributes",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[15\\] Advanced Views"
+  },
+  {
+   "id": "SYI94s9cGqU",
+   "title": "Views Decorators",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[15\\] Advanced Views"
+  },
+  {
+   "id": "SfpoQHjwcJM",
+   "title": "Views Code Improvement",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[15\\] Advanced Views"
+  },
+  {
+   "id": "PIZfYBGdB7o",
+   "title": "Advanced Searches Intro",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[16\\] Advanced searches"
+  },
+  {
+   "id": "eD12L3Er1wg",
+   "title": "Default Search",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[16\\] Advanced searches"
+  },
+  {
+   "id": "TlD6ViX6jl8",
+   "title": "Filter Domain",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[16\\] Advanced searches"
+  },
+  {
+   "id": "Q6-1OE5K9dw",
+   "title": "Advanced Searches Demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[16\\] Advanced searches"
+  },
+  {
+   "id": "Ng6zggOHzyo",
+   "title": "More Buttons",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[17\\] More buttons"
+  },
+  {
+   "id": "ywPTQb3aM9c",
+   "title": "Stat Button Definition",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[17\\] More buttons"
+  },
+  {
+   "id": "6AHoKERbbbU",
+   "title": "Stat Button demo (1)",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[17\\] More buttons"
+  },
+  {
+   "id": "r1yEw-QMNvs",
+   "title": "Stat Button demo (2)",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[17\\] More buttons"
+  },
+  {
+   "id": "GzIJE_65U7o",
+   "title": "Stat Button demo result",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[17\\] More buttons"
+  },
+  {
+   "id": "wGiyPkUnmDE",
+   "title": "Inheritance Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "ij1vT4LNnqU",
+   "title": "CRUD Inheritance",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "_LRPnud1kSk",
+   "title": "CRUD demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "gFWPGE4fkNA",
+   "title": "Class Inheritance",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "W9hFkW3nLG8",
+   "title": "Class Inheritance - demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "Y307qZDcER8",
+   "title": "Prototype Inheritance",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "HaQ5LUuB1LA",
+   "title": "Prototype Inheritance - demo",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "0OVKW4Ze7kU",
+   "title": "Delegation Inheritance",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[18\\] Model Inheritance"
+  },
+  {
+   "id": "QfF_57nRGRU",
+   "title": "View Inheritance Introduction",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[19\\] View Inheritance"
+  },
+  {
+   "id": "Kyes4OpO-UE",
+   "title": "View Inheritance",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[19\\] View Inheritance"
+  },
+  {
+   "id": "GL0Z7MQYKSQ",
+   "title": "Single Node Modification",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[19\\] View Inheritance"
+  },
+  {
+   "id": "zFGyzqDphb8",
+   "title": "Xpath - expr",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[19\\] View Inheritance"
+  },
+  {
+   "id": "Nsnolf4mV-M",
+   "title": "Xpath - Position",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[19\\] View Inheritance"
+  },
+  {
+   "id": "xVWoaxBkk_Q",
+   "title": "Xpath - Position=attributes",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[19\\] View Inheritance"
+  },
+  {
+   "id": "x0db_gHckTY",
+   "title": "\\[END\\]",
+   "course": "Technical Training - Introduction to Development",
+   "section": "\\[END\\]"
+  },
+  {
+   "id": "b81o1ht_XKs",
+   "title": "Introduction",
+   "course": "Onboarding - Studio",
+   "section": "A. Odoo Studio"
+  },
+  {
+   "id": "0UppPMgecY8",
+   "title": "Customization vs Development",
+   "course": "Onboarding - Studio",
+   "section": "Basics"
+  },
+  {
+   "id": "6tvOoWcQNSA",
+   "title": "Technical Concepts",
+   "course": "Onboarding - Studio",
+   "section": "Basics"
+  },
+  {
+   "id": "97SUNCIStck",
+   "title": "Model and Fields",
+   "course": "Onboarding - Studio",
+   "section": "Basics"
+  },
+  {
+   "id": "OMII8YnBV0E",
+   "title": "¿Cómo funciona este curso?",
+   "course": "Partner Bootcamp en español",
+   "section": "Partner Bootcamp en español"
+  },
+  {
+   "id": "g-qMfMfHQ9M",
+   "title": "I am a new partner, what's next ?",
+   "course": "Partnership Knowledge Base",
+   "section": "Introduction"
+  },
+  {
+   "id": "8E5GUEEiBzk",
+   "title": "Getting my first prospect",
+   "course": "Partnership Knowledge Base",
+   "section": "Sales"
+  },
+  {
+   "id": "8XaOJkCGc34",
+   "title": "How to do a good qualification",
+   "course": "Partnership Knowledge Base",
+   "section": "Sales"
+  }
+ ]
+}

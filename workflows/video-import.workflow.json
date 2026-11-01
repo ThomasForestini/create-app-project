@@ -1,0 +1,552 @@
+{
+  "name": "[DEV] video-import",
+  "nodes": [
+    {
+      "id": "v1",
+      "name": "Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.2,
+      "position": [
+        0,
+        0
+      ],
+      "webhookId": "8f3c2a51-video-import",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "video-import",
+        "authentication": "headerAuth",
+        "responseMode": "lastNode",
+        "responseData": "firstEntryJson",
+        "options": {}
+      },
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "LQqGAUFsqdlaTmb0",
+          "name": "Odoo webhook token"
+        }
+      }
+    },
+    {
+      "id": "v2",
+      "name": "Build summary request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        220,
+        -120
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: transcript horodaté et consignes de la fiche vidéo (sortie structurée Haiku).\nconst v = $('Webhook').first().json.body;\nconst mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;\nconst transcript = v.segments.map((s) => `[${mmss(s.start)}] ${s.text}`).join('\\n');\n\nconst SYSTEM = `Tu rédiges la fiche d'une vidéo de formation Odoo pour un consultant fonctionnel, en français, à partir de sa transcription automatique.\nRègles :\n- N'écris que ce que la transcription dit. N'invente aucun menu, champ ni réglage.\n- Recopie les libellés d'interface et les chemins de menu en anglais, tels que prononcés (séparateur ‣, ex. Inventory ‣ Configuration ‣ Settings).\n- \"version\" : la version d'Odoo si la vidéo la dit (« 17.0 », « 18.0 »…), sinon « indéterminée ».\n- \"resume\" : 3 à 6 phrases sur ce que la vidéo montre.\n- \"quand\" : dans quel besoin client cette vidéo est utile, en une ou deux phrases.\n- \"etapes\" : chaque opération montrée, dans l'ordre, avec \"debut\" = la seconde où elle commence (d'après les repères [m:ss]), un titre court, le détail (champ, valeur, effet) et les menus cités.\n- \"pieges\" : limites, prérequis ou erreurs signalés dans la vidéo ; liste vide sinon.`;\nconst SCHEMA = {\n  type: 'object',\n  properties: {\n    version: { type: 'string' },\n    apps: { type: 'array', items: { type: 'string' } },\n    resume: { type: 'string' },\n    quand: { type: 'string' },\n    etapes: { type: 'array', items: { type: 'object', properties: { debut: { type: 'integer' }, titre: { type: 'string' }, detail: { type: 'string' }, menus: { type: 'array', items: { type: 'string' } } }, required: ['debut', 'titre', 'detail', 'menus'], additionalProperties: false } },\n    pieges: { type: 'array', items: { type: 'string' } },\n  },\n  required: ['version', 'apps', 'resume', 'quand', 'etapes', 'pieges'],\n  additionalProperties: false,\n};\n\nreturn [{\n  json: {\n    video: v,\n    claudeBody: {\n      model: 'claude-haiku-5-5',\n      max_tokens: 12000,\n      output_config: { effort: 'low', format: { type: 'json_schema', schema: SCHEMA } },\n      system: SYSTEM,\n      messages: [{ role: 'user', content: `Vidéo « ${v.title} » (cours « ${v.course} »${v.section && v.section !== v.course ? ` › ${v.section}` : ''}).\\n\\nTranscription :\\n${transcript}` }],\n    },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "v3",
+      "name": "Summarize video (Claude)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        440,
+        -120
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.anthropic.com/v1/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "anthropicApi",
+        "sendQuery": false,
+        "sendHeaders": true,
+        "specifyHeaders": "keypair",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "anthropic-version",
+              "value": "2023-06-01"
+            }
+          ]
+        },
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.claudeBody) }}",
+        "options": {
+          "timeout": 120000
+        }
+      },
+      "credentials": {
+        "anthropicApi": {
+          "id": "H830I5g8houaoPAf",
+          "name": "Anthropic account"
+        }
+      }
+    },
+    {
+      "id": "v4",
+      "name": "Build chunks",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        660,
+        -120
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: fiche + passages de transcription au format de la bibliothèque, et lot d'embeddings (préfixe document de gemini-embedding-2).\nconst { video: v } = $('Build summary request').first().json;\nconst raw = ($json.content ?? []).find((c) => c.type === 'text')?.text ?? '';\nlet f;\ntry { f = JSON.parse(raw); } catch (e) { throw new Error(`Fiche illisible pour ${v.id} : ${raw.slice(0, 200)}`); }\n\nconst mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;\nconst url = `https://www.youtube.com/watch?v=${v.id}`;\nconst module = v.course.toLowerCase().normalize('NFD').replace(/\\p{Diacritic}/gu, '').replace(/^odoo academy - /, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');\nconst head = `Vidéo officielle Odoo « ${v.title} » (cours « ${v.course} »${v.section && v.section !== v.course ? ` › ${v.section}` : ''}), langue ${v.language}. Transcription automatique YouTube, non relue. Version : ${f.version}.`;\n\n// Fiche : en-tête, résumé, étapes horodatées, pièges ; coupée en morceaux de 2 400 caractères au plus.\nconst lines = [\n  head,\n  `Applications : ${f.apps.join(', ') || 'non précisées'}.`,\n  `Quand l'utiliser : ${f.quand}`,\n  `Résumé : ${f.resume}`,\n  ...f.etapes.map((e) => `- [${mmss(e.debut)}] **${e.titre}** : ${e.detail}${e.menus.length ? ` Menus : ${e.menus.join(' ; ')}.` : ''}`),\n  ...(f.pieges.length ? [`Pièges : ${f.pieges.join(' ')}`] : []),\n];\nconst fiche = [];\nfor (const l of lines) {\n  if (fiche.length && fiche[fiche.length - 1].length + l.length < 2400) fiche[fiche.length - 1] += `\\n${l}`;\n  else fiche.push(l);\n}\nconst chunks = fiche.map((content, k) => ({ breadcrumb: `Vidéo « ${v.title} » > Fiche${k ? ` (suite ${k + 1})` : ''}`, url, content, start_s: null, end_s: null }));\n// Passages de transcription (fenêtres de 2 minutes préparées par le script local).\nfor (const s of v.segments) {\n  chunks.push({ breadcrumb: `Vidéo « ${v.title} » > Transcription (${mmss(s.start)}–${mmss(s.end)})`, url: `${url}&t=${Math.floor(s.start)}s`, content: `${head}\\nTranscription : ${s.text}`, start_s: Math.floor(s.start), end_s: Math.ceil(s.end) });\n}\nchunks.forEach((c, k) => Object.assign(c, { ordinal: k, module, tokens: Math.ceil(c.content.length / 4) }));\n\nconst u = $json.usage ?? {};\nconst usd = ((u.input_tokens ?? 0) * 0.1 + (u.output_tokens ?? 0) * 0.5) / 1e6;\nreturn [{\n  json: {\n    source: { title: v.title, url, path: `youtube/${v.id}`, module },\n    chunks,\n    usd,\n    embedBody: { requests: chunks.map((c) => ({ model: 'models/gemini-embedding-2', content: { parts: [{ text: `title: ${c.breadcrumb} | text: ${c.content}` }] }, outputDimensionality: 1536 })) },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "v5",
+      "name": "Embed chunks (Gemini)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        880,
+        -120
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-2:batchEmbedContents",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendQuery": false,
+        "sendHeaders": false,
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.embedBody) }}",
+        "options": {
+          "timeout": 60000
+        }
+      },
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nVJcX81Tp0k9542X",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "id": "v6",
+      "name": "Build payload",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1100,
+        -120
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: assemble les passages et leurs vecteurs en un seul paramètre JSON pour l'insertion.\n// Fiche Haiku (transcript fourni) ou analyse Gemini de la vidéo.\nconst b = ($('Build chunks').isExecuted ? $('Build chunks') : $('Build chunks (video)')).first().json;\nconst vectors = $json.embeddings.map((e) => `[${e.values.join(',')}]`);\nreturn [{ json: { usd: b.usd, chunks: b.chunks.length, payload: JSON.stringify({ ...b.source, chunks: b.chunks.map((c, k) => ({ ...c, embedding: vectors[k] })) }) } }];\n"
+      }
+    },
+    {
+      "id": "v7",
+      "name": "Save video (pgvector)",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        1320,
+        -120
+      ],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Une vidéo déjà présente (même URL ou même chemin) est laissée telle quelle : l'import est rejouable.\nwith p as (select $1::jsonb as j),\nsrc as (\n  insert into knowledge_sources (kind, title, url, odoo_version, module, category, path, license, reliability, status, ingested_at)\n  select 'youtube_video', j->>'title', j->>'url', '20.0', j->>'module', 'video', j->>'path',\n    'Vidéo YouTube © Odoo S.A. (consultation personnelle, non redistribuée)', 'ai_transcript_unverified', 'ingested', now()\n  from p\n  on conflict do nothing\n  returning id\n),\nins as (\n  insert into knowledge_chunks (source_id, odoo_version, module, ordinal, breadcrumb, url, anchor_verified, content, content_hash, token_count, embedding, embedding_model, start_seconds, end_seconds)\n  select src.id, '20.0', c.module, c.ordinal, c.breadcrumb, c.url, true, c.content, encode(sha256(convert_to(c.content, 'UTF8')), 'hex'), c.tokens, c.embedding::vector, 'gemini-embedding-2', c.start_s, c.end_s\n  from src, p, jsonb_to_recordset(p.j->'chunks') as c(module text, ordinal int, breadcrumb text, url text, content text, tokens int, embedding text, start_s int, end_s int)\n  returning 1\n)\nselect (select count(*) from src) as source_ajoutee, (select count(*) from ins) as passages",
+        "options": {
+          "queryReplacement": "={{ [ $json.payload ] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "2kZXmPiVRr0deiOp",
+          "name": "Odoo pgvector"
+        }
+      }
+    },
+    {
+      "id": "v8",
+      "name": "Result",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        1540,
+        -120
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "r1",
+              "name": "ajoutee",
+              "type": "boolean",
+              "value": "={{ $json.source_ajoutee > 0 }}"
+            },
+            {
+              "id": "r2",
+              "name": "passages",
+              "type": "number",
+              "value": "={{ Number($json.passages) }}"
+            },
+            {
+              "id": "r3",
+              "name": "usd",
+              "type": "number",
+              "value": "={{ $('Build payload').first().json.usd }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "v9",
+      "name": "Transcript provided?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        110,
+        120
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "t1",
+              "leftValue": "={{ ($('Webhook').first().json.body?.segments ?? []).length > 0 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "v10",
+      "name": "Build video request (Gemini)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        330,
+        120
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: consignes et schéma de l'analyse vidéo par Gemini (lecture de la vidéo YouTube côté Google, aucun transcript à fournir).\nconst v = $('Webhook').first().json.body;\nconst SYSTEM = `Tu analyses une vidéo officielle de la chaîne YouTube d'Odoo pour la base de connaissances d'un consultant fonctionnel Odoo. Tu rapportes fidèlement ce qui est dit et montré, sans rien ajouter de ta propre connaissance d'Odoo. Réponds uniquement en JSON.`;\nconst PROMPT = `Vidéo : « ${v.title} », cours « ${v.course} »${v.section && v.section !== v.course ? ` › ${v.section}` : ''}.\n\nProduis :\n- \"language\" : code de la langue parlée (en, fr, it…) ;\n- \"odooVersion\" : \"value\" = la version d'Odoo présentée (« 17.0 », « 18.0 », « 19.0 »…) seulement si la vidéo la dit, l'affiche, ou si le titre la donne ; sinon « indéterminée ». \"evidence\" = l'indice exact ;\n- \"apps\" : applications Odoo traitées, avec leur nom anglais d'interface (Helpdesk, Accounting, Inventory…) ;\n- \"summary\" : résumé en français, 3 à 6 phrases ;\n- \"segments\" : la vidéo entière découpée en segments de 1 à 3 minutes qui se suivent sans trou, avec \"start\" et \"end\" en secondes depuis le début, un \"title\" court en français, \"transcript\" = transcription fidèle et complète de ce qui est dit, dans la langue d'origine (pas de résumé), et \"onScreen\" = en français, ce qui est montré : écrans, menus et chemins de menu (séparateur ‣, libellés tels qu'affichés), boutons, champs et valeurs saisies ;\n- \"features\" : chaque fonctionnalité présentée : \"app\", \"name\" (libellé anglais tel qu'affiché ou prononcé), \"description\" en français (ce qu'elle fait, comment l'activer ou l'utiliser, d'après la vidéo), \"menuPaths\" (chemins de menu vus ou cités, sinon liste vide), \"start\" (seconde où elle est présentée) ;\n- \"cautions\" : mises en garde, limites, prérequis ou conseils donnés dans la vidéo (édition Enterprise, application à installer, paramètre à activer…), en français, avec \"start\".\nN'invente rien : un menu ou un libellé non visible ni prononcé n'est pas cité.`;\nconst int = { type: 'integer', minimum: 0 };\nconst SCHEMA = {\n  type: 'object',\n  properties: {\n    language: { type: 'string' },\n    odooVersion: { type: 'object', properties: { value: { type: 'string' }, evidence: { type: 'string' } }, required: ['value', 'evidence'] },\n    apps: { type: 'array', items: { type: 'string' } },\n    summary: { type: 'string' },\n    segments: { type: 'array', items: { type: 'object', properties: { start: int, end: int, title: { type: 'string' }, transcript: { type: 'string' }, onScreen: { type: 'string' } }, required: ['start', 'end', 'title', 'transcript', 'onScreen'] } },\n    features: { type: 'array', items: { type: 'object', properties: { app: { type: 'string' }, name: { type: 'string' }, description: { type: 'string' }, menuPaths: { type: 'array', items: { type: 'string' } }, start: int }, required: ['app', 'name', 'description', 'menuPaths', 'start'] } },\n    cautions: { type: 'array', items: { type: 'object', properties: { text: { type: 'string' }, start: int }, required: ['text', 'start'] } },\n  },\n  required: ['language', 'odooVersion', 'apps', 'summary', 'segments', 'features', 'cautions'],\n};\nreturn [{\n  json: {\n    video: v,\n    geminiBody: {\n      systemInstruction: { parts: [{ text: SYSTEM }] },\n      // Une image toutes les 2 secondes en basse résolution : menus lisibles, coût par seconde réduit.\n      contents: [{ role: 'user', parts: [{ fileData: { fileUri: `https://www.youtube.com/watch?v=${v.id}` }, videoMetadata: { fps: 0.5 } }, { text: PROMPT }] }],\n      generationConfig: { responseMimeType: 'application/json', responseJsonSchema: SCHEMA, mediaResolution: 'MEDIA_RESOLUTION_LOW', thinkingConfig: { thinkingLevel: 'LOW' }, maxOutputTokens: 60000 },\n    },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "v11",
+      "name": "Analyze video (Gemini)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.5,
+      "position": [
+        550,
+        120
+      ],
+      "parameters": {
+        "method": "POST",
+        "url": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "googlePalmApi",
+        "sendQuery": false,
+        "sendHeaders": false,
+        "sendBody": true,
+        "contentType": "json",
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify($json.geminiBody) }}",
+        "options": {
+          "timeout": 600000
+        }
+      },
+      "retryOnFail": true,
+      "maxTries": 3,
+      "waitBetweenTries": 5000,
+      "credentials": {
+        "googlePalmApi": {
+          "id": "nVJcX81Tp0k9542X",
+          "name": "Google Gemini(PaLM) Api account"
+        }
+      }
+    },
+    {
+      "id": "v12",
+      "name": "Build chunks (video)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        770,
+        120
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: fiche (fonctionnalités, mises en garde) et passages horodatés (à l'écran + transcription) au format des vidéos déjà en base, puis lot d'embeddings.\nconst { video: v } = $('Build video request (Gemini)').first().json;\nconst raw = ($json.candidates?.[0]?.content?.parts ?? []).filter((p) => !p.thought).map((p) => p.text ?? '').join('');\nlet a;\ntry { a = JSON.parse(raw); } catch (e) { throw new Error(`Analyse illisible pour ${v.id} (${$json.candidates?.[0]?.finishReason ?? 'sans réponse'}) : ${raw.slice(0, 200)}`); }\n\nconst mmss = (s) => `${Math.floor(s / 60)}:${String(Math.floor(s % 60)).padStart(2, '0')}`;\nconst url = `https://www.youtube.com/watch?v=${v.id}`;\nconst module = v.course.toLowerCase().normalize('NFD').replace(/\\p{Diacritic}/gu, '').replace(/^odoo academy - /, '').replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');\nconst head = `Vidéo officielle Odoo « ${v.title} » (cours « ${v.course} »${v.section && v.section !== v.course ? ` › ${v.section}` : ''}), langue ${a.language}. Transcription générée par IA, non relue.`;\n\nconst lines = [\n  head,\n  `Applications : ${a.apps.join(', ') || 'non précisées'}. Version : ${a.odooVersion.value}${a.odooVersion.value === 'indéterminée' ? '' : ` (${a.odooVersion.evidence})`}.`,\n  `Résumé : ${a.summary}`,\n  ...a.features.map((f) => `- [${mmss(f.start)}] **${f.name}** (${f.app}) : ${f.description}${f.menuPaths.length ? ` Menus : ${f.menuPaths.join(' ; ')}.` : ''}`),\n  ...a.cautions.map((c) => `- Attention [${mmss(c.start)}] : ${c.text}`),\n];\nconst fiche = [];\nfor (const l of lines) {\n  if (fiche.length && fiche[fiche.length - 1].length + l.length < 2400) fiche[fiche.length - 1] += `\\n${l}`;\n  else fiche.push(l);\n}\nconst chunks = fiche.map((content, k) => ({ breadcrumb: `Vidéo « ${v.title} » > Fiche${k ? ` (suite ${k + 1})` : ''}`, url, content, start_s: null, end_s: null }));\nfor (const s of a.segments) {\n  chunks.push({ breadcrumb: `Vidéo « ${v.title} » > ${s.title} (${mmss(s.start)}–${mmss(s.end)})`, url: `${url}&t=${s.start}s`, content: `${head}\\nÀ l'écran : ${s.onScreen}\\nTranscription : ${s.transcript}`, start_s: s.start, end_s: s.end });\n}\nchunks.forEach((c, k) => Object.assign(c, { ordinal: k, module, tokens: Math.ceil(c.content.length / 4) }));\n\n// gemini-3.8-flash : 0,75 USD par million en entrée (vidéo comprise), 3,75 en sortie et réflexion (passe à 1,50 / 7,50 le 01/01/2027).\nconst u = $json.usageMetadata ?? {};\nconst usd = ((u.promptTokenCount ?? 0) * 0.75 + ((u.candidatesTokenCount ?? 0) + (u.thoughtsTokenCount ?? 0)) * 3.75) / 1e6;\nreturn [{\n  json: {\n    source: { title: v.title, url, path: `youtube/${v.id}`, module },\n    chunks,\n    usd,\n    embedBody: { requests: chunks.map((c) => ({ model: 'models/gemini-embedding-2', content: { parts: [{ text: `title: ${c.breadcrumb} | text: ${c.content}` }] }, outputDimensionality: 1536 })) },\n  },\n}];\n"
+      }
+    },
+    {
+      "id": "v13",
+      "name": "Already stored?",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        110,
+        -260
+      ],
+      "notes": "Une vidéo déjà en base n'est ni résumée ni analysée à nouveau : pas de coût en double.",
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "select count(*)::int as deja from knowledge_sources where path = 'youtube/' || $1",
+        "options": {
+          "queryReplacement": "={{ [ $json.body.id ] }}"
+        }
+      },
+      "credentials": {
+        "postgres": {
+          "id": "2kZXmPiVRr0deiOp",
+          "name": "Odoo pgvector"
+        }
+      }
+    },
+    {
+      "id": "v14",
+      "name": "New video?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        330,
+        -260
+      ],
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "loose",
+            "version": 2
+          },
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "n1",
+              "leftValue": "={{ $json.deja === 0 }}",
+              "rightValue": "",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "v15",
+      "name": "Skip (already stored)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        550,
+        -260
+      ],
+      "parameters": {
+        "mode": "manual",
+        "includeOtherFields": false,
+        "assignments": {
+          "assignments": [
+            {
+              "id": "s1",
+              "name": "ajoutee",
+              "type": "boolean",
+              "value": "={{ false }}"
+            },
+            {
+              "id": "s2",
+              "name": "passages",
+              "type": "number",
+              "value": "={{ 0 }}"
+            },
+            {
+              "id": "s3",
+              "name": "usd",
+              "type": "number",
+              "value": "={{ 0 }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Already stored?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build summary request": {
+      "main": [
+        [
+          {
+            "node": "Summarize video (Claude)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Summarize video (Claude)": {
+      "main": [
+        [
+          {
+            "node": "Build chunks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build chunks": {
+      "main": [
+        [
+          {
+            "node": "Embed chunks (Gemini)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Embed chunks (Gemini)": {
+      "main": [
+        [
+          {
+            "node": "Build payload",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build payload": {
+      "main": [
+        [
+          {
+            "node": "Save video (pgvector)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save video (pgvector)": {
+      "main": [
+        [
+          {
+            "node": "Result",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Transcript provided?": {
+      "main": [
+        [
+          {
+            "node": "Build summary request",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Build video request (Gemini)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build video request (Gemini)": {
+      "main": [
+        [
+          {
+            "node": "Analyze video (Gemini)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Analyze video (Gemini)": {
+      "main": [
+        [
+          {
+            "node": "Build chunks (video)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build chunks (video)": {
+      "main": [
+        [
+          {
+            "node": "Embed chunks (Gemini)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Already stored?": {
+      "main": [
+        [
+          {
+            "node": "New video?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "New video?": {
+      "main": [
+        [
+          {
+            "node": "Transcript provided?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Skip (already stored)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "id": "C19Qd5uxcryWxnjJ"
+}

@@ -5,7 +5,7 @@
 <!-- close:active -->
 **Dernière étape** : `/close` Phase 3 — PDF client (01/11/2026)
 **Prochaine étape recommandée** : `/plan Phase 4` (robustesse, dont plan Complet sur Thermo et coût ≤ 0,40 USD)
-**Dernier commit reflété** : 5989df6
+**Dernier commit reflété** : 19f36ae
 
 ## Historique récent
 - 01/11/2026 — Phase 3 clôturée : `[DEV] odoo-plan` (extraction, lots parallèles, assemblage, contrôle web) + PDF / `plan:` sur Telegram ; vidéos (🎬) et repli web (🌐) dans `odoo-question` ; MTO Complet 3/3, Thermo Partiel (reporté en Phase 4), 0 « Documenté » faux, 0,20 à 0,41 USD par plan ; rapport `docs/evaluation/2026-11-01-plan-v2.md`

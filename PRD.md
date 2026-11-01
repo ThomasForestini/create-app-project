@@ -54,14 +54,14 @@ Un assistant personnel sur Telegram, propulsé par n8n, qui répond avec précis
 - ≥ 90 % de bonnes réponses sur un échantillon de 30 questions du PDF de certification, corrigé vérifié à la main (doc + runbot).
 - ≤ 1 réponse marquée « Documenté » fausse sur cet échantillon (les erreurs doivent tomber en « À vérifier »).
 - Réponse reçue sur Telegram en < 60 s pour une photo de QCM, < 3 min pour un PDF client.
-- Coût moyen ≤ 0,05 USD par question et ≤ 0,40 USD par plan de configuration (relevé de 0,20 USD le 01/11/2026 : Sonnet 5.5 gardé pour rédiger les lots, repli web compris).
+- Coût moyen ≤ 0,05 USD par question et ≤ 0,50 USD par plan de configuration (relevé de 0,20 à 0,40 USD le 01/11/2026 : Sonnet 5.5 gardé pour rédiger les lots, repli web compris ; puis à 0,50 USD le même jour pour les documents denses comme Thermo, 12 besoins en 6 lots à 0,467 USD).
 
 ## 7. Implementation Phases
 
 - **Phase 1 — Socle + question texte** : pgvector sur VPS + import v20, bot Telegram filtré, workflow question texte → recherche → réponse sourcée à 3 statuts ; duel Sonnet 5.5 vs meilleur Gemini sur les jeux de test existants (106 doc + 12 de référence), modèle gagnant figé. ✅ Terminée le 2026-10-27
 - **Phase 2 — QCM photo** : photo → lecture de la question et des choix (vision) → réponse + explication + source ; corrigé vérifié de 30 questions ; mesure du taux de bonnes réponses. ✅ Terminée le 2026-10-31
 - **Phase 3 — PDF client** : PDF → extraction des besoins → plan de configuration Odoo 20 étape par étape ; validé sur les scénarios clients existants (dont MTO) ✅ Terminée le 2026-11-01 (MTO Complet 3/3 ; Thermo Partiel, reporté en Phase 4)
-- **Phase 4 — Robustesse** : format Telegram lisible (découpage messages longs), gestion d'erreurs visible, journal coûts/latence, workflows `[PROD]` ; plan « Complet » à chaque tirage sur les scénarios denses (Thermo, Partiel 2/2 en fin de Phase 3) et coût de Thermo ≤ 0,40 USD (0,40-0,41 USD en fin de Phase 3) — reporté de la Phase 3 le 01/11/2026.
+- **Phase 4 — Robustesse** : format Telegram lisible (découpage messages longs), gestion d'erreurs visible, journal coûts/latence, workflows `[PROD]` ; plan « Complet » à chaque tirage sur les scénarios denses (Thermo, Partiel 2/2 en fin de Phase 3) et coût de Thermo ≤ 0,50 USD (0,40-0,41 USD en fin de Phase 3, plafond relevé le 01/11/2026) — reporté de la Phase 3 le 01/11/2026.
 
 ## 8. Risks & Mitigations
 

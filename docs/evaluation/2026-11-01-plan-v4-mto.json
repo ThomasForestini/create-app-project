@@ -1,0 +1,1460 @@
+{
+ "1": {
+  "latenceS": 68,
+  "plan": {
+   "client": "Atelier Lumière",
+   "edition": "Non précisée",
+   "resume": "Plan de paramétrage pour Atelier Lumière : activation de la route MTO, produit standard suivi en stock, produit sur mesure non stocké acheté chez Lumitech SAS (délai 15 jours) avec commande fournisseur générée à la confirmation de la commande client, et entrepôt unique de Lyon avec réception et livraison directes.",
+   "besoins": [
+    {
+     "n": 1,
+     "titre": "Produits standard et sur mesure",
+     "besoin": "Gérer deux familles de produits : des luminaires standard tenus en stock et des luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.",
+     "contexte": "luminaires standard (famille de produits tenue en stock) ; luminaires sur mesure (famille de produits jamais stockée, commandée au fournisseur à la commande client)",
+     "extrait": "Deux familles de produits : des luminaires standard tenus en stock, et des luminaires sur mesure qui ne sont jamais stockés : ils sont commandés au fournisseur uniquement quand un client passe commande."
+    },
+    {
+     "n": 2,
+     "titre": "Fournisseur du sur-mesure",
+     "besoin": "Renseigner Lumitech SAS comme fournisseur des luminaires sur mesure avec son délai de livraison annoncé.",
+     "contexte": "Lumitech SAS (fournisseur des luminaires sur mesure uniquement) ; 15 jours (délai de livraison annoncé de Lumitech SAS pour le sur-mesure)",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "n": 3,
+     "titre": "Commande fournisseur automatique",
+     "besoin": "Préparer automatiquement la commande fournisseur, sans ressaisie, à la confirmation d'une commande client de luminaires sur mesure.",
+     "contexte": "commande client de sur-mesure (déclencheur de la commande fournisseur)",
+     "extrait": "À la confirmation d'une commande client de sur-mesure, la commande fournisseur doit être préparée automatiquement, sans ressaisie."
+    },
+    {
+     "n": 4,
+     "titre": "Suivi commande client/fournisseur",
+     "besoin": "Savoir à tout moment quelle commande fournisseur correspond à quelle commande client.",
+     "contexte": "",
+     "extrait": "Ils veulent savoir à tout moment quelle commande fournisseur correspond à quelle commande client."
+    },
+    {
+     "n": 5,
+     "titre": "Entrepôt et réception",
+     "besoin": "Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.",
+     "contexte": "Lyon (seul entrepôt de la société) ; sans contrôle qualité (réception de la marchandise fournisseur)",
+     "extrait": "Un seul entrepôt, à Lyon. La marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité."
+    },
+    {
+     "n": 6,
+     "titre": "Livraison client",
+     "besoin": "Livrer le client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.",
+     "contexte": "entrepôt de Lyon (départ de la livraison au client)",
+     "extrait": "La livraison au client part de l'entrepôt de Lyon dès que la marchandise fournisseur est reçue."
+    }
+   ],
+   "donnees_client": [
+    {
+     "donnee": "Société",
+     "valeur": "Atelier Lumière",
+     "objet": "général",
+     "extrait": "M. Durand, directeur des opérations d'Atelier Lumière (distributeur de luminaires, une dizaine d'utilisateurs)."
+    },
+    {
+     "donnee": "Interlocuteur",
+     "valeur": "M. Durand, directeur des opérations",
+     "objet": "général",
+     "extrait": "RDV du 14/10/2026 avec M. Durand, directeur des opérations d'Atelier Lumière"
+    },
+    {
+     "donnee": "Nombre d'utilisateurs",
+     "valeur": "une dizaine",
+     "objet": "général",
+     "extrait": "distributeur de luminaires, une dizaine d'utilisateurs"
+    },
+    {
+     "donnee": "Fournisseur",
+     "valeur": "Lumitech SAS",
+     "objet": "luminaires sur mesure",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "donnee": "Délai de livraison",
+     "valeur": "15 jours",
+     "objet": "luminaires sur mesure (Lumitech SAS)",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "donnee": "Entrepôt",
+     "valeur": "Lyon",
+     "objet": "général (seul entrepôt)",
+     "extrait": "Un seul entrepôt, à Lyon."
+    }
+   ],
+   "lots": [
+    {
+     "n": 1,
+     "besoins": [
+      1,
+      2
+     ],
+     "question": "Comment paramétrer les produits standard en stock et les produits sur mesure non stockés avec Lumitech SAS comme fournisseur et son délai de livraison dans Odoo 20.0 ?",
+     "contexte": "Lumitech SAS (fournisseur des luminaires sur mesure uniquement) ; 15 jours (délai de livraison de Lumitech SAS pour le sur-mesure)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 2,
+     "besoins": [
+      3,
+      4
+     ],
+     "question": "Comment paramétrer la création automatique de la commande fournisseur à la confirmation d'une commande client de sur-mesure et le suivi entre commande client et commande fournisseur dans Odoo 20.0 ?",
+     "contexte": "commande client de sur-mesure (déclencheur de la commande fournisseur)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 3,
+     "besoins": [
+      5,
+      6
+     ],
+     "question": "Comment paramétrer l'entrepôt de Lyon, la réception directement en stock sans contrôle qualité et la livraison au client dès réception de la marchandise fournisseur dans Odoo 20.0 ?",
+     "contexte": "Lyon (seul entrepôt de la société) ; sans contrôle qualité (réception de la marchandise fournisseur)",
+     "statut": "À vérifier"
+    }
+   ],
+   "etapes": [
+    {
+     "n": 1,
+     "ref": "",
+     "besoins": [],
+     "action": "Installer les apps Sales, Purchase, Inventory",
+     "menu": "Apps",
+     "champ": "",
+     "valeur": "Sales, Purchase, Inventory",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Ajoutée par le code : apps citées dans les menus du plan."
+    },
+    {
+     "n": 2,
+     "ref": "L1.1",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Activer la route MTO",
+     "menu": "**Inventory app ‣ Configuration ‣ Settings**",
+     "champ": "**Replenish on Order (MTO)** (section **Logistics**)",
+     "valeur": "Case cochée, puis cliquer sur **Save**",
+     "detail": "Réglage nécessaire pour utiliser la route make to order sur les luminaires sur mesure.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route"
+     ]
+    },
+    {
+     "n": 3,
+     "ref": "L1.2",
+     "besoins": [
+      1
+     ],
+     "action": "Ouvrir ou créer la fiche du produit standard",
+     "menu": "**Inventory app ‣ Products ‣ Products**",
+     "champ": "**Tracking**",
+     "valeur": "**By Quantity**",
+     "detail": "Pour un produit standard en stock, le champ Tracking permet de suivre le stock (valorisation, règles de réapprovisionnement). Sélectionner **Goods** pour le **Product Type** ; **By Quantity** est la valeur par défaut du champ Tracking.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/sales/rental/configure_products/products.html#initial-product-configuration",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html#tracked-vs-untracked-goods"
+     ]
+    },
+    {
+     "n": 4,
+     "ref": "L1.3",
+     "besoins": [
+      1
+     ],
+     "action": "Créer une règle de réapprovisionnement pour le produit standard",
+     "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+     "champ": "**Product**, **Location**, **Min**, **Max**",
+     "valeur": "À renseigner",
+     "detail": "Cliquer sur **New** puis renseigner produit, emplacement, quantités min et max. Les seuils ne sont pas fournis dans les données client. Étape à faire seulement si le client veut un réapprovisionnement automatique.",
+     "statut": "À vérifier",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+     ],
+     "raison": "Les passages décrivent la création d'une règle de réapprovisionnement (menu, champs Product, Location, Min, Max) mais l'étape concerne le réapprovisionnement automatique, non demandé ici ; le contexte ne correspond pas à la question."
+    },
+    {
+     "n": 5,
+     "ref": "L1.4",
+     "besoins": [
+      1,
+      2
+     ],
+     "action": "Ouvrir ou créer la fiche du produit sur mesure",
+     "menu": "**Inventory app ‣ Products ‣ Products**",
+     "champ": "",
+     "valeur": "Produit luminaire sur mesure : nom À renseigner",
+     "detail": "Sélectionner un produit existant ou cliquer sur **New**.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+     ]
+    },
+    {
+     "n": 6,
+     "ref": "L1.5",
+     "besoins": [
+      1
+     ],
+     "action": "Rendre le produit sur mesure non suivi en stock",
+     "menu": "",
+     "champ": "**Tracking**",
+     "valeur": "Champ vidé (untracked)",
+     "detail": "Sélectionner le texte du champ Tracking, le supprimer, puis cliquer en dehors du champ pour marquer le produit comme non suivi.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html#tracked-vs-untracked-goods"
+     ]
+    },
+    {
+     "n": 7,
+     "ref": "L1.6",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Activer la route MTO sur le produit sur mesure",
+     "menu": "Onglet *Inventory* ‣ section *Operations*",
+     "champ": "**Routes**",
+     "valeur": "**Replenish on Order (MTO)**",
+     "detail": "Cocher l'option Replenish on Order (MTO) dans le champ Routes.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+     ]
+    },
+    {
+     "n": 8,
+     "ref": "L1.7",
+     "besoins": [
+      2,
+      3
+     ],
+     "action": "Activer la case Purchase du produit sur mesure",
+     "menu": "",
+     "champ": "**Purchase**",
+     "valeur": "Case cochée",
+     "detail": "La case sous le nom du produit fait apparaître l'onglet *Purchase*.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+     ]
+    },
+    {
+     "n": 9,
+     "ref": "",
+     "besoins": [
+      2
+     ],
+     "action": "Créer le fournisseur Lumitech SAS",
+     "menu": "Purchase app ‣ Orders ‣ Vendors",
+     "champ": "Name",
+     "valeur": "Lumitech SAS",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Ajoutée par le code : fournisseur à créer avant de le sélectionner."
+    },
+    {
+     "n": 10,
+     "ref": "L1.8",
+     "besoins": [
+      2
+     ],
+     "action": "Ajouter Lumitech SAS comme fournisseur du produit sur mesure",
+     "menu": "Onglet *Purchase* de la fiche produit",
+     "champ": "**Vendor**",
+     "valeur": "Lumitech SAS",
+     "detail": "Cliquer sur **Add a line** puis sélectionner le fournisseur. Lumitech SAS ne concerne que les luminaires sur mesure, pas les produits standard.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+     ]
+    },
+    {
+     "n": 11,
+     "ref": "L1.9",
+     "besoins": [
+      2
+     ],
+     "action": "Renseigner le prix unitaire chez Lumitech SAS",
+     "menu": "Onglet *Purchase*",
+     "champ": "**Unit Price**",
+     "valeur": "À renseigner",
+     "detail": "Le prix n'est pas fourni dans les données client.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time"
+     ]
+    },
+    {
+     "n": 12,
+     "ref": "L1.10",
+     "besoins": [
+      2
+     ],
+     "action": "Renseigner le délai du fournisseur Lumitech SAS",
+     "menu": "Onglet *Purchase*",
+     "champ": "**Lead Time**",
+     "valeur": "15 days",
+     "detail": "Le délai de 15 jours de Lumitech SAS va dans le délai de la ligne fournisseur (nommé **Delivery Lead Time** dans l'une des colonnes par défaut de la liste).",
+     "statut": "À vérifier",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+     ],
+     "raison": "Le passage [5] décrit Lead Time dans la ligne fournisseur et [12] le nomme Delivery Lead Time ; le champ Lead Time est présent, mais l'assimilation des deux noms reste une interprétation."
+    },
+    {
+     "n": 13,
+     "ref": "L3.2",
+     "besoins": [
+      5,
+      6
+     ],
+     "action": "Ouvrir la fiche de l'entrepôt de Lyon",
+     "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+     "champ": "",
+     "valeur": "Lyon",
+     "detail": "Sélectionner l'entrepôt de Lyon à modifier (onglet **Warehouse Configuration**).",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html#configuration",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+     ]
+    }
+   ],
+   "parStatut": {
+    "À vérifier": 4,
+    "Documenté": 9
+   },
+   "tests": [
+    {
+     "titre": "Commande client sur mesure vers commande fournisseur Lumitech SAS",
+     "etapes": [
+      "Ouvrir la Sales app et créer un devis avec un client (À renseigner)",
+      "Dans Order Lines, cliquer sur Add a product et choisir le luminaire sur mesure",
+      "Cliquer sur Confirm",
+      "Cliquer sur le smart button Purchase pour ouvrir la RfQ liée",
+      "Vérifier que le fournisseur est Lumitech SAS et que le délai est de 15 jours",
+      "Confirmer la RfQ en laissant les quantités proposées"
+     ],
+     "pages": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html"
+     ]
+    },
+    {
+     "titre": "Réception à Lyon puis livraison au client",
+     "etapes": [
+      "Ouvrir la Inventory app et ouvrir la réception de l'entrepôt de Lyon liée à la commande fournisseur",
+      "Cliquer sur Validate pour réceptionner directement en stock",
+      "Ouvrir la livraison liée à la commande client",
+      "Cliquer sur Validate pour livrer le client"
+     ],
+     "pages": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html"
+     ]
+    }
+   ],
+   "questions_ouvertes": [
+    {
+     "question": "Quelle est la liste des fournisseurs des luminaires standard ?",
+     "besoin": 1,
+     "raison": "Plusieurs fournisseurs sont possibles et la liste doit être fournie par le client."
+    },
+    {
+     "question": "Quels sont les prix d'achat négociés et la liste des articles ?",
+     "besoin": 2,
+     "raison": "Nécessaire pour paramétrer les produits et les fournisseurs."
+    },
+    {
+     "question": "Qui valide les commandes fournisseurs avant envoi (le responsable achats ou personne) ?",
+     "besoin": 3,
+     "raison": "Décision non prise par le client."
+    },
+    {
+     "question": "Quels sont les noms, références et seuils Min/Max des produits standard ?",
+     "besoin": 1,
+     "raison": "Nécessaires pour créer les fiches produits et la règle de réapprovisionnement."
+    },
+    {
+     "question": "Quel est le nom complet, le Short Name et l'adresse de l'entrepôt de Lyon ?",
+     "besoin": 5,
+     "raison": "Nécessaires si l'entrepôt doit être créé ou modifié."
+    },
+    {
+     "question": "Comment la livraison doit-elle se déclencher dès la réception fournisseur : validation manuelle ou automatique ?",
+     "besoin": 6,
+     "raison": "Aucun mécanisme documenté de livraison automatique, interprétation via MTO à valider."
+    }
+   ],
+   "avertissements": [
+    "Édition (Community ou Enterprise) non précisée : à confirmer avec le client.",
+    "Étapes L3.1 et L3.3 écartées : Multi-Step Routes et réception en 1 étape non demandés, la 1 étape est le comportement par défaut d'Odoo.",
+    "Une RfQ est toujours créée à la confirmation d'une commande client avec la route MTO, même si le stock suffit. Il ne faut pas l'annuler : Odoo n'en crée pas de nouvelle et un document recréé manuellement ne sera pas lié à la commande client.",
+    "Si la commande client est annulée, la livraison est annulée mais pas la RfQ, qui reste à annuler manuellement ou à réutiliser.",
+    "Depuis Odoo 19.0, la route Buy est masquée dans le champ Routes et s'applique automatiquement selon la configuration du produit : il ne faut pas l'activer manuellement.",
+    "Les passages ne précisent pas si un produit non suivi (Tracking vide) peut utiliser la route MTO : à vérifier lors du test.",
+    "La livraison reste en 1 étape par défaut (Deliver goods directly (1 step)) et est validée manuellement.",
+    "Les étapes L1.3 et L1.10 sont à vérifier."
+   ],
+   "markdown": "# Plan Odoo 20 — Atelier Lumière\n\nÉdition : Non précisée. Plan de paramétrage pour Atelier Lumière : activation de la route MTO, produit standard suivi en stock, produit sur mesure non stocké acheté chez Lumitech SAS (délai 15 jours) avec commande fournisseur générée à la confirmation de la commande client, et entrepôt unique de Lyon avec réception et livraison directes.\n\nÉtapes : 4 À vérifier, 9 Documenté.\n\n## Besoins compris\n1. **Produits standard et sur mesure** : Gérer deux familles de produits : des luminaires standard tenus en stock et des luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.\n2. **Fournisseur du sur-mesure** : Renseigner Lumitech SAS comme fournisseur des luminaires sur mesure avec son délai de livraison annoncé.\n3. **Commande fournisseur automatique** : Préparer automatiquement la commande fournisseur, sans ressaisie, à la confirmation d'une commande client de luminaires sur mesure.\n4. **Suivi commande client/fournisseur** : Savoir à tout moment quelle commande fournisseur correspond à quelle commande client.\n5. **Entrepôt et réception** : Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.\n6. **Livraison client** : Livrer le client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.\n\n## Étapes\n1. **Installer les apps Sales, Purchase, Inventory** — _À vérifier_\n   - Menu : Apps\n   - Valeur : Sales, Purchase, Inventory\n   - À vérifier : Ajoutée par le code : apps citées dans les menus du plan.\n2. **Activer la route MTO** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Settings**\n   - Champ : **Replenish on Order (MTO)** (section **Logistics**)\n   - Valeur : Case cochée, puis cliquer sur **Save**\n   - Réglage nécessaire pour utiliser la route make to order sur les luminaires sur mesure.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route\n3. **Ouvrir ou créer la fiche du produit standard** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **Tracking**\n   - Valeur : **By Quantity**\n   - Pour un produit standard en stock, le champ Tracking permet de suivre le stock (valorisation, règles de réapprovisionnement). Sélectionner **Goods** pour le **Product Type** ; **By Quantity** est la valeur par défaut du champ Tracking.\n   - Source : https://www.odoo.com/documentation/20.0/applications/sales/rental/configure_products/products.html#initial-product-configuration ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html#tracked-vs-untracked-goods\n4. **Créer une règle de réapprovisionnement pour le produit standard** — _À vérifier_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : **Product**, **Location**, **Min**, **Max**\n   - Valeur : À renseigner\n   - Cliquer sur **New** puis renseigner produit, emplacement, quantités min et max. Les seuils ne sont pas fournis dans les données client. Étape à faire seulement si le client veut un réapprovisionnement automatique.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n   - À vérifier : Les passages décrivent la création d'une règle de réapprovisionnement (menu, champs Product, Location, Min, Max) mais l'étape concerne le réapprovisionnement automatique, non demandé ici ; le contexte ne correspond pas à la question.\n5. **Ouvrir ou créer la fiche du produit sur mesure** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Valeur : Produit luminaire sur mesure : nom À renseigner\n   - Sélectionner un produit existant ou cliquer sur **New**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n6. **Rendre le produit sur mesure non suivi en stock** — _Documenté_\n   - Champ : **Tracking**\n   - Valeur : Champ vidé (untracked)\n   - Sélectionner le texte du champ Tracking, le supprimer, puis cliquer en dehors du champ pour marquer le produit comme non suivi.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/product_management/configure/type.html#tracked-vs-untracked-goods\n7. **Activer la route MTO sur le produit sur mesure** — _Documenté_\n   - Menu : Onglet *Inventory* ‣ section *Operations*\n   - Champ : **Routes**\n   - Valeur : **Replenish on Order (MTO)**\n   - Cocher l'option Replenish on Order (MTO) dans le champ Routes.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n8. **Activer la case Purchase du produit sur mesure** — _Documenté_\n   - Champ : **Purchase**\n   - Valeur : Case cochée\n   - La case sous le nom du produit fait apparaître l'onglet *Purchase*.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n9. **Créer le fournisseur Lumitech SAS** — _À vérifier_\n   - Menu : Purchase app ‣ Orders ‣ Vendors\n   - Champ : Name\n   - Valeur : Lumitech SAS\n   - À vérifier : Ajoutée par le code : fournisseur à créer avant de le sélectionner.\n10. **Ajouter Lumitech SAS comme fournisseur du produit sur mesure** — _Documenté_\n   - Menu : Onglet *Purchase* de la fiche produit\n   - Champ : **Vendor**\n   - Valeur : Lumitech SAS\n   - Cliquer sur **Add a line** puis sélectionner le fournisseur. Lumitech SAS ne concerne que les luminaires sur mesure, pas les produits standard.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n11. **Renseigner le prix unitaire chez Lumitech SAS** — _Documenté_\n   - Menu : Onglet *Purchase*\n   - Champ : **Unit Price**\n   - Valeur : À renseigner\n   - Le prix n'est pas fourni dans les données client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time\n12. **Renseigner le délai du fournisseur Lumitech SAS** — _À vérifier_\n   - Menu : Onglet *Purchase*\n   - Champ : **Lead Time**\n   - Valeur : 15 days\n   - Le délai de 15 jours de Lumitech SAS va dans le délai de la ligne fournisseur (nommé **Delivery Lead Time** dans l'une des colonnes par défaut de la liste).\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n   - À vérifier : Le passage [5] décrit Lead Time dans la ligne fournisseur et [12] le nomme Delivery Lead Time ; le champ Lead Time est présent, mais l'assimilation des deux noms reste une interprétation.\n13. **Ouvrir la fiche de l'entrepôt de Lyon** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Valeur : Lyon\n   - Sélectionner l'entrepôt de Lyon à modifier (onglet **Warehouse Configuration**).\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html#configuration ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n\n## Tests\n### Commande client sur mesure vers commande fournisseur Lumitech SAS\n1. Ouvrir la Sales app et créer un devis avec un client (À renseigner)\n2. Dans Order Lines, cliquer sur Add a product et choisir le luminaire sur mesure\n3. Cliquer sur Confirm\n4. Cliquer sur le smart button Purchase pour ouvrir la RfQ liée\n5. Vérifier que le fournisseur est Lumitech SAS et que le délai est de 15 jours\n6. Confirmer la RfQ en laissant les quantités proposées\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html\n\n### Réception à Lyon puis livraison au client\n1. Ouvrir la Inventory app et ouvrir la réception de l'entrepôt de Lyon liée à la commande fournisseur\n2. Cliquer sur Validate pour réceptionner directement en stock\n3. Ouvrir la livraison liée à la commande client\n4. Cliquer sur Validate pour livrer le client\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html\n\n## Questions ouvertes\n- Quelle est la liste des fournisseurs des luminaires standard ? (besoin 1) — Plusieurs fournisseurs sont possibles et la liste doit être fournie par le client.\n- Quels sont les prix d'achat négociés et la liste des articles ? (besoin 2) — Nécessaire pour paramétrer les produits et les fournisseurs.\n- Qui valide les commandes fournisseurs avant envoi (le responsable achats ou personne) ? (besoin 3) — Décision non prise par le client.\n- Quels sont les noms, références et seuils Min/Max des produits standard ? (besoin 1) — Nécessaires pour créer les fiches produits et la règle de réapprovisionnement.\n- Quel est le nom complet, le Short Name et l'adresse de l'entrepôt de Lyon ? (besoin 5) — Nécessaires si l'entrepôt doit être créé ou modifié.\n- Comment la livraison doit-elle se déclencher dès la réception fournisseur : validation manuelle ou automatique ? (besoin 6) — Aucun mécanisme documenté de livraison automatique, interprétation via MTO à valider.\n\n## Avertissements\n- Édition (Community ou Enterprise) non précisée : à confirmer avec le client.\n- Étapes L3.1 et L3.3 écartées : Multi-Step Routes et réception en 1 étape non demandés, la 1 étape est le comportement par défaut d'Odoo.\n- Une RfQ est toujours créée à la confirmation d'une commande client avec la route MTO, même si le stock suffit. Il ne faut pas l'annuler : Odoo n'en crée pas de nouvelle et un document recréé manuellement ne sera pas lié à la commande client.\n- Si la commande client est annulée, la livraison est annulée mais pas la RfQ, qui reste à annuler manuellement ou à réutiliser.\n- Depuis Odoo 19.0, la route Buy est masquée dans le champ Routes et s'applique automatiquement selon la configuration du produit : il ne faut pas l'activer manuellement.\n- Les passages ne précisent pas si un produit non suivi (Tracking vide) peut utiliser la route MTO : à vérifier lors du test.\n- La livraison reste en 1 étape par défaut (Deliver goods directly (1 step)) et est validée manuellement.\n- Les étapes L1.3 et L1.10 sont à vérifier.\n\n_Coût : 0.184 USD · durée : 68 s_",
+   "rejetsWeb": [],
+   "cout": {
+    "usd": 0.18386,
+    "details": [
+     {
+      "etape": "extraction",
+      "modele": "claude-sonnet-5-5",
+      "entree": 4737,
+      "sortie": 2158,
+      "usd": 0.03105
+     },
+     {
+      "etape": "lot 1",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.047,
+      "cache_lecture": 3076,
+      "dureeMs": 23577
+     },
+     {
+      "etape": "lot 2",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.0389,
+      "cache_lecture": 3076,
+      "dureeMs": 42301
+     },
+     {
+      "etape": "lot 3",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.02945,
+      "cache_lecture": 3076,
+      "dureeMs": 32937
+     },
+     {
+      "etape": "assemblage",
+      "modele": "claude-sonnet-5-5",
+      "entree": 7221,
+      "sortie": 2302,
+      "usd": 0.03746
+     }
+    ]
+   },
+   "dureeMs": 67564
+  }
+ },
+ "2": {
+  "latenceS": 76,
+  "plan": {
+   "client": "Atelier Lumière",
+   "edition": "Non précisée",
+   "resume": "Plan pour Atelier Lumière : activation de la route MTO, fiche produit sur mesure (MTO, Purchase, fournisseur Lumitech SAS, prix à renseigner, délai 15 jours), lien commande client/fournisseur via le smart button Purchase, et entrepôt Lyon avec réception et livraison en 1 étape, qui est le comportement par défaut d'Odoo. Les réglages multi-étapes ne sont pas retenus car non exigés.",
+   "besoins": [
+    {
+     "n": 1,
+     "titre": "Familles de produits",
+     "besoin": "Distinguer deux familles de produits : les luminaires standard tenus en stock et les luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.",
+     "contexte": "luminaires standard (tenus en stock); luminaires sur mesure (jamais stockés, commandés au fournisseur uniquement à la commande client)",
+     "extrait": "Deux familles de produits : des luminaires standard tenus en stock, et des luminaires sur mesure qui ne sont jamais stockés : ils sont commandés au fournisseur uniquement quand un client passe commande."
+    },
+    {
+     "n": 2,
+     "titre": "Fournisseur du sur-mesure",
+     "besoin": "Renseigner Lumitech SAS comme fournisseur des luminaires sur mesure avec son délai de livraison annoncé.",
+     "contexte": "Lumitech SAS (fournisseur des luminaires sur mesure uniquement); 15 jours (délai de livraison annoncé de Lumitech SAS pour le sur-mesure)",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "n": 3,
+     "titre": "Commande fournisseur automatique",
+     "besoin": "Préparer automatiquement la commande fournisseur à la confirmation d'une commande client de sur-mesure, sans ressaisie.",
+     "contexte": "commande client de sur-mesure (déclencheur de la commande fournisseur)",
+     "extrait": "À la confirmation d'une commande client de sur-mesure, la commande fournisseur doit être préparée automatiquement, sans ressaisie."
+    },
+    {
+     "n": 4,
+     "titre": "Suivi commande client / fournisseur",
+     "besoin": "Savoir à tout moment quelle commande fournisseur correspond à quelle commande client.",
+     "contexte": "",
+     "extrait": "Ils veulent savoir à tout moment quelle commande fournisseur correspond à quelle commande client."
+    },
+    {
+     "n": 5,
+     "titre": "Entrepôt et réception",
+     "besoin": "Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.",
+     "contexte": "Lyon (entrepôt unique); sans contrôle qualité (réception de la marchandise fournisseur)",
+     "extrait": "Un seul entrepôt, à Lyon. La marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité."
+    },
+    {
+     "n": 6,
+     "titre": "Livraison client",
+     "besoin": "Livrer le client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.",
+     "contexte": "entrepôt de Lyon (départ de la livraison au client)",
+     "extrait": "La livraison au client part de l'entrepôt de Lyon dès que la marchandise fournisseur est reçue."
+    }
+   ],
+   "donnees_client": [
+    {
+     "donnee": "Société",
+     "valeur": "Atelier Lumière",
+     "objet": "général",
+     "extrait": "M. Durand, directeur des opérations d'Atelier Lumière (distributeur de luminaires, une dizaine d'utilisateurs)."
+    },
+    {
+     "donnee": "Interlocuteur",
+     "valeur": "M. Durand, directeur des opérations",
+     "objet": "général",
+     "extrait": "RDV du 14/10/2026 avec M. Durand, directeur des opérations d'Atelier Lumière"
+    },
+    {
+     "donnee": "Nombre d'utilisateurs",
+     "valeur": "une dizaine",
+     "objet": "général",
+     "extrait": "distributeur de luminaires, une dizaine d'utilisateurs"
+    },
+    {
+     "donnee": "Fournisseur",
+     "valeur": "Lumitech SAS",
+     "objet": "luminaires sur mesure",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "donnee": "Délai de livraison",
+     "valeur": "15 jours",
+     "objet": "luminaires sur mesure (Lumitech SAS)",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "donnee": "Entrepôt",
+     "valeur": "Lyon",
+     "objet": "entrepôt unique",
+     "extrait": "Un seul entrepôt, à Lyon."
+    }
+   ],
+   "lots": [
+    {
+     "n": 1,
+     "besoins": [
+      1,
+      2
+     ],
+     "question": "Comment paramétrer les produits sur mesure commandés à la demande et leur fournisseur Lumitech SAS avec son délai de livraison dans Odoo 20.0 ?",
+     "contexte": "Lumitech SAS (fournisseur des luminaires sur mesure uniquement); 15 jours (délai de livraison de Lumitech SAS pour le sur-mesure)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 2,
+     "besoins": [
+      3,
+      4
+     ],
+     "question": "Comment paramétrer dans Odoo 20.0 la commande fournisseur automatique à la confirmation d'une commande client de sur-mesure, avec suivi du lien entre commande client et commande fournisseur ?",
+     "contexte": "commande client de sur-mesure (déclencheur de la commande fournisseur)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 3,
+     "besoins": [
+      5,
+      6
+     ],
+     "question": "Comment paramétrer l'entrepôt de Lyon, la réception directe en stock sans contrôle qualité et la livraison au client dès réception de la marchandise fournisseur dans Odoo 20.0 ?",
+     "contexte": "Lyon (entrepôt unique); sans contrôle qualité (réception de la marchandise fournisseur)",
+     "statut": "À vérifier"
+    }
+   ],
+   "etapes": [
+    {
+     "n": 1,
+     "ref": "",
+     "besoins": [],
+     "action": "Installer les apps Sales, Purchase, Inventory",
+     "menu": "Apps",
+     "champ": "",
+     "valeur": "Sales, Purchase, Inventory",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Ajoutée par le code : apps citées dans les menus du plan."
+    },
+    {
+     "n": 2,
+     "ref": "L1.1",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Activer la route MTO dans les réglages",
+     "menu": "**Inventory app ‣ Configuration ‣ Settings**",
+     "champ": "**Replenish on Order (MTO)** (section **Logistics**)",
+     "valeur": "Case cochée, puis cliquer sur **Save**",
+     "detail": "Le réglage se trouve dans la section Logistics, en fin de page.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route"
+     ]
+    },
+    {
+     "n": 3,
+     "ref": "L1.3",
+     "besoins": [
+      1,
+      2
+     ],
+     "action": "Ouvrir ou créer la fiche produit sur mesure",
+     "menu": "**Inventory app ‣ Products ‣ Products**",
+     "champ": "**New**",
+     "valeur": "À renseigner (nom du luminaire sur mesure)",
+     "detail": "Sélectionner un produit existant ou cliquer sur New pour en créer un.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+     ]
+    },
+    {
+     "n": 4,
+     "ref": "L1.4",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Activer la route MTO sur le produit",
+     "menu": "**Inventory app ‣ Products ‣ Products** ‣ onglet *Inventory* ‣ section *Operations*",
+     "champ": "**Routes**",
+     "valeur": "**Replenish on Order (MTO)**",
+     "detail": "Cocher l'option **Replenish on Order (MTO)** dans le champ Routes.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+     ]
+    },
+    {
+     "n": 5,
+     "ref": "L1.5",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Cocher la case Purchase du produit",
+     "menu": "",
+     "champ": "**Purchase**",
+     "valeur": "Case cochée",
+     "detail": "La case sous le nom du produit fait apparaître l'onglet *Purchase*, car le produit est acheté auprès d'un fournisseur.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+     ]
+    },
+    {
+     "n": 6,
+     "ref": "",
+     "besoins": [
+      2
+     ],
+     "action": "Créer le fournisseur Lumitech SAS",
+     "menu": "Purchase app ‣ Orders ‣ Vendors",
+     "champ": "Name",
+     "valeur": "Lumitech SAS",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Ajoutée par le code : fournisseur à créer avant de le sélectionner."
+    },
+    {
+     "n": 7,
+     "ref": "L1.6",
+     "besoins": [
+      2
+     ],
+     "action": "Ajouter Lumitech SAS comme fournisseur du produit",
+     "menu": "Fiche produit ‣ onglet *Purchase*",
+     "champ": "**Vendor**",
+     "valeur": "Lumitech SAS",
+     "detail": "Cliquer sur **Add a line** dans l'onglet Purchase, puis choisir le fournisseur.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+     ]
+    },
+    {
+     "n": 8,
+     "ref": "L1.7",
+     "besoins": [
+      2
+     ],
+     "action": "Renseigner le prix unitaire du fournisseur",
+     "menu": "Fiche produit ‣ onglet *Purchase*",
+     "champ": "**Unit Price**",
+     "valeur": "À renseigner",
+     "detail": "Le prix proposé par Lumitech SAS n'est pas fourni dans les données client.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+     ]
+    },
+    {
+     "n": 9,
+     "ref": "L1.8",
+     "besoins": [
+      2
+     ],
+     "action": "Renseigner le délai du fournisseur",
+     "menu": "Fiche produit ‣ onglet *Purchase*",
+     "champ": "**Lead Time**",
+     "valeur": "15 days",
+     "detail": "Délai de livraison de Lumitech SAS pour le sur-mesure, saisi sur la ligne fournisseur. Selon la documentation, la colonne s'appelle **Delivery Lead Time** dans les colonnes par défaut de l'onglet Purchase.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist"
+     ]
+    }
+   ],
+   "parStatut": {
+    "À vérifier": 2,
+    "Documenté": 7
+   },
+   "tests": [
+    {
+     "titre": "Commande client de sur-mesure jusqu'à la livraison",
+     "etapes": [
+      "Aller dans Sales app et créer un devis avec Customer à renseigner",
+      "Dans Order Lines, cliquer sur Add a product et choisir le luminaire sur mesure en MTO",
+      "Cliquer sur Confirm",
+      "Cliquer sur le smart button Purchase pour ouvrir la RfQ liée à Lumitech SAS",
+      "Confirmer la RfQ (ne pas l'annuler) puis cliquer sur Confirm Order",
+      "Dans Inventory, valider la réception de la marchandise (Validate)",
+      "Ouvrir la livraison de l'entrepôt Lyon et cliquer sur Validate"
+     ],
+     "pages": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html"
+     ]
+    }
+   ],
+   "questions_ouvertes": [
+    {
+     "question": "Qui valide les commandes fournisseurs avant envoi : le responsable achats ou personne ?",
+     "besoin": 3,
+     "raison": "Décision non prise, elle détermine si une validation est requise avant envoi."
+    },
+    {
+     "question": "Quelle est la liste des fournisseurs des luminaires standard ?",
+     "besoin": 2,
+     "raison": "La liste sera fournie par le client."
+    },
+    {
+     "question": "Quels sont les prix d'achat négociés ?",
+     "besoin": 2,
+     "raison": "Nécessaires pour les fiches produits et commandes fournisseurs."
+    },
+    {
+     "question": "Quelle est la liste des articles à créer (noms, références) ?",
+     "besoin": 1,
+     "raison": "La liste sera transmise par le client."
+    },
+    {
+     "question": "Quels sont les seuils de réapprovisionnement des luminaires standard tenus en stock ?",
+     "besoin": 1,
+     "raison": "Non indiqués alors que les standards sont tenus en stock."
+    },
+    {
+     "question": "Quels sont le nom court, l'adresse et la société de l'entrepôt de Lyon ?",
+     "besoin": 5,
+     "raison": "Non fournis dans les données client."
+    }
+   ],
+   "avertissements": [
+    "Édition (Community ou Enterprise) non précisée : à confirmer avec le client.",
+    "Réglage multi-étapes écarté : Multi-Step Routes (L3.1) n'est pas exigé, et la réception et la livraison en 1 étape (L3.3, L3.4) sont le comportement par défaut d'Odoo, donc écartées.",
+    "Une RfQ est toujours créée à la confirmation d'une commande client avec un produit MTO, même si le stock est suffisant.",
+    "Ne pas annuler la RfQ générée par la MTO : Odoo n'en génère pas de nouvelle et un document créé manuellement ne sera pas lié à la vente d'origine ; il faut la confirmer ou la modifier.",
+    "L'annulation de la commande client annule la livraison liée mais pas la RfQ, qui reste active.",
+    "Depuis Odoo 19.0, les routes Buy et Manufacture sont masquées par défaut dans le champ Routes et appliquées automatiquement selon la configuration du produit : il n'y a pas d'étape pour activer Buy.",
+    "Aucune documentation ne décrit une livraison déclenchée automatiquement par la réception fournisseur en 1 étape ; la livraison se valide manuellement.",
+    "La ligne fournisseur Lumitech SAS doit être saisie uniquement sur les produits sur mesure concernés.",
+    "Prix unitaire de Lumitech SAS et produits sur mesure : À renseigner."
+   ],
+   "markdown": "# Plan Odoo 20 — Atelier Lumière\n\nÉdition : Non précisée. Plan pour Atelier Lumière : activation de la route MTO, fiche produit sur mesure (MTO, Purchase, fournisseur Lumitech SAS, prix à renseigner, délai 15 jours), lien commande client/fournisseur via le smart button Purchase, et entrepôt Lyon avec réception et livraison en 1 étape, qui est le comportement par défaut d'Odoo. Les réglages multi-étapes ne sont pas retenus car non exigés.\n\nÉtapes : 2 À vérifier, 7 Documenté.\n\n## Besoins compris\n1. **Familles de produits** : Distinguer deux familles de produits : les luminaires standard tenus en stock et les luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.\n2. **Fournisseur du sur-mesure** : Renseigner Lumitech SAS comme fournisseur des luminaires sur mesure avec son délai de livraison annoncé.\n3. **Commande fournisseur automatique** : Préparer automatiquement la commande fournisseur à la confirmation d'une commande client de sur-mesure, sans ressaisie.\n4. **Suivi commande client / fournisseur** : Savoir à tout moment quelle commande fournisseur correspond à quelle commande client.\n5. **Entrepôt et réception** : Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.\n6. **Livraison client** : Livrer le client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.\n\n## Étapes\n1. **Installer les apps Sales, Purchase, Inventory** — _À vérifier_\n   - Menu : Apps\n   - Valeur : Sales, Purchase, Inventory\n   - À vérifier : Ajoutée par le code : apps citées dans les menus du plan.\n2. **Activer la route MTO dans les réglages** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Settings**\n   - Champ : **Replenish on Order (MTO)** (section **Logistics**)\n   - Valeur : Case cochée, puis cliquer sur **Save**\n   - Le réglage se trouve dans la section Logistics, en fin de page.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route\n3. **Ouvrir ou créer la fiche produit sur mesure** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **New**\n   - Valeur : À renseigner (nom du luminaire sur mesure)\n   - Sélectionner un produit existant ou cliquer sur New pour en créer un.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n4. **Activer la route MTO sur le produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products** ‣ onglet *Inventory* ‣ section *Operations*\n   - Champ : **Routes**\n   - Valeur : **Replenish on Order (MTO)**\n   - Cocher l'option **Replenish on Order (MTO)** dans le champ Routes.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n5. **Cocher la case Purchase du produit** — _Documenté_\n   - Champ : **Purchase**\n   - Valeur : Case cochée\n   - La case sous le nom du produit fait apparaître l'onglet *Purchase*, car le produit est acheté auprès d'un fournisseur.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n6. **Créer le fournisseur Lumitech SAS** — _À vérifier_\n   - Menu : Purchase app ‣ Orders ‣ Vendors\n   - Champ : Name\n   - Valeur : Lumitech SAS\n   - À vérifier : Ajoutée par le code : fournisseur à créer avant de le sélectionner.\n7. **Ajouter Lumitech SAS comme fournisseur du produit** — _Documenté_\n   - Menu : Fiche produit ‣ onglet *Purchase*\n   - Champ : **Vendor**\n   - Valeur : Lumitech SAS\n   - Cliquer sur **Add a line** dans l'onglet Purchase, puis choisir le fournisseur.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n8. **Renseigner le prix unitaire du fournisseur** — _Documenté_\n   - Menu : Fiche produit ‣ onglet *Purchase*\n   - Champ : **Unit Price**\n   - Valeur : À renseigner\n   - Le prix proposé par Lumitech SAS n'est pas fourni dans les données client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n9. **Renseigner le délai du fournisseur** — _Documenté_\n   - Menu : Fiche produit ‣ onglet *Purchase*\n   - Champ : **Lead Time**\n   - Valeur : 15 days\n   - Délai de livraison de Lumitech SAS pour le sur-mesure, saisi sur la ligne fournisseur. Selon la documentation, la colonne s'appelle **Delivery Lead Time** dans les colonnes par défaut de l'onglet Purchase.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist\n\n## Tests\n### Commande client de sur-mesure jusqu'à la livraison\n1. Aller dans Sales app et créer un devis avec Customer à renseigner\n2. Dans Order Lines, cliquer sur Add a product et choisir le luminaire sur mesure en MTO\n3. Cliquer sur Confirm\n4. Cliquer sur le smart button Purchase pour ouvrir la RfQ liée à Lumitech SAS\n5. Confirmer la RfQ (ne pas l'annuler) puis cliquer sur Confirm Order\n6. Dans Inventory, valider la réception de la marchandise (Validate)\n7. Ouvrir la livraison de l'entrepôt Lyon et cliquer sur Validate\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html\n\n## Questions ouvertes\n- Qui valide les commandes fournisseurs avant envoi : le responsable achats ou personne ? (besoin 3) — Décision non prise, elle détermine si une validation est requise avant envoi.\n- Quelle est la liste des fournisseurs des luminaires standard ? (besoin 2) — La liste sera fournie par le client.\n- Quels sont les prix d'achat négociés ? (besoin 2) — Nécessaires pour les fiches produits et commandes fournisseurs.\n- Quelle est la liste des articles à créer (noms, références) ? (besoin 1) — La liste sera transmise par le client.\n- Quels sont les seuils de réapprovisionnement des luminaires standard tenus en stock ? (besoin 1) — Non indiqués alors que les standards sont tenus en stock.\n- Quels sont le nom court, l'adresse et la société de l'entrepôt de Lyon ? (besoin 5) — Non fournis dans les données client.\n\n## Avertissements\n- Édition (Community ou Enterprise) non précisée : à confirmer avec le client.\n- Réglage multi-étapes écarté : Multi-Step Routes (L3.1) n'est pas exigé, et la réception et la livraison en 1 étape (L3.3, L3.4) sont le comportement par défaut d'Odoo, donc écartées.\n- Une RfQ est toujours créée à la confirmation d'une commande client avec un produit MTO, même si le stock est suffisant.\n- Ne pas annuler la RfQ générée par la MTO : Odoo n'en génère pas de nouvelle et un document créé manuellement ne sera pas lié à la vente d'origine ; il faut la confirmer ou la modifier.\n- L'annulation de la commande client annule la livraison liée mais pas la RfQ, qui reste active.\n- Depuis Odoo 19.0, les routes Buy et Manufacture sont masquées par défaut dans le champ Routes et appliquées automatiquement selon la configuration du produit : il n'y a pas d'étape pour activer Buy.\n- Aucune documentation ne décrit une livraison déclenchée automatiquement par la réception fournisseur en 1 étape ; la livraison se valide manuellement.\n- La ligne fournisseur Lumitech SAS doit être saisie uniquement sur les produits sur mesure concernés.\n- Prix unitaire de Lumitech SAS et produits sur mesure : À renseigner.\n\n_Coût : 0.176 USD · durée : 76 s_",
+   "rejetsWeb": [],
+   "cout": {
+    "usd": 0.17574,
+    "details": [
+     {
+      "etape": "extraction",
+      "modele": "claude-sonnet-5-5",
+      "entree": 4737,
+      "sortie": 2247,
+      "usd": 0.03194
+     },
+     {
+      "etape": "lot 1",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.04127,
+      "cache_lecture": 3076,
+      "dureeMs": 30077
+     },
+     {
+      "etape": "lot 2",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.0365,
+      "cache_lecture": 3076,
+      "dureeMs": 51058
+     },
+     {
+      "etape": "lot 3",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.03156,
+      "cache_lecture": 3076,
+      "dureeMs": 36484
+     },
+     {
+      "etape": "assemblage",
+      "modele": "claude-sonnet-5-5",
+      "entree": 6714,
+      "sortie": 2104,
+      "usd": 0.03447
+     }
+    ]
+   },
+   "dureeMs": 75697
+  }
+ },
+ "3": {
+  "latenceS": 80,
+  "plan": {
+   "client": "Atelier Lumière",
+   "edition": "Non précisée",
+   "resume": "Plan de paramétrage pour Atelier Lumière : activation de la route MTO, fiche du luminaire sur mesure avec Lumitech SAS (15 jours), entrepôt unique de Lyon avec réglages par défaut, puis luminaires standard stockés avec plusieurs fournisseurs et règle de réapprovisionnement. La commande fournisseur automatique et son suivi reposent sur MTO.",
+   "besoins": [
+    {
+     "n": 1,
+     "titre": "Familles de produits",
+     "besoin": "Gérer deux familles de produits : des luminaires standard tenus en stock et des luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.",
+     "contexte": "luminaires standard (tenus en stock) ; luminaires sur mesure (jamais stockés, commandés au fournisseur uniquement à la commande client)",
+     "extrait": "Deux familles de produits : des luminaires standard tenus en stock, et des luminaires sur mesure qui ne sont jamais stockés : ils sont commandés au fournisseur uniquement quand un client passe commande."
+    },
+    {
+     "n": 2,
+     "titre": "Fournisseur du sur-mesure",
+     "besoin": "Enregistrer Lumitech SAS comme fournisseur des luminaires sur mesure avec un délai de livraison annoncé de 15 jours.",
+     "contexte": "Lumitech SAS (fournisseur des luminaires sur mesure) ; 15 jours (délai de livraison annoncé de Lumitech SAS pour le sur-mesure)",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "n": 3,
+     "titre": "Fournisseurs des standards",
+     "besoin": "Enregistrer plusieurs fournisseurs possibles pour les luminaires standard tenus en stock, selon une liste que le client doit fournir.",
+     "contexte": "plusieurs fournisseurs possibles (luminaires standard, liste à fournir par le client)",
+     "extrait": "Pour les standards, plusieurs fournisseurs possibles, liste à fournir par le client."
+    },
+    {
+     "n": 4,
+     "titre": "Commande fournisseur automatique",
+     "besoin": "À la confirmation d'une commande client de sur-mesure, préparer automatiquement la commande fournisseur sans ressaisie.",
+     "contexte": "commande client de sur-mesure (déclencheur à la confirmation)",
+     "extrait": "À la confirmation d'une commande client de sur-mesure, la commande fournisseur doit être préparée automatiquement, sans ressaisie."
+    },
+    {
+     "n": 5,
+     "titre": "Suivi client-fournisseur",
+     "besoin": "Savoir à tout moment quelle commande fournisseur correspond à quelle commande client.",
+     "contexte": "Aucun suivi actuel entre commande client et commande fournisseur (organisation actuelle)",
+     "extrait": "Ils veulent savoir à tout moment quelle commande fournisseur correspond à quelle commande client."
+    },
+    {
+     "n": 6,
+     "titre": "Entrepôt et réception",
+     "besoin": "Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.",
+     "contexte": "Lyon (entrepôt unique) ; réception directement en stock sans contrôle qualité (marchandise fournisseur)",
+     "extrait": "Un seul entrepôt, à Lyon. La marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité."
+    },
+    {
+     "n": 7,
+     "titre": "Livraison client",
+     "besoin": "Faire partir la livraison au client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.",
+     "contexte": "entrepôt de Lyon (départ de la livraison au client) ; dès réception de la marchandise fournisseur (déclencheur)",
+     "extrait": "La livraison au client part de l'entrepôt de Lyon dès que la marchandise fournisseur est reçue."
+    }
+   ],
+   "donnees_client": [
+    {
+     "donnee": "Société",
+     "valeur": "Atelier Lumière",
+     "objet": "général",
+     "extrait": "M. Durand, directeur des opérations d'Atelier Lumière (distributeur de luminaires, une dizaine d'utilisateurs)."
+    },
+    {
+     "donnee": "Interlocuteur",
+     "valeur": "M. Durand, directeur des opérations",
+     "objet": "Atelier Lumière",
+     "extrait": "RDV du 14/10/2026 avec M. Durand, directeur des opérations d'Atelier Lumière"
+    },
+    {
+     "donnee": "Nombre d'utilisateurs",
+     "valeur": "une dizaine",
+     "objet": "général",
+     "extrait": "distributeur de luminaires, une dizaine d'utilisateurs"
+    },
+    {
+     "donnee": "Fournisseur",
+     "valeur": "Lumitech SAS",
+     "objet": "luminaires sur mesure",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "donnee": "Délai de livraison",
+     "valeur": "15 jours",
+     "objet": "luminaires sur mesure (Lumitech SAS)",
+     "extrait": "Fournisseur du sur-mesure : Lumitech SAS, délai de livraison annoncé de 15 jours."
+    },
+    {
+     "donnee": "Entrepôt",
+     "valeur": "Lyon",
+     "objet": "général (entrepôt unique)",
+     "extrait": "Un seul entrepôt, à Lyon."
+    }
+   ],
+   "lots": [
+    {
+     "n": 1,
+     "besoins": [
+      1,
+      2
+     ],
+     "question": "Comment paramétrer les luminaires sur mesure, commandés uniquement à la commande client, avec Lumitech SAS comme fournisseur et son délai de 15 jours ?",
+     "contexte": "Lumitech SAS (fournisseur des luminaires sur mesure) ; 15 jours (délai de livraison de Lumitech SAS pour le sur-mesure) ; luminaires sur mesure (jamais stockés)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 2,
+     "besoins": [
+      4,
+      5
+     ],
+     "question": "Comment générer automatiquement la commande fournisseur à la confirmation d'une commande client de sur-mesure et suivre la correspondance entre commande client et commande fournisseur ?",
+     "contexte": "commande client de sur-mesure (déclencheur à la confirmation) ; Lumitech SAS (fournisseur des luminaires sur mesure)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 3,
+     "besoins": [
+      6,
+      7
+     ],
+     "question": "Comment paramétrer l'entrepôt unique de Lyon avec réception directe en stock sans contrôle qualité et livraison au client dès réception de la marchandise fournisseur ?",
+     "contexte": "Lyon (entrepôt unique) ; réception directement en stock sans contrôle qualité (marchandise fournisseur)",
+     "statut": "À vérifier"
+    },
+    {
+     "n": 4,
+     "besoins": [
+      3
+     ],
+     "question": "Comment paramétrer les luminaires standard tenus en stock avec plusieurs fournisseurs possibles ?",
+     "contexte": "luminaires standard (tenus en stock) ; plusieurs fournisseurs possibles (liste à fournir par le client)",
+     "statut": "À vérifier"
+    }
+   ],
+   "etapes": [
+    {
+     "n": 1,
+     "ref": "",
+     "besoins": [],
+     "action": "Installer les apps Sales, Purchase, Inventory",
+     "menu": "Apps",
+     "champ": "",
+     "valeur": "Sales, Purchase, Inventory",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Ajoutée par le code : apps citées dans les menus du plan."
+    },
+    {
+     "n": 2,
+     "ref": "L1.1",
+     "besoins": [
+      1,
+      4
+     ],
+     "action": "Activer le réglage de la route MTO",
+     "menu": "**Inventory app ‣ Configuration ‣ Settings**",
+     "champ": "**Replenish on Order (MTO)** (section **Logistics**)",
+     "valeur": "Case cochée, puis cliquer sur **Save**",
+     "detail": "Le réglage doit être activé pour pouvoir utiliser la route MTO.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route"
+     ]
+    },
+    {
+     "n": 3,
+     "ref": "L1.2",
+     "besoins": [
+      1,
+      2
+     ],
+     "action": "Ouvrir ou créer la fiche produit du luminaire sur mesure",
+     "menu": "**Inventory app ‣ Products ‣ Products**",
+     "champ": "**New**",
+     "valeur": "Sélectionner un produit existant ou cliquer sur **New** ; nom : À renseigner",
+     "detail": "Le nom du produit n'est pas fourni dans les données client.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+     ]
+    },
+    {
+     "n": 4,
+     "ref": "L1.3",
+     "besoins": [
+      1,
+      4
+     ],
+     "action": "Cocher la route MTO sur le produit",
+     "menu": "**Inventory app ‣ Products ‣ Products** (onglet *Inventory*, section *Operations*)",
+     "champ": "**Routes**",
+     "valeur": "**Replenish on Order (MTO)**",
+     "detail": "Cocher la case à côté de l'option dans le champ Routes de l'onglet Inventory.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto"
+     ]
+    },
+    {
+     "n": 5,
+     "ref": "L2.4",
+     "besoins": [
+      4
+     ],
+     "action": "Indiquer que le produit est acheté",
+     "menu": "Fiche produit (sous le nom du produit)",
+     "champ": "**Purchase**",
+     "valeur": "Case cochée",
+     "detail": "Cela fait apparaître l'onglet *Purchase*.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products"
+     ]
+    },
+    {
+     "n": 6,
+     "ref": "",
+     "besoins": [
+      2,
+      4
+     ],
+     "action": "Créer le fournisseur Lumitech SAS",
+     "menu": "Purchase app ‣ Orders ‣ Vendors",
+     "champ": "Name",
+     "valeur": "Lumitech SAS",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Ajoutée par le code : fournisseur à créer avant de le sélectionner."
+    },
+    {
+     "n": 7,
+     "ref": "L1.4",
+     "besoins": [
+      2,
+      4
+     ],
+     "action": "Ajouter Lumitech SAS comme fournisseur du produit",
+     "menu": "**Purchase app ‣ Products ‣ Products** (onglet **Purchase**)",
+     "champ": "**Vendor**",
+     "valeur": "Lumitech SAS",
+     "detail": "Dans l'onglet Purchase, cliquer sur **Add a line** pour ajouter une ligne fournisseur. La présence d'un fournisseur applique automatiquement la route Buy.",
+     "statut": "À vérifier",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/use_routes.html#additional-routes"
+     ],
+     "raison": "Le passage [3] indique Purchase app > Products > Products, onglet Purchase, bouton Add a line et champ Vendor ; mais le menu cité dans [2] pour le produit est Inventory, et la mention « La présence d'un fournisseur applique automatiquement la route Buy » vient de [12] (conditionnel, non reprise ici comme étape)."
+    },
+    {
+     "n": 8,
+     "ref": "L1.5",
+     "besoins": [
+      2
+     ],
+     "action": "Renseigner le prix d'achat chez Lumitech SAS",
+     "menu": "**Purchase app ‣ Products ‣ Products** (onglet **Purchase**)",
+     "champ": "**Unit Price**",
+     "valeur": "À renseigner",
+     "detail": "Le prix proposé par le fournisseur n'est pas indiqué dans les données client.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time"
+     ]
+    },
+    {
+     "n": 9,
+     "ref": "L1.6",
+     "besoins": [
+      2
+     ],
+     "action": "Renseigner le délai du fournisseur",
+     "menu": "**Purchase app ‣ Products ‣ Products** (onglet **Purchase**)",
+     "champ": "**Lead Time**",
+     "valeur": "15 days",
+     "detail": "Il s'agit du délai d'achat de Lumitech SAS (de la confirmation du PO à la réception), pas du délai de livraison client (**Delivery Time**).",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#types-of-lead-times"
+     ]
+    },
+    {
+     "n": 10,
+     "ref": "L3.2",
+     "besoins": [
+      6,
+      7
+     ],
+     "action": "Ouvrir l'entrepôt de Lyon",
+     "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+     "champ": "**Warehouse**",
+     "valeur": "Lyon",
+     "detail": "Sélectionner l'entrepôt existant à éditer, ou cliquer sur **New** pour créer l'entrepôt de Lyon. Champs obligatoires : **Warehouse**, **Short Name** (5 caractères max), **Address**, **Company**.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html"
+     ]
+    },
+    {
+     "n": 11,
+     "ref": "L3.3",
+     "besoins": [
+      6
+     ],
+     "action": "Renseigner le nom court de l'entrepôt",
+     "menu": "**Inventory app ‣ Configuration ‣ Warehouses**",
+     "champ": "**Short Name**",
+     "valeur": "À renseigner",
+     "detail": "Code abrégé de 5 caractères maximum, affiché sur les documents de l'entrepôt.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration"
+     ]
+    },
+    {
+     "n": 12,
+     "ref": "",
+     "besoins": [
+      7
+     ],
+     "action": "Odoo 20 : déclencher automatiquement la livraison client depuis l'entrepôt dès la réception de la marchandise fournisseur d'une commande MTO (réapprovisionnement sur commande)",
+     "menu": "",
+     "champ": "",
+     "valeur": "",
+     "detail": "",
+     "statut": "À vérifier",
+     "source": [],
+     "raison": "Non trouvée dans la documentation ni sur le web."
+    },
+    {
+     "n": 13,
+     "ref": "L4.1",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Ouvrir ou créer la fiche produit du luminaire",
+     "menu": "**Inventory app ‣ Products ‣ Products**",
+     "champ": "",
+     "valeur": "Luminaire standard (nom à renseigner)",
+     "detail": "Sélectionner un produit existant ou cliquer sur **New**.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration"
+     ]
+    },
+    {
+     "n": 14,
+     "ref": "L4.2",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Définir le type de produit",
+     "menu": "",
+     "champ": "Product Type",
+     "valeur": "Goods",
+     "detail": "Dans l'onglet **General Information** de la fiche produit.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration"
+     ]
+    },
+    {
+     "n": 15,
+     "ref": "L4.3",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Activer le suivi de stock",
+     "menu": "",
+     "champ": "Track Inventory",
+     "valeur": "Cochée",
+     "detail": "Nécessaire pour que Odoo suive les niveaux de stock et déclenche les règles de réapprovisionnement.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration"
+     ]
+    },
+    {
+     "n": 16,
+     "ref": "L4.4",
+     "besoins": [
+      3
+     ],
+     "action": "Vérifier la case Purchase",
+     "menu": "",
+     "champ": "Purchase",
+     "valeur": "Cochée",
+     "detail": "Sous le nom du produit ; cela affiche l'onglet **Purchase**.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method"
+     ]
+    },
+    {
+     "n": 17,
+     "ref": "L4.5",
+     "besoins": [
+      3
+     ],
+     "action": "Ajouter le premier fournisseur dans la liste de prix fournisseur",
+     "menu": "**Purchase** tab of the product form",
+     "champ": "Add a line",
+     "valeur": "Vendor : À renseigner (liste fournie par le client) ; Unit Price : À renseigner ; Lead Time : À renseigner",
+     "detail": "Cliquer sur **Add a line** et saisir le fournisseur, le prix et le délai. Le fournisseur en haut de la liste est celui utilisé par défaut pour générer les RFQ.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method"
+     ]
+    },
+    {
+     "n": 18,
+     "ref": "L4.6",
+     "besoins": [
+      3
+     ],
+     "action": "Ajouter les autres fournisseurs possibles",
+     "menu": "**Purchase** tab of the product form",
+     "champ": "Add a line",
+     "valeur": "Vendor : À renseigner pour chaque fournisseur ; Unit Price : À renseigner ; Lead Time : À renseigner",
+     "detail": "Répéter l'opération pour chaque fournisseur. Plusieurs fournisseurs et délais peuvent figurer dans la liste.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time"
+     ]
+    },
+    {
+     "n": 19,
+     "ref": "L4.7",
+     "besoins": [
+      1,
+      3
+     ],
+     "action": "Créer la règle de réapprovisionnement du luminaire",
+     "menu": "**Inventory app ‣ Operations ‣ Replenishment**",
+     "champ": "Product / Location / Min / Max",
+     "valeur": "Product : luminaire standard ; Location : À renseigner ; Min : À renseigner ; Max : À renseigner",
+     "detail": "Cliquer sur **New** puis remplir les champs. La règle peut aussi être créée depuis le smart button **Reordering Rules** de la fiche produit.",
+     "statut": "Documenté",
+     "source": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule"
+     ]
+    }
+   ],
+   "parStatut": {
+    "À vérifier": 4,
+    "Documenté": 15
+   },
+   "tests": [
+    {
+     "titre": "Luminaire sur mesure : commande client, commande fournisseur et suivi",
+     "etapes": [
+      "Inventory app ‣ Products ‣ Products : vérifier que le luminaire sur mesure a la route Replenish on Order (MTO) et Lumitech SAS comme Vendor",
+      "Sales app : créer un devis avec le luminaire sur mesure puis cliquer sur Confirm",
+      "Ouvrir le smart button Purchase de la commande client pour retrouver la RfQ liée",
+      "Dans la RfQ, vérifier l'Expected Date puis cliquer sur Confirm Order"
+     ],
+     "pages": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html"
+     ]
+    },
+    {
+     "titre": "Réception à Lyon et livraison au client",
+     "etapes": [
+      "Purchase app : ouvrir la commande fournisseur confirmée",
+      "Cliquer sur le smart button Receipt puis sur Validate pour réceptionner directement en stock",
+      "Ouvrir la livraison liée à la commande client et vérifier qu'elle est prête au départ de l'entrepôt de Lyon",
+      "Cliquer sur Validate pour la livraison"
+     ],
+     "pages": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html"
+     ]
+    },
+    {
+     "titre": "Luminaire standard en stock avec réapprovisionnement",
+     "etapes": [
+      "Inventory app ‣ Operations ‣ Replenishment : vérifier la règle de réapprovisionnement du luminaire standard",
+      "Lancer le réapprovisionnement avec Order Once ou laisser la règle se déclencher",
+      "Ouvrir la RfQ générée et vérifier que le fournisseur est celui en tête de la liste du produit"
+     ],
+     "pages": [
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html",
+      "https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html"
+     ]
+    }
+   ],
+   "questions_ouvertes": [
+    {
+     "question": "Quels sont les fournisseurs des luminaires standard, avec leurs prix et délais ?",
+     "besoin": 3,
+     "raison": "La liste doit être fournie par le client pour renseigner les lignes fournisseur."
+    },
+    {
+     "question": "Quels sont les prix d'achat négociés et la liste des articles ?",
+     "besoin": 1,
+     "raison": "Nécessaires pour créer les produits et les prix fournisseurs."
+    },
+    {
+     "question": "Qui valide les commandes fournisseurs avant envoi (responsable achats ou personne) ?",
+     "besoin": 4,
+     "raison": "Décision non prise, elle détermine la présence d'une validation."
+    },
+    {
+     "question": "Quels sont les seuils de réapprovisionnement (Min, Max, emplacement, déclenchement Auto ou Manual) des luminaires standard ?",
+     "besoin": 1,
+     "raison": "Aucun seuil n'est indiqué pour les produits stockés."
+    },
+    {
+     "question": "Quel délai de livraison au client (Delivery Time) annoncer pour le sur-mesure ?",
+     "besoin": 2,
+     "raison": "Décision client non prise, distincte du délai de 15 jours du fournisseur."
+    },
+    {
+     "question": "Quel est le nom court et l'adresse de l'entrepôt de Lyon ?",
+     "besoin": 6,
+     "raison": "Données de l'entrepôt non fournies."
+    },
+    {
+     "question": "Stock avec MTO ou dropshipping pour le sur-mesure ?",
+     "besoin": 7,
+     "raison": "Choix non tranché par le client, il influe sur le circuit de livraison."
+    }
+   ],
+   "avertissements": [
+    "Édition d'Odoo non précisée : à confirmer avec le client.",
+    "Étapes L3.1, L3.4 et L3.5 écartées : réception et livraison en 1 étape sont le comportement par défaut et Multi-Step Routes n'est pas exigé.",
+    "Étape L2.4 retenue sans activer la route Buy : depuis Odoo 19.0, Buy et Manufacture sont masquées par défaut et s'appliquent selon la configuration du produit (fournisseur renseigné).",
+    "Avec MTO, Odoo génère une RfQ brouillon dès la confirmation de la commande client, même si le stock est suffisant, et elle est liée à la commande client.",
+    "Ne pas annuler la RfQ générée : Odoo n'en crée pas de remplaçante et un document manuel ne sera pas lié à la commande client.",
+    "Si la commande client est annulée, la livraison l'est aussi mais pas la RfQ, qui reste active.",
+    "Le fournisseur en tête de liste du produit est choisi par défaut pour les RfQ, avec son délai : l'ordre de la liste compte.",
+    "L1.4 est marquée À vérifier : contrôler le fournisseur sur la fiche produit.",
+    "Le déclenchement automatique de la livraison à la réception fournisseur n'est pas décrit dans les lots : recherche demandée.",
+    "Le lot 4 cite des pages Fleet et Lunch sans rapport avec le besoin : ne pas s'y fier."
+   ],
+   "markdown": "# Plan Odoo 20 — Atelier Lumière\n\nÉdition : Non précisée. Plan de paramétrage pour Atelier Lumière : activation de la route MTO, fiche du luminaire sur mesure avec Lumitech SAS (15 jours), entrepôt unique de Lyon avec réglages par défaut, puis luminaires standard stockés avec plusieurs fournisseurs et règle de réapprovisionnement. La commande fournisseur automatique et son suivi reposent sur MTO.\n\nÉtapes : 4 À vérifier, 15 Documenté.\n\n## Besoins compris\n1. **Familles de produits** : Gérer deux familles de produits : des luminaires standard tenus en stock et des luminaires sur mesure jamais stockés, commandés au fournisseur uniquement quand un client passe commande.\n2. **Fournisseur du sur-mesure** : Enregistrer Lumitech SAS comme fournisseur des luminaires sur mesure avec un délai de livraison annoncé de 15 jours.\n3. **Fournisseurs des standards** : Enregistrer plusieurs fournisseurs possibles pour les luminaires standard tenus en stock, selon une liste que le client doit fournir.\n4. **Commande fournisseur automatique** : À la confirmation d'une commande client de sur-mesure, préparer automatiquement la commande fournisseur sans ressaisie.\n5. **Suivi client-fournisseur** : Savoir à tout moment quelle commande fournisseur correspond à quelle commande client.\n6. **Entrepôt et réception** : Gérer un seul entrepôt à Lyon où la marchandise fournisseur est réceptionnée directement en stock, sans contrôle qualité.\n7. **Livraison client** : Faire partir la livraison au client depuis l'entrepôt de Lyon dès que la marchandise fournisseur est reçue.\n\n## Étapes\n1. **Installer les apps Sales, Purchase, Inventory** — _À vérifier_\n   - Menu : Apps\n   - Valeur : Sales, Purchase, Inventory\n   - À vérifier : Ajoutée par le code : apps citées dans les menus du plan.\n2. **Activer le réglage de la route MTO** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Settings**\n   - Champ : **Replenish on Order (MTO)** (section **Logistics**)\n   - Valeur : Case cochée, puis cliquer sur **Save**\n   - Le réglage doit être activé pour pouvoir utiliser la route MTO.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#enable-the-mto-route\n3. **Ouvrir ou créer la fiche produit du luminaire sur mesure** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Champ : **New**\n   - Valeur : Sélectionner un produit existant ou cliquer sur **New** ; nom : À renseigner\n   - Le nom du produit n'est pas fourni dans les données client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n4. **Cocher la route MTO sur le produit** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products** (onglet *Inventory*, section *Operations*)\n   - Champ : **Routes**\n   - Valeur : **Replenish on Order (MTO)**\n   - Cocher la case à côté de l'option dans le champ Routes de l'onglet Inventory.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#configure-a-product-for-mto\n5. **Indiquer que le produit est acheté** — _Documenté_\n   - Menu : Fiche produit (sous le nom du produit)\n   - Champ : **Purchase**\n   - Valeur : Case cochée\n   - Cela fait apparaître l'onglet *Purchase*.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products\n6. **Créer le fournisseur Lumitech SAS** — _À vérifier_\n   - Menu : Purchase app ‣ Orders ‣ Vendors\n   - Champ : Name\n   - Valeur : Lumitech SAS\n   - À vérifier : Ajoutée par le code : fournisseur à créer avant de le sélectionner.\n7. **Ajouter Lumitech SAS comme fournisseur du produit** — _À vérifier_\n   - Menu : **Purchase app ‣ Products ‣ Products** (onglet **Purchase**)\n   - Champ : **Vendor**\n   - Valeur : Lumitech SAS\n   - Dans l'onglet Purchase, cliquer sur **Add a line** pour ajouter une ligne fournisseur. La présence d'un fournisseur applique automatiquement la route Buy.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/use_routes.html#additional-routes\n   - À vérifier : Le passage [3] indique Purchase app > Products > Products, onglet Purchase, bouton Add a line et champ Vendor ; mais le menu cité dans [2] pour le produit est Inventory, et la mention « La présence d'un fournisseur applique automatiquement la route Buy » vient de [12] (conditionnel, non reprise ici comme étape).\n8. **Renseigner le prix d'achat chez Lumitech SAS** — _Documenté_\n   - Menu : **Purchase app ‣ Products ‣ Products** (onglet **Purchase**)\n   - Champ : **Unit Price**\n   - Valeur : À renseigner\n   - Le prix proposé par le fournisseur n'est pas indiqué dans les données client.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time\n9. **Renseigner le délai du fournisseur** — _Documenté_\n   - Menu : **Purchase app ‣ Products ‣ Products** (onglet **Purchase**)\n   - Champ : **Lead Time**\n   - Valeur : 15 days\n   - Il s'agit du délai d'achat de Lumitech SAS (de la confirmation du PO à la réception), pas du délai de livraison client (**Delivery Time**).\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#types-of-lead-times\n10. **Ouvrir l'entrepôt de Lyon** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : **Warehouse**\n   - Valeur : Lyon\n   - Sélectionner l'entrepôt existant à éditer, ou cliquer sur **New** pour créer l'entrepôt de Lyon. Champs obligatoires : **Warehouse**, **Short Name** (5 caractères max), **Address**, **Company**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html\n11. **Renseigner le nom court de l'entrepôt** — _Documenté_\n   - Menu : **Inventory app ‣ Configuration ‣ Warehouses**\n   - Champ : **Short Name**\n   - Valeur : À renseigner\n   - Code abrégé de 5 caractères maximum, affiché sur les documents de l'entrepôt.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/inventory_management/warehouses.html#configuration\n12. **Odoo 20 : déclencher automatiquement la livraison client depuis l'entrepôt dès la réception de la marchandise fournisseur d'une commande MTO (réapprovisionnement sur commande)** — _À vérifier_\n   - À vérifier : Non trouvée dans la documentation ni sur le web.\n13. **Ouvrir ou créer la fiche produit du luminaire** — _Documenté_\n   - Menu : **Inventory app ‣ Products ‣ Products**\n   - Valeur : Luminaire standard (nom à renseigner)\n   - Sélectionner un produit existant ou cliquer sur **New**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration\n14. **Définir le type de produit** — _Documenté_\n   - Champ : Product Type\n   - Valeur : Goods\n   - Dans l'onglet **General Information** de la fiche produit.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration\n15. **Activer le suivi de stock** — _Documenté_\n   - Champ : Track Inventory\n   - Valeur : Cochée\n   - Nécessaire pour que Odoo suive les niveaux de stock et déclenche les règles de réapprovisionnement.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#product-type-configuration\n16. **Vérifier la case Purchase** — _Documenté_\n   - Champ : Purchase\n   - Valeur : Cochée\n   - Sous le nom du produit ; cela affiche l'onglet **Purchase**.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html#for-purchased-products ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method\n17. **Ajouter le premier fournisseur dans la liste de prix fournisseur** — _Documenté_\n   - Menu : **Purchase** tab of the product form\n   - Champ : Add a line\n   - Valeur : Vendor : À renseigner (liste fournie par le client) ; Unit Price : À renseigner ; Lead Time : À renseigner\n   - Cliquer sur **Add a line** et saisir le fournisseur, le prix et le délai. Le fournisseur en haut de la liste est celui utilisé par défaut pour générer les RFQ.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#replenishment-method\n18. **Ajouter les autres fournisseurs possibles** — _Documenté_\n   - Menu : **Purchase** tab of the product form\n   - Champ : Add a line\n   - Valeur : Vendor : À renseigner pour chaque fournisseur ; Unit Price : À renseigner ; Lead Time : À renseigner\n   - Répéter l'opération pour chaque fournisseur. Plusieurs fournisseurs et délais peuvent figurer dans la liste.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html#vendor-pricelist ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/lead_times.html#vendor-lead-time\n19. **Créer la règle de réapprovisionnement du luminaire** — _Documenté_\n   - Menu : **Inventory app ‣ Operations ‣ Replenishment**\n   - Champ : Product / Location / Min / Max\n   - Valeur : Product : luminaire standard ; Location : À renseigner ; Min : À renseigner ; Max : À renseigner\n   - Cliquer sur **New** puis remplir les champs. La règle peut aussi être créée depuis le smart button **Reordering Rules** de la fiche produit.\n   - Source : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html#create-a-reordering-rule\n\n## Tests\n### Luminaire sur mesure : commande client, commande fournisseur et suivi\n1. Inventory app ‣ Products ‣ Products : vérifier que le luminaire sur mesure a la route Replenish on Order (MTO) et Lumitech SAS comme Vendor\n2. Sales app : créer un devis avec le luminaire sur mesure puis cliquer sur Confirm\n3. Ouvrir le smart button Purchase de la commande client pour retrouver la RfQ liée\n4. Dans la RfQ, vérifier l'Expected Date puis cliquer sur Confirm Order\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html\n\n### Réception à Lyon et livraison au client\n1. Purchase app : ouvrir la commande fournisseur confirmée\n2. Cliquer sur le smart button Receipt puis sur Validate pour réceptionner directement en stock\n3. Ouvrir la livraison liée à la commande client et vérifier qu'elle est prête au départ de l'entrepôt de Lyon\n4. Cliquer sur Validate pour la livraison\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/shipping_receiving/daily_operations/receipts_delivery_one_step.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/mto.html\n\n### Luminaire standard en stock avec réapprovisionnement\n1. Inventory app ‣ Operations ‣ Replenishment : vérifier la règle de réapprovisionnement du luminaire standard\n2. Lancer le réapprovisionnement avec Order Once ou laisser la règle se déclencher\n3. Ouvrir la RfQ générée et vérifier que le fournisseur est celui en tête de la liste du produit\nPages : https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/inventory/warehouses_storage/replenishment/reordering_rules.html ; https://www.odoo.com/documentation/20.0/applications/inventory_and_mrp/purchase/manage_deals/rfq.html\n\n## Questions ouvertes\n- Quels sont les fournisseurs des luminaires standard, avec leurs prix et délais ? (besoin 3) — La liste doit être fournie par le client pour renseigner les lignes fournisseur.\n- Quels sont les prix d'achat négociés et la liste des articles ? (besoin 1) — Nécessaires pour créer les produits et les prix fournisseurs.\n- Qui valide les commandes fournisseurs avant envoi (responsable achats ou personne) ? (besoin 4) — Décision non prise, elle détermine la présence d'une validation.\n- Quels sont les seuils de réapprovisionnement (Min, Max, emplacement, déclenchement Auto ou Manual) des luminaires standard ? (besoin 1) — Aucun seuil n'est indiqué pour les produits stockés.\n- Quel délai de livraison au client (Delivery Time) annoncer pour le sur-mesure ? (besoin 2) — Décision client non prise, distincte du délai de 15 jours du fournisseur.\n- Quel est le nom court et l'adresse de l'entrepôt de Lyon ? (besoin 6) — Données de l'entrepôt non fournies.\n- Stock avec MTO ou dropshipping pour le sur-mesure ? (besoin 7) — Choix non tranché par le client, il influe sur le circuit de livraison.\n\n## Avertissements\n- Édition d'Odoo non précisée : à confirmer avec le client.\n- Étapes L3.1, L3.4 et L3.5 écartées : réception et livraison en 1 étape sont le comportement par défaut et Multi-Step Routes n'est pas exigé.\n- Étape L2.4 retenue sans activer la route Buy : depuis Odoo 19.0, Buy et Manufacture sont masquées par défaut et s'appliquent selon la configuration du produit (fournisseur renseigné).\n- Avec MTO, Odoo génère une RfQ brouillon dès la confirmation de la commande client, même si le stock est suffisant, et elle est liée à la commande client.\n- Ne pas annuler la RfQ générée : Odoo n'en crée pas de remplaçante et un document manuel ne sera pas lié à la commande client.\n- Si la commande client est annulée, la livraison l'est aussi mais pas la RfQ, qui reste active.\n- Le fournisseur en tête de liste du produit est choisi par défaut pour les RfQ, avec son délai : l'ordre de la liste compte.\n- L1.4 est marquée À vérifier : contrôler le fournisseur sur la fiche produit.\n- Le déclenchement automatique de la livraison à la réception fournisseur n'est pas décrit dans les lots : recherche demandée.\n- Le lot 4 cite des pages Fleet et Lunch sans rapport avec le besoin : ne pas s'y fier.\n\n_Coût : 0.243 USD · durée : 80 s_",
+   "rejetsWeb": [],
+   "cout": {
+    "usd": 0.24314,
+    "details": [
+     {
+      "etape": "extraction",
+      "modele": "claude-sonnet-5-5",
+      "entree": 4737,
+      "sortie": 2552,
+      "usd": 0.03499
+     },
+     {
+      "etape": "lot 1",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.03507,
+      "cache_lecture": 3076,
+      "dureeMs": 19168
+     },
+     {
+      "etape": "lot 2",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.03317,
+      "cache_lecture": 3076,
+      "dureeMs": 38820
+     },
+     {
+      "etape": "lot 3",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.03099,
+      "cache_lecture": 3076,
+      "dureeMs": 36019
+     },
+     {
+      "etape": "lot 4",
+      "modele": "claude-sonnet-5-5",
+      "usd": 0.04261,
+      "cache_lecture": 3076,
+      "dureeMs": 34310
+     },
+     {
+      "etape": "assemblage",
+      "modele": "claude-sonnet-5-5",
+      "entree": 7772,
+      "sortie": 2747,
+      "usd": 0.04301
+     },
+     {
+      "etape": "contrôle web",
+      "modele": "claude-haiku-5-5",
+      "entree": 1323,
+      "sortie": 12,
+      "usd": 0.00014
+     },
+     {
+      "etape": "web",
+      "modele": "claude-haiku-5-5",
+      "entree": 23847,
+      "sortie": 1544,
+      "recherches": 2,
+      "usd": 0.02316
+     }
+    ]
+   },
+   "dureeMs": 80125
+  }
+ }
+}

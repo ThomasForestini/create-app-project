@@ -111,9 +111,7 @@
         0
       ],
       "parameters": {
-        "mode": "runOnceForEachItem",
-        "language": "javaScript",
-        "jsCode": "// Why Code: mise en forme HTML Telegram (échappement, gras, statuts par élément, liens) et coupe à 4 096 caractères.\nconst r = $json;\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst fmt = (s) => esc(s).replace(/\\*\\*(.+?)\\*\\*/g, '<b>$1</b>');\nconst refs = (i) => (i.sources?.length ? ` <i>[${i.sources.join(', ')}]</i>` : '');\nconst MARK = { 'Documenté': '✅', 'Vidéo': '🎬', 'Web': '🌐' };\nconst mark = (i) => MARK[i.statut] ?? '⚠️';\nconst BADGE = { 'Documenté': '✅ Documenté', 'À vérifier': '⚠️ À vérifier', 'Non couvert': '❌ Non couvert', 'Web': '🌐 Trouvé sur le web' };\nconst chatId = $('Telegram Trigger').first().json.message.chat.id;\n\n// Photo illisible (odoo-qcm) : demande d'une nouvelle photo, sans réponse.\nif (r.lisible === false) {\n  return { json: { chatId, text: `📷 ${esc(r.message)}\\n\\n<i>${esc(r.raison)}</i>` } };\n}\n\nconst lines = [`<b>${BADGE[r.statut] ?? esc(r.statut)}</b>`, ''];\nif (r.lisible) {\n  // QCM (odoo-qcm) : question lue, choix avec la ou les bonnes réponses, explication, écart de version.\n  const letter = (k) => String.fromCharCode(65 + k);\n  lines.push('<b>Question lue</b>', esc(r.question_lue), '');\n  lines.push(...r.choix.map((c, k) => (r.bonnes_reponses.includes(letter(k)) ? `<b>${letter(k)}. ${esc(c)}</b> ✅` : `${letter(k)}. ${esc(c)}`)));\n  lines.push('', `<b>Réponse : ${r.bonnes_reponses.join(', ') || '?'}</b>`, `${mark(r.resume)} ${fmt(r.explication)}${refs(r.resume)}`);\n  if (r.ecart_version) lines.push('', '<b>Écart v19 / v20</b>', `⚠️ ${fmt(r.ecart_version)}`);\n} else {\n  lines.push(`${mark(r.resume)} ${fmt(r.resume.texte)}${refs(r.resume)}`);\n  if (r.prerequis.length) lines.push('', '<b>Prérequis</b>', ...r.prerequis.map((i) => `${mark(i)} ${fmt(i.texte)}${refs(i)}`));\n  if (r.etapes.length) lines.push('', '<b>Étapes</b>', ...r.etapes.map((i, k) => `${k + 1}. ${mark(i)} <b>${fmt(i.titre)}</b> — ${fmt(i.texte)}${refs(i)}`));\n}\nif (r.avertissements.length) lines.push('', '<b>Attention</b>', ...r.avertissements.map((i) => `${mark(i)} ${fmt(i.texte)}${refs(i)}`));\nif (r.web?.length) lines.push('', '<b>Compléments web</b>', ...r.web.map((i) => `🌐 ${fmt(i.texte)}${i.raison ? ` <i>(${esc(i.raison)})</i>` : ''}\\n${i.source.map((u) => `<a href=\"${esc(u)}\">${esc(u.replace(/^https?:\\/\\/(www\\.)?/, '').slice(0, 60))}</a>`).join(' · ')}`));\nif (r.pistes.length) lines.push('', '<b>Pistes à tester</b>', ...r.pistes.map((p) => `• ${fmt(p)}`));\nif (r.nonCouvert.length) lines.push('', '<b>Non couvert</b>', ...r.nonCouvert.map((p) => `• ${fmt(p)}`));\nif (r.sources.length) lines.push('', '<b>Sources — doc officielle Odoo 20</b>', ...r.sources.map((s) => `[${s.n}] <a href=\"${esc(s.url)}\">${esc(s.titre)}</a>`));\nlines.push('', `<i>✅ = vérifié sur la doc en ligne · 🎬 = vidéo Odoo Tutorials · 🌐 = web (hors doc) · ⚠️ = à vérifier · contrôle : ${esc(r.controle.site)} · ${Math.round(r.dureeMs / 1000)} s</i>`);\n\n// Coupe à une fin de ligne (chaque ligne ferme ses balises) ; découpage en plusieurs messages en Phase 4.\nlet text = lines.join('\\n');\nif (text.length > 4096) text = text.slice(0, text.lastIndexOf('\\n', 4000)) + '\\n\\n<i>… réponse tronquée</i>';\n\nreturn { json: { chatId, text } };\n"
+        "jsCode": "// Why Code: mise en forme HTML Telegram (échappement, gras, repères de source, liens) et découpage en messages de 4 096 caractères.\nconst r = $input.first().json;\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst fmt = (s) => esc(s).replace(/\\*\\*(.+?)\\*\\*/g, '<b>$1</b>');\nconst refs = (i) => (i.sources?.length ? ` <i>[${i.sources.join(', ')}]</i>` : '');\n// Repère seulement ce qui est confirmé ou d'une autre origine ; le reste s'affiche sans marque.\nconst MARK = { 'Documenté': '✅ ', 'Vidéo': '🎬 ', 'Web': '🌐 ' };\nconst mark = (i) => MARK[i.statut] ?? '';\nconst chatId = $('Telegram Trigger').first().json.message.chat.id;\n\n// Photo illisible (odoo-qcm) : demande d'une nouvelle photo, sans réponse.\nif (r.lisible === false) {\n  return [{ json: { chatId, text: `📷 ${esc(r.message)}\\n\\n<i>${esc(r.raison)}</i>` } }];\n}\n\nconst lines = [];\nif (r.lisible) {\n  // QCM (odoo-qcm) : question lue, choix avec la ou les bonnes réponses, explication, écart de version.\n  const letter = (k) => String.fromCharCode(65 + k);\n  lines.push('<b>Question lue</b>', esc(r.question_lue), '');\n  lines.push(...r.choix.map((c, k) => (r.bonnes_reponses.includes(letter(k)) ? `<b>${letter(k)}. ${esc(c)}</b> ✅` : `${letter(k)}. ${esc(c)}`)));\n  lines.push('', `<b>Réponse : ${r.bonnes_reponses.join(', ') || '?'}</b>`, `${mark(r.resume)}${fmt(r.explication)}${refs(r.resume)}`);\n  if (r.ecart_version) lines.push('', '<b>Différence avec Odoo 19</b>', fmt(r.ecart_version));\n} else {\n  lines.push(`${mark(r.resume)}${fmt(r.resume.texte)}${refs(r.resume)}`);\n  if (r.prerequis.length) lines.push('', '<b>Prérequis</b>', ...r.prerequis.map((i) => `• ${mark(i)}${fmt(i.texte)}${refs(i)}`));\n  if (r.etapes.length) lines.push('', '<b>Étapes</b>', ...r.etapes.map((i, k) => `${k + 1}. ${mark(i)}<b>${fmt(i.titre)}</b> — ${fmt(i.texte)}${refs(i)}`));\n}\nif (r.avertissements.length) lines.push('', '<b>Attention</b>', ...r.avertissements.map((i) => `• ${mark(i)}${fmt(i.texte)}${refs(i)}`));\nif (r.web?.length) lines.push('', '<b>Compléments web</b>', ...r.web.map((i) => `🌐 ${fmt(i.texte)}\\n${i.source.map((u) => `<a href=\"${esc(u)}\">${esc(u.replace(/^https?:\\/\\/(www\\.)?/, '').slice(0, 60))}</a>`).join(' · ')}`));\nif (r.nonCouvert.length) lines.push('', '<b>Absent de la doc Odoo</b>', ...r.nonCouvert.map((p) => `• ${fmt(p)}`));\nif (r.sources.length) lines.push('', '<b>Sources — doc officielle Odoo 20</b>', ...r.sources.map((s) => `[${s.n}] <a href=\"${esc(s.url)}\">${esc(s.titre)}</a>`));\nlines.push('', `<i>✅ confirmé sur la doc en ligne · 🎬 vidéo Odoo Tutorials · 🌐 web · ${Math.round(r.dureeMs / 1000)} s</i>`);\n\n// Découpage aux fins de ligne (chaque ligne ferme ses balises) ; une ligne seule trop longue part en texte brut.\nconst MAX = 4096;\nconst chunks = [];\nlet cur = '';\nfor (const line of lines.join('\\n').split('\\n')) {\n  const parts = line.length > MAX ? (line.replace(/<[^>]+>/g, '').match(new RegExp(`[^]{1,${MAX - 100}}`, 'g')) ?? []) : [line];\n  for (const p of parts) {\n    if (cur && cur.length + 1 + p.length > MAX) { chunks.push(cur); cur = p; } else cur = cur ? `${cur}\\n${p}` : p;\n  }\n}\nif (cur.trim()) chunks.push(cur);\nreturn chunks.filter((t) => t.trim()).map((text) => ({ json: { chatId, text } }));\n"
       }
     },
     {
@@ -556,7 +554,7 @@
         400
       ],
       "parameters": {
-        "jsCode": "// Why Code: résumé HTML Telegram du plan (besoins, étapes par statut, questions ouvertes) et nom du fichier .md.\nconst r = $json;\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst chatId = $('Telegram Trigger').first().json.message.chat.id;\n\nconst MARK = { 'Documenté': '✅', 'Vidéo': '🎬', 'Web': '🌐' };\nconst statuts = Object.entries(r.parStatut).map(([k, v]) => `${MARK[k] ?? '⚠️'} ${v} ${esc(k)}`).join(' · ');\nconst lines = [\n  `<b>📋 Plan Odoo 20 — ${esc(r.client)}</b>`,\n  `<i>Édition : ${esc(r.edition)}</i>`,\n  '',\n  '<b>Besoins compris</b>',\n  ...r.besoins.map((b) => `${b.n}. ${esc(b.titre)}`),\n  '',\n  `<b>Étapes (${r.etapes.length})</b> : ${statuts}`,\n  `<b>Tests</b> : ${r.tests.map((t) => esc(t.titre)).join(' ; ') || 'aucun'}`,\n];\nif (r.questions_ouvertes.length) lines.push('', `<b>Questions ouvertes (${r.questions_ouvertes.length})</b>`, ...r.questions_ouvertes.map((q) => `• ${esc(q.question)}`));\nlines.push('', `<i>Plan complet dans le fichier joint · ${r.cout.usd === null ? 'coût inconnu' : `${r.cout.usd.toFixed(3)} USD`} · ${Math.round(r.dureeMs / 1000)} s</i>`);\n\n// Coupe à une fin de ligne ; découpage en plusieurs messages en Phase 4.\nlet text = lines.join('\\n');\nif (text.length > 4096) text = text.slice(0, text.lastIndexOf('\\n', 4000)) + '\\n\\n<i>… résumé tronqué, voir le fichier</i>';\n\nconst slug = String(r.client || 'client').normalize('NFD').replace(/\\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'client';\nreturn { json: { chatId, text, markdown: r.markdown, fileName: `plan-${slug}.md` } };\n"
+        "jsCode": "// Why Code: résumé HTML Telegram du plan (besoins, étapes, questions ouvertes) découpé en messages de 4 096 caractères, et nom du fichier .md.\nconst r = $json;\nconst esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');\nconst chatId = $('Telegram Trigger').first().json.message.chat.id;\n\nconst n = (k) => r.parStatut[k] ?? 0;\nconst statuts = [`✅ ${n('Documenté')} confirmées sur la doc`, n('Web') && `🌐 ${n('Web')} du web`, n('Vidéo') && `🎬 ${n('Vidéo')} des vidéos`].filter(Boolean).join(' · ');\nconst lines = [\n  `<b>📋 Plan Odoo 20 — ${esc(r.client)}</b>`,\n  `<i>Édition : ${esc(r.edition)}</i>`,\n  '',\n  '<b>Besoins compris</b>',\n  ...r.besoins.map((b) => `${b.n}. ${esc(b.titre)}`),\n  '',\n  `<b>Étapes (${r.etapes.length})</b> : ${statuts}`,\n  `<b>Tests</b> : ${r.tests.map((t) => esc(t.titre)).join(' ; ') || 'aucun'}`,\n];\nif (r.questions_ouvertes.length) lines.push('', `<b>Questions ouvertes (${r.questions_ouvertes.length})</b>`, ...r.questions_ouvertes.map((q) => `• ${esc(q.question)}`));\nlines.push('', `<i>Plan complet dans le fichier joint · ${r.cout.usd === null ? 'coût inconnu' : `${r.cout.usd.toFixed(3)} USD`} · ${Math.round(r.dureeMs / 1000)} s</i>`);\n\n// Découpage aux fins de ligne (chaque ligne ferme ses balises), un message par partie.\nconst texts = [];\nfor (const line of lines) {\n  if (texts.length && texts[texts.length - 1].length + 1 + line.length <= 4096) texts[texts.length - 1] += `\\n${line}`;\n  else texts.push(line.slice(0, 4096));\n}\n\nconst slug = String(r.client || 'client').normalize('NFD').replace(/\\p{Diacritic}/gu, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'client';\nreturn { json: { chatId, texts, markdown: r.markdown, fileName: `plan-${slug}.md` } };\n"
       }
     },
     {
@@ -654,6 +652,75 @@
         "telegramApi": {
           "id": "knO0m7y2xLhQBsGw",
           "name": "Assistant Odoo"
+        }
+      }
+    },
+    {
+      "id": "c4a1d9e0-0003-4b00-8000-000000000101",
+      "name": "Build journal row",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2200,
+        500
+      ],
+      "parameters": {
+        "jsCode": "// Why Code: une ligne de journal par message, quel que soit le chemin suivi (question, photo, PDF, erreur).\n// Sortie principale (0) = réponse ; sortie d'erreur (1) = échec du nœud.\nconst pick = (name) => {\n  if (!$(name).isExecuted) return null;\n  const ok = $(name).all(0);\n  if (ok.length) return { ok: true, j: ok[0].json };\n  return { ok: false, j: $(name).all(1)[0]?.json ?? {} };\n};\nconst type = $('Download document').isExecuted || $('Ask odoo-plan').isExecuted ? 'plan'\n  : $('Download photo').isExecuted ? 'qcm' : 'texte';\nconst steps = { plan: ['Download document', 'Ask odoo-plan'], qcm: ['Download photo', 'Ask odoo-qcm'], texte: ['Ask odoo-question'] }[type];\n// Dernière étape exécutée du chemin : la réponse, ou le nœud qui a échoué.\nconst r = steps.map(pick).filter(Boolean).find((x) => !x.ok) ?? pick(steps[steps.length - 1]) ?? { ok: false, j: {} };\nconst err = r.ok ? null : (r.j.error?.message ?? (typeof r.j.error === 'string' ? r.j.error : 'Erreur inconnue'));\nconst sentAt = $('Telegram Trigger').first().json.message.date * 1000;\nreturn [{\n  json: {\n    type,\n    duree_ms: Date.now() - sentAt,\n    cout_usd: r.ok ? (r.j.cout?.usd ?? null) : null,\n    statut: r.ok ? 'ok' : 'erreur',\n    erreur: err,\n    execution_id: String($execution.id),\n  },\n}];"
+      }
+    },
+    {
+      "id": "c4a1d9e0-0003-4b00-8000-000000000102",
+      "name": "Write journal",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2.6,
+      "position": [
+        2420,
+        500
+      ],
+      "onError": "continueRegularOutput",
+      "notes": "Après l'envoi de la réponse : une panne de l'insertion ne bloque rien (onError continue).",
+      "parameters": {
+        "operation": "insert",
+        "schema": {
+          "__rl": true,
+          "mode": "list",
+          "value": "public"
+        },
+        "table": {
+          "__rl": true,
+          "mode": "name",
+          "value": "journal"
+        },
+        "columns": {
+          "mappingMode": "autoMapInputData",
+          "value": {},
+          "matchingColumns": [],
+          "schema": []
+        },
+        "options": {}
+      },
+      "credentials": {
+        "postgres": {
+          "id": "2kZXmPiVRr0deiOp",
+          "name": "Odoo pgvector"
+        }
+      }
+    },
+    {
+      "id": "c4a1d9e0-0004-4b00-8000-000000000103",
+      "name": "One message per part",
+      "type": "n8n-nodes-base.splitOut",
+      "typeVersion": 1,
+      "position": [
+        2080,
+        280
+      ],
+      "parameters": {
+        "fieldToSplitOut": "texts",
+        "include": "selectedOtherFields",
+        "fieldsToInclude": "chatId",
+        "options": {
+          "destinationFieldName": "text"
         }
       }
     }
@@ -869,7 +936,7 @@
       "main": [
         [
           {
-            "node": "Send plan summary",
+            "node": "One message per part",
             "type": "main",
             "index": 0
           },
@@ -886,6 +953,61 @@
         [
           {
             "node": "Send plan file",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send answer": {
+      "main": [
+        [
+          {
+            "node": "Build journal row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send plan file": {
+      "main": [
+        [
+          {
+            "node": "Build journal row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send error": {
+      "main": [
+        [
+          {
+            "node": "Build journal row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Build journal row": {
+      "main": [
+        [
+          {
+            "node": "Write journal",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "One message per part": {
+      "main": [
+        [
+          {
+            "node": "Send plan summary",
             "type": "main",
             "index": 0
           }
